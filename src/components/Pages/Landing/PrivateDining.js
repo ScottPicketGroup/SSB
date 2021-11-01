@@ -4,6 +4,7 @@ import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
   PrivateDiningImage,
+  RenderTextOverHiddenWrapper,
 } from "./landingPage.css"
 import { getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -17,22 +18,24 @@ const PrivateDining = ({
 }) => {
   return (
     <SectionContainer>
-      <PrivateDiningWrapper>
+      <PrivateDiningWrapper first={true}>
         <PrivateDiningImage
           image={getImage(privateDiningImage)}
           alt="private-dining"
+          first={true}
         />
-        <PrivateDiningTextWrapper>
-          <Heading3 marginBottom="sm">{privateDiningHeading}</Heading3>
-          <BC1 marginBottom="sm">{privateDiningIntro}</BC1>
+        <PrivateDiningTextWrapper dining={true}>
+          <Heading3 marginBottom="md">{privateDiningHeading}</Heading3>
+          <RenderTextOverHiddenWrapper first={true}>
+            <BC1>{privateDiningIntro}</BC1>
+          </RenderTextOverHiddenWrapper>
           <Link
             to="#"
             style={{
-              marginTop: "0.75rem",
               textDecorationColor: color.PRIMARY_RED_ROUGE,
             }}
           >
-            <BC1>Learn more...</BC1>
+            <BC1>Learn more...&nbsp;&nbsp;</BC1>
           </Link>
         </PrivateDiningTextWrapper>
       </PrivateDiningWrapper>

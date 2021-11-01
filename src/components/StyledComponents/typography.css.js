@@ -121,6 +121,7 @@ export const Heading2 = styled.h2`
   @media (max-width: 450px) {
     font-size: 20px;
     line-height: 32px;
+    margin-bottom: 1rem;
   }
 `
 
@@ -278,6 +279,7 @@ export const BC1 = styled.p`
   @media (max-width: 450px) {
     font-size: 12px;
     line-height: 16px;
+    margin-bottom: 1rem;
   }
 `
 

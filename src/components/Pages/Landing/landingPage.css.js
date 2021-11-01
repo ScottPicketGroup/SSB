@@ -6,17 +6,20 @@ export const HeroWrapper = styled.div`
   height: 52vw;
   text-align: center;
   width: 100%;
+  padding: 0 8%;
   @media (max-width: 451px) {
     height: 100%;
+    padding: 0;
   }
 `
 export const IntroWrapper = styled.div`
   text-align: center;
-
+  margin-top: 3.5rem;
   p {
-    padding: 0 25%;
+    padding: 0 15%;
   }
   @media (max-width: 451px) {
+    margin-top: 0;
     p {
       padding: 0 5%;
     }
@@ -34,6 +37,7 @@ export const HeroTextWrapper = styled.div`
   transform: translateX(-50%);
 
   @media (max-width: 451px) {
+    top: 6rem;
     width: 96%;
     height: 100%;
   }
@@ -43,9 +47,18 @@ export const HeroImage = styled(GatsbyImage)`
 `
 
 export const WineAndFoodWrapper = styled.div`
+  background-image: url("/static/c34fd4c50dfe2cdc8ae743ba5f54967e/SSB_Flower_Illustration_V01-02.png");
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  width: 50%;
+  height: 35vw;
+  background-repeat: norepeat;
+  background-size: 100% 100%;
+  @media (max-width: 451px) {
+    width: 100%;
+    height: 70vw;
+  }
 `
 
 export const WeekdayItemsWrapper = styled.div`
@@ -65,19 +78,20 @@ export const WeekdayItemWrapper = styled.div`
 `
 export const PrivateDiningWrapper = styled.div`
   display: flex;
-  flex-direction: ${props => (props.column ? "column" : "row")};
-  justify-content: space-between;
+  flex-direction: ${props => (props.first === true ? "row" : "column")};
+  justify-content: ${props => (props.first === true && "space-between")};
   width: 100%;
-  margin-bottom: ${props => (props.whatsonfirst ? "6rem" : "11.25rem")};
+  margin-bottom: ${props => (props.first === true ? "6rem" : "0")};
   @media (max-width: 451px) {
     flex-direction: column;
-    margin-bottom: ${props => (props.whatsonfirst ? "3.25rem" : "6rem")};
+    margin-bottom: ${props => (props.first === true ? "3.25rem" : "0")};
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
-  width: ${props => (props.column ? "100%" : "50%")};
+  width: ${props => (props.first === true ? "60%" : "100%")};
+  order: ${props => (props.first === true ? "1" : "0")};
   @media (max-width: 451px) {
-    order: ${props => (props.whatsonfirst ? "0" : "1")};
+    order: 0;
     width: 100%;
   }
 `
@@ -88,9 +102,12 @@ export const PrivateDiningTextWrapper = styled.div`
   // align-items: center;
   text-align: left;
   margin-top: 3.5rem;
-  width: ${props => (props.column ? "100%" : "43%")};
+  width: ${props =>
+    props.first === true ? "20%" : props.dining ? "25%" : "80%"};
+  margin ${props => (props.dining ? "3.5rem auto 0" : "3.5rem 0 0")};
+  order: ${props => (props.first === true ? "0" : "1")};
   @media (max-width: 451px) {
-    order: ${props => (props.whatsOnFirst ? "1" : "0")};
+    order: 1;
     width: 100%;
     margin-top: 1.75rem;
   }
@@ -98,14 +115,24 @@ export const PrivateDiningTextWrapper = styled.div`
 
 export const WhatsOnEventsWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-`
-export const WhatsOnEventsTwoInWrapper = styled.div`
-  display: flex;
   flex-direction: row;
   gap: 8vw;
   justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;
+  }
+`
+export const RenderTextOverHiddenWrapper = styled.div`
+  display: -webkit-box;
+  -webkit-line-clamp: ${props=>props.first===true ? 3 : 2};
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1.75rem;
+  p {
+    margin-bottom: 0;
+  }
+  @media (max-width: 451px) {
+    margin-bottom: 1rem;
   }
 `

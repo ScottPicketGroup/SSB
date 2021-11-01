@@ -8,6 +8,7 @@ import {
   PrivateDiningImage,
   WhatsOnEventsWrapper,
   WhatsOnEventsTwoInWrapper,
+  RenderTextOverHiddenWrapper,
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/sample"
 import { getImage } from "gatsby-plugin-image"
@@ -17,70 +18,54 @@ import { color } from "../../StyledComponents/variables"
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
   return (
-    <SectionContainer>
+    <SectionContainer column="true" marginBottom="xxl">
+      <PrivateDiningWrapper first={true}>
+        <PrivateDiningTextWrapper first={true}>
+          <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
+          <RenderTextOverHiddenWrapper first={true}>
+            <Renderer node={events[0].eventDescription} />
+          </RenderTextOverHiddenWrapper>
+          <Link
+            to="/whats-on/page-title"
+            style={{
+              textDecorationColor: color.PRIMARY_RED_ROUGE,
+            }}
+          >
+            <BC1>Learn more...&nbsp;&nbsp;</BC1>
+          </Link>
+        </PrivateDiningTextWrapper>
+        <PrivateDiningImage
+          image={getImage(events[1].eventMenuImage)}
+          first={true}
+          alt="private-dining"
+        />
+      </PrivateDiningWrapper>
       <WhatsOnEventsWrapper>
-        <PrivateDiningWrapper whatsonfirst="true">
-          <PrivateDiningTextWrapper whatsonfirst="true">
-            <Heading2 marginBottom="sm">{events[2].eventTitle}</Heading2>
-            <Renderer node={events[2].eventDescription} />
-            <Link
-              to="/whats-on/page-title"
-              style={{
-                marginTop: "0.75rem",
-                textDecorationColor: color.PRIMARY_RED_ROUGE,
-              }}
-            >
-              <BC1>Learn more...</BC1>
-            </Link>
-          </PrivateDiningTextWrapper>
-          <PrivateDiningImage
-            image={getImage(events[2].eventMenuImage)}
-            whatsonfirst="true"
-            alt="private-dining"
-          />
-        </PrivateDiningWrapper>
-        <WhatsOnEventsTwoInWrapper>
-          <PrivateDiningWrapper column="true">
-            <PrivateDiningImage
-              image={getImage(events[1].eventMenuImage)}
-              column="true"
-              alt="private-dining"
-            />
-            <PrivateDiningTextWrapper column="true">
-              <Heading2 marginBottom="sm">{events[1].eventTitle}</Heading2>
-              <Renderer node={events[1].eventDescription} />
-              <Link
-                to="/whats-on/page-title"
-                style={{
-                  marginTop: "0.75rem",
-                  textDecorationColor: color.PRIMARY_RED_ROUGE,
-                }}
-              >
-                <BC1>Learn more...</BC1>
-              </Link>
-            </PrivateDiningTextWrapper>
-          </PrivateDiningWrapper>
-          <PrivateDiningWrapper column="true">
-            <PrivateDiningImage
-              image={getImage(events[1].eventMenuImage)}
-              column="true"
-              alt="private-dining"
-            />
-            <PrivateDiningTextWrapper column="true">
-              <Heading2 marginBottom="sm">{events[0].eventTitle}</Heading2>
-              <Renderer node={events[0].eventDescription} />
-              <Link
-                to="/whats-on/page-title"
-                style={{
-                  marginTop: "0.75rem",
-                  textDecorationColor: color.PRIMARY_RED_ROUGE,
-                }}
-              >
-                <BC1>Learn more...</BC1>
-              </Link>
-            </PrivateDiningTextWrapper>
-          </PrivateDiningWrapper>
-        </WhatsOnEventsTwoInWrapper>
+        {events.map(
+          (item, index) =>
+            index > 0 && (
+              <PrivateDiningWrapper>
+                <PrivateDiningTextWrapper>
+                  <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
+                  <RenderTextOverHiddenWrapper>
+                    <Renderer node={item.eventDescription} />
+                  </RenderTextOverHiddenWrapper>
+                  <Link
+                    to="/whats-on/page-title"
+                    style={{
+                      textDecorationColor: color.PRIMARY_RED_ROUGE,
+                    }}
+                  >
+                    <BC1>Learn more...&nbsp;&nbsp;</BC1>
+                  </Link>
+                </PrivateDiningTextWrapper>
+                <PrivateDiningImage
+                  image={getImage(item.eventMenuImage)}
+                  alt="private-dining"
+                />
+              </PrivateDiningWrapper>
+            )
+        )}
       </WhatsOnEventsWrapper>
     </SectionContainer>
   )

@@ -6,10 +6,10 @@ export const HeaderContainer = styled.div`
   top: 0;
   z-index: 1;
   background: #fff;
-  padding: 56px 139px 28px;
+  padding: 3.5rem 16rem 1.75rem;
 
   @media (max-width: 451px) {
-    padding: 14px 5%;
+    padding: 1rem 1.5rem 3.5rem;
   }
 `
 export const MenuCancelIconWrapper = styled.div`

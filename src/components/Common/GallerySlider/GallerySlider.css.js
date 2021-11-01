@@ -1,0 +1,58 @@
+import styled from "styled-components"
+import { color } from "../../StyledComponents/variables"
+
+export const Container = styled.div`
+  width: 72vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: auto;
+  margin-bottom: 5rem;
+  overflow: hidden;
+`
+
+export const ImageContainer = styled.div`
+  margin-top: 2.25rem;
+  width: 100vw;
+  height: 40vw;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+`
+
+export const Card = styled.div`
+  width: 100%;
+  margin-left: ${props =>
+    props.active === props.i + 1
+      ? "0vw"
+      : `${(props.i - props.active) * 100}vw`};
+  transition: margin-left 550ms ease-in-out;
+  position: absolute;
+  top: 0;
+`
+
+export const Controls = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+`
+
+export const Control = styled.div`
+  width: 30px;
+  height: 30px;
+  margin: 0.5rem;
+  text-align: center;
+`
+export const ActiveControl = styled.div`
+  width: 30px;
+  height: 30px;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  background: ${color.PRIMARY_RICH_BLACK};
+`

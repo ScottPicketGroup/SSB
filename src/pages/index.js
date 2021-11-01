@@ -9,6 +9,7 @@ import WineAndFood from "../components/Pages/Landing/WineAndFood"
 import Weekday from "../components/Pages/Landing/Weekday"
 import PrivateDining from "../components/Pages/Landing/PrivateDining"
 import WhatsOnEvents from "../components/Pages/Landing/WhatsOnEvents"
+import GallerySlider from "../components/Common/GallerySlider/GallerySlider"
 
 const IndexPage = ({ data }) => {
   const {
@@ -20,6 +21,7 @@ const IndexPage = ({ data }) => {
     privateDiningImage,
     privateDiningIntro,
     whatsOnEvents,
+    gallery
   } = data.allContentfulLandingPageContent.edges[0].node
 
   const weekdays = [
@@ -42,6 +44,7 @@ const IndexPage = ({ data }) => {
       <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
       <WineAndFood />
+      <GallerySlider images={gallery} />
       <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
       <Weekday data={weekdays} />
       <PrivateDining
@@ -68,11 +71,9 @@ export const landingPageData = graphql`
           quoteText {
             raw
           }
-          privateDiningHeading
-          privateDiningImage {
+          gallery {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
-          privateDiningIntro
           whatsOnEvents {
             events {
               eventMenuImage {
@@ -84,6 +85,11 @@ export const landingPageData = graphql`
               eventTitle
             }
           }
+          privateDiningHeading
+          privateDiningImage {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          }
+          privateDiningIntro
         }
       }
     }

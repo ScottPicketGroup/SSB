@@ -1,4 +1,5 @@
 import * as React from "react"
+import { useRef } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -13,6 +14,7 @@ import Intro from "../components/Pages/Food/Intro"
 import FoodScrollMenu from "../components/Pages/Food/FoodScrollMenu"
 
 const FoodPage = ({ data }) => {
+  const itemsRef = useRef([])
   const {
     pageTitle,
     menuDuJour,
@@ -21,21 +23,45 @@ const FoodPage = ({ data }) => {
     imageAdjacentToBrunchMenuHiddenOnMob,
   } = data.allContentfulFoodMenuPageContent.nodes[0]
 
+  const excuteScroll = el => {
+    itemsRef.current[el].scrollIntoView({behavior: "smooth"})
+  }
+
+    
+  
+
   return (
     <Layout>
       <Seo title="Home" />
       <PageContainer red={true}>
         <Intro pageTitle={pageTitle} />
-        <FoodScrollMenu />
-        <MenuDuJour menuDuJourData={menuDuJour} />
-        <Brunch
-          brunchData={brunch}
-          hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
-        />
-        <SectionContainer marginBottom="xxl" centered red>
-          <Desserts
-            dessertData={desserts}
+        <FoodScrollMenu excuteScroll={excuteScroll} />
+        <SectionContainer
+          marginBottom="xl"
+          centered
+          red
+          ref={el => (itemsRef.current[0] = el)}
+        >
+          <MenuDuJour menuDuJourData={menuDuJour} />
+        </SectionContainer>
+        <SectionContainer
+          marginBottom="xl"
+          centered
+          red
+          ref={el => (itemsRef.current[1] = el)}
+        >
+          <Brunch
+            brunchData={brunch}
+            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
+        </SectionContainer>
+        <SectionContainer
+          marginBottom="xxl"
+          centered
+          red
+          ref={el => (itemsRef.current[2] = el)}
+        >
+          <Desserts dessertData={desserts} />
         </SectionContainer>
       </PageContainer>
     </Layout>

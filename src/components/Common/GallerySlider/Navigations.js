@@ -4,6 +4,7 @@ import { BC3 } from "../../StyledComponents/typography.css"
 import { Controls, Control, ActiveControl } from "./GallerySlider.css"
 
 const Navigations = ({ active, setActive, images }) => {
+  console.log(images)
   return (
     <Controls>
       {images.map((item, index) =>
@@ -14,7 +15,7 @@ const Navigations = ({ active, setActive, images }) => {
             </BC3>
           </ActiveControl>
         ) : (
-          <Control>
+          <Control key={index}>
             <BC3 color="black" onClick={() => setActive(index)}>
               {index + 1}
             </BC3>

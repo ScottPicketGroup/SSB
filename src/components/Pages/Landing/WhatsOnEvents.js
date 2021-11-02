@@ -7,7 +7,6 @@ import {
   PrivateDiningTextWrapper,
   PrivateDiningImage,
   WhatsOnEventsWrapper,
-  WhatsOnEventsTwoInWrapper,
   RenderTextOverHiddenWrapper,
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/sample"
@@ -44,7 +43,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
         {events.map(
           (item, index) =>
             index > 0 && (
-              <PrivateDiningWrapper>
+              <PrivateDiningWrapper key={index}>
                 <PrivateDiningTextWrapper>
                   <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
                   <RenderTextOverHiddenWrapper>

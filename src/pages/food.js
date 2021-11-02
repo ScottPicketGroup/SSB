@@ -7,9 +7,9 @@ import {
   SectionContainer,
 } from "../components/StyledComponents/containers.css"
 import { Heading1 } from "../components/StyledComponents/typography.css"
-import MenuDuJour from "../components/Pages/MenuDuJour/MenuDuJour"
-import Brunch from "../components/Pages/MenuDuJour/Brunch"
-import Desserts from "../components/Pages/MenuDuJour/Desserts"
+import MenuDuJour from "../components/Pages/Food/MenuDuJour"
+import Brunch from "../components/Pages/Food/Brunch"
+import Desserts from "../components/Pages/Food/Desserts"
 
 const FoodPage = ({ data }) => {
   const {

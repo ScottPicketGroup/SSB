@@ -4,7 +4,7 @@ import { BC3 } from "../../StyledComponents/typography.css"
 import { Controls, Control, ActiveControl } from "./GallerySlider.css"
 
 const Navigations = ({ active, setActive, images }) => {
-  console.log(images)
+
   return (
     <Controls>
       {images.map((item, index) =>

@@ -9,7 +9,7 @@ const GallerySlider = ({ images }) => {
   const [active, setActive] = React.useState(0)
 
   return (
-    <SectionContainer marginBottom="xxl" column>
+    <SectionContainer marginBottom="xl" column>
       <ImageContainer>
         {images.length &&
           images.map((item, i) => (

@@ -1,17 +1,6 @@
 import styled from "styled-components"
 import { color } from "../../StyledComponents/variables"
 
-export const Container = styled.div`
-  width: 72vw;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: auto;
-  margin-bottom: 5rem;
-  overflow: hidden;
-`
-
 export const ImageContainer = styled.div`
   margin-top: 2.25rem;
   width: 100vw;
@@ -21,6 +10,10 @@ export const ImageContainer = styled.div`
   flex-direction: row;
   position: relative;
   overflow: hidden;
+
+  @media (max-width: 451px) {
+    height: 60vw;
+  }
 `
 
 export const Card = styled.div`
@@ -47,6 +40,13 @@ export const Control = styled.div`
   height: 30px;
   margin: 0.5rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 451px) {
+    width: 15px;
+    height: 15px;
+  }
 `
 export const ActiveControl = styled.div`
   width: 30px;
@@ -55,4 +55,11 @@ export const ActiveControl = styled.div`
   text-align: center;
   border-radius: 50%;
   background: ${color.PRIMARY_RICH_BLACK};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 451px) {
+    width: 15px;
+    height: 15px;
+  }
 `

@@ -1,59 +1,65 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
-import { BC1, Heading2 } from "../../StyledComponents/typography.css"
+import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
   DessertContainer,
-  MenuDuJourContainer,
+  DessertWrapper,
   DessertSeasonalTitleWrapper,
   DessertImage,
+  DessertItemWrapper,
+  DessertDrinkSectionWrapper,
+  DessertDrinkSectionItemWrapper,
+  DessertDrinkSectionContainer,
 } from "./FoodPage.css"
 
-const Desserts = ({ dessertData, hiddenOnMobImg }) => {
-  const { menuItems, bottomHeading, drinksSection } = dessertData[0]
+const Desserts = ({ dessertData }) => {
+  const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =
+    dessertData[0]
   return (
     <DessertContainer>
-      <DessertImage  image={getImage(hiddenOnMobImg)} alt="dessert" />
-      <MenuDuJourContainer coffee style={{paddingTop: "3.5rem", paddingLeft: "5.5rem",paddingRight:"5.25rem"}}>
+      <DessertImage
+        image={getImage(food_menu_page_content[0].imageAdjacentToDessertMenu)}
+        alt="dessert"
+      />
+      <DessertWrapper>
         {menuItems.map((item, index) => (
-          <div key={index} style={{ marginBottom: "3.25rem", width: "80%" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <BC1>{item.menuItem}</BC1>
-              <BC1>{item.menuItemPrice}$$</BC1>
-            </div>
+          <DessertItemWrapper key={index}>
+            <DessertDrinkSectionItemWrapper>
+              <BC2 color="black" style={{ fontWeight: "bold" }}>
+                {item.menuItem}
+              </BC2>
+              <BC2 color="black" style={{ fontWeight: "bold" }}>
+                {item.menuItemPrice}$$
+              </BC2>
+            </DessertDrinkSectionItemWrapper>
 
-            <BC1>{item.menuItemDescription}</BC1>
-          </div>
+            <BC2 color="black">{item.menuItemDescription}</BC2>
+          </DessertItemWrapper>
         ))}
-        <div style={{paddingLeft: "4.4rem"}}>
-        {drinksSection.drinkMenuItems.map((item, index) => (
-          <div key={index} style={{ marginBottom: "3.25rem" }}>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <BC1>{item.menuItem}</BC1>
-              <BC1>{item.menuItemPrice}$$</BC1>
-            </div>
+        <DessertDrinkSectionContainer>
+          {drinksSection.drinkMenuItems.map((item, index) => (
+            <DessertDrinkSectionWrapper>
+              <DessertDrinkSectionItemWrapper>
+                <BC2 color="black" style={{ fontWeight: "bold" }}>
+                  {item.menuItem}
+                </BC2>
+                <BC2 color="black" style={{ fontWeight: "bold" }}>
+                  {item.menuItemPrice}$$
+                </BC2>
+              </DessertDrinkSectionItemWrapper>
 
-            <BC1>{item.menuItemDescription}</BC1>
-          </div>
-        ))}
-        </div>
+              <BC2 color="black">{item.menuItemDescription}</BC2>
+            </DessertDrinkSectionWrapper>
+          ))}
+        </DessertDrinkSectionContainer>
 
-        <Heading2 marginBottom="md">{bottomHeading}</Heading2>
+        <Heading2 marginTop="lg" marginBottom="md" color="black">
+          {bottomHeading}
+        </Heading2>
         <DessertSeasonalTitleWrapper>
-          <BC1 >SPRING & SUMMER</BC1>
+          <BC2 style={{ fontWeight: "bold" }}>SPRING & SUMMER</BC2>
         </DessertSeasonalTitleWrapper>
-      </MenuDuJourContainer>
+      </DessertWrapper>
     </DessertContainer>
   )
 }

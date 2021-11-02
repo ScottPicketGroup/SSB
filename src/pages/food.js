@@ -6,10 +6,11 @@ import {
   PageContainer,
   SectionContainer,
 } from "../components/StyledComponents/containers.css"
-import { Heading1 } from "../components/StyledComponents/typography.css"
 import MenuDuJour from "../components/Pages/Food/MenuDuJour"
 import Brunch from "../components/Pages/Food/Brunch"
 import Desserts from "../components/Pages/Food/Desserts"
+import Intro from "../components/Pages/Food/Intro"
+import FoodScrollMenu from "../components/Pages/Food/FoodScrollMenu"
 
 const FoodPage = ({ data }) => {
   const {
@@ -19,27 +20,21 @@ const FoodPage = ({ data }) => {
     desserts,
     imageAdjacentToBrunchMenuHiddenOnMob,
   } = data.allContentfulFoodMenuPageContent.nodes[0]
-  
+
   return (
     <Layout>
       <Seo title="Home" />
-      <PageContainer red>
-        <SectionContainer marginTop="xl" marginBottom="lg" centered red>
-          <Heading1 color="white">{pageTitle}</Heading1>
-        </SectionContainer>
-        <SectionContainer marginBottom="xl" centered red>
-          <MenuDuJour menuDuJourData={menuDuJour} />
-        </SectionContainer>
-        <SectionContainer marginBottom="xl" centered red>
-          <Brunch
-            brunchData={brunch}
-            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
-          />
-        </SectionContainer>
+      <PageContainer red={true}>
+        <Intro pageTitle={pageTitle} />
+        <FoodScrollMenu />
+        <MenuDuJour menuDuJourData={menuDuJour} />
+        <Brunch
+          brunchData={brunch}
+          hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
+        />
         <SectionContainer marginBottom="xxl" centered red>
           <Desserts
             dessertData={desserts}
-            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
         </SectionContainer>
       </PageContainer>
@@ -76,7 +71,7 @@ export const foodPageData = graphql`
           }
         }
         imageAdjacentToBrunchMenuHiddenOnMob {
-          gatsbyImageData
+          gatsbyImageData(aspectRatio: 0.7)
         }
         desserts {
           bottomHeading
@@ -91,6 +86,11 @@ export const foodPageData = graphql`
               menuItem
               menuItemDescription
               menuItemPrice
+            }
+          }
+          food_menu_page_content {
+            imageAdjacentToDessertMenu {
+              gatsbyImageData(aspectRatio: 1, layout: FULL_WIDTH)
             }
           }
         }

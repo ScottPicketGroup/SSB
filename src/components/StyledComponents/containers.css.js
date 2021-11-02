@@ -94,6 +94,7 @@ export const SectionContainer = styled.div`
     background: none;
     margin-bottom: 3.5rem;
     flex-direction: column;
+    margin-top: 0;
     display: ${props => (props.hiddenOnMob ? "none" : "block")};
   }
 `

@@ -60,6 +60,9 @@ export const WineAndFoodWrapper = styled.div`
     height: 70vw;
   }
 `
+export const WeekdayWrapper = styled.div`
+  display: flex;
+`
 
 export const WeekdayItemsWrapper = styled.div`
   display: flex;
@@ -74,6 +77,7 @@ export const WeekdayItemWrapper = styled.div`
   margin-top: 3.5rem;
   @media (max-width: 451px) {
     margin-top: 1.75rem;
+    flex-direction: column;
   }
 `
 export const PrivateDiningWrapper = styled.div`
@@ -84,7 +88,7 @@ export const PrivateDiningWrapper = styled.div`
   margin-bottom: ${props => (props.first === true ? "6rem" : "0")};
   @media (max-width: 451px) {
     flex-direction: column;
-    margin-bottom: ${props => (props.first === true ? "3.25rem" : "0")};
+    margin-bottom: ${props => (props.dining === true ? "0" : props.first === true ? "3.25rem" : "0")};
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`

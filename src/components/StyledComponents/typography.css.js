@@ -175,7 +175,7 @@ export const Heading3 = styled.h3`
   }};
   @media (max-width: 450px) {
     font-size: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 1rem;
   }
 `
 
@@ -492,4 +492,12 @@ export const FBC1 = styled.p`
     margin-bottom: 2.35rem;
     line-height: 1.15;
   }
+`
+export const BBHeading2 = styled(Heading2)`
+  line-height: 1.5;
+  border-bottom: 1.5px solid;
+`
+export const BBHeading = styled(Heading3)`
+  line-height: 1.5;
+  border-bottom: 1.5px solid;
 `

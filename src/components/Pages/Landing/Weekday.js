@@ -1,5 +1,5 @@
 import React from "react"
-import { WeekdayItemsWrapper } from "./landingPage.css"
+import { WeekdayItemsWrapper, WeekdayWrapper } from "./landingPage.css"
 import WeekdayItem from "./WeekdayItem"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import { StaticImage } from "gatsby-plugin-image"
@@ -7,6 +7,7 @@ import { StaticImage } from "gatsby-plugin-image"
 const Weekday = ({ data }) => {
   return (
     <SectionContainer marginBottom="xxl">
+      <WeekdayWrapper>
       <div>
         <StaticImage
           src="../../../images/weekday-icon.png"
@@ -23,6 +24,7 @@ const Weekday = ({ data }) => {
           />
         ))}
       </WeekdayItemsWrapper>
+      </WeekdayWrapper>
     </SectionContainer>
   )
 }

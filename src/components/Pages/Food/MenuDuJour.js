@@ -1,32 +1,36 @@
 import React from "react"
-import { BC1, BC2, Heading2 } from "../../StyledComponents/typography.css"
-import { MenuDuJourContainer, SeasonalTitleWrapper } from "./FoodPage.css"
+import { BC2, Heading2 } from "../../StyledComponents/typography.css"
+import { SectionContainer } from "../../StyledComponents/containers.css"
+import { MenuDuJourContainer, MenuDuJourItemWrapper, MenuDuJourTitleWrapper, SeasonalTitleWrapper } from "./FoodPage.css"
 
 const MenuDuJour = ({ menuDuJourData }) => {
   const {
     menuTitleTop,
     menuItems,
     bottomTitle,
-    scrollToMenuItem,
     seasonalMenuTitle,
   } = menuDuJourData
   return (
-    <MenuDuJourContainer>
-      <BC1 marginTop="lg" style={{ marginBottom: "2.25rem" }}>
-        {menuTitleTop}
-      </BC1>
-      {menuItems.map((item, index) => (
-        <div key={index} style={{ width: "80%", marginBottom: "3.25rem" }}>
-          <BC1>{item.day}</BC1>
-          <BC1>{item.menuItem}</BC1>
-        </div>
-      ))}
-      <Heading2 marginBottom="md">{bottomTitle}</Heading2>
-      <BC2>{scrollToMenuItem}</BC2>
-      <SeasonalTitleWrapper>
-        <BC1>{seasonalMenuTitle}</BC1>
-      </SeasonalTitleWrapper>
-    </MenuDuJourContainer>
+    <SectionContainer marginBottom="xl" centered red>
+      <MenuDuJourContainer>
+        <MenuDuJourTitleWrapper>
+        <BC2 style={{ fontWeight: "bold" }} color="black">
+          {menuTitleTop}
+        </BC2>
+        </MenuDuJourTitleWrapper>
+        {menuItems.map((item, index) => (
+          <MenuDuJourItemWrapper key={index}>
+            <BC2 style={{ fontWeight: "bold" }} color="black">{item.day}</BC2>
+            <BC2 color="black">{item.menuItem}</BC2>
+          </MenuDuJourItemWrapper>
+        ))}
+        <Heading2 marginTop="xl" marginBottom="md" color="black">{bottomTitle}</Heading2>
+        {/* <BC2 color="black">{scrollToMenuItem}</BC2> */}
+        <SeasonalTitleWrapper>
+          <BC2 style={{ fontWeight: "bold" }}>{seasonalMenuTitle}</BC2>
+        </SeasonalTitleWrapper>
+      </MenuDuJourContainer>
+    </SectionContainer>
   )
 }
 

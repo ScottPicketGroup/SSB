@@ -9,7 +9,7 @@ const WhatsOnPage = ({ data }) => {
 
     const { events, pageHeading } = data.allContentfulWhatsOnPageEventsLandingPageContent.edges[0].node
   return (
-    <Layout landing>
+    <Layout>
       <Seo title="Home" />
       <Intro pageHeading={pageHeading} />
       <WhatsOnEvents events={events} />

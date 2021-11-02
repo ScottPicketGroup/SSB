@@ -8,7 +8,7 @@ const TermsAndConditionsPage = ({ data }) => {
 
     const { pageHeading, content } = data.allContentfulTermsAndConditionsPageContent.nodes[0]
   return (
-    <Layout landing>
+    <Layout>
       <Seo title="Home" />
       <TermsAndConditions pageHeading={pageHeading} content={content} />
     </Layout>

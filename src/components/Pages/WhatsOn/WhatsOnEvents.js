@@ -20,11 +20,18 @@ const WhatsOnEvents = ({ events }) => {
     <SectionContainer width="62vw" column>
       <WhatsOnEventsContainer>
         {events.map((item, index) => (
-          <EventWrapper key={index}>
-            <EventImage
-              image={getImage(item.eventMenuImage)}
-              alt="whats-on-image"
-            />
+          <EventWrapper key={index} order={index}>
+            {item.eventMenuImage === null ? (
+              <EventImage
+                image={getImage(events[0].eventMenuImage)}
+                alt="whats-on-image"
+              />
+            ) : (
+              <EventImage
+                image={getImage(item.eventMenuImage)}
+                alt="whats-on-image"
+              />
+            )}
             <EventTextWrapper>
               <Heading3 marginBottom="md">{item.eventTitle}</Heading3>
               <RenderTextOverHiddenWrapper>

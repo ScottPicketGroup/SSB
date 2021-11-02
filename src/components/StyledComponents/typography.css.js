@@ -498,7 +498,7 @@ export const BBHeading2 = styled(Heading2)`
   line-height: 1.5;
   border-bottom: 1.5px solid;
 `
-export const BBHeading = styled(Heading3)`
+export const BBHeading3 = styled(Heading3)`
   line-height: 1.5;
   border-bottom: 1.5px solid;
 `

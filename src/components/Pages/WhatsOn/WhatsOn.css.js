@@ -15,8 +15,8 @@ export const EventWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 25vw;
-  margin-top: ${props=>props.key % 2 === 0 ? "0" : "6rem"};
-  margin-bottom: ${props=>props.key % 2 === 1 ? "6rem" : "0"};
+  margin-top: ${props=>props.order % 2 === 0 ? "0" : "6rem"};
+  margin-bottom: ${props=>props.order % 2 === 1 ? "0" : "6rem"};
   @media (max-width: 451px) {
     width: 90vw;
   }
@@ -57,4 +57,10 @@ export const WhatsOnEventsContainer = styled.div`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-top: 6rem;
+  margin-bottom: 11.25rem;
+  @media(max-width: 451px) {
+    margin-top: 3.5rem;
+    margin-bottom: 6rem;
+  }
 `

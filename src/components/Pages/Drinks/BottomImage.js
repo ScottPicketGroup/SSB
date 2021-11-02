@@ -6,7 +6,7 @@ import { BottomGatsByImage } from "./DrinksPage.css"
 const BottomImage = ({ bottomImage }) => {
   return (
     <SectionContainer
-      marginBottom="lg"
+      marginBottom="xxl"
       width="50%"
       centered={true}
     >

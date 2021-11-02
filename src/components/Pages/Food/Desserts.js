@@ -25,10 +25,10 @@ const Desserts = ({ dessertData }) => {
         {menuItems.map((item, index) => (
           <DessertItemWrapper key={index}>
             <DessertDrinkSectionItemWrapper>
-              <BC2 color="black" style={{ fontWeight: "bold" }}>
+              <BC2 color="black" bold>
                 {item.menuItem}
               </BC2>
-              <BC2 color="black" style={{ fontWeight: "bold" }}>
+              <BC2 color="black" bold>
                 {item.menuItemPrice}$$
               </BC2>
             </DessertDrinkSectionItemWrapper>
@@ -40,10 +40,10 @@ const Desserts = ({ dessertData }) => {
           {drinksSection.drinkMenuItems.map((item, index) => (
             <DessertDrinkSectionWrapper>
               <DessertDrinkSectionItemWrapper>
-                <BC2 color="black" style={{ fontWeight: "bold" }}>
+                <BC2 color="black" bold>
                   {item.menuItem}
                 </BC2>
-                <BC2 color="black" style={{ fontWeight: "bold" }}>
+                <BC2 color="black" bold>
                   {item.menuItemPrice}$$
                 </BC2>
               </DessertDrinkSectionItemWrapper>
@@ -57,7 +57,7 @@ const Desserts = ({ dessertData }) => {
           {bottomHeading}
         </Heading2>
         <DessertSeasonalTitleWrapper>
-          <BC2 style={{ fontWeight: "bold" }}>SPRING & SUMMER</BC2>
+          <BC2 bold>SPRING & SUMMER</BC2>
         </DessertSeasonalTitleWrapper>
       </DessertWrapper>
     </DessertContainer>

@@ -13,13 +13,13 @@ const MenuDuJour = ({ menuDuJourData }) => {
   return (
     <MenuDuJourContainer>
       <MenuDuJourTitleWrapper>
-        <BC2 style={{ fontWeight: "bold" }} color="black">
+        <BC2 bold color="black">
           {menuTitleTop}
         </BC2>
       </MenuDuJourTitleWrapper>
       {menuItems.map((item, index) => (
         <MenuDuJourItemWrapper key={index}>
-          <BC2 style={{ fontWeight: "bold" }} color="black">
+          <BC2 bold color="black">
             {item.day}
           </BC2>
           <BC2 color="black">{item.menuItem}</BC2>
@@ -28,9 +28,8 @@ const MenuDuJour = ({ menuDuJourData }) => {
       <Heading2 marginTop="xl" marginBottom="md" color="black">
         {bottomTitle}
       </Heading2>
-      {/* <BC2 color="black">{scrollToMenuItem}</BC2> */}
       <SeasonalTitleWrapper>
-        <BC2 style={{ fontWeight: "bold" }}>{seasonalMenuTitle}</BC2>
+        <BC2 bold>{seasonalMenuTitle}</BC2>
       </SeasonalTitleWrapper>
     </MenuDuJourContainer>
   )

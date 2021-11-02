@@ -1,3 +1,4 @@
+import { Link } from "gatsby"
 import styled, { createGlobalStyle } from "styled-components"
 import OggRegularItalic from "../../assetts/fonts/Ogg-RegularItalic.woff"
 import PitchRegular from "../../assetts/fonts/Pitch-Regular.woff"
@@ -135,7 +136,7 @@ export const Heading3 = styled.h3`
       : color.PRIMARY_RED_ROUGE};
   font-size: 22px;
   line-height: 30px;
-  font-weight: 500;
+  font-weight: ${props => props.bold ? "bold" : "normal"};
 
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -189,7 +190,7 @@ export const Heading4 = styled.h4`
       : color.PRIMARY_RED_ROUGE};
   font-size: 16px;
   line-height: 21px;
-  font-weight: 500;
+  font-weight: ${props => props.bold ? "bold" : "normal"};
 
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -239,7 +240,7 @@ export const BC1 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 16px;
   line-height: 22px;
-  font-weight: 500;
+  font-weight: ${props => props.bold ? "bold" : "normal"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -293,7 +294,7 @@ export const BC2 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 12px;
   line-height: 16px;
-  font-weight: 500;
+  font-weight: ${props => props.bold ? "bold" : "normal"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -346,7 +347,7 @@ export const BC3 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 20px;
   line-height: 26px;
-  font-weight: 500;
+  font-weight: ${props => props.bold ? "bold" : "normal"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -400,7 +401,7 @@ export const BC4 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 6px;
   line-height: 8px;
-  font-weight: 500;
+  font-weight: ${props => props.bold ? "bold" : "normal"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -500,4 +501,10 @@ export const BBHeading2 = styled(Heading2)`
 export const BBHeading = styled(Heading3)`
   line-height: 1.5;
   border-bottom: 1.5px solid;
+`
+export const NoneDecorationLink = styled(Link)`
+  text-decoration: none;
+`
+export const RedDecorationLink = styled(Link)`
+  text-decoration-color: ${color.PRIMARY_RED_ROUGE};
 `

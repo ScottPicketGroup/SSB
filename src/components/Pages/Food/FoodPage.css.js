@@ -179,7 +179,7 @@ export const DessertDrinkSectionWrapper = styled.div`
   }
 `
 export const DessertDrinkSectionContainer = styled.div`
-  padding-left: 4.4rem;
+  align-self: flex-end;
   padding-top: 1.75rem;
   @media (max-width: 451px) {
     padding-left: 2.4rem;

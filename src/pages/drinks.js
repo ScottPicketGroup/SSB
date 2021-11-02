@@ -22,7 +22,6 @@ const DrinksPage = ({ data }) => {
     nonAlcoholicDrinksMenu,
     wineByTheGlassMenu,
   } = data.allContentfulWineMenuPageContent.nodes[0]
-  console.log(data)
 
   const excuteScroll = el => {
     itemsRef.current[el].scrollIntoView({ behavior: "smooth" })
@@ -51,14 +50,6 @@ const DrinksPage = ({ data }) => {
             nonAlcoholicDrinksMenu={nonAlcoholicDrinksMenu}
           />
         </SectionContainer>
-        {/* <SectionContainer
-          marginBottom="xxl"
-          centered
-          red
-          ref={el => (itemsRef.current[2] = el)}
-        >
-          <Desserts dessertData={desserts} />
-        </SectionContainer> */}
         <BottomImage bottomImage={bottomImage} />
       </PageContainer>
     </Layout>

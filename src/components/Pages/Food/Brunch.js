@@ -25,7 +25,7 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
           />
           {menuItems.map((item, index) => (
             <MenuDuJourItemWrapper>
-              <BC2 color="black" style={{ fontWeight: "bold" }}>
+              <BC2 color="black" bold>
                 {item.menuItem}, {item.menuItemPrice}$$
               </BC2>
               <BC2 color="black">{item.menuItemDescription}</BC2>

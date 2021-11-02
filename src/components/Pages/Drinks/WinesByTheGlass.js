@@ -11,12 +11,12 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
   const wineData = wineByTheGlassMenu.wineMenuSection
   return (
     <WinesByTheGlassWrapper>
-      <BC1 color="red" style={{ fontWeight: "bold" }}>
+      <BC1 color="red" bold>
         BY THE GLASS
       </BC1>
       {wineData.map((item, index) => (
         <WineSectionWrapper key={index}>
-          <BC1 color="black" style={{ fontWeight: "bold" }}>
+          <BC1 color="black" bold>
             {item.sectionHeadingIeRed}
           </BC1>
           {item.sectionMenuItems.map((i, idx) => (

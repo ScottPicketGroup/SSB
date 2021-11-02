@@ -26,10 +26,6 @@ const FoodPage = ({ data }) => {
   const excuteScroll = el => {
     itemsRef.current[el].scrollIntoView({behavior: "smooth"})
   }
-
-    
-  
-
   return (
     <Layout>
       <Seo title="Home" />

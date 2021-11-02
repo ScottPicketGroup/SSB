@@ -7,8 +7,14 @@ import {
   SectionContainer,
 } from "../../StyledComponents/containers.css"
 import { BC2, Heading1, Heading2 } from "../../StyledComponents/typography.css"
-import { HeroImage, HeroTextWrapper, HeroWrapper } from "./landingPage.css"
-
+import {
+  HeroImage,
+  HeroTextWrapper,
+  HeroWrapper,
+  LogoTopTextWrapper,
+  LogoBottomTextWrapper,
+  MobileLogoBottomTextWrapper,
+} from "./landingPage.css"
 import LogoIcon from "../../Icons/LogoIcon"
 
 const Hero = ({ heroImage, heroImageTitle }) => {
@@ -22,39 +28,23 @@ const Hero = ({ heroImage, heroImageTitle }) => {
             <LogoIcon />
           </MobileContainer>
           <DesktopContainer>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "baseline",
-                marginBottom: "3rem",
-              }}
-            >
+            <LogoTopTextWrapper>
               <BC2>300 SMITH STREET</BC2>
               <Heading1>{heroImageTitle}</Heading1>
               <BC2>INFO@SMITHSTBISTROT.COM.AU</BC2>
-            </div>
+            </LogoTopTextWrapper>
             <LogoIcon />
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <LogoBottomTextWrapper>
               <Heading1>{"Wine & Food"}</Heading1>
               <Heading1>French etc</Heading1>
-            </div>
+            </LogoBottomTextWrapper>
           </DesktopContainer>
         </HeroTextWrapper>
         <MobileContainer>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              position: "absolute",
-              bottom: "1rem",
-              width: "96%",
-              left: "2%",
-            }}
-          >
+          <MobileLogoBottomTextWrapper>
             <Heading2>{"Wine & Food"}</Heading2>
             <Heading2>French etc</Heading2>
-          </div>
+          </MobileLogoBottomTextWrapper>
         </MobileContainer>
       </HeroWrapper>
     </SectionContainer>

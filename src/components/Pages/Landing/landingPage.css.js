@@ -83,12 +83,13 @@ export const WeekdayItemWrapper = styled.div`
 export const PrivateDiningWrapper = styled.div`
   display: flex;
   flex-direction: ${props => (props.first === true ? "row" : "column")};
-  justify-content: ${props => (props.first === true && "space-between")};
+  justify-content: ${props => props.first === true && "space-between"};
   width: 100%;
   margin-bottom: ${props => (props.first === true ? "6rem" : "0")};
   @media (max-width: 451px) {
     flex-direction: column;
-    margin-bottom: ${props => (props.dining === true ? "0" : props.first === true ? "3.25rem" : "0")};
+    margin-bottom: ${props =>
+      props.dining === true ? "0" : props.first === true ? "3.25rem" : "0"};
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
@@ -128,7 +129,7 @@ export const WhatsOnEventsWrapper = styled.div`
 `
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
-  -webkit-line-clamp: ${props=>props.first===true ? 3 : 2};
+  -webkit-line-clamp: ${props => (props.first === true ? 3 : 2)};
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -139,4 +140,25 @@ export const RenderTextOverHiddenWrapper = styled.div`
   @media (max-width: 451px) {
     margin-bottom: 1rem;
   }
+`
+export const LogoTopTextWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3rem;
+`
+export const LogoBottomTextWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
+export const MobileLogoBottomTextWrapper = styled(LogoBottomTextWrapper)`
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 1rem;
+  width: 96%;
+  left: 2%;
+`
+export const WeekdayItemDescriptionWrapper = styled.div`
+  width: 60%;
 `

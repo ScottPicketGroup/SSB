@@ -91,37 +91,6 @@ export const BrunchSecondWrapper = styled.div`
     height: 100%;
   }
 `
-export const DessertContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  text-align: left;
-  @media (max-width: 451px) {
-    height: 100%;
-    flex-direction: column;
-  }
-`
-export const DessertSeasonalTitleWrapper = styled.div`
-  position: absolute;
-  bottom: 6rem;
-  left: 6.5%;
-  writing-mode: vertical-lr;
-  text-orientation: upright;
-  @media (max-width: 451px) {
-    bottom: 3.5rem;
-  }
-`
-export const DessertImage = styled(GatsbyImage)`
-  margin-top: 6rem;
-  width: 45%;
-  height: 30vw;
-  @media (max-width: 451px) {
-    width: 70%;
-    height: 64vw;
-    margin: 0 auto 3.5rem;
-  }
-`
 export const DrinksIntroWrapper = styled.div`
   margin-top: 6rem;
   @media (max-width: 451px) {
@@ -165,43 +134,6 @@ export const MenuDuJourTitleWrapper = styled.div`
   @media (max-width: 451px) {
     margin-top: 1.75rem;
     margin-bottom: 1rem;
-  }
-`
-export const DessertItemWrapper = styled.div`
-  width: 100%;
-  margin-bottom: 2rem;
-  @media (max-width: 451px) {
-    margin-bottom: 1rem;
-  }
-`
-export const DessertDrinkSectionWrapper = styled.div`
-  align-self: flex-end;
-  margin-bottom: 1rem;
-  @media (max-width: 451px) {
-  }
-`
-export const DessertDrinkSectionContainer = styled.div`
-  padding-left: 4.4rem;
-  padding-top: 1.75rem;
-  @media (max-width: 451px) {
-    padding-left: 2.4rem;
-  }
-`
-
-export const DessertDrinkSectionItemWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-`
-export const DessertWrapper = styled(MenuDuJourContainer)`
-  background-color: #ac785b;
-  padding-top: 3.5rem;
-  padding-left: 5.5rem;
-  padding-right: 5.25rem;
-  @media (max-width: 451px) {
-    padding-top: 1.75rem;
-    width: 90%;
-    margin: 0 auto;
   }
 `
 export const WinesByTheGlassWrapper = styled.div`

@@ -1,7 +1,11 @@
 import React from "react"
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { BC1, Heading2 } from "../../StyledComponents/typography.css"
+import {
+  BC1,
+  Heading2,
+  RedDecorationLink,
+} from "../../StyledComponents/typography.css"
 import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
@@ -11,8 +15,6 @@ import {
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/sample"
 import { getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
-import { color } from "../../StyledComponents/variables"
 
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
@@ -24,14 +26,9 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
           <RenderTextOverHiddenWrapper first={true}>
             <Renderer node={events[0].eventDescription} />
           </RenderTextOverHiddenWrapper>
-          <Link
-            to="/whats-on/page-title"
-            style={{
-              textDecorationColor: color.PRIMARY_RED_ROUGE,
-            }}
-          >
+          <RedDecorationLink to="/whats-on/page-title">
             <BC1>Learn more...&nbsp;&nbsp;</BC1>
-          </Link>
+          </RedDecorationLink>
         </PrivateDiningTextWrapper>
         <PrivateDiningImage
           image={getImage(events[1].eventMenuImage)}
@@ -49,14 +46,9 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
                   <RenderTextOverHiddenWrapper>
                     <Renderer node={item.eventDescription} />
                   </RenderTextOverHiddenWrapper>
-                  <Link
-                    to="/whats-on/page-title"
-                    style={{
-                      textDecorationColor: color.PRIMARY_RED_ROUGE,
-                    }}
-                  >
+                  <RedDecorationLink to="/whats-on/page-title">
                     <BC1>Learn more...&nbsp;&nbsp;</BC1>
-                  </Link>
+                  </RedDecorationLink>
                 </PrivateDiningTextWrapper>
                 <PrivateDiningImage
                   image={getImage(item.eventMenuImage)}

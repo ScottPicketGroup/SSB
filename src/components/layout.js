@@ -9,6 +9,7 @@ import * as React from "react"
 import { PageContainer } from "./StyledComponents/containers.css"
 import Header from "../components/Header/Header"
 import Menu from "./Header/Menu"
+import GiftVouchers from "./Header/GiftVouchers"
 
 const Layout = ({ landing,  children }) => {
   return (
@@ -16,6 +17,7 @@ const Layout = ({ landing,  children }) => {
       <PageContainer>
         <Header landing={landing}/>
         <Menu />
+        {/* <GiftVouchers /> */}
         {children}
       </PageContainer>
     </>

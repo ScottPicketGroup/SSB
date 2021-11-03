@@ -1,3 +1,4 @@
+import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 export const HeaderContainer = styled.div`
@@ -25,7 +26,7 @@ export const MenuWrapper = styled.div`
 `
 export const MenuLogoWrapper = styled.div`
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
 `
 export const MenuItemWrapper = styled.div`
   display: flex;
@@ -49,5 +50,40 @@ export const HeaderLogoWrapper = styled.div`
       width: 50px;
       text-align: center;
     }
+  }
+`
+
+export const GiftVouchersItemContainer = styled.div`
+  width: 66vw;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 0 auto 3.5rem;
+  @media(max-width: 451px){
+    flex-direction: column;
+    width: 90vw;
+  }
+`
+export const GiftVouchersItemWrapper = styled.div`
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  @media(max-width: 451px){
+    width: 90vw;
+    padding-top: 0.75rem;
+  }
+`
+export const GiftItemImage = styled(GatsbyImage)`
+  width: 30vw;
+  height: 20vw;
+  margin-top: 1rem;
+  @media(max-width: 451px){
+    width: 80vw;
+    height: 58vw;
+    margin-top: 2.5rem;
+    display: ${props=>props.onMobHidden ? "none" : "block"};
   }
 `

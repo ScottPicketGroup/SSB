@@ -24,7 +24,6 @@ const Reservation = ({
   privateFunctionsHeading,
   bookATableHeading,
 }) => {
-    console.log(image)
   return (
     <SectionContainer column centered full red={true}>
       <HeadingWrapper>

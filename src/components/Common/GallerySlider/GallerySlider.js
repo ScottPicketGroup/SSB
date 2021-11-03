@@ -1,15 +1,14 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
-import { SectionContainer } from "../../StyledComponents/containers.css"
-import { Card, ImageContainer } from "./GallerySlider.css"
+import { Card, GalleryContainer, ImageContainer } from "./GallerySlider.css"
 import Navigations from "./Navigations"
 
 const GallerySlider = ({ images }) => {
   const [active, setActive] = React.useState(0)
 
   return (
-    <SectionContainer marginBottom="xl" column>
+    <GalleryContainer column full>
       <ImageContainer>
         {images.length &&
           images.map((item, i) => (
@@ -19,7 +18,7 @@ const GallerySlider = ({ images }) => {
           ))}
       </ImageContainer>
       <Navigations active={active} setActive={setActive} images={images} />
-    </SectionContainer>
+    </GalleryContainer>
   )
 }
 

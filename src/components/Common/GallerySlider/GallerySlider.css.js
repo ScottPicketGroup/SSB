@@ -1,5 +1,13 @@
 import styled from "styled-components"
+import { SectionContainer } from "../../StyledComponents/containers.css"
 import { color } from "../../StyledComponents/variables"
+
+export const GalleryContainer = styled(SectionContainer)`
+  @media(max-width: 451px){
+    width: 100%;
+    margin-bottom: 0;
+  }
+`
 
 export const ImageContainer = styled.div`
   margin-top: 2.25rem;

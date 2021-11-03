@@ -9,7 +9,7 @@ import WineAndFood from "../components/Pages/Landing/WineAndFood"
 import Weekday from "../components/Pages/Landing/Weekday"
 import PrivateDining from "../components/Pages/Landing/PrivateDining"
 import WhatsOnEvents from "../components/Pages/Landing/WhatsOnEvents"
-import GallerySlider from "../components/Common/GallerySlider/GallerySlider"
+import Gallery from "../components/Pages/Landing/Gallery"
 
 const IndexPage = ({ data }) => {
   const {
@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => {
       <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
       <WineAndFood />
-      <GallerySlider images={gallery} />
+      <Gallery gallery={gallery} />
       <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
       <Weekday data={weekdays} />
       <PrivateDining

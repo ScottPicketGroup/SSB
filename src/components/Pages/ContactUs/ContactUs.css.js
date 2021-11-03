@@ -5,7 +5,7 @@ export const FormWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 56%;
-//   align-items: center;
+  //   align-items: center;
   @media (max-width: 451px) {
     width: 100%;
   }
@@ -27,15 +27,21 @@ export const InformationWrapper = styled.div`
     display: none;
   }
 `
-export const HeadingWrapper = styled.div`
+export const DesktopHeadingWrapper = styled.div`
   margin-top: 6rem;
   margin-bottom: 3.5rem;
   text-align: left;
   @media (max-width: 451px) {
-    margin-top:  3.5rem;
-    text-align: center;
-    &: h2{
-        color: ${color.PRIMARY_RED_ROUGE};
-    }
+    display: none;
+  }
+`
+export const MobileHeadingWrapper = styled.div`
+  margin-top: 6rem;
+  margin-bottom: 3.5rem;
+  margin-top: 3.5rem;
+  text-align: center;
+  color: ${color.PRIMARY_RED_ROUGE};
+  @media (min-width: 451px) {
+    display: none;
   }
 `

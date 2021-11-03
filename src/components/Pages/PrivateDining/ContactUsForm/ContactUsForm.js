@@ -1,16 +1,16 @@
 import React, { useState } from "react"
 
+import { BC1 } from "../../../StyledComponents/typography.css"
 import {
   ContactUsFormContainer,
   TixboxContainer,
   ContactDetailsContainer,
-  ContactFormRow,
   InputContainer,
   SignUp,
   Input,
-  InputMessage,
   Label,
-  Button
+  Button,
+  ContactFormRow
 } from "./ContactUsForm.css"
 import CheckBox from "./CheckBox"
 const ContactUsForm = () => {
@@ -23,12 +23,13 @@ const ContactUsForm = () => {
     sName: "",
     email: "",
     number: "",
-    message: "",
-    messageLength: 0,
     newsletter: false,
     eventType: "",
     eventDate: "",
     guestNum: "",
+    addintionalNote: "",
+    startHour: "",
+    finishHour: ""
   })
 
   const [thankyou, setThankyou] = useState(false)
@@ -43,27 +44,15 @@ const ContactUsForm = () => {
     !inputs.email.includes(".") || !inputs.email.includes("@")
       ? setError(error => ({ ...error, email: true }))
       : setError(error => ({ ...error, email: false }))
-    inputs.fName == ""
+    inputs.fName === ""
       ? setError(error => ({ ...error, fName: true }))
       : setError(error => ({ ...error, fName: false }))
-    inputs.sName == ""
+    inputs.sName === ""
       ? setError(error => ({ ...error, sName: true }))
       : setError(error => ({ ...error, sName: false }))
-    inputs.number == ""
+    inputs.number === ""
       ? setError(error => ({ ...error, number: true }))
       : setError(error => ({ ...error, number: false }))
-    inputs.message == ""
-      ? setError(error => ({ ...error, message: true }))
-      : setError(error => ({ ...error, message: false }))
-    inputs.eventType == ""
-      ? setError(error => ({ ...error, eventType: true }))
-      : setError(error => ({ ...error, eventType: false }))
-    inputs.eventDate == ""
-      ? setError(error => ({ ...error, eventDate: true }))
-      : setError(error => ({ ...error, eventDate: false }))
-    inputs.guestNum == ""
-      ? setError(error => ({ ...error, guestNum: true }))
-      : setError(error => ({ ...error, guestNum: false }))
   }
 
   const handleSubmit = e => {
@@ -138,109 +127,76 @@ const ContactUsForm = () => {
             <input type="hidden" name="form-name" value="cont" />
 
             <ContactDetailsContainer>
-              <ContactFormRow>
-                <InputContainer>
-                  <Label>NAME</Label>
-                  <Input
-                    placeholder="Please enter your first name"
-                    name="fName"
-                    type="text"
-                    value={inputs.fName}
-                    onChange={handleChange}
-                    err={error.fName}
-                  />
-                </InputContainer>
-                <InputContainer>
-                  <Label>SURNAME</Label>
-                  <Input
-                    placeholder="Please enter your surname"
-                    name="sName"
-                    type="text"
-                    value={inputs.sName}
-                    onChange={handleChange}
-                    err={error.sName}
-                  />
-                </InputContainer>
-              </ContactFormRow>
-              <ContactFormRow>
-                <InputContainer>
-                  <Label>EMAIL ADDRESS</Label>
-                  <Input
-                    placeholder="Please enter your email address"
-                    name="email"
-                    type="text"
-                    value={inputs.email}
-                    onChange={handleChange}
-                    err={error.email}
-                  />
-                </InputContainer>
-                <InputContainer>
-                  <Label>CONTACT NUMBER</Label>
-                  <Input
-                    placeholder="Please enter your contact number"
-                    name="number"
-                    type="text"
-                    value={inputs.number}
-                    onChange={handleChange}
-                    err={error.number}
-                  />
-                </InputContainer>
-              </ContactFormRow>
-              <ContactFormRow>
-                <InputContainer>
-                  <Label>TYPE OF EVENT</Label>
-                  <Input
-                    placeholder="Please enter the type of event"
-                    name="eventType"
-                    type="text"
-                    value={inputs.eventType}
-                    onChange={handleChange}
-                    err={error.eventType}
-                  />
-                </InputContainer>
-                <InputContainer>
-                  <Label>DATE OF EVENT</Label>
-                  <Input
-                    placeholder="Please enter the date of event"
-                    name="eventDate"
-                    type="text"
-                    value={inputs.eventDate}
-                    onChange={handleChange}
-                    err={error.eventDate}
-                  />
-                </InputContainer>
-              </ContactFormRow>
-              <ContactFormRow>
-                <InputContainer>
-                  <Label>NUMBER OF GUESTS</Label>
-                  <Input
-                    placeholder="Please enter the number of guests"
-                    name="guestNum"
-                    type="text"
-                    value={inputs.guestNum}
-                    onChange={handleChange}
-                    err={error.guestNum}
-                  />
-                </InputContainer>
-              </ContactFormRow>
               <InputContainer>
-                <Label>MESSAGE</Label>
-                <InputMessage
-                  placeholder="Please enter your enquiry (1000 characters remaining)"
-                  name="message"
+                <Input
+                  placeholder="First Name*"
+                  name="fName"
                   type="text"
-                  value={inputs.message}
+                  value={inputs.fName}
                   onChange={handleChange}
-                  err={error.message}
-                  scroll="disable"
+                  err={error.fName}
                 />
-                {inputs.message.length >= 1 ? (
-                  <Label style={{ marginTop: `1rem`, fontSize: `1rem` }}>
-                    {1000 - inputs.message.length} characters remaining
-                  </Label>
-                ) : error.message ? (
-                  <span></span>
-                ) : null}
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  placeholder="Surname*"
+                  name="sName"
+                  type="text"
+                  value={inputs.sName}
+                  onChange={handleChange}
+                  err={error.sName}
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  placeholder="Mobile Number*"
+                  name="number"
+                  type="text"
+                  value={inputs.number}
+                  onChange={handleChange}
+                  err={error.number}
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  placeholder="Email*"
+                  name="email"
+                  type="text"
+                  value={inputs.email}
+                  onChange={handleChange}
+                  err={error.email}
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  placeholder="Event Date"
+                  name="eventDate"
+                  type="text"
+                  value={inputs.eventDate}
+                  onChange={handleChange}
+                  err={error.eventDate}
+                />
+              </InputContainer>
+              <InputContainer>
+                <Input
+                  placeholder="Type Of Event"
+                  name="eventType"
+                  type="text"
+                  value={inputs.eventType}
+                  onChange={handleChange}
+                  err={error.eventType}
+                />
+              </InputContainer>
+
+              <InputContainer>
+                <Input
+                  placeholder="Number Of Guests"
+                  name="guestNum"
+                  type="text"
+                  value={inputs.guestNum}
+                  onChange={handleChange}
+                  err={error.guestNum}
+                />
               </InputContainer>
               <TixboxContainer>
                 <div
@@ -251,18 +207,49 @@ const ContactUsForm = () => {
                 >
                   <CheckBox />
                 </div>
-                <Label bc2 style={{ width: `90%` }}>
-                  I would like to receive communications about Scott Pickett
-                  Group services, events and matters of relevant interest.
-                </Label>
+                <BC1 color="black" style={{ width: `90%` }}>
+                  Receive updates from the Scott Pickett Group
+                </BC1>
               </TixboxContainer>
+              <InputContainer>
+                <Input
+                  placeholder="Additional Note"
+                  name="addintionalNote"
+                  type="text"
+                  value={inputs.addintionalNote}
+                  onChange={handleChange}
+                  err={error.addintionalNote}
+                />
+              </InputContainer>
+              <ContactFormRow>
+                <InputContainer hour>
+                  <Input
+                    placeholder="Start Hour"
+                    name="startHour"
+                    type="text"
+                    value={inputs.startHour}
+                    onChange={handleChange}
+                    err={error.startHour}
+                  />
+                </InputContainer>
+                <InputContainer hour>
+                  <Input
+                    placeholder="Finish Hour"
+                    name="finishHour"
+                    type="text"
+                    value={inputs.finishHour}
+                    onChange={handleChange}
+                    err={error.finishHour}
+                  />
+                </InputContainer>
+              </ContactFormRow>
               <Button
                 onClick={handleSubmit}
                 err={error.email}
                 type="submit"
                 submit
               >
-                SUBMIT
+                <BC1 color="black" style={{marginBottom: "0"}}>Submit</BC1>
               </Button>
             </ContactDetailsContainer>
           </SignUp>

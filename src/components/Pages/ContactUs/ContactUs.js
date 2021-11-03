@@ -4,12 +4,13 @@ import { Link } from "gatsby"
 import Renderer from "../../../components/rich-text-renderers/BlackSample"
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { BC1, Heading2 } from "../../StyledComponents/typography.css"
+import { BC1, Heading2, Heading3 } from "../../StyledComponents/typography.css"
 import {
   FormWrapper,
   ContactUsContainer,
   InformationWrapper,
-  HeadingWrapper
+  DesktopHeadingWrapper,
+  MobileHeadingWrapper
 } from "./ContactUs.css"
 import ContactUsForm from "./ContactUsForm/ContactUsForm"
 
@@ -36,9 +37,12 @@ const ContactUs = () => {
   const information = data.allContentfulContactUsPageContent.nodes[0]
   return (
     <SectionContainer marginBottom="lg" column>
-      <HeadingWrapper>
+      <DesktopHeadingWrapper>
         <Heading2 color="black">Contact Us</Heading2>
-      </HeadingWrapper>
+      </DesktopHeadingWrapper>
+      <MobileHeadingWrapper>
+        <Heading3>Contact Us</Heading3>
+      </MobileHeadingWrapper>
       <ContactUsContainer>
         <FormWrapper>
           <ContactUsForm />

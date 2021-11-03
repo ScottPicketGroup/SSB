@@ -16,18 +16,17 @@ export const ContactDetailsContainer = styled.div`
 export const ContactFormRow = styled.div`
   min-width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  margin-bottom: 2.25rem;
   @media screen and (max-width: 450px) {
     margin-bottom: 0;
+    order: 7;
   }
 `
 export const InputContainer = styled.div`
   min-width: 48%;
   background: transperant;
   @media screen and (max-width: 800px) {
-    width: 100%;
+    width: ${props=>props.hour ? "48%": "100%"};
     margin-bottom: 1.25rem;
   }
 `
@@ -36,6 +35,9 @@ export const TixboxContainer = styled.div`
   justify-content: space-between;
   margin-top: 2.25rem;
   margin-bottom: 1.75rem;
+  @media(max-width: 451px){
+    order: 9;
+  }
 `
 
 export const Label = styled.p`
@@ -75,15 +77,16 @@ export const SignUp = styled.form`
 `
 export const Input = styled.input`
   width: 100%;
-  height: 2rem;
+  height: 1.75rem;
   background: rgba(255, 255, 255, 0);
   border: none;
   padding: 1.5rem 0;
   font-size: 0.75rem;
+  margin-bottom: 1.75rem;
   line-height: none;
   border-bottom: 1px solid ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
   ::placeholder {
-    color: ${props => (props.err ? "#CB0000" : "rgba(21, 62, 53, 50%)")};
+    color: ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
     font-size: 1rem;
     margin-bottom: 10rem;
     background: transperant;
@@ -108,39 +111,8 @@ export const Input = styled.input`
   }
   @media screen and (max-width: 450px) {
     width: 100%;
-  }
-`
-
-export const InputMessage = styled.textarea`
-  width: 100%;
-  height: 10rem;
-  background: rgba(255, 255, 255, 0);
-  border: none;
-  padding: 1.5rem 0;
-  font-size: 0.75rem;
-  line-height: none;
-  border-bottom: 1px solid ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
-  overflow: hidden;
-
-  ::placeholder {
-    font-size: 1rem;
-    margin-bottom: 10rem;
-    color: ${props => (props.err ? "#CB0000" : "rgba(21, 62, 53, 50%)")};
-  }
-  :focus {
-    outline: none;
-    background: transparent;
-
-    height: 3rem;
-    font-size: 150%;
-  }
-  :valid {
-    color: ${color.PRIMARY_RICH_BLACK};
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  ::-moz-focus-outer {
-    color: ${color.PRIMARY_RICH_BLACK};
+    height: 1rem;
+    margin-bottom: 1rem;
   }
 `
 
@@ -174,5 +146,8 @@ export const Button = styled.button`
   :hover {
     color: #2b3c31;
     background: white;
+  }
+  @media(max-width: 451px){
+    order: 10;
   }
 `

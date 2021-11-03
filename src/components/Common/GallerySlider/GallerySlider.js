@@ -6,7 +6,7 @@ import Navigations from "./Navigations"
 
 const GallerySlider = ({ images }) => {
   const [active, setActive] = React.useState(0)
-
+  console.log(images)
   return (
     <GalleryContainer column full>
       <ImageContainer>

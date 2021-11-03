@@ -10,6 +10,7 @@ import { PageContainer } from "./StyledComponents/containers.css"
 import Header from "../components/Header/Header"
 import Menu from "./Header/Menu"
 import GiftVouchers from "./Header/GiftVouchers"
+import Footer from "../components/Common/Footer/Footer"
 
 const Layout = ({ landing,  children }) => {
   return (
@@ -19,6 +20,7 @@ const Layout = ({ landing,  children }) => {
         <Menu />
         {/* <GiftVouchers /> */}
         {children}
+        <Footer />
       </PageContainer>
     </>
   )

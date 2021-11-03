@@ -1,5 +1,9 @@
 import React from "react"
-import { WeekdayItemsWrapper, WeekdayWrapper } from "./landingPage.css"
+import {
+  WeekdayItemsWrapper,
+  WeekdayWrapper,
+  CircleImageWrapper,
+} from "./landingPage.css"
 import WeekdayItem from "./WeekdayItem"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import { StaticImage } from "gatsby-plugin-image"
@@ -8,22 +12,23 @@ const Weekday = ({ data }) => {
   return (
     <SectionContainer marginBottom="xxl">
       <WeekdayWrapper>
-      <div>
-        <StaticImage
-          src="../../../images/weekday-icon.png"
-          alt="weekday"
-          width={400}
-        />
-      </div>
-      <WeekdayItemsWrapper>
-        {data.map((item, index) => (
-          <WeekdayItem
-            key={index}
-            day={item.day}
-            description={item.description}
+        <CircleImageWrapper>
+          <StaticImage
+            src="../../../images/weekday-icon.png"
+            alt="weekday"
+            width={400}
           />
-        ))}
-      </WeekdayItemsWrapper>
+        </CircleImageWrapper>
+
+        <WeekdayItemsWrapper>
+          {data.map((item, index) => (
+            <WeekdayItem
+              key={index}
+              day={item.day}
+              description={item.description}
+            />
+          ))}
+        </WeekdayItemsWrapper>
       </WeekdayWrapper>
     </SectionContainer>
   )

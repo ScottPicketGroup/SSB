@@ -1,4 +1,4 @@
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 
 export const HeroWrapper = styled.div`
@@ -68,6 +68,8 @@ export const WeekdayItemsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   @media (max-width: 451px) {
+    margin-left: 35%;
+    margin-top: 4.5rem;
   }
 `
 export const WeekdayItemWrapper = styled.div`
@@ -161,4 +163,15 @@ export const MobileLogoBottomTextWrapper = styled(LogoBottomTextWrapper)`
 `
 export const WeekdayItemDescriptionWrapper = styled.div`
   width: 60%;
+  @media(max-width: 451px){
+    width:70%;
+  }
+`
+export const CircleImageWrapper = styled.div`
+  position: relative;
+  width: 16vw;
+  @media(max-width: 451px){
+    position: absolute;
+    width: 40vw;
+  }
 `

@@ -25,7 +25,7 @@ import {
 } from "../StyledComponents/typography.css"
 
 const MenuComponent = () => {
-  const { menuOpen, giftOpen, setGiftOpen } = useActiveMenu()
+  const { menuOpen, setMenuOpen, giftOpen, setGiftOpen } = useActiveMenu()
   const data = useStaticQuery(graphql`
     query giftVouchersQuery {
       allContentfulGiftVouchersPageContent {
@@ -50,15 +50,15 @@ const MenuComponent = () => {
   const giftVouchersData = data.allContentfulGiftVouchersPageContent.nodes[0]
 
   const menuItems = [
-    { title: "Home", pageNum: 0, to: "#" },
-    { title: "Book a Table", pageNum: 1, to: "#" },
-    { title: "What's On", pageNum: 2, to: "#" },
-    { title: "Daily Spacials", pageNum: 3, to: "#" },
-    { title: "Wine", pageNum: 4, to: "#" },
-    { title: "Food", pageNum: 5, to: "#" },
-    { title: "Private Events", pageNum: 6, to: "#" },
-    { title: "Vouchers", pageNum: 7, to: "#" },
-    { title: "Contact Us", pageNum: 8, to: "#" },
+    { title: "Home", pageNum: 0, to: "/" },
+    { title: "Book a Table", pageNum: 1, to: "" },
+    { title: "What's On", pageNum: 2, to: "/whats-on" },
+    { title: "Daily Spacials", pageNum: 3, to: "" },
+    { title: "Wine", pageNum: 4, to: "/drinks" },
+    { title: "Food", pageNum: 5, to: "/food" },
+    { title: "Private Events", pageNum: 6, to: "/private-dining" },
+    { title: "Vouchers", pageNum: 7, to: "" },
+    { title: "Contact Us", pageNum: 8, to: "/contact-us" },
   ]
 
   return (
@@ -82,7 +82,7 @@ const MenuComponent = () => {
                 <Heading3 color="white" marginBottom="xs">{item.title}</Heading3>
               </Link>
             ) : (
-              <Link key={index} to="#" style={{ textDecoration: "none" }}>
+              <Link key={index} onClick={() => setMenuOpen(false)} to={item.to} style={{ textDecoration: "none" }}>
                 <Heading3 color="white" marginBottom="xs">{item.title}</Heading3>
               </Link>
             )

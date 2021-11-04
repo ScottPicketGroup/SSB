@@ -29,7 +29,7 @@ const FooterLinks = () => {
           </a>
         </SocialLinks>
         <PageLinks>
-          <NoneDecorationLink>
+          <NoneDecorationLink to="">
             <BC1 color="white" marginBottom="sm">
               Smith St Bistrot
             </BC1>

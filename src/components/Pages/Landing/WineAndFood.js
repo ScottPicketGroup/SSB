@@ -11,7 +11,7 @@ const WineAndFood = () => {
   return (
     <SectionContainer marginBottom="xl" full>
       <WineAndFoodWrapper>
-        <NoneDecorationLink to="/wine">
+        <NoneDecorationLink to="/drinks">
           <BBHeading2>Wine</BBHeading2>
         </NoneDecorationLink>
         <NoneDecorationLink to="/food">

@@ -20,10 +20,10 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
   return (
     <SectionContainer column="true" marginBottom="xxl">
-      <PrivateDiningWrapper first={true}>
-        <PrivateDiningTextWrapper first={true}>
+      <PrivateDiningWrapper first="true">
+        <PrivateDiningTextWrapper first="true">
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
-          <RenderTextOverHiddenWrapper first={true}>
+          <RenderTextOverHiddenWrapper first="true">
             <Renderer node={events[0].eventDescription} />
           </RenderTextOverHiddenWrapper>
           <RedDecorationLink to="/whats-on/page-title">
@@ -32,7 +32,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
         </PrivateDiningTextWrapper>
         <PrivateDiningImage
           image={getImage(events[1].eventMenuImage)}
-          first={true}
+          first="true"
           alt="private-dining"
         />
       </PrivateDiningWrapper>

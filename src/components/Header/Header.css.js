@@ -17,11 +17,13 @@ export const MenuCancelIconWrapper = styled.div`
   position: absolute;
   right: 5%;
   top: 1.75rem;
+  z-index: 10;
 `
 export const MenuWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
+  height: 100vh;
   justify-content: space-between;
 `
 export const MenuLogoWrapper = styled.div`
@@ -33,7 +35,7 @@ export const MenuItemWrapper = styled.div`
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
-  margin-bottom: 6rem;
+  display: ${props=>props.giftOpen ? "none" : "block"};
 `
 export const HeaderLogoWrapper = styled.div`
   display: flex;
@@ -58,8 +60,8 @@ export const GiftVouchersItemContainer = styled.div`
   display: flex;
   text-align: center;
   justify-content: space-between;
-  margin: 0 auto 3.5rem;
-  @media(max-width: 451px){
+  margin: 0 auto;
+  @media (max-width: 451px) {
     flex-direction: column;
     width: 90vw;
   }
@@ -71,7 +73,7 @@ export const GiftVouchersItemWrapper = styled.div`
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  @media(max-width: 451px){
+  @media (max-width: 451px) {
     width: 90vw;
     padding-top: 0.75rem;
   }
@@ -80,10 +82,31 @@ export const GiftItemImage = styled(GatsbyImage)`
   width: 30vw;
   height: 20vw;
   margin-top: 1rem;
-  @media(max-width: 451px){
+  @media (max-width: 451px) {
     width: 80vw;
     height: 58vw;
     margin-top: 2.5rem;
-    display: ${props=>props.onMobHidden ? "none" : "block"};
   }
+`
+export const MobileHiddenGiftItemImage = styled(GatsbyImage)`
+  width: 30vw;
+  height: 20vw;
+  margin-top: 1rem;
+  @media (max-width: 451px) {
+    display: none;
+  }
+`
+export const GiftVouchersContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+  display: ${props=>props.giftOpen ? "block" : "none"};
+`
+export const InformationWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
+  margin-bottom: 3.5rem;
 `

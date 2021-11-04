@@ -36,7 +36,6 @@ export const privateDiningPageData = graphql`
         introduction
         gallery {
           gatsbyImageData(
-            aspectRatio: 0.7
             layout: FULL_WIDTH
             placeholder: BLURRED
           )

@@ -33,7 +33,7 @@ query WhatsOnQuery {
               raw
             }
             eventMenuImage {
-              gatsbyImageData(aspectRatio: 0.7, layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
             }
           }
         }

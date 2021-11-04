@@ -44,7 +44,6 @@ export const reservationPageData = graphql`
           gatsbyImageData(
             layout: FULL_WIDTH
             placeholder: BLURRED
-            aspectRatio: 0.7
           )
         }
         privateFunctionsHeading

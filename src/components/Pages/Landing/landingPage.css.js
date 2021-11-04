@@ -84,19 +84,19 @@ export const WeekdayItemWrapper = styled.div`
 `
 export const PrivateDiningWrapper = styled.div`
   display: flex;
-  flex-direction: ${props => (props.first === true ? "row" : "column")};
-  justify-content: ${props => props.first === true && "space-between"};
+  flex-direction: ${props => (props.first ? "row" : "column")};
+  justify-content: ${props => props.first && "space-between"};
   width: 100%;
-  margin-bottom: ${props => (props.first === true ? "6rem" : "0")};
+  margin-bottom: ${props => (props.first ? "6rem" : "0")};
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: ${props =>
-      props.dining === true ? "0" : props.first === true ? "3.25rem" : "0"};
+      props.dining ? "0" : props.first ? "3.25rem" : "0"};
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
-  width: ${props => (props.first === true ? "60%" : "100%")};
-  order: ${props => (props.first === true ? "1" : "0")};
+  width: ${props => (props.first ? "60%" : "100%")};
+  order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
     order: 0;
     width: 100%;
@@ -110,9 +110,9 @@ export const PrivateDiningTextWrapper = styled.div`
   text-align: left;
   margin-top: 3.5rem;
   width: ${props =>
-    props.first === true ? "20%" : props.dining ? "25%" : "80%"};
+    props.first ? "20%" : props.dining ? "25%" : "80%"};
   margin ${props => (props.dining ? "3.5rem auto 0" : "3.5rem 0 0")};
-  order: ${props => (props.first === true ? "0" : "1")};
+  order: ${props => (props.first ? "0" : "1")};
   @media (max-width: 451px) {
     order: 1;
     width: 100%;
@@ -131,7 +131,7 @@ export const WhatsOnEventsWrapper = styled.div`
 `
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
-  -webkit-line-clamp: ${props => (props.first === true ? 3 : 2)};
+  -webkit-line-clamp: ${props => (props.first ? 3 : 2)};
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;

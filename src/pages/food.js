@@ -93,7 +93,7 @@ export const foodPageData = graphql`
           }
         }
         imageAdjacentToBrunchMenuHiddenOnMob {
-          gatsbyImageData(aspectRatio: 0.7)
+          gatsbyImageData
         }
         desserts {
           bottomHeading

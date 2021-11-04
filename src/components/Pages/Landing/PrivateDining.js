@@ -16,15 +16,15 @@ const PrivateDining = ({
 }) => {
   return (
     <SectionContainer>
-      <PrivateDiningWrapper first={true} dining={true}>
+      <PrivateDiningWrapper first="true" dining="true">
         <PrivateDiningImage
           image={getImage(privateDiningImage)}
           alt="private-dining"
-          first={true}
+          first="true"
         />
-        <PrivateDiningTextWrapper dining={true}>
+        <PrivateDiningTextWrapper dining="true">
           <Heading3 marginBottom="md">{privateDiningHeading}</Heading3>
-          <RenderTextOverHiddenWrapper first={true}>
+          <RenderTextOverHiddenWrapper first="true">
             <BC1>{privateDiningIntro}</BC1>
           </RenderTextOverHiddenWrapper>
           <RedDecorationLink to="">

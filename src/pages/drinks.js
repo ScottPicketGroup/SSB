@@ -50,7 +50,7 @@ const DrinksPage = ({ data }) => {
             nonAlcoholicDrinksMenu={nonAlcoholicDrinksMenu}
           />
         </SectionContainer>
-        <BottomImage bottomImage={bottomImage} />
+        <BottomImage bottomImage={bottomImage} alt="bottom-image" />
       </PageContainer>
     </Layout>
   )
@@ -95,7 +95,6 @@ export const drinksPageData = graphql`
         }
         bottomImage {
           gatsbyImageData(
-            aspectRatio: 0.7
             layout: FULL_WIDTH
             placeholder: BLURRED
           )

@@ -41,7 +41,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout landing>
       <Seo title="Home" />
-      <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} />
+      <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} alt="landing-hero-image" />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
       <WineAndFood />
       <Gallery gallery={gallery} />

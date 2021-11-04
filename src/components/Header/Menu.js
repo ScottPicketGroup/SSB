@@ -1,5 +1,6 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import { getImage } from "gatsby-plugin-image"
 import { MenuContainer } from "../StyledComponents/containers.css"
 import useActiveMenu from "../hooks/ActiveMenu"
 import MenuCancelIcon from "../Icons/MenuCancelIcon"
@@ -8,12 +9,45 @@ import {
   MenuWrapper,
   MenuLogoWrapper,
   MenuItemWrapper,
+  GiftVouchersContainer,
+  GiftVouchersItemContainer,
+  GiftVouchersItemWrapper,
+  GiftItemImage,
+  MobileHiddenGiftItemImage,
+  InformationWrapper
 } from "./Header.css"
 import { StaticImage } from "gatsby-plugin-image"
-import { BC1, Heading3 } from "../StyledComponents/typography.css"
+import {
+  BC1,
+  Heading3,
+  NoneDecorationLink,
+  BBHeading3,
+} from "../StyledComponents/typography.css"
 
 const MenuComponent = () => {
-  const { menuOpen, setGiftOpen } = useActiveMenu()
+  const { menuOpen, giftOpen, setGiftOpen } = useActiveMenu()
+  const data = useStaticQuery(graphql`
+    query giftVouchersQuery {
+      allContentfulGiftVouchersPageContent {
+        nodes {
+          address
+          phoneNumber
+          venueGiftVoucherHeading
+          venueGiftVoucherImage {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          }
+          smithStBistroGiftVoucherLink
+          scottPicketGroupGiftVoucherHeading
+          spgGiftVoucherImageOnlyImageOnMob {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          }
+          spgGvLink
+        }
+      }
+    }
+  `)
+
+  const giftVouchersData = data.allContentfulGiftVouchersPageContent.nodes[0]
 
   const menuItems = [
     { title: "Home", pageNum: 0, to: "#" },
@@ -36,21 +70,63 @@ const MenuComponent = () => {
         <MenuLogoWrapper>
           <StaticImage src="../../images/menu-logo.png" alt="menu-logo" />
         </MenuLogoWrapper>
-        <MenuItemWrapper>
-          {menuItems.map((item, index) => (
-            index === 7 ? (<Link onClick={()=>setGiftOpen(true)} key={index} to="#" style={{ textDecoration: "none" }}>
-            <Heading3 color="white">{item.title}</Heading3>
-          </Link>) :
-            (<Link key={index} to="#" style={{ textDecoration: "none" }}>
-              <Heading3 color="white">{item.title}</Heading3>
-            </Link>)
-          ))}
+        <MenuItemWrapper giftOpen={giftOpen}>
+          {menuItems.map((item, index) =>
+            item.pageNum === 7 ? (
+              <Link
+                onClick={() => setGiftOpen(true)}
+                key={index}
+                to="#"
+                style={{ textDecoration: "none" }}
+              >
+                <Heading3 color="white" marginBottom="xs">{item.title}</Heading3>
+              </Link>
+            ) : (
+              <Link key={index} to="#" style={{ textDecoration: "none" }}>
+                <Heading3 color="white" marginBottom="xs">{item.title}</Heading3>
+              </Link>
+            )
+          )}
         </MenuItemWrapper>
-
-        <BC1 color="white" marginBottom="sm">
-          300 SMITH ST, COLLINGWOOD VIC 3066
-        </BC1>
-        <BC1 color="white">03 9419 2202</BC1>
+        <GiftVouchersContainer giftOpen={giftOpen}>
+          <BC1 marginBottom="md" color="white">
+            Select your gift voucher bellow
+          </BC1>
+          <GiftVouchersItemContainer>
+            <GiftVouchersItemWrapper>
+              <NoneDecorationLink
+                to={giftVouchersData.smithStBistroGiftVoucherLink}
+              >
+                <BBHeading3 color="white">
+                  {giftVouchersData.venueGiftVoucherHeading}
+                </BBHeading3>
+              </NoneDecorationLink>
+              <MobileHiddenGiftItemImage
+                image={getImage(giftVouchersData.venueGiftVoucherImage)}
+                alt="gift-left-image"
+              />
+            </GiftVouchersItemWrapper>
+            <GiftVouchersItemWrapper>
+              <NoneDecorationLink to={giftVouchersData.spgGvLink}>
+                <BBHeading3 color="white">
+                  {giftVouchersData.scottPicketGroupGiftVoucherHeading}
+                </BBHeading3>
+              </NoneDecorationLink>
+              <GiftItemImage
+                image={getImage(
+                  giftVouchersData.spgGiftVoucherImageOnlyImageOnMob
+                )}
+                alt="gift-right-image"
+              />
+            </GiftVouchersItemWrapper>
+          </GiftVouchersItemContainer>
+        </GiftVouchersContainer>
+        <InformationWrapper>
+          <BC1 color="white" marginBottom="sm">
+            {giftVouchersData.address}
+          </BC1>
+          <BC1 color="white">{giftVouchersData.phoneNumber}</BC1>
+        </InformationWrapper>
       </MenuWrapper>
     </MenuContainer>
   )

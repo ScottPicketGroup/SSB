@@ -9,8 +9,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             eventTitle
-            eventDateAndStartTime(formatString: "YYYY-MM-DD HH-mm")
-            eventEndDateAndTime(formatString: "YYYY-MM-DD HH-mm")
+            eventDateAndStartTime(formatString: "dddd MMM DD YYYY LT")
+            eventEndDateAndTime(formatString: "dddd MMM DD YYYY LT")
             bookNowLinkText
             bookNowLinkUrl
             galleryImages {
@@ -46,7 +46,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const EventTemplate = path.resolve(`src/templates/EventTemplate/index.js`)
   result.data.allContentfulWhatsOnPageContent.edges.forEach(({ node }) => {
     const path = `/events/${node.id}`
-    console.log(path)
     createPage({
       path,
       component: EventTemplate,

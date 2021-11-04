@@ -14,15 +14,10 @@ import {
   GiftVouchersItemWrapper,
   GiftItemImage,
   MobileHiddenGiftItemImage,
-  InformationWrapper
+  InformationWrapper,
 } from "./Header.css"
 import { StaticImage } from "gatsby-plugin-image"
-import {
-  BC1,
-  Heading3,
-  NoneDecorationLink,
-  BBHeading3,
-} from "../StyledComponents/typography.css"
+import { BC1, Heading3, BBHeading3 } from "../StyledComponents/typography.css"
 
 const MenuComponent = () => {
   const { menuOpen, setMenuOpen, giftOpen, setGiftOpen } = useActiveMenu()
@@ -79,11 +74,20 @@ const MenuComponent = () => {
                 to="#"
                 style={{ textDecoration: "none" }}
               >
-                <Heading3 color="white" marginBottom="xs">{item.title}</Heading3>
+                <Heading3 color="white" marginBottom="xs">
+                  {item.title}
+                </Heading3>
               </Link>
             ) : (
-              <Link key={index} onClick={() => setMenuOpen(false)} to={item.to} style={{ textDecoration: "none" }}>
-                <Heading3 color="white" marginBottom="xs">{item.title}</Heading3>
+              <Link
+                key={index}
+                onClick={() => setMenuOpen(false)}
+                to={item.to}
+                style={{ textDecoration: "none" }}
+              >
+                <Heading3 color="white" marginBottom="xs">
+                  {item.title}
+                </Heading3>
               </Link>
             )
           )}
@@ -94,24 +98,32 @@ const MenuComponent = () => {
           </BC1>
           <GiftVouchersItemContainer>
             <GiftVouchersItemWrapper>
-              <NoneDecorationLink
-                to={giftVouchersData.smithStBistroGiftVoucherLink}
+              <a
+                href={giftVouchersData.smithStBistroGiftVoucherLink}
+                style={{ textDecoration: "none" }}
+                target="_blank"
+                rel="noreferrer"
               >
                 <BBHeading3 color="white">
                   {giftVouchersData.venueGiftVoucherHeading}
                 </BBHeading3>
-              </NoneDecorationLink>
+              </a>
               <MobileHiddenGiftItemImage
                 image={getImage(giftVouchersData.venueGiftVoucherImage)}
                 alt="gift-left-image"
               />
             </GiftVouchersItemWrapper>
             <GiftVouchersItemWrapper>
-              <NoneDecorationLink to={giftVouchersData.spgGvLink}>
+              <a
+                href={giftVouchersData.spgGvLink}
+                style={{ textDecoration: "none" }}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <BBHeading3 color="white">
                   {giftVouchersData.scottPicketGroupGiftVoucherHeading}
                 </BBHeading3>
-              </NoneDecorationLink>
+              </a>
               <GiftItemImage
                 image={getImage(
                   giftVouchersData.spgGiftVoucherImageOnlyImageOnMob

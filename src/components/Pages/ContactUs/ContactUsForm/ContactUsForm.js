@@ -8,7 +8,7 @@ import {
   SignUp,
   Input,
   InputMessage,
-  Label,
+  LabelBC1,
   Button,
 } from "./ContactUsForm.css"
 import CheckBox from "./CheckBox"
@@ -127,9 +127,8 @@ const ContactUsForm = () => {
 
             <ContactDetailsContainer>
               <InputContainer>
-                <BC1 color="black">First Name*</BC1>
                 <Input
-                  placeholder="Please enter your first name"
+                  placeholder="First Name*"
                   name="fName"
                   type="text"
                   value={inputs.fName}
@@ -138,9 +137,8 @@ const ContactUsForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <BC1 color="black">Surname*</BC1>
                 <Input
-                  placeholder="Please enter your surname"
+                  placeholder="Surname*"
                   name="sName"
                   type="text"
                   value={inputs.sName}
@@ -149,9 +147,8 @@ const ContactUsForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <BC1 color="black">Mobile Number*</BC1>
                 <Input
-                  placeholder="Please enter your mobile number"
+                  placeholder="Mobile Number*"
                   name="number"
                   type="text"
                   value={inputs.number}
@@ -160,9 +157,8 @@ const ContactUsForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <BC1 color="black">Email*</BC1>
                 <Input
-                  placeholder="Please enter your email address"
+                  placeholder="Email*"
                   name="email"
                   type="text"
                   value={inputs.email}
@@ -171,9 +167,8 @@ const ContactUsForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <BC1 color="black">Message*</BC1>
                 <InputMessage
-                  placeholder="Please enter your enquiry (1000 characters remaining)"
+                  placeholder="Message*"
                   name="message"
                   type="text"
                   value={inputs.message}
@@ -216,10 +211,10 @@ const ContactUsForm = () => {
         </>
       ) : (
         <>
-          <Label thankyou> Thank you for submitting your enquirey.</Label>
-          <Label thankyou>
+          <LabelBC1 thankyou> Thank you for submitting your enquirey.</LabelBC1>
+          <LabelBC1 thankyou>
             A member of our staff will be in contact shortly.
-          </Label>
+          </LabelBC1>
         </>
       )}
     </ContactUsFormContainer>

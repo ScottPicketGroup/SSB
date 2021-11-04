@@ -39,7 +39,7 @@ export const TixboxContainer = styled.div`
   margin-bottom: 1.75rem;
 `
 
-export const Label = styled.p`
+export const LabelBC1 = styled.p`
   margin-bottom: ${props =>
     props.marginBottom ? props.marginBottom : `.5rem`};
   font-size: 1rem;
@@ -85,9 +85,8 @@ export const Input = styled.input`
   border-bottom: 1px solid
     ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
   ::placeholder {
-    color: ${props => (props.err ? "#CB0000" : "rgba(21, 62, 53, 50%)")};
+    color: ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)}};
     font-size: 1rem;
-    margin-bottom: 10rem;
     background: transperant;
     font-family: normal;
   }
@@ -117,7 +116,7 @@ export const InputMessage = styled.textarea`
   width: 100%;
   height: 11.25rem;
   font-size: 16px;
-  font-family: PitchRegular;
+  font-family: normal;
   background: rgba(255, 255, 255, 0);
   border: none;
   padding: 1.5rem 0;
@@ -130,22 +129,21 @@ export const InputMessage = styled.textarea`
 
   ::placeholder {
     font-size: 16px;
-    font-family: PitchRegular;
-    letter-spacing: -2px;
     margin-bottom: 10rem;
-    color: ${props => (props.err ? "#CB0000" : "rgba(21, 62, 53, 50%)")};
+    font-family: normal;
+    color: ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
   }
   :focus {
     outline: none;
     background: transparent;
-
+    font-family: normal;
     height: 3rem;
     font-size: 150%;
   }
   :valid {
     color: ${color.PRIMARY_RICH_BLACK};
     font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: font-family: normal;;
   }
   ::-moz-focus-outer {
     color: ${color.PRIMARY_RICH_BLACK};

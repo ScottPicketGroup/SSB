@@ -6,7 +6,7 @@ export const HeroWrapper = styled.div`
   height: 52vw;
   text-align: center;
   width: 100%;
-  padding: 0 8%;
+  padding: 0 5%;
   @media (max-width: 451px) {
     height: 100%;
     padding: 0;

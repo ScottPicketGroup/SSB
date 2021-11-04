@@ -26,7 +26,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
           <RenderTextOverHiddenWrapper first="true">
             <Renderer node={events[0].eventDescription} />
           </RenderTextOverHiddenWrapper>
-          <RedDecorationLink to="/whats-on/page-title">
+          <RedDecorationLink to={`events/${events[0].id}`}>
             <BC1>Learn more...&nbsp;&nbsp;</BC1>
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
@@ -46,7 +46,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
                   <RenderTextOverHiddenWrapper>
                     <Renderer node={item.eventDescription} />
                   </RenderTextOverHiddenWrapper>
-                  <RedDecorationLink to="/whats-on/page-title">
+                  <RedDecorationLink to={`events/${item.id}`}>
                     <BC1>Learn more...&nbsp;&nbsp;</BC1>
                   </RedDecorationLink>
                 </PrivateDiningTextWrapper>

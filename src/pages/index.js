@@ -76,6 +76,7 @@ export const landingPageData = graphql`
           }
           whatsOnEvents {
             events {
+              id
               eventMenuImage {
                 gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 1.5)
               }

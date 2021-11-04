@@ -3,17 +3,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.
   const result = await graphql(`
-  query eventsQuery {
-    allContentfulWhatsOnPageContent {
-      edges {
-        node {
-          eventTitle
-          eventEndDateAndTime
+    query EventsQuery {
+      allContentfulWhatsOnPageContent {
+        edges {
+          node {
+            id
+            eventTitle
+            eventDateAndStartTime(formatString: "YYYY-MM-DD HH-mm")
+            eventEndDateAndTime(formatString: "YYYY-MM-DD HH-mm")
+            bookNowLinkText
+            bookNowLinkUrl
+            galleryImages {
+              gatsbyImageData(layout: FULL_WIDTH)
+            }
+            eventDescription {
+              raw
+            }
+            eventMenu {
+              menuName
+              sideMenuName
+              eventMenuItems {
+                menuITem
+                menuItemLongDescription
+                menuItemShortDescription
+              }
+            }
+            eventMenuImage {
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            }
+          }
         }
       }
     }
-  }
-  
   `)
 
   // Handle errors
@@ -24,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages for each markdown file.
   const EventTemplate = path.resolve(`src/templates/EventTemplate/index.js`)
   result.data.allContentfulWhatsOnPageContent.edges.forEach(({ node }) => {
-    const path = `/events/${node.eventTitle.toLowerCase().replace(" ", "-")}`
+    const path = `/events/${node.id}`
     console.log(path)
     createPage({
       path,

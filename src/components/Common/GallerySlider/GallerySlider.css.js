@@ -3,7 +3,8 @@ import { SectionContainer } from "../../StyledComponents/containers.css"
 import { color } from "../../StyledComponents/variables"
 
 export const GalleryContainer = styled(SectionContainer)`
-  @media(max-width: 451px){
+  background: transparent;
+  @media (max-width: 451px) {
     width: 100%;
     margin-bottom: 0;
   }
@@ -63,6 +64,21 @@ export const ActiveControl = styled.div`
   text-align: center;
   border-radius: 50%;
   background: ${color.PRIMARY_RICH_BLACK};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 451px) {
+    width: 15px;
+    height: 15px;
+  }
+`
+export const ActiveControlBgRed = styled.div`
+  width: 30px;
+  height: 30px;
+  margin: 0.5rem;
+  text-align: center;
+  border-radius: 50%;
+  background: ${color.SECONDARY_WHITE};
   display: flex;
   justify-content: center;
   align-items: center;

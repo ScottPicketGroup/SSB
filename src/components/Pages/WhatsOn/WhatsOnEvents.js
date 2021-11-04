@@ -37,7 +37,8 @@ const WhatsOnEvents = ({ events }) => {
               <RenderTextOverHiddenWrapper>
                 <Renderer node={item.eventDescription} />
               </RenderTextOverHiddenWrapper>
-              <RedDecorationLink to={"/events/"+ item.eventTitle.toLowerCase().replaceAll(' ' , '-')}>
+              {/* <RedDecorationLink to={"/events/"+ item.eventTitle.toLowerCase().replaceAll(' ' , '-')}> */}
+              <RedDecorationLink to={"/events/"+ item.id}>
                 <BC1>Learn more...&nbsp;&nbsp;</BC1>
               </RedDecorationLink>
             </EventTextWrapper>

@@ -24,8 +24,10 @@ query WhatsOnQuery {
     allContentfulWhatsOnPageEventsLandingPageContent {
       edges {
         node {
+          id
           pageHeading
           events {
+            id
             eventTitle
             eventDescription {
               raw

@@ -1,5 +1,5 @@
 import React from 'react'
-import { FooterItemsWrapper, FooterWrapper } from '../Footer.css'
+import { FooterItemsWrapper, FooterWrapper } from './Footer.css'
 import FooterLinks from './FooterLinks'
 
 const FooterItems = () => {

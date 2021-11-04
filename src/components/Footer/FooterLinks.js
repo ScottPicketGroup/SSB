@@ -9,22 +9,22 @@ import {
   TimeWrapper,
   MobileWrapper,
   MobileSocialWrapper
-} from "../Footer.css"
+} from "./Footer.css"
 import {
   BC1,
   NoneDecorationLink,
-} from "../../../StyledComponents/typography.css"
-import FacebookIcon from "../../../Icons/FacebookIcon"
-import InstagramIcon from "../../../Icons/InstagramIcon"
+} from "../StyledComponents/typography.css"
+import FacebookIcon from "../Icons/FacebookIcon"
+import InstagramIcon from "../Icons/InstagramIcon"
 const FooterLinks = () => {
   return (
     <>
       <FooterLinksGrid>
         <SocialLinks>
-          <a href="http://www.facebook.com" target="_blank" rel="no referer">
+          <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
             <FacebookIcon />
           </a>
-          <a href="http://www.instagram.com" target="_blank" rel="no referer">
+          <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
             <InstagramIcon />
           </a>
         </SocialLinks>
@@ -136,10 +136,10 @@ const FooterLinks = () => {
             </BC1>
           </PageLinks>
           <SocialLinks>
-            <a href="http://www.facebook.com" target="_blank" rel="no referer">
+            <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
               <FacebookIcon />
             </a>
-            <a href="http://www.instagram.com" target="_blank" rel="no referer">
+            <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
               <InstagramIcon />
             </a>
           </SocialLinks>

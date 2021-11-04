@@ -1,7 +1,7 @@
 import styled, { keyframes } from "styled-components"
 import { Link } from "gatsby"
-import { color } from "../../StyledComponents/variables"
-import { BC2 } from "../../StyledComponents/typography.css"
+import { color } from "../StyledComponents/variables"
+import { BC2 } from "../StyledComponents/typography.css"
 export const FooterWrapper = styled.div`
   width: 100%;
   background: ${color.PRIMARY_RED_WINE};
@@ -24,13 +24,9 @@ export const FooterItemsWrapper = styled.div`
 export const FooterLinksGrid = styled.div`
   width: 78%;
   padding-bottom: 8.65rem;
-  // display: grid;
-  // grid-template-columns: repeat(5, 1fr);
-  // grid-gap: 0 3.5rem;
   display: flex;
   @media (max-width: 450px) {
     padding-bottom: 1.5rem;
-    // grid-template-columns: repeat(1, 1fr);
     display: none;
   }
 `
@@ -88,109 +84,10 @@ export const FooterLink = styled(Link)`
   }
 `
 
-export const FooterItem = styled.p`
-  font-family: CentraNo2Light;
-  text-decoration: none;
-  font-size: 1rem;
-  color: white;
-  margin-bottom: ${props => {
-    switch (props.marginBottom) {
-      case "sm":
-        return ".75rem"
-      case "md":
-        return "1.25rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "9.63rem"
-      default:
-        return "0"
-    }
-  }};
-  margin-top: ${props => {
-    switch (props.marginTop) {
-      case "sm":
-        return "1rem"
-      case "md":
-        return "1.5rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "100%"
-      default:
-        return "0"
-    }
-  }};
-  /* :hover {
-    font-family: bold;
-  } */
-  @media (max-width: 450px) {
-    font-size: 1rem;
-    margin-bottom: 2.35rem;
-    line-height: 1.15;
-  }
-`
-
-export const SubscribeWrapper = styled.div`
-  width: 22%;
-`
-
 const moveSlideshow = keyframes`
 100% { 
   transform: translateX(-2025px);  
 }
-`
-
-export const FooterExternalLink = styled.a`
-  text-decoration: none;
-  font-family: CentraNo2Light;
-  font-size: 1rem;
-
-  color: white;
-  margin-bottom: ${props => {
-    switch (props.marginBottom) {
-      case "sm":
-        return ".75rem"
-      case "md":
-        return "1.25rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "9.63rem"
-      default:
-        return "0"
-    }
-  }};
-  margin-top: ${props => {
-    switch (props.marginTop) {
-      case "sm":
-        return "1rem"
-      case "md":
-        return "1.5rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "100%"
-      default:
-        return "0"
-    }
-  }};
-  :hover {
-    font-family: bold;
-  }
-  @media (max-width: 450px) {
-    font-size: 1rem;
-    margin-bottom: 2.35rem;
-    line-height: 1.15;
-  }
 `
 
 export const Logos = styled.div`
@@ -297,6 +194,7 @@ export const Input = styled.input`
   border-right: none;
   border-left: none;
   padding: 0.5rem 0;
+  background-color: ${color.SECONDARY_CREME};
   background: transperant;
   ::placeholder {
     color: #E88585;

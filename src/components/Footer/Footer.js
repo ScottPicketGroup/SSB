@@ -1,6 +1,6 @@
 import React from 'react'
 import { FooterWrapper } from './Footer.css'
-import FooterItems from './FooterItems/FooterItems'
+import FooterItems from './FooterItems'
 import LogoSlider from './LogoSlider'
 import FooterForm from './FooterForm'
 

@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
 
   html, body {
     font-size: 16px;
-    font-family: 'CentraNo2', sans-serif;
+    font-family: 'Pitch', sans-serif;
   
   }
   a {

@@ -62,7 +62,7 @@ const EventTemplate = ({ pageContext }) => {
               <BBHeading2 color="white">
                 {eventData.bookNowLinkText !== null
                   ? eventData.bookNowLinkText
-                  : "BOOK NOW"}
+                  : "BOOK  NOW"}
               </BBHeading2>
             </NoneDecorationLink>
           </Intro>

@@ -113,6 +113,7 @@ export const DessertImage = styled(GatsbyImage)`
   margin-top: 6rem;
   width: 45%;
   height: 30vw;
+  margin-bottom: 6rem;
   @media (max-width: 451px) {
     width: 70%;
     height: 64vw;

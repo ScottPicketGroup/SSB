@@ -18,7 +18,7 @@ const Layout = ({ landing,  children }) => {
       <PageContainer>
         <Header landing={landing}/>
         <Menu />
-        {/* <GiftVouchers /> */}
+        <GiftVouchers />
         {children}
         <Footer />
       </PageContainer>

@@ -2,11 +2,20 @@ import React from "react"
 import useActiveMenu from "../hooks/ActiveMenu"
 
 const MenuCancelIcon = () => {
-  const { menuOpen, setMenuOpen } = useActiveMenu()
+  const { setMenuOpen, giftOpen, setGiftOpen } = useActiveMenu()
+
+  const handleClick = () => {
+    if (giftOpen) {
+      setGiftOpen(false)
+    } else {
+      setMenuOpen(false)
+    }
+  }
+
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      onClick={() => setMenuOpen(!menuOpen)}
+      onClick={() => handleClick()}
       viewBox="0 0 39.914 39.914"
       height="2rem"
     >

@@ -163,6 +163,25 @@ export const MenuContainer = styled.div`
     // display: none;
   }
 `
+export const GiftVouchersContainer = styled.div`
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: -webkit-sticky;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  transform: translateX(${props => (props.giftOpen ? "unset" : "100%")});
+  // display: ${props => (props.giftOpen ? "block" : "none")};
+  transition: transform 1s ease-in-out;
+  background-color: ${color.PRIMARY_RED_WINE};
+  z-index: 10;
+  @media (max-width: 450px) {
+    // display: none;
+  }
+`
 
 export const DesktopContainer = styled.div`
   width: 100%;

@@ -4,12 +4,15 @@ const ActiveMenuContext = createContext()
 
 export const ActiveMenuProvider = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [giftOpen, setGiftOpen] = useState(false)
 
   return (
     <ActiveMenuContext.Provider
       value={{
         menuOpen,
-        setMenuOpen
+        setMenuOpen,
+        giftOpen,
+        setGiftOpen
       }}
     >
       {children}

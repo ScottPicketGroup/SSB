@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { getImage } from "gatsby-plugin-image"
-import { MenuContainer } from "../StyledComponents/containers.css"
+import { GiftVouchersContainer } from "../StyledComponents/containers.css"
 import useActiveMenu from "../hooks/ActiveMenu"
 import MenuCancelIcon from "../Icons/MenuCancelIcon"
 import {
@@ -18,7 +18,7 @@ import {
 } from "../StyledComponents/typography.css"
 
 const GiftVouchers = () => {
-  const { menuOpen } = useActiveMenu()
+  const { giftOpen } = useActiveMenu()
   const data = useStaticQuery(graphql`
     query giftVouchersQuery {
       allContentfulGiftVouchersPageContent {
@@ -51,7 +51,7 @@ const GiftVouchers = () => {
   const giftVouchersData = data.allContentfulGiftVouchersPageContent.nodes[0]
 
   return (
-    <MenuContainer menuOpen={menuOpen}>
+    <GiftVouchersContainer giftOpen={giftOpen}>
       <MenuCancelIconWrapper>
         <MenuCancelIcon />
       </MenuCancelIconWrapper>
@@ -76,7 +76,7 @@ const GiftVouchers = () => {
         </BC1>
         <BC1 color="white">{giftVouchersData.phoneNumber}</BC1>
       </MenuWrapper>
-    </MenuContainer>
+    </GiftVouchersContainer>
   )
 }
 

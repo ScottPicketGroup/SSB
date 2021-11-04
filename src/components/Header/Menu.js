@@ -13,7 +13,8 @@ import { StaticImage } from "gatsby-plugin-image"
 import { BC1, Heading3 } from "../StyledComponents/typography.css"
 
 const MenuComponent = () => {
-  const { menuOpen } = useActiveMenu()
+  const { menuOpen, setGiftOpen } = useActiveMenu()
+
   const menuItems = [
     { title: "Home", pageNum: 0, to: "#" },
     { title: "Book a Table", pageNum: 1, to: "#" },
@@ -37,9 +38,12 @@ const MenuComponent = () => {
         </MenuLogoWrapper>
         <MenuItemWrapper>
           {menuItems.map((item, index) => (
-            <Link key={index} to="#" style={{ textDecoration: "none" }}>
+            index === 7 ? (<Link onClick={()=>setGiftOpen(true)} key={index} to="#" style={{ textDecoration: "none" }}>
+            <Heading3 color="white">{item.title}</Heading3>
+          </Link>) :
+            (<Link key={index} to="#" style={{ textDecoration: "none" }}>
               <Heading3 color="white">{item.title}</Heading3>
-            </Link>
+            </Link>)
           ))}
         </MenuItemWrapper>
 

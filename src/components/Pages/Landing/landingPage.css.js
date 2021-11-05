@@ -47,7 +47,8 @@ export const HeroImage = styled(GatsbyImage)`
 `
 
 export const WineAndFoodWrapper = styled.div`
-  background-image: url("/static/5bd2de02b89b88f6d21174dde6c46809/SSB_Flower_Illustration_V01-02.png");
+  background-image: ${props =>
+    props.backgroundImage ? `url(${props.backgroundImage})` : `url("")`};
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -109,8 +110,7 @@ export const PrivateDiningTextWrapper = styled.div`
   // align-items: center;
   text-align: left;
   margin-top: 3.5rem;
-  width: ${props =>
-    props.first ? "20%" : props.dining ? "25%" : "80%"};
+  width: ${props => (props.first ? "20%" : props.dining ? "25%" : "80%")};
   margin ${props => (props.dining ? "3.5rem auto 0" : "3.5rem 0 0")};
   order: ${props => (props.first ? "0" : "1")};
   @media (max-width: 451px) {
@@ -163,14 +163,14 @@ export const MobileLogoBottomTextWrapper = styled(LogoBottomTextWrapper)`
 `
 export const WeekdayItemDescriptionWrapper = styled.div`
   width: 60%;
-  @media(max-width: 451px){
-    width:70%;
+  @media (max-width: 451px) {
+    width: 70%;
   }
 `
 export const CircleImageWrapper = styled.div`
   position: relative;
   width: 16vw;
-  @media(max-width: 451px){
+  @media (max-width: 451px) {
     position: absolute;
     width: 40vw;
   }

@@ -7,10 +7,20 @@ import { SectionContainer } from "../../StyledComponents/containers.css"
 
 import { WineAndFoodWrapper } from "./landingPage.css"
 
+import { useStaticQuery, graphql } from "gatsby"
+
 const WineAndFood = () => {
+  const imageData = useStaticQuery(graphql`
+    query FlowerURL {
+      file(name: { eq: "flower" }) {
+        publicURL
+      }
+    }
+  `)
+  const backgroundImage = imageData.file.publicURL
   return (
     <SectionContainer marginBottom="xl" full>
-      <WineAndFoodWrapper>
+      <WineAndFoodWrapper backgroundImage={backgroundImage}>
         <NoneDecorationLink to="/drinks">
           <BBHeading2>Wine</BBHeading2>
         </NoneDecorationLink>

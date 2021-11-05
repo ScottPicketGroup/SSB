@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import styled from "styled-components"
+import { color } from "../../../StyledComponents/variables"
 const CheckBox = () => {
   const [checked, setChecked] = useState(false)
 
@@ -41,7 +42,7 @@ const StyledCheckbox = styled.div`
   width: 24px;
   height: 24px;
 
-  background: ${props => (props.checked ? "#153E35" : "#FDF9EE")};
+  background: ${props => (props.checked ? color.PRIMARY_RED_WINE : "#FDF9EE")};
   border: 1px solid black;
   border-radius: 1px;
   transition: all 150ms;

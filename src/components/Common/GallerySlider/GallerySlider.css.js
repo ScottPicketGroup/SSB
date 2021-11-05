@@ -12,7 +12,7 @@ export const GalleryContainer = styled(SectionContainer)`
 
 export const ImageContainer = styled.div`
   margin-top: 2.25rem;
-  width: 100vw;
+  ${props=>props.page==="dining" && "width:100vw"};
   height: 40vw;
   position: relative;
   display: flex;

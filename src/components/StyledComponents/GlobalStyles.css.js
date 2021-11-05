@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components"
+import PitchRegular from "../../assetts/fonts/Pitch-Regular.woff"
 
 const GlobalStyles = createGlobalStyle`
   * {
@@ -10,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
   html, body {
     font-size: 16px;
-    font-family: 'Pitch', sans-serif;
+    font-family: ${PitchRegular};
   
   }
   a {

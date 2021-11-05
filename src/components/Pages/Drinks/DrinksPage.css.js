@@ -185,10 +185,11 @@ export const NonAlcoholicItemWrapper = styled.div`
   flex-direction: column;
   width: 35%;
   align-self: flex-end;
-  margin-right: 3.5rem;
+  margin-right: 5.5rem;
   @media (max-width: 451px) {
     height: 100%;
     width: 40%;
+    margin-right: 3.5rem;
   }
 `
 export const NonAlcoholicSeasonalTitleWrapper = styled.div`

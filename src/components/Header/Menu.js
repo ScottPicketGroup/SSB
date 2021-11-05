@@ -17,7 +17,8 @@ import {
   InformationWrapper,
 } from "./Header.css"
 import { StaticImage } from "gatsby-plugin-image"
-import { BC1, Heading3, BBHeading3 } from "../StyledComponents/typography.css"
+import { BC1, Heading3 } from "../StyledComponents/typography.css"
+import { color } from "../../components/StyledComponents/variables"
 
 const MenuComponent = () => {
   const { menuOpen, setMenuOpen, giftOpen, setGiftOpen } = useActiveMenu()
@@ -48,7 +49,7 @@ const MenuComponent = () => {
     { title: "Home", pageNum: 0, to: "/" },
     { title: "Book a Table", pageNum: 1, to: "" },
     { title: "What's On", pageNum: 2, to: "/whats-on" },
-    { title: "Daily Spacials", pageNum: 3, to: "" },
+    { title: "Daily Spacials", pageNum: 3, to: "/food" },
     { title: "Wine", pageNum: 4, to: "/drinks" },
     { title: "Food", pageNum: 5, to: "/food" },
     { title: "Private Events", pageNum: 6, to: "/private-dining" },
@@ -74,7 +75,7 @@ const MenuComponent = () => {
                 to="#"
                 style={{ textDecoration: "none" }}
               >
-                <Heading3 color="white" marginBottom="xs">
+                <Heading3 color="white" style={{marginBottom: "1.25rem"}}>
                   {item.title}
                 </Heading3>
               </Link>
@@ -85,7 +86,7 @@ const MenuComponent = () => {
                 to={item.to}
                 style={{ textDecoration: "none" }}
               >
-                <Heading3 color="white" marginBottom="xs">
+                <Heading3 color="white" style={{marginBottom: "1.25rem"}}>
                   {item.title}
                 </Heading3>
               </Link>
@@ -100,13 +101,13 @@ const MenuComponent = () => {
             <GiftVouchersItemWrapper>
               <a
                 href={giftVouchersData.smithStBistroGiftVoucherLink}
-                style={{ textDecoration: "none" }}
+                style={{ textDecorationColor: color.SECONDARY_WHITE }}
                 target="_blank"
                 rel="noreferrer"
               >
-                <BBHeading3 color="white">
+                <Heading3 color="white">
                   {giftVouchersData.venueGiftVoucherHeading}
-                </BBHeading3>
+                </Heading3>
               </a>
               <MobileHiddenGiftItemImage
                 image={getImage(giftVouchersData.venueGiftVoucherImage)}
@@ -116,13 +117,13 @@ const MenuComponent = () => {
             <GiftVouchersItemWrapper>
               <a
                 href={giftVouchersData.spgGvLink}
-                style={{ textDecoration: "none" }}
+                style={{ textDecorationColor: color.SECONDARY_WHITE }}
                 target="_blank"
                 rel="noreferrer"
               >
-                <BBHeading3 color="white">
+                <Heading3 color="white">
                   {giftVouchersData.scottPicketGroupGiftVoucherHeading}
-                </BBHeading3>
+                </Heading3>
               </a>
               <GiftItemImage
                 image={getImage(

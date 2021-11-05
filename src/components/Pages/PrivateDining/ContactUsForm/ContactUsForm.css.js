@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { color } from "../../../StyledComponents/variables"
 export const ContactUsFormContainer = styled.div`
-  margin-bottom: 6.75rem;
   @media screen and (max-width: 800px) {
     width: 100%;
   }
@@ -25,9 +24,10 @@ export const ContactFormRow = styled.div`
 export const InputContainer = styled.div`
   min-width: 48%;
   background: transperant;
+  margin-bottom: 1.75rem;
   @media screen and (max-width: 800px) {
     width: ${props=>props.hour ? "48%": "100%"};
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 `
 export const TixboxContainer = styled.div`
@@ -82,7 +82,6 @@ export const Input = styled.input`
   border: none;
   padding: 1.5rem 0;
   font-size: 0.75rem;
-  margin-bottom: 1.75rem;
   line-height: none;
   border-bottom: 1px solid ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
   ::placeholder {
@@ -90,12 +89,12 @@ export const Input = styled.input`
     font-size: 1rem;
     margin-bottom: 10rem;
     background: transperant;
-    font-family: normal;
+    font-family: PitchRegular;
   }
   :focus {
     outline: none;
     background: transparent;
-    font-family: normal;
+    font-family: PitchRegular;
     height: 3rem;
     font-size: 150%;
     color: ${color.PRIMARY_RICH_BLACK};
@@ -103,7 +102,7 @@ export const Input = styled.input`
   :valid {
     font-size: 1rem;
     background: transperant;
-    font-family: normal;
+    font-family: PitchRegular;
     color: ${color.PRIMARY_RICH_BLACK};
   }
   ::-moz-focus-outer {
@@ -111,15 +110,13 @@ export const Input = styled.input`
   }
   @media screen and (max-width: 450px) {
     width: 100%;
-    height: 1rem;
-    margin-bottom: 1rem;
   }
 `
 
 export const SignUpSubmit = styled.button`
   background: none;
   height: 46px;
-  font-family: tTNormsProNormal;
+  font-family: PitchRegular;
   padding: 0.5rem 2.5rem;
   border: 1px solid ${props => (props.err ? "red" : "#153e35")};
   color: ${props => (props.err ? "red" : "#153e35")};
@@ -133,7 +130,7 @@ export const SignUpSubmit = styled.button`
     color: ${props => (props.err ? color.PRIMARY_RICH_BLACK : color.PRIMARY_RICH_BLACK)};
   }
   p {
-    font-family: tTNormsPro;
+    font-family: PitchRegular;
   }
 `
 export const Button = styled.button`

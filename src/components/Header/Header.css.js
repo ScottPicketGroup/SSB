@@ -27,15 +27,19 @@ export const MenuWrapper = styled.div`
   justify-content: space-between;
 `
 export const MenuLogoWrapper = styled.div`
-  margin: 0 auto;
+  margin: 6rem auto;
   width: 100%;
+  @media(max-width: 451px){
+    margin-top: 3.5rem;
+  }
 `
 export const MenuItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
-  display: ${props=>props.giftOpen ? "none" : "block"};
+  height: 70%;
+  display: ${props => props.giftOpen ? "none" : "block"};
 `
 export const HeaderLogoWrapper = styled.div`
   display: flex;
@@ -80,7 +84,7 @@ export const GiftVouchersItemWrapper = styled.div`
 `
 export const GiftItemImage = styled(GatsbyImage)`
   width: 30vw;
-  height: 20vw;
+  height: 25vw;
   margin-top: 1rem;
   @media (max-width: 451px) {
     width: 80vw;
@@ -90,7 +94,7 @@ export const GiftItemImage = styled(GatsbyImage)`
 `
 export const MobileHiddenGiftItemImage = styled(GatsbyImage)`
   width: 30vw;
-  height: 20vw;
+  height: 25vw;
   margin-top: 1rem;
   @media (max-width: 451px) {
     display: none;
@@ -101,12 +105,13 @@ export const GiftVouchersContainer = styled.div`
   flex-direction: column;
   text-align: center;
   justify-content: space-between;
-  display: ${props=>props.giftOpen ? "block" : "none"};
+  display: ${props => props.giftOpen ? "block" : "none"};
 `
 export const InformationWrapper = styled.div`
   display: flex;
   flex-direction: column;
   text-align: center;
   justify-content: space-evenly;
-  margin-bottom: 3.5rem;
+  margin-bottom: 6rem;
+  margin-top: 3.5rem;
 `

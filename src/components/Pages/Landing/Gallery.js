@@ -5,7 +5,7 @@ import { SectionContainer } from "../../StyledComponents/containers.css"
 
 const Gallery = ({ gallery }) => {
   return (
-    <SectionContainer marginBottom="xl">
+    <SectionContainer marginBottom="xxl">
       <GallerySlider images={gallery} />
     </SectionContainer>
   )

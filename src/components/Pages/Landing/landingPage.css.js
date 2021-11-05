@@ -16,7 +16,7 @@ export const IntroWrapper = styled.div`
   text-align: center;
   margin-top: 3.5rem;
   p {
-    padding: 0 15%;
+    padding: 0 10%;
   }
   @media (max-width: 451px) {
     margin-top: 0;
@@ -47,7 +47,7 @@ export const HeroImage = styled(GatsbyImage)`
 `
 
 export const WineAndFoodWrapper = styled.div`
-  background-image: url("/static/c34fd4c50dfe2cdc8ae743ba5f54967e/SSB_Flower_Illustration_V01-02.png");
+  background-image: url("/static/5bd2de02b89b88f6d21174dde6c46809/SSB_Flower_Illustration_V01-02.png");
   display: flex;
   justify-content: space-around;
   align-items: center;

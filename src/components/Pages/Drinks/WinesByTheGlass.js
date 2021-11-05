@@ -21,9 +21,9 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
           </BC1>
           {item.sectionMenuItems.map((i, idx) => (
             <WineSectionItemWrapper key={idx}>
-              <BC1 color="black" style={{width: "50%"}}>{i.producer}</BC1>
-              <BC1 color="black" style={{width: "45%"}}>{i.region}</BC1>
-              <BC1 color="black" style={{width: "5%"}}>{i.price}</BC1>
+              <BC1 color="black" style={{width: "50%", fontSize: "0.5rem"}}>{i.producer}</BC1>
+              <BC1 color="black" style={{width: "45%", fontSize: "0.5rem"}}>{i.region}</BC1>
+              <BC1 color="black" style={{width: "5%", fontSize: "0.5rem"}}>{i.price}</BC1>
             </WineSectionItemWrapper>
           ))}
         </WineSectionWrapper>

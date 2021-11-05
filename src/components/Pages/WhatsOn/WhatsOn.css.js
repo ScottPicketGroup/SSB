@@ -19,6 +19,8 @@ export const EventWrapper = styled.div`
   margin-bottom: ${props=>props.order % 2 === 1 ? "0" : "6rem"};
   @media (max-width: 451px) {
     width: 90vw;
+    margin-bottom: 3.5rem;
+    margin-top: 0;
   }
 `
 export const EventImage = styled(GatsbyImage)`

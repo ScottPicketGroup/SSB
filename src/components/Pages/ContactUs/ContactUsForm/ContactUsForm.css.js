@@ -25,11 +25,11 @@ export const ContactFormRow = styled.div`
 `
 export const InputContainer = styled.div`
   min-width: 48%;
-  margin-bottom: 1rem;
+  margin-bottom: 1.75rem;
   background: transperant;
   @media screen and (max-width: 800px) {
     width: 100%;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
   }
 `
 export const TixboxContainer = styled.div`
@@ -88,12 +88,12 @@ export const Input = styled.input`
     color: ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)}};
     font-size: 1rem;
     background: transperant;
-    font-family: normal;
+    font-family: PitchRegular;
   }
   :focus {
     outline: none;
     background: transparent;
-    font-family: normal;
+    font-family: PitchRegular;
     height: 3rem;
     font-size: 150%;
     color: ${color.PRIMARY_RICH_BLACK};
@@ -101,7 +101,7 @@ export const Input = styled.input`
   :valid {
     font-size: 1rem;
     background: transperant;
-    font-family: normal;
+    font-family: PitchRegular;
     color: ${color.PRIMARY_RICH_BLACK};
   }
   ::-moz-focus-outer {
@@ -109,6 +109,7 @@ export const Input = styled.input`
   }
   @media screen and (max-width: 450px) {
     width: 100%;
+    height: 1rem;
   }
 `
 
@@ -116,7 +117,7 @@ export const InputMessage = styled.textarea`
   width: 100%;
   height: 11.25rem;
   font-size: 16px;
-  font-family: normal;
+  font-family: PitchRegular;
   background: rgba(255, 255, 255, 0);
   border: none;
   padding: 1.5rem 0;
@@ -130,20 +131,20 @@ export const InputMessage = styled.textarea`
   ::placeholder {
     font-size: 16px;
     margin-bottom: 10rem;
-    font-family: normal;
+    font-family: PitchRegular;
     color: ${props => (props.err ? "#CB0000" : color.PRIMARY_RICH_BLACK)};
   }
   :focus {
     outline: none;
     background: transparent;
-    font-family: normal;
+    font-family: PitchRegular;
     height: 3rem;
     font-size: 150%;
   }
   :valid {
     color: ${color.PRIMARY_RICH_BLACK};
     font-size: 1rem;
-    font-family: font-family: normal;;
+    font-family: PitchRegular;
   }
   ::-moz-focus-outer {
     color: ${color.PRIMARY_RICH_BLACK};

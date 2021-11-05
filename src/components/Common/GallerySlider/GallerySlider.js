@@ -5,11 +5,12 @@ import { Card, GalleryContainer, ImageContainer } from "./GallerySlider.css"
 import Navigations from "./Navigations"
 import NavigationsBgRed from "./NavigationsBgRed"
 
-const GallerySlider = ({ images, bgRed }) => {
+const GallerySlider = ({ images, bgRed, page }) => {
   const [active, setActive] = React.useState(0)
+  
   return (
     <GalleryContainer column full>
-      <ImageContainer>
+      <ImageContainer page={page}>
         {images.length &&
           images.map(
             (item, i) =>

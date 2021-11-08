@@ -66,7 +66,7 @@ const Arrow = styled.i`
 
 const DropDownListContainer = styled("div")`
     position:absolute;
-    height: 15rem;
+    max-height: 15rem;
     overflow-y: ${props => (props.isOpen ? "scroll" : "hidden")};
     width: ${props=>props.dropWidth ? props.dropWidth : "19%"};
     @media(max-width: 451px){

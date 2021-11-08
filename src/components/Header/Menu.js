@@ -17,7 +17,7 @@ import {
   InformationWrapper,
 } from "./Header.css"
 import { StaticImage } from "gatsby-plugin-image"
-import { BC1, Heading2 } from "../StyledComponents/typography.css"
+import { BC1, Heading2, FBC1 } from "../StyledComponents/typography.css"
 import { color } from "../../components/StyledComponents/variables"
 
 const MenuComponent = () => {
@@ -47,7 +47,7 @@ const MenuComponent = () => {
 
   const menuItems = [
     { title: "Home", pageNum: 0, to: "/" },
-    { title: "Book a Table", pageNum: 1, to: "" },
+    { title: "Book a Table", pageNum: 1, to: "/book-a-table" },
     { title: "What's On", pageNum: 2, to: "/whats-on" },
     { title: "Wine", pageNum: 4, to: "/drinks" },
     { title: "Food", pageNum: 5, to: "/food" },
@@ -134,10 +134,10 @@ const MenuComponent = () => {
           </GiftVouchersItemContainer>
         </GiftVouchersContainer>
         <InformationWrapper>
-          <BC1 color="white" marginBottom="sm">
+          <FBC1 color="white" marginBottom="sm">
             {giftVouchersData.address.toUpperCase()}
-          </BC1>
-          <BC1 color="white">{giftVouchersData.phoneNumber}</BC1>
+          </FBC1>
+          <FBC1 color="white">{giftVouchersData.phoneNumber}</FBC1>
         </InformationWrapper>
       </MenuWrapper>
     </MenuContainer>

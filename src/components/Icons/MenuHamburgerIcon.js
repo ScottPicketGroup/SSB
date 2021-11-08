@@ -4,7 +4,8 @@ const MenuHamburgerIcon = ({ mobile, menuOpen, setMenuOpen }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={mobile ? "39" : "58"}
+      // width={mobile ? "39" : "58"}
+      width="100%"
       height="27"
       viewBox="0 0 58 27"
       onClick={() => setMenuOpen(!menuOpen)}

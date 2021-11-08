@@ -6,14 +6,14 @@ export const MenuDuJourContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  // width: 25vw;
-  width: 50%;
+  width : 481px;
+  height: ${props => props.menus === "brunch" ? "842px" : "714px"};
   align-items: center;
   background-color: ${props =>
     props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
-    height: 100%;
-    width: 90%;
+    width : 301px;
+  height: ${props => props.menus === "brunch" ? "529px" : "445px"};
     margin: 0 auto;
   }
 `
@@ -152,10 +152,10 @@ export const FoodScrollMenuMobileWrapper = styled.div`
   }
 `
 export const MenuDuJourItemWrapper = styled.div`
-  width: 55%;
-  margin-bottom: 3.5rem;
+  width: 60%;
+  margin-bottom: ${props=>props.menus === "brunch" ? "1.75rem" : "3.5rem"};
   @media (max-width: 451px) {
-    margin-bottom: 1.75rem;
+    margin-bottom: ${props=>props.menus === "brunch" ? "0.75rem" : "1.75rem"};
   }
 `
 export const MenuDuJourTitleWrapper = styled.div`
@@ -199,7 +199,11 @@ export const DessertWrapper = styled(MenuDuJourContainer)`
   padding-right: 5.25rem;
   @media (max-width: 451px) {
     padding-top: 1.75rem;
-    width: 90%;
     margin: 0 auto;
+    padding-left: 3.5rem;
+    padding-right: 3.25rem;
+    & h2{
+      margin-top: 1.75rem;
+    }
   }
 `

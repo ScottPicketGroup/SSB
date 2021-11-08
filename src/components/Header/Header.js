@@ -19,27 +19,36 @@ const Header = ({ landing }) => {
     <HeaderContainer ref={headerRef}>
       {elementWidth > 450 ? (
         <HeaderLogoWrapper>
-          <Link to="#">
+          <div style={{width: "10%"}}>
+          <Link to="/book-a-table">
             <BC1 style={{ fontWeight: "bold" }}>BOOK A TABLE</BC1>
           </Link>
+          </div>
+          
           {landing ? (
-            scrollPosition > 400 && <LogoIcon header />
+            scrollPosition > 400 && <Link to="/" style={{width: "75%", textAlign: "center"}}><LogoIcon header /></Link>
           ) : (
-            <LogoIcon header />
+            <Link to="/" style={{width: "75%", textAlign: "center"}}><LogoIcon header /></Link>
           )}
+          <div style={{width: "10%"}}>
           <MenuHamburgerIcon menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          </div>
         </HeaderLogoWrapper>
       ) : (
         <HeaderLogoWrapper>
-          <Link to="#">
+          <div style={{width: "10%"}}>
+          <Link to="/book-a-table">
             <BC1 style={{ fontWeight: "bold" }}>BOOK A TABLE</BC1>
           </Link>
-          {scrollPosition > 150 && <LogoIcon mobile />}
+          </div>
+          {scrollPosition > 150 && <Link to="/" style={{width: "75%", textAlign: "center"}}><LogoIcon mobile="true" /></Link>}
+          <div style={{width: "10%"}}>
           <MenuHamburgerIcon
             mobile
             menuOpen={menuOpen}
             setMenuOpen={setMenuOpen}
           />
+          </div>
         </HeaderLogoWrapper>
       )}
     </HeaderContainer>

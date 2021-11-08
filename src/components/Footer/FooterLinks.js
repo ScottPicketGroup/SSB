@@ -22,10 +22,10 @@ const FooterLinks = () => {
       <FooterLinksGrid>
         <SocialLinks>
           <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
-            <FacebookIcon />
+            {/* <FacebookIcon /> */}<FBC1 color="white" marginBottom="sm">FaceBook</FBC1>
           </a>
           <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
-            <InstagramIcon />
+            {/* <InstagramIcon /> */}<FBC1 color="white" marginBottom="sm">Instagram</FBC1>
           </a>
         </SocialLinks>
         <PageLinks>

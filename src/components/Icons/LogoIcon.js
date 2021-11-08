@@ -4,7 +4,7 @@ const LogoIcon = ({ header, mobile }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={header ? "30%" : mobile ? "40%" : "100%"}
+      width={header ? "40%" : mobile ? "80%" : "100%"}
       viewBox="0 0 775.011 97.44"
     >
       <path

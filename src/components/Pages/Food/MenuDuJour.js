@@ -25,7 +25,7 @@ const MenuDuJour = ({ menuDuJourData }) => {
           <BC2 color="black">{item.menuItem}</BC2>
         </MenuDuJourItemWrapper>
       ))}
-      <Heading2 marginTop="xl" marginBottom="md" color="black">
+      <Heading2 marginBottom="md" color="black" style={{fontSize: "1.75rem"}}>
         {bottomTitle.substr(0, 1).toUpperCase() + bottomTitle.substr(1).toLowerCase()}
       </Heading2>
       <SeasonalTitleWrapper>

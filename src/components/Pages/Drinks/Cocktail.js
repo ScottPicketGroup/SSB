@@ -18,14 +18,14 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
     <CocktailContainer>
       <MenuDuJourContainer coffee>
         {menuItems.map((item, index) => (
-          <MenuDuJourItemWrapper key={index}>
+          <MenuDuJourItemWrapper key={index} cocktail >
             <BC2 bold color="black">
               {item.menuItem}
             </BC2>
             <BC2 color="black">{item.menuItemDescription}</BC2>
           </MenuDuJourItemWrapper>
         ))}
-        <Heading2 marginTop="xl" marginBottom="md" color="black">
+        <Heading2 marginBottom="md" color="black" style={{fontSize: "1.75rem"}}>
           {menuHeadingBottom}
         </Heading2>
         <SeasonalTitleWrapper>

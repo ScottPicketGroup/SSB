@@ -190,10 +190,10 @@ export default class LogoSlider extends Component {
         </a>
       </Logo>
       <Logo>
-      <a href="https://longrainmelbourne.com/" target="_blank" rel="noreferrer">
+      <a href="https://longrainmelbourne.com/" style={{height: "64"}} target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="71.607"
+          width="100"
           height="64.959"
           viewBox="0 0 71.607 44.959"
         >
@@ -4206,8 +4206,8 @@ export default class LogoSlider extends Component {
       <a href="https://longrainmelbourne.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="71.607"
-          height="34.959"
+          width="100"
+          height="64.959"
           viewBox="0 0 71.607 44.959"
         >
           <g

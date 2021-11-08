@@ -132,6 +132,13 @@ export const SocialLinks = styled.div`
   width: 10vw;
   display: flex;
   justify-content: space-evenly;
+  & a{
+    text-decoration: none;
+  }
+  & a:hover{
+    text-decoration: underline;
+    text-decoration-color: ${color.SECONDARY_WHITE};
+  }
   @media(max-width: 451px){
     width: 30vw;
   }

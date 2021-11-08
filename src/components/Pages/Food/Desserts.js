@@ -53,7 +53,7 @@ const Desserts = ({ dessertData }) => {
           ))}
         </DessertDrinkSectionContainer>
 
-        <Heading2 marginTop="lg" marginBottom="md" color="black">
+        <Heading2 marginTop="xl" marginBottom="md" color="black" style={{fontSize: "1.75rem"}}>
           {bottomHeading}
         </Heading2>
         <DessertSeasonalTitleWrapper>

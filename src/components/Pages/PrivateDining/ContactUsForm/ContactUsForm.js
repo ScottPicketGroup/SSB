@@ -13,6 +13,7 @@ import {
   ContactFormRow
 } from "./ContactUsForm.css"
 import CheckBox from "./CheckBox"
+import Dropdown from "./Dropdown"
 const ContactUsForm = () => {
   const functionURL = "https://pear-cobra-4528.twil.io/send-email"
   const [error, setError] = useState({
@@ -31,6 +32,12 @@ const ContactUsForm = () => {
     startHour: "",
     finishHour: ""
   })
+
+  const hourOpptions = [
+    "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "0:00", 
+  ]
+
+  const eventsTypes = ["Type 1", "Type 2", "Type 3"]
 
   const [thankyou, setThankyou] = useState(false)
   const encode = data => {
@@ -178,14 +185,7 @@ const ContactUsForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <Input
-                  placeholder="Type Of Event"
-                  name="eventType"
-                  type="text"
-                  value={inputs.eventType}
-                  onChange={handleChange}
-                  err={error.eventType}
-                />
+                <Dropdown title="Type Of Events" options={eventsTypes} dropWidth="40%" />
               </InputContainer>
 
               <InputContainer>
@@ -211,24 +211,10 @@ const ContactUsForm = () => {
               </InputContainer>
               <ContactFormRow>
                 <InputContainer hour>
-                  <Input
-                    placeholder="Start Hour"
-                    name="startHour"
-                    type="text"
-                    value={inputs.startHour}
-                    onChange={handleChange}
-                    err={error.startHour}
-                  />
+                  <Dropdown title="Start Hours" options={hourOpptions} />
                 </InputContainer>
                 <InputContainer hour>
-                  <Input
-                    placeholder="Finish Hour"
-                    name="finishHour"
-                    type="text"
-                    value={inputs.finishHour}
-                    onChange={handleChange}
-                    err={error.finishHour}
-                  />
+                  <Dropdown title="Finish Hours" options={hourOpptions} />
                 </InputContainer>
               </ContactFormRow>
               <TixboxContainer>

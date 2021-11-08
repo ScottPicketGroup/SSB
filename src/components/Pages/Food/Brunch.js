@@ -17,21 +17,21 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
   return (
     <BrunchContainer>
       <BrunchFirstWrapper>
-        <MenuDuJourContainer>
+        <MenuDuJourContainer menus="brunch">
           <GatsbyImage
             image={getImage(menuLogo)}
-            style={{ margin: "1rem 1rem 1.75rem" }}
+            style={{ margin: "1rem 1rem 1.75rem", overflow: "visible" }}
             alt="menu-dujour"
           />
           {menuItems.map((item, index) => (
-            <MenuDuJourItemWrapper>
+            <MenuDuJourItemWrapper menus="brunch">
               <BC2 color="black" bold>
                 {item.menuItem}{item.menuItem.includes(",") ? "" : ","} {item.menuItemPrice}$$
               </BC2>
               <BC2 color="black">{item.menuItemDescription ? item.menuItemDescription : "No Description"}</BC2>
             </MenuDuJourItemWrapper>
           ))}
-          <Heading2 marginBottom="md" color="black">
+          <Heading2 marginBottom="md" style={{fontSize: "1.75rem"}} color="black">
             {bottomMenuTitle}
           </Heading2>
         </MenuDuJourContainer>

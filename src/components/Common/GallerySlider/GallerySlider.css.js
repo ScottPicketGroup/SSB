@@ -13,7 +13,7 @@ export const GalleryContainer = styled(SectionContainer)`
 export const ImageContainer = styled.div`
   margin-top: 2.25rem;
   ${props=>props.page==="dining" && "width:100vw"};
-  height: 40vw;
+  height: ${props=>props.page==="dining" ? "35vw" : "46vw"};
   position: relative;
   display: flex;
   flex-direction: row;
@@ -45,8 +45,8 @@ export const Controls = styled.div`
 `
 
 export const Control = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 12px;
+  height: 12px;
   margin: 0.5rem;
   text-align: center;
   display: flex;
@@ -58,8 +58,8 @@ export const Control = styled.div`
   }
 `
 export const ActiveControl = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 12px;
+  height: 12px;
   margin: 0.5rem;
   text-align: center;
   border-radius: 50%;
@@ -73,8 +73,8 @@ export const ActiveControl = styled.div`
   }
 `
 export const ActiveControlBgRed = styled.div`
-  width: 30px;
-  height: 30px;
+  width: 12px;
+  height: 12px;
   margin: 0.5rem;
   text-align: center;
   border-radius: 50%;

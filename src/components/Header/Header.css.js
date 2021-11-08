@@ -84,7 +84,7 @@ export const GiftVouchersItemWrapper = styled.div`
 `
 export const GiftItemImage = styled(GatsbyImage)`
   width: 30vw;
-  height: 25vw;
+  height: 20vw;
   margin-top: 1rem;
   @media (max-width: 451px) {
     width: 80vw;
@@ -94,7 +94,7 @@ export const GiftItemImage = styled(GatsbyImage)`
 `
 export const MobileHiddenGiftItemImage = styled(GatsbyImage)`
   width: 30vw;
-  height: 25vw;
+  height: 20vw;
   margin-top: 1rem;
   @media (max-width: 451px) {
     display: none;

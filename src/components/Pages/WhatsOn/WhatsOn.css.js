@@ -25,7 +25,7 @@ export const EventWrapper = styled.div`
 `
 export const EventImage = styled(GatsbyImage)`
   width: 100%;
-  height: 18vw;
+  height: 16vw;
   @media (max-width: 451px) {
       height: 65vw;
   }

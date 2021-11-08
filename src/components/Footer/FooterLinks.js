@@ -8,11 +8,11 @@ import {
   DayWrapper,
   TimeWrapper,
   MobileWrapper,
-  MobileSocialWrapper
+  MobileSocialWrapper,
+  FooterLink
 } from "./Footer.css"
 import {
-  BC1,
-  NoneDecorationLink,
+  FBC1,
 } from "../StyledComponents/typography.css"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
@@ -29,111 +29,111 @@ const FooterLinks = () => {
           </a>
         </SocialLinks>
         <PageLinks>
-          <NoneDecorationLink to="">
-            <BC1 color="white" marginBottom="sm">
+          <FooterLink to="">
+            <FBC1 color="white" marginBottom="sm">
               Smith St Bistrot
-            </BC1>
-          </NoneDecorationLink>
-          <NoneDecorationLink to="/">
-            <BC1 color="white" marginBottom="sm">
+            </FBC1>
+          </FooterLink>
+          <FooterLink to="/">
+            <FBC1 color="white" marginBottom="sm">
               Home
-            </BC1>
-          </NoneDecorationLink>
-          <NoneDecorationLink to="/contact-us">
-            <BC1 color="white" marginBottom="sm">
+            </FBC1>
+          </FooterLink>
+          <FooterLink to="/contact-us">
+            <FBC1 color="white" marginBottom="sm">
               Contact
-            </BC1>
-          </NoneDecorationLink>
-          <NoneDecorationLink to="/terms-conditions">
-            <BC1 color="white" marginBottom="sm">
+            </FBC1>
+          </FooterLink>
+          <FooterLink to="/terms-conditions">
+            <FBC1 color="white" marginBottom="sm">
               Terms and Conditions
-            </BC1>
-          </NoneDecorationLink>
+            </FBC1>
+          </FooterLink>
         </PageLinks>
         <ServiceTime>
           <Lunch>
             <DayWrapper>
-              <BC1 color="white" marginBottom="xs">
+              <FBC1 color="white" marginBottom="xs">
                 Lunch
-              </BC1>
-              <BC1 color="white" marginBottom="sm">
+              </FBC1>
+              <FBC1 color="white" marginBottom="sm">
                 Monday-Friday
-              </BC1>
+              </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 Noon - 4.00 pm
-              </BC1>
+              </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
-              <BC1 color="white" marginBottom="xs">
+              <FBC1 color="white" marginBottom="xs">
                 Dinner
-              </BC1>
-              <BC1 color="white" marginBottom="sm">
+              </FBC1>
+              <FBC1 color="white" marginBottom="sm">
                 Tuesday-Sunday
-              </BC1>
+              </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 6 pm - late
-              </BC1>
+              </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 Monday
-              </BC1>
+              </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 Closed
-              </BC1>
+              </FBC1>
             </TimeWrapper>
           </Lunch>
         </ServiceTime>
         <PageLinks>
-          <BC1 color="white" marginBottom="xs">
+          <FBC1 color="white" marginBottom="xs">
             300 Smith St
-          </BC1>
-          <BC1 color="white" marginBottom="sm">
+          </FBC1>
+          <FBC1 color="white" marginBottom="sm">
             Colling Wood VIC 3066
-          </BC1>
-          <BC1 color="white" marginBottom="xs">
+          </FBC1>
+          <FBC1 color="white" marginBottom="xs">
             info@smithstbistrot.com.au
-          </BC1>
-          <BC1 color="white" marginBottom="sm">
+          </FBC1>
+          <FBC1 color="white" marginBottom="sm">
             03 9419 2202
-          </BC1>
-          <BC1 color="white" marginBottom="sm">
+          </FBC1>
+          <FBC1 color="white" marginBottom="sm">
             Scott Pickett Group
-          </BC1>
+          </FBC1>
         </PageLinks>
       </FooterLinksGrid>
       <MobileWrapper>
-        <BC1 color="white" bold>
+        <FBC1 color="white" bold>
           LOCATION & CONTACT DETAILS
-        </BC1>
+        </FBC1>
 
         <MobileSocialWrapper>
           <PageLinks>
-            <BC1 color="white" marginBottom="xs">
+            <FBC1 color="white" marginBottom="xs">
               300 Smith St
-            </BC1>
-            <BC1 color="white" marginBottom="sm">
+            </FBC1>
+            <FBC1 color="white" marginBottom="sm">
               Colling Wood VIC 3066
-            </BC1>
-            <BC1 color="white" marginBottom="xs">
+            </FBC1>
+            <FBC1 color="white" marginBottom="xs">
               info@smithstbistrot.com.au
-            </BC1>
-            <BC1 color="white" marginBottom="sm">
+            </FBC1>
+            <FBC1 color="white" marginBottom="sm">
               03 9419 2202
-            </BC1>
-            <BC1 color="white" marginBottom="sm">
+            </FBC1>
+            <FBC1 color="white" marginBottom="sm">
               Scott Pickett Group
-            </BC1>
+            </FBC1>
           </PageLinks>
           <SocialLinks>
             <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
@@ -147,44 +147,44 @@ const FooterLinks = () => {
         <ServiceTime>
           <Lunch>
             <DayWrapper>
-              <BC1 color="white" marginBottom="xs">
+              <FBC1 color="white" marginBottom="xs">
                 Lunch
-              </BC1>
-              <BC1 color="white" marginBottom="sm">
+              </FBC1>
+              <FBC1 color="white" marginBottom="sm">
                 Monday-Friday
-              </BC1>
+              </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 Noon - 4.00 pm
-              </BC1>
+              </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
-              <BC1 color="white" marginBottom="xs">
+              <FBC1 color="white" marginBottom="xs">
                 Dinner
-              </BC1>
-              <BC1 color="white" marginBottom="sm">
+              </FBC1>
+              <FBC1 color="white" marginBottom="sm">
                 Tuesday-Sunday
-              </BC1>
+              </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 6 pm - late
-              </BC1>
+              </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 Monday
-              </BC1>
+              </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <BC1 color="white" marginBottom="sm">
+              <FBC1 color="white" marginBottom="sm">
                 Closed
-              </BC1>
+              </FBC1>
             </TimeWrapper>
           </Lunch>
         </ServiceTime>

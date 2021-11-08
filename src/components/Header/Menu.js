@@ -17,7 +17,7 @@ import {
   InformationWrapper,
 } from "./Header.css"
 import { StaticImage } from "gatsby-plugin-image"
-import { BC1, Heading3 } from "../StyledComponents/typography.css"
+import { BC1, Heading2 } from "../StyledComponents/typography.css"
 import { color } from "../../components/StyledComponents/variables"
 
 const MenuComponent = () => {
@@ -49,7 +49,6 @@ const MenuComponent = () => {
     { title: "Home", pageNum: 0, to: "/" },
     { title: "Book a Table", pageNum: 1, to: "" },
     { title: "What's On", pageNum: 2, to: "/whats-on" },
-    { title: "Daily Spacials", pageNum: 3, to: "/food" },
     { title: "Wine", pageNum: 4, to: "/drinks" },
     { title: "Food", pageNum: 5, to: "/food" },
     { title: "Private Events", pageNum: 6, to: "/private-dining" },
@@ -75,9 +74,9 @@ const MenuComponent = () => {
                 to="#"
                 style={{ textDecoration: "none" }}
               >
-                <Heading3 color="white" style={{marginBottom: "1.25rem"}}>
+                <Heading2 color="white" marginBottom="sm">
                   {item.title}
-                </Heading3>
+                </Heading2>
               </Link>
             ) : (
               <Link
@@ -86,9 +85,9 @@ const MenuComponent = () => {
                 to={item.to}
                 style={{ textDecoration: "none" }}
               >
-                <Heading3 color="white" style={{marginBottom: "1.25rem"}}>
+                <Heading2 color="white" marginBottom="sm">
                   {item.title}
-                </Heading3>
+                </Heading2>
               </Link>
             )
           )}
@@ -105,9 +104,9 @@ const MenuComponent = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Heading3 color="white">
+                <Heading2 color="white">
                   {giftVouchersData.venueGiftVoucherHeading}
-                </Heading3>
+                </Heading2>
               </a>
               <MobileHiddenGiftItemImage
                 image={getImage(giftVouchersData.venueGiftVoucherImage)}
@@ -121,9 +120,9 @@ const MenuComponent = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Heading3 color="white">
+                <Heading2 color="white">
                   {giftVouchersData.scottPicketGroupGiftVoucherHeading}
-                </Heading3>
+                </Heading2>
               </a>
               <GiftItemImage
                 image={getImage(
@@ -136,7 +135,7 @@ const MenuComponent = () => {
         </GiftVouchersContainer>
         <InformationWrapper>
           <BC1 color="white" marginBottom="sm">
-            {giftVouchersData.address}
+            {giftVouchersData.address.toUpperCase()}
           </BC1>
           <BC1 color="white">{giftVouchersData.phoneNumber}</BC1>
         </InformationWrapper>

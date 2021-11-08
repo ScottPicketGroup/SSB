@@ -345,7 +345,7 @@ export const BC3 = styled.p`
       : props.color === "black"
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
-  font-size: 20px;
+  font-size: 10px;
   line-height: 26px;
   font-weight: ${props => props.bold ? "bold" : "normal"};
   margin-bottom: ${props => {
@@ -448,7 +448,7 @@ export const FBC1 = styled.p`
       : props.color === "black"
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
-  font-size: 20px;
+  font-size: 10px;
   line-height: 26px;
   font-weight: 500;
   margin-bottom: ${props => {
@@ -507,4 +507,8 @@ export const NoneDecorationLink = styled(Link)`
 `
 export const RedDecorationLink = styled(Link)`
   text-decoration-color: ${color.PRIMARY_RED_ROUGE};
+`
+
+export const RenderBC1 = styled(BC1)`
+  font-size: 18px;
 `

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Renderer from "../../../components/rich-text-renderers/BlackSample"
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { BC1, Heading2, Heading3 } from "../../StyledComponents/typography.css"
+import { BC1, Heading1, Heading3, NoneDecorationLink } from "../../StyledComponents/typography.css"
 import {
   FormWrapper,
   ContactUsContainer,
@@ -38,7 +38,7 @@ const ContactUs = () => {
   return (
     <SectionContainer marginBottom="lg" column>
       <DesktopHeadingWrapper>
-        <Heading2 color="black">Contact Us</Heading2>
+        <Heading1 color="black">Contact Us</Heading1>
       </DesktopHeadingWrapper>
       <MobileHeadingWrapper>
         <Heading3>Contact Us</Heading3>
@@ -52,12 +52,12 @@ const ContactUs = () => {
             {information.address}
           </BC1>
           <BC1 color="black">{information.findUsOnGoogleMapsHeading}</BC1>
-          <Link
+          <NoneDecorationLink
             to={information.findUsOnGoogleMapsUrl}
             style={{ marginBottom: "4.5rem" }}
           >
             <BC1 color="black">{information.findUsOnGoogleMapsUrl}</BC1>
-          </Link>
+          </NoneDecorationLink>
           <BC1 color="black" bold marginBottom="md">
             {information.openingHoursHeading}
           </BC1>
@@ -73,7 +73,7 @@ const ContactUs = () => {
             </BC1>
           </Link>
           <BC1 color="black" marginTop="md">
-            {information.tcsLinkHeading}
+            View our <Link to="/terms-conditions">privacy policy and terms & conditions</Link>
           </BC1>
         </InformationWrapper>
       </ContactUsContainer>

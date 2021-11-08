@@ -198,19 +198,7 @@ const ContactUsForm = () => {
                   err={error.guestNum}
                 />
               </InputContainer>
-              <TixboxContainer>
-                <div
-                  onClick={() =>
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))
-                  }
-                  aria-hidden="true"
-                >
-                  <CheckBox />
-                </div>
-                <BC1 color="black" style={{ width: `90%` }}>
-                  Receive updates from the Scott Pickett Group
-                </BC1>
-              </TixboxContainer>
+
               <InputContainer>
                 <Input
                   placeholder="Additional Note"
@@ -243,13 +231,26 @@ const ContactUsForm = () => {
                   />
                 </InputContainer>
               </ContactFormRow>
+              <TixboxContainer>
+                <div
+                  onClick={() =>
+                    setInputs(inputs => ({ ...inputs, newsletter: true }))
+                  }
+                  aria-hidden="true"
+                >
+                  <CheckBox />
+                </div>
+                <BC1 color="black" style={{ width: `90%` }}>
+                  Receive updates from the Scott Pickett Group
+                </BC1>
+              </TixboxContainer>
               <Button
                 onClick={handleSubmit}
                 err={error.email}
                 type="submit"
                 submit
               >
-                <BC1 color="black" style={{marginBottom: "0"}}>Submit</BC1>
+                <BC1 color="black" style={{ marginBottom: "0" }}>Submit</BC1>
               </Button>
             </ContactDetailsContainer>
           </SignUp>

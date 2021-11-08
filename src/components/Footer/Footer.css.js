@@ -1,7 +1,6 @@
 import styled, { keyframes } from "styled-components"
-import { Link } from "gatsby"
 import { color } from "../StyledComponents/variables"
-import { BC2 } from "../StyledComponents/typography.css"
+import { BC2, NoneDecorationLink } from "../StyledComponents/typography.css"
 export const FooterWrapper = styled.div`
   width: 100%;
   background: ${color.PRIMARY_RED_WINE};
@@ -40,49 +39,49 @@ export const FooterLinksColumn = styled.div`
   }
 `
 
-export const FooterLink = styled(Link)`
-  color: white;
-  margin-bottom: ${props => {
-    switch (props.marginBottom) {
-      case "sm":
-        return ".75rem"
-      case "md":
-        return "1.25rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "9.63rem"
-      default:
-        return "0"
-    }
-  }};
-  margin-top: ${props => {
-    switch (props.marginTop) {
-      case "sm":
-        return "1rem"
-      case "md":
-        return "1.5rem"
-      case "lg":
-        return "3.75rem"
-      case "xl":
-        return "8rem"
-      case "xxl":
-        return "100%"
-      default:
-        return "0"
-    }
-  }};
-  :hover {
-    font-family: bold;
-  }
-  @media (max-width: 450px) {
-    font-size: 1rem;
-    margin-bottom: 2.35rem;
-    line-height: 1.15;
-  }
-`
+// export const FooterLink = styled(Link)`
+//   color: white;
+//   margin-bottom: ${props => {
+//     switch (props.marginBottom) {
+//       case "sm":
+//         return ".75rem"
+//       case "md":
+//         return "1.25rem"
+//       case "lg":
+//         return "3.75rem"
+//       case "xl":
+//         return "8rem"
+//       case "xxl":
+//         return "9.63rem"
+//       default:
+//         return "0"
+//     }
+//   }};
+//   margin-top: ${props => {
+//     switch (props.marginTop) {
+//       case "sm":
+//         return "1rem"
+//       case "md":
+//         return "1.5rem"
+//       case "lg":
+//         return "3.75rem"
+//       case "xl":
+//         return "8rem"
+//       case "xxl":
+//         return "100%"
+//       default:
+//         return "0"
+//     }
+//   }};
+//   :hover {
+//     font-family: bold;
+//   }
+//   @media (max-width: 450px) {
+//     font-size: 1rem;
+//     margin-bottom: 2.35rem;
+//     line-height: 1.15;
+//   }
+// `
 
 const moveSlideshow = keyframes`
 100% { 
@@ -107,7 +106,7 @@ export const Logos = styled.div`
   svg,
   path,
   g {
-    fill: #f9f9f4;
+    fill: #ffffff;
   }
 
   /* @media screen and (max-width: 450px) {
@@ -122,10 +121,10 @@ export const Logos = styled.div`
   }
 `
 export const Logo = styled.div`
-  fill: #f9f9f4;
+  fill: #ffffff;
   margin-right: 70px;
   svg {
-    fill: #f9f9f4;
+    fill: #ffffff;
   }
 `
 
@@ -188,7 +187,7 @@ export const FormWrapper = styled.div`
 `
 
 export const Input = styled.input`
-  border-bottom: 1px solid ${color.PRIMARY_RED_ROUGE};
+  border-bottom: 1px solid #E88585;
   border-top: none;
   width: 30%;
   border-right: none;
@@ -196,14 +195,17 @@ export const Input = styled.input`
   padding: 0.5rem 0;
   background-color: ${color.SECONDARY_CREME};
   background: transperant;
+  font-family: PitchRegular;
   ::placeholder {
     color: #E88585;
     font-size: 12px;
     background: transperant;
+    font-family: PitchRegular;
   }
   :focus {
     outline: none;
     background: transparent;
+    font-family: PitchRegular;
   }
   @media screen and (max-width: 450px) {
     width: 100%;
@@ -252,5 +254,11 @@ export const MobileSocialWrapper = styled.div`
   text-align: left;
   @media(min-width: 450px){
     display: none;
+  }
+`
+export const FooterLink = styled(NoneDecorationLink)`
+  &:hover{
+    text-decoration: underline;
+    text-decoration-color: ${color.SECONDARY_WHITE};
   }
 `

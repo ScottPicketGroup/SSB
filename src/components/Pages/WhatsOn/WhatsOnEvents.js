@@ -1,7 +1,7 @@
 import React from "react"
 import {
   BC1,
-  Heading3,
+  Heading2,
   RedDecorationLink,
 } from "../../StyledComponents/typography.css"
 import {
@@ -33,7 +33,7 @@ const WhatsOnEvents = ({ events }) => {
               />
             )}
             <EventTextWrapper>
-              <Heading3 marginBottom="md">{item.eventTitle}</Heading3>
+              <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
               <RenderTextOverHiddenWrapper>
                 <Renderer node={item.eventDescription} />
               </RenderTextOverHiddenWrapper>

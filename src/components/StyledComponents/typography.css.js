@@ -507,6 +507,7 @@ export const NoneDecorationLink = styled(Link)`
 `
 export const RedDecorationLink = styled(Link)`
   text-decoration-color: ${color.PRIMARY_RED_ROUGE};
+  text-underline-offset: 5px;
 `
 
 export const RenderBC1 = styled(BC1)`

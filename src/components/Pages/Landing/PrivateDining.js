@@ -28,7 +28,7 @@ const PrivateDining = ({
             <BC1>{privateDiningIntro}</BC1>
           </RenderTextOverHiddenWrapper>
           <RedDecorationLink to="/private-dining">
-          <BC1>Learn more...&nbsp;&nbsp;</BC1>
+          <BC1>Learn more...&nbsp;</BC1>
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
       </PrivateDiningWrapper>

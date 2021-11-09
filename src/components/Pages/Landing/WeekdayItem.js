@@ -21,7 +21,7 @@ const WeekdayItem = ({ day, description }) => {
           <BC1 marginBottom="md">{description}</BC1>
         </RenderTextOverHiddenWrapper>
         <RedDecorationLink to="">
-          <BC1>Learn more...&nbsp;&nbsp;</BC1>
+          <BC1>Learn more...&nbsp;</BC1>
         </RedDecorationLink>
       </WeekdayItemDescriptionWrapper>
     </WeekdayItemWrapper>

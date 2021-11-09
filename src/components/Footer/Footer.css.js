@@ -122,7 +122,7 @@ export const Logos = styled.div`
 `
 export const Logo = styled.div`
   fill: #ffffff;
-  margin-right: 70px;
+  margin-right: 100px;
   svg {
     fill: #ffffff;
   }

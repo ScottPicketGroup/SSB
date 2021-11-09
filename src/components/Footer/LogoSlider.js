@@ -11,8 +11,8 @@ export default class LogoSlider extends Component {
         <a href="http://www.chancerylane.com.au" target="_blank" rel="noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="247.831"
-            height="27.568"
+            width="124"
+            height="24"
             viewBox="0 0 247.831 27.568"
             fill="#ffffff"
           >
@@ -27,7 +27,7 @@ export default class LogoSlider extends Component {
       </Logo>
       <Logo>
         <a href="http://www.leshoppe.com.au" target="_blank" rel="noreferrer">
-        <svg id="CL_LESHOPPE_NOCL_RGB_C" xmlns="http://www.w3.org/2000/svg" width="136" height="24.192" viewBox="0 0 136 24.192">
+        <svg id="CL_LESHOPPE_NOCL_RGB_C" xmlns="http://www.w3.org/2000/svg" width="84" height="24" viewBox="0 0 136 24.192">
   <path id="Path_10285" data-name="Path 10285" d="M11.941,21.192l-.016.032c-.008.017-.828,1.656-1.961,1.656h-2.4a.271.271,0,0,1-.267-.267v-12.5a.271.271,0,0,1,.267-.267h.681V9.551H5.669v.295h.295a.271.271,0,0,1,.267.267v12.5a.294.294,0,0,1-.267.267H5.669v.295h4.623c.233,0,.466,0,.551.11a.372.372,0,0,1,.011.319l-.021.075H11.1l1.142-2.4.04-.084Z" transform="translate(-5.669 -8.578)" fill="#fdf9ee"/>
   <path id="Path_10286" data-name="Path 10286" d="M26.746,20.846l-.016.032c-.008.017-.828,1.656-1.961,1.656H21.451a.271.271,0,0,1-.267-.267V14.418a.271.271,0,0,1,.267-.267h2.517a1.148,1.148,0,0,1,1.038,1.1v.059h.265V12.729h-.265v.059a1.132,1.132,0,0,1-1.038,1.067H21.451a.271.271,0,0,1-.267-.267V9.767a.271.271,0,0,1,.267-.267H24.5c1.134,0,1.924,1.582,1.932,1.6l.016.032h.275L25.652,8.735,25.636,8.7h-.274l.034.081a.275.275,0,0,1,.007.264c-.114.168-.519.166-.717.158h-5.13V9.5h.3a.294.294,0,0,1,.267.267v12.5a.294.294,0,0,1-.267.267h-.3v.295h5.331c.4,0,.646.061.743.186a.272.272,0,0,1,.031.244l-.021.073H25.9l1.082-2.4.037-.083Z" transform="translate(-11.323 -8.232)" fill="#fdf9ee"/>
   <rect id="Rectangle_4481" data-name="Rectangle 4481" width="2.271" height="2.267" transform="matrix(0.707, 0.707, -0.707, 0.707, 8.087, 19.955)" fill="#fdf9ee"/>
@@ -46,8 +46,8 @@ export default class LogoSlider extends Component {
         <a href="https://www.theestelle.com.au/" target="_blank" rel="noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="96.534"
-            height="34.959"
+            width="74"
+            height="33"
             viewBox="0 0 96.534 44.959"
           >
             <g
@@ -93,8 +93,8 @@ export default class LogoSlider extends Component {
       <a href="https://longrainmelbourne.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="210.167"
-          height="33.484"
+          width="126"
+          height="28"
           viewBox="0 0 210.167 33.484"
         >
           <g
@@ -193,8 +193,8 @@ export default class LogoSlider extends Component {
       <a href="https://longrainmelbourne.com/" style={{height: "64"}} target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="64.959"
+          width="91"
+          height="58"
           viewBox="0 0 71.607 44.959"
         >
           <g
@@ -428,8 +428,8 @@ export default class LogoSlider extends Component {
       <a href="https://matilda159.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="154.879"
-          height="33.485"
+          width="96"
+          height="28"
           viewBox="0 0 154.879 33.485"
         >
           <g
@@ -548,7 +548,7 @@ export default class LogoSlider extends Component {
       </Logo>
       <Logo>
         <a href="https://www.pickettsdeli.com/" target="_blank" rel="noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg"  width="60.487" height="62.674" viewBox="0 0 60.487 62.674">
+        <svg xmlns="http://www.w3.org/2000/svg"  width="62" height="62" viewBox="0 0 60.487 62.674">
   <defs>
     <clipPath id="clipPath">
       <path id="Path_10597" data-name="Path 10597" d="M519.774,168.148a.7.7,0,0,0,.324-.629.38.38,0,0,0-.151-.262l-.574.03a.561.561,0,0,1,.074-.761c.413-.363,1.154.137,1.134.666A1.131,1.131,0,0,1,519.774,168.148Z" transform="translate(-519.254 -166.404)" fill="#ffffff"/>
@@ -3804,8 +3804,8 @@ export default class LogoSlider extends Component {
       <a href="https://pastorerestaurant.com.au/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="119.141"
-          height="20.913"
+          width="78"
+          height="18"
           viewBox="0 0 119.141 20.913"
         >
           <g
@@ -3823,7 +3823,7 @@ export default class LogoSlider extends Component {
         </a>
       </Logo>
       <Logo>
-      <svg xmlns="http://www.w3.org/2000/svg" width="95.741" height="41.135" viewBox="0 0 95.741 41.135">
+      <svg xmlns="http://www.w3.org/2000/svg" width="83" height="42" viewBox="0 0 95.741 41.135">
 <g id="Group_5623" data-name="Group 5623" transform="translate(-1567 -5038.5)">
 <path id="Path_11580" data-name="Path 11580" d="M49.953,56.953q.21-.209.346-.325a.517.517,0,0,1,.346-.116.294.294,0,0,1,.2.073.89.89,0,0,1,.136.147,6.007,6.007,0,0,0,.97.875,6.137,6.137,0,0,0,1.122.645,6.361,6.361,0,0,0,1.211.4,5.685,5.685,0,0,0,1.227.136,7.592,7.592,0,0,0,1.682-.189,4.776,4.776,0,0,0,1.494-.6,3.344,3.344,0,0,0,1.069-1.064,2.893,2.893,0,0,0,.409-1.572,2.115,2.115,0,0,0-.2-.949,2.3,2.3,0,0,0-.561-.723,3.67,3.67,0,0,0-.828-.534,7.77,7.77,0,0,0-1-.393q-.529-.168-1.085-.3t-1.08-.247a17.029,17.029,0,0,1-2.27-.66,6.45,6.45,0,0,1-1.609-.849,3.2,3.2,0,0,1-.954-1.1,3.1,3.1,0,0,1-.315-1.426,3.88,3.88,0,0,1,.383-1.74,3.76,3.76,0,0,1,1.085-1.321,5.081,5.081,0,0,1,1.7-.839,7.861,7.861,0,0,1,2.222-.293,7.211,7.211,0,0,1,2.595.467,6.261,6.261,0,0,1,2.186,1.42q.136.136.2.215a.247.247,0,0,1,.068.163.307.307,0,0,1-.1.194q-.1.11-.314.309c-.063.056-.115.1-.157.136a.194.194,0,0,1-.126.052.655.655,0,0,1-.367-.2q-.367-.314-.77-.6a5.546,5.546,0,0,0-.886-.5,5.434,5.434,0,0,0-1.064-.351,5.9,5.9,0,0,0-1.295-.131,6.116,6.116,0,0,0-1.793.236,3.856,3.856,0,0,0-1.279.645,2.638,2.638,0,0,0-1.027,2.107,1.957,1.957,0,0,0,.168.833,2.155,2.155,0,0,0,.466.65,3.1,3.1,0,0,0,.7.5,7.085,7.085,0,0,0,.87.388q.466.173.98.309t1.027.252q.608.147,1.263.314t1.284.393a8.924,8.924,0,0,1,1.19.524,4.21,4.21,0,0,1,.986.718,3.038,3.038,0,0,1,.917,2.264,4.139,4.139,0,0,1-1.719,3.481,5.7,5.7,0,0,1-1.871.886,8.825,8.825,0,0,1-3.852.157,6.494,6.494,0,0,1-1.462-.451,6.314,6.314,0,0,1-2.448-1.923.975.975,0,0,1-.115-.157.333.333,0,0,1-.042-.168A.234.234,0,0,1,49.953,56.953Z" transform="translate(1517.142 4994.515)"/>
 <path id="Path_11581" data-name="Path 11581" d="M90.291,44.939a.466.466,0,0,1,.482-.482h4.969a4.684,4.684,0,0,1,1.887.383,4.88,4.88,0,0,1,2.573,2.573,4.847,4.847,0,0,1,0,3.774,4.89,4.89,0,0,1-2.565,2.573,4.611,4.611,0,0,1-1.869.383H91.5v5.4a.428.428,0,0,1-.486.482h-.254q-.465,0-.465-.482ZM99.4,49.3a3.6,3.6,0,0,0-.288-1.436,3.815,3.815,0,0,0-.78-1.174,3.614,3.614,0,0,0-2.586-1.08H91.5v7.38h4.25a3.614,3.614,0,0,0,2.586-1.08,3.81,3.81,0,0,0,.78-1.174A3.6,3.6,0,0,0,99.4,49.3Z" transform="translate(1493.817 4994.242)"/>
@@ -3842,8 +3842,8 @@ export default class LogoSlider extends Component {
       <a href="https://www.pickettandco.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="137.936"
-          height="42.463"
+          width="132"
+          height="43"
           viewBox="0 0 137.936 42.463"
         >
           <g
@@ -4025,8 +4025,8 @@ export default class LogoSlider extends Component {
         <a href="http://www.chancerylane.com.au" target="_blank" rel="noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="247.831"
-            height="27.568"
+            width="124"
+            height="24"
             viewBox="0 0 247.831 27.568"
             fill="#ffffff"
           >
@@ -4041,7 +4041,7 @@ export default class LogoSlider extends Component {
       </Logo>
       <Logo>
         <a href="http://www.leshoppe.com.au" target="_blank" rel="noreferrer">
-        <svg id="CL_LESHOPPE_NOCL_RGB_C" xmlns="http://www.w3.org/2000/svg" width="136" height="24.192" viewBox="0 0 136 24.192">
+        <svg id="CL_LESHOPPE_NOCL_RGB_C" xmlns="http://www.w3.org/2000/svg" width="84" height="24" viewBox="0 0 136 24.192">
   <path id="Path_10285" data-name="Path 10285" d="M11.941,21.192l-.016.032c-.008.017-.828,1.656-1.961,1.656h-2.4a.271.271,0,0,1-.267-.267v-12.5a.271.271,0,0,1,.267-.267h.681V9.551H5.669v.295h.295a.271.271,0,0,1,.267.267v12.5a.294.294,0,0,1-.267.267H5.669v.295h4.623c.233,0,.466,0,.551.11a.372.372,0,0,1,.011.319l-.021.075H11.1l1.142-2.4.04-.084Z" transform="translate(-5.669 -8.578)" fill="#fdf9ee"/>
   <path id="Path_10286" data-name="Path 10286" d="M26.746,20.846l-.016.032c-.008.017-.828,1.656-1.961,1.656H21.451a.271.271,0,0,1-.267-.267V14.418a.271.271,0,0,1,.267-.267h2.517a1.148,1.148,0,0,1,1.038,1.1v.059h.265V12.729h-.265v.059a1.132,1.132,0,0,1-1.038,1.067H21.451a.271.271,0,0,1-.267-.267V9.767a.271.271,0,0,1,.267-.267H24.5c1.134,0,1.924,1.582,1.932,1.6l.016.032h.275L25.652,8.735,25.636,8.7h-.274l.034.081a.275.275,0,0,1,.007.264c-.114.168-.519.166-.717.158h-5.13V9.5h.3a.294.294,0,0,1,.267.267v12.5a.294.294,0,0,1-.267.267h-.3v.295h5.331c.4,0,.646.061.743.186a.272.272,0,0,1,.031.244l-.021.073H25.9l1.082-2.4.037-.083Z" transform="translate(-11.323 -8.232)" fill="#fdf9ee"/>
   <rect id="Rectangle_4481" data-name="Rectangle 4481" width="2.271" height="2.267" transform="matrix(0.707, 0.707, -0.707, 0.707, 8.087, 19.955)" fill="#fdf9ee"/>
@@ -4059,8 +4059,8 @@ export default class LogoSlider extends Component {
         <a href="https://www.theestelle.com.au/" target="_blank" rel="noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="96.534"
-            height="34.959"
+            width="74"
+            height="33"
             viewBox="0 0 96.534 44.959"
           >
             <g
@@ -4106,8 +4106,8 @@ export default class LogoSlider extends Component {
       <a href="https://longrainmelbourne.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="210.167"
-          height="33.484"
+          width="126"
+          height="28"
           viewBox="0 0 210.167 33.484"
         >
           <g
@@ -4206,8 +4206,8 @@ export default class LogoSlider extends Component {
       <a href="https://longrainmelbourne.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="100"
-          height="64.959"
+          width="91"
+          height="58"
           viewBox="0 0 71.607 44.959"
         >
           <g
@@ -4441,8 +4441,8 @@ export default class LogoSlider extends Component {
       <a href="https://matilda159.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="154.879"
-          height="33.485"
+          width="96"
+          height="28"
           viewBox="0 0 154.879 33.485"
         >
           <g
@@ -4561,7 +4561,7 @@ export default class LogoSlider extends Component {
       </Logo>
      <Logo>
         <a href="https://www.pickettsdeli.com/" target="_blank" rel="noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg"  width="60.487" height="62.674" viewBox="0 0 60.487 62.674">
+        <svg xmlns="http://www.w3.org/2000/svg"  width="62" height="62" viewBox="0 0 60.487 62.674">
   <defs>
     <clipPath id="clipPath">
       <path id="Path_10597" data-name="Path 10597" d="M519.774,168.148a.7.7,0,0,0,.324-.629.38.38,0,0,0-.151-.262l-.574.03a.561.561,0,0,1,.074-.761c.413-.363,1.154.137,1.134.666A1.131,1.131,0,0,1,519.774,168.148Z" transform="translate(-519.254 -166.404)" fill="#ffffff"/>
@@ -7818,8 +7818,8 @@ export default class LogoSlider extends Component {
       <a href="https://pastorerestaurant.com.au/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="119.141"
-          height="20.913"
+          width="78"
+          height="18"
           viewBox="0 0 119.141 20.913"
         >
           <g
@@ -7840,8 +7840,8 @@ export default class LogoSlider extends Component {
       <a href="https://www.pickettandco.com/" target="_blank" rel="noreferrer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="137.936"
-          height="42.463"
+          width="132"
+          height="43"
           viewBox="0 0 137.936 42.463"
         >
           <g
@@ -8019,7 +8019,7 @@ export default class LogoSlider extends Component {
         </a>
       </Logo>
       <Logo>
-      <svg xmlns="http://www.w3.org/2000/svg" width="95.741" height="41.135" viewBox="0 0 95.741 41.135">
+      <svg xmlns="http://www.w3.org/2000/svg" width="83" height="42" viewBox="0 0 95.741 41.135">
 <g id="Group_5623" data-name="Group 5623" transform="translate(-1567 -5038.5)">
 <path id="Path_11580" data-name="Path 11580" d="M49.953,56.953q.21-.209.346-.325a.517.517,0,0,1,.346-.116.294.294,0,0,1,.2.073.89.89,0,0,1,.136.147,6.007,6.007,0,0,0,.97.875,6.137,6.137,0,0,0,1.122.645,6.361,6.361,0,0,0,1.211.4,5.685,5.685,0,0,0,1.227.136,7.592,7.592,0,0,0,1.682-.189,4.776,4.776,0,0,0,1.494-.6,3.344,3.344,0,0,0,1.069-1.064,2.893,2.893,0,0,0,.409-1.572,2.115,2.115,0,0,0-.2-.949,2.3,2.3,0,0,0-.561-.723,3.67,3.67,0,0,0-.828-.534,7.77,7.77,0,0,0-1-.393q-.529-.168-1.085-.3t-1.08-.247a17.029,17.029,0,0,1-2.27-.66,6.45,6.45,0,0,1-1.609-.849,3.2,3.2,0,0,1-.954-1.1,3.1,3.1,0,0,1-.315-1.426,3.88,3.88,0,0,1,.383-1.74,3.76,3.76,0,0,1,1.085-1.321,5.081,5.081,0,0,1,1.7-.839,7.861,7.861,0,0,1,2.222-.293,7.211,7.211,0,0,1,2.595.467,6.261,6.261,0,0,1,2.186,1.42q.136.136.2.215a.247.247,0,0,1,.068.163.307.307,0,0,1-.1.194q-.1.11-.314.309c-.063.056-.115.1-.157.136a.194.194,0,0,1-.126.052.655.655,0,0,1-.367-.2q-.367-.314-.77-.6a5.546,5.546,0,0,0-.886-.5,5.434,5.434,0,0,0-1.064-.351,5.9,5.9,0,0,0-1.295-.131,6.116,6.116,0,0,0-1.793.236,3.856,3.856,0,0,0-1.279.645,2.638,2.638,0,0,0-1.027,2.107,1.957,1.957,0,0,0,.168.833,2.155,2.155,0,0,0,.466.65,3.1,3.1,0,0,0,.7.5,7.085,7.085,0,0,0,.87.388q.466.173.98.309t1.027.252q.608.147,1.263.314t1.284.393a8.924,8.924,0,0,1,1.19.524,4.21,4.21,0,0,1,.986.718,3.038,3.038,0,0,1,.917,2.264,4.139,4.139,0,0,1-1.719,3.481,5.7,5.7,0,0,1-1.871.886,8.825,8.825,0,0,1-3.852.157,6.494,6.494,0,0,1-1.462-.451,6.314,6.314,0,0,1-2.448-1.923.975.975,0,0,1-.115-.157.333.333,0,0,1-.042-.168A.234.234,0,0,1,49.953,56.953Z" transform="translate(1517.142 4994.515)"/>
 <path id="Path_11581" data-name="Path 11581" d="M90.291,44.939a.466.466,0,0,1,.482-.482h4.969a4.684,4.684,0,0,1,1.887.383,4.88,4.88,0,0,1,2.573,2.573,4.847,4.847,0,0,1,0,3.774,4.89,4.89,0,0,1-2.565,2.573,4.611,4.611,0,0,1-1.869.383H91.5v5.4a.428.428,0,0,1-.486.482h-.254q-.465,0-.465-.482ZM99.4,49.3a3.6,3.6,0,0,0-.288-1.436,3.815,3.815,0,0,0-.78-1.174,3.614,3.614,0,0,0-2.586-1.08H91.5v7.38h4.25a3.614,3.614,0,0,0,2.586-1.08,3.81,3.81,0,0,0,.78-1.174A3.6,3.6,0,0,0,99.4,49.3Z" transform="translate(1493.817 4994.242)"/>

@@ -15,7 +15,7 @@ const PrivateDining = ({
   privateDiningIntro,
 }) => {
   return (
-    <SectionContainer>
+    <SectionContainer marginBottom="xl">
       <PrivateDiningWrapper first="true" dining="true">
         <PrivateDiningImage
           image={getImage(privateDiningImage)}

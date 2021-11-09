@@ -32,15 +32,15 @@ export const BrunchContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   @media (max-width: 451px) {
     height: 100%;
   }
 `
 export const BrunchHiddenOnMobImage = styled(GatsbyImage)`
   margin-top: 6rem;
-  width: 45%;
-  height: 35vw;
+  width: 40%;
+  height: 32vw;
   @media (max-width: 451px) {
     display: none;
   }
@@ -92,7 +92,7 @@ export const DessertContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 95%;
   text-align: left;
   @media (max-width: 451px) {
     height: 100%;

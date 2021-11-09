@@ -57,7 +57,7 @@ const Arrow = styled.i`
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inline-block;
-    padding: 3px;
+    padding: 4px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     width: 1rem;

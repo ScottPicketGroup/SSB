@@ -1,40 +1,25 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import Renderer from "../../../components/rich-text-renderers/BlackSample"
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { BC1, Heading1, Heading3, NoneDecorationLink } from "../../StyledComponents/typography.css"
+import {
+  BC1,
+  Heading1,
+  Heading3,
+  NoneDecorationLink,
+} from "../../StyledComponents/typography.css"
 import {
   FormWrapper,
   ContactUsContainer,
   InformationWrapper,
   DesktopHeadingWrapper,
-  MobileHeadingWrapper
+  MobileHeadingWrapper,
 } from "./ContactUs.css"
 import ContactUsForm from "./ContactUsForm/ContactUsForm"
 
-const ContactUs = () => {
-  const data = useStaticQuery(graphql`
-    query contactUsQuery {
-      allContentfulContactUsPageContent {
-        nodes {
-          address
-          emailAddress
-          findUsOnGoogleMapsHeading
-          findUsOnGoogleMapsUrl
-          phoneNumber
-          tcsLinkHeading
-          openingHoursHeading
-          hoursToBeDisplayed {
-            raw
-          }
-        }
-      }
-    }
-  `)
+const ContactUs = ({...data}) => {
 
-  const information = data.allContentfulContactUsPageContent.nodes[0]
   return (
     <SectionContainer marginBottom="lg" column>
       <DesktopHeadingWrapper>
@@ -49,31 +34,34 @@ const ContactUs = () => {
         </FormWrapper>
         <InformationWrapper>
           <BC1 color="black" marginBottom="md">
-            {information.address}
+            {data.address}
           </BC1>
-          <BC1 color="black">{information.findUsOnGoogleMapsHeading}</BC1>
+          <BC1 color="black">{data.findUsOnGoogleMapsHeading}</BC1>
           <NoneDecorationLink
-            to={information.findUsOnGoogleMapsUrl}
+            to={data.findUsOnGoogleMapsUrl}
             style={{ marginBottom: "4.5rem" }}
           >
-            <BC1 color="black">{information.findUsOnGoogleMapsUrl}</BC1>
+            <BC1 color="black">{data.findUsOnGoogleMapsUrl}</BC1>
           </NoneDecorationLink>
           <BC1 color="black" bold marginBottom="md">
-            {information.openingHoursHeading}
+            {data.openingHoursHeading}
           </BC1>
-          <Renderer node={information.hoursToBeDisplayed} />
-          <Link to={information.phoneNumber}>
+          <Renderer node={data.hoursToBeDisplayed} />
+          <Link to={data.phoneNumber}>
             <BC1 color="black" marginTop="md" marginBottom="sm">
-              {information.phoneNumber}
+              {data.phoneNumber}
             </BC1>
           </Link>
-          <Link to={information.emailAddress}>
+          <Link to={data.emailAddress}>
             <BC1 color="black" marginBottom="xl">
-              {information.emailAddress}
+              {data.emailAddress}
             </BC1>
           </Link>
           <BC1 color="black" marginTop="md">
-            View our <Link to="/terms-conditions">privacy policy and terms & conditions</Link>
+            View our{" "}
+            <Link to="/terms-conditions">
+              privacy policy and terms & conditions
+            </Link>
           </BC1>
         </InformationWrapper>
       </ContactUsContainer>

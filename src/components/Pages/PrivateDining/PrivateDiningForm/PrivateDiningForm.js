@@ -11,10 +11,10 @@ import {
   Label,
   Button,
   ContactFormRow
-} from "./ContactUsForm.css"
+} from "./PrivateDiningForm.css"
 import CheckBox from "./CheckBox"
 import Dropdown from "./Dropdown"
-const ContactUsForm = () => {
+const PrivateDiningForm = () => {
   const functionURL = "https://pear-cobra-4528.twil.io/send-email"
   const [error, setError] = useState({
     fName: false,
@@ -253,4 +253,4 @@ const ContactUsForm = () => {
   )
 }
 
-export default ContactUsForm
+export default PrivateDiningForm

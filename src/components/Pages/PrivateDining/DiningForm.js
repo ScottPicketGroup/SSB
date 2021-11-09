@@ -1,18 +1,18 @@
 import React from "react"
 
 import { Heading2 } from "../../StyledComponents/typography.css"
-import ContactUsForm from "./ContactUsForm/ContactUsForm"
+import PrivateDiningForm from "./PrivateDiningForm/PrivateDiningForm"
 import { FormWrapper, TitleWrapper } from "./PrivateDining.css"
 
-const PrivateDiningForm = ({ makeAndEnquiryHeading }) => {
+const DiningForm = ({ makeAndEnquiryHeading }) => {
   return (
     <FormWrapper>
       <TitleWrapper>
         <Heading2 color="black">{makeAndEnquiryHeading}</Heading2>
       </TitleWrapper>
-      <ContactUsForm />
+      <PrivateDiningForm />
     </FormWrapper>
   )
 }
 
-export default PrivateDiningForm
+export default DiningForm

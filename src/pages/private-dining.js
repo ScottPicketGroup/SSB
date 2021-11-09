@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Intro from "../components/Pages/PrivateDining/Intro"
 import GallaryAndDescription from "../components/Pages/PrivateDining/GallaryAndDescription"
-import PrivateDiningForm from "../components/Pages/PrivateDining/PrivateDiningForm"
+import DiningForm from "../components/Pages/PrivateDining/DiningForm"
 
 const PrivateDingingPage = ({ data }) => {
   const {
@@ -25,7 +25,7 @@ const PrivateDingingPage = ({ data }) => {
         description={description}
         eventsPackageLinkText={eventsPackageLinkText}
       />
-      <PrivateDiningForm makeAndEnquiryHeading={makeAndEnquiryHeading} />
+      <DiningForm makeAndEnquiryHeading={makeAndEnquiryHeading} />
     </Layout>
   )
 }

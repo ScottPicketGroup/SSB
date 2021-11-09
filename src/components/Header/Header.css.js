@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   top: 0;
   z-index: 1;
   background: #fff;
-  padding: 3.5rem 16rem 1.75rem;
+  padding: 3.5rem 8rem 1.75rem;
 
   @media (max-width: 451px) {
     padding: 1rem 1.5rem 3.5rem;

@@ -6,12 +6,13 @@ const Dropdown = ({ title, options, dropWidth }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
 
-    const toggling = () => setIsOpen(!isOpen);
+    const toggling = () => {
+        setIsOpen(!isOpen);
+    }
 
     const onOptionClicked = value => () => {
         setSelectedOption(value);
         setIsOpen(false);
-        console.log(selectedOption);
     };
 
     return (
@@ -21,6 +22,7 @@ const Dropdown = ({ title, options, dropWidth }) => {
             </DropDownHeader>
             <DropDownListContainer isOpen={isOpen} dropWidth={dropWidth}>
                 <DropDownList isOpen={isOpen}>
+                    <ListItem onClick={onOptionClicked(title)} color="grey">{title}</ListItem>
                     {options.map(option => {
                         return(<ListItem onClick={onOptionClicked(option)}>
                             {option}
@@ -66,7 +68,8 @@ const Arrow = styled.i`
 
 const DropDownListContainer = styled("div")`
     position:absolute;
-    max-height: 15rem;
+    max-height: ${props => (props.isOpen ? "15rem" : "0rem")};
+    transition: max-height 0.2s ease-in-out;
     overflow-y: ${props => (props.isOpen ? "scroll" : "hidden")};
     width: ${props=>props.dropWidth ? props.dropWidth : "19%"};
     @media(max-width: 451px){
@@ -77,9 +80,9 @@ const DropDownListContainer = styled("div")`
 const DropDownList = styled("ul")`
   padding: 0;
   margin: 0;
-  padding-left: 1em;
   background: #ffffff;
   border: 2px solid #e5e5e5;
+  border-right: none;
   box-sizing: border-box;
   color: #3faffa;
   font-size: 1.3rem;
@@ -96,7 +99,7 @@ const ListItem = styled("li")`
   margin-bottom: 0.8em;
   font-size: 16px;
   font-family: PitchRegular;
-  color: black;
+  color: ${props=>props.color ? "grey" : "black"};
   background: #ffffff;
   &:hover{
       background: black;

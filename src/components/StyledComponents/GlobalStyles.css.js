@@ -20,6 +20,25 @@ const GlobalStyles = createGlobalStyle`
   h1 {
     font-weight: normal;
   }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    border: 1px solid lightgrey;
+    border-radius: 1px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    background: lightgrey;  
+    border-radius: 1px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+    background: grey;  
+    }
 `
 
 export default GlobalStyles

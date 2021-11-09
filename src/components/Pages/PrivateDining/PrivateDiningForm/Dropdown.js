@@ -1,10 +1,11 @@
 import React from "react"
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
 const Dropdown = ({ title, options, dropWidth }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
+    const ref = useRef(null)
 
     const toggling = () => {
         setIsOpen(!isOpen);
@@ -15,8 +16,21 @@ const Dropdown = ({ title, options, dropWidth }) => {
         setIsOpen(false);
     };
 
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ref]);
+
     return (
-        <DropDownContainer>
+        <DropDownContainer ref={ref}>
             <DropDownHeader onClick={toggling}>
                 {selectedOption ||  title }<Arrow />
             </DropDownHeader>
@@ -90,19 +104,19 @@ const DropDownList = styled("ul")`
   transform: translateY(${props => (props.isOpen ? "unset" : "-100%")});
   transition: transform 0.5s ease-in-out;
   &:first-child {
-    padding-top: 0.8em;
+    padding-top: 0.2em;
   }
 `;
 
 const ListItem = styled("li")`
   list-style: none;
-  margin-bottom: 0.8em;
+  padding: 0.4em;
   font-size: 16px;
   font-family: PitchRegular;
   color: ${props=>props.color ? "grey" : "black"};
   background: #ffffff;
   &:hover{
-      background: black;
+      background: grey;
       color: white;
   }
 `;

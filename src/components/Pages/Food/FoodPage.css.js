@@ -13,8 +13,9 @@ export const MenuDuJourContainer = styled.div`
     props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
     width : 301px;
-  height: ${props => props.menus === "brunch" ? "529px" : "445px"};
+    height: ${props => props.menus === "brunch" ? "529px" : "445px"};
     margin: 0 auto;
+    overflow-y: scroll;
   }
 `
 export const SeasonalTitleWrapper = styled.div`
@@ -218,5 +219,56 @@ export const DessertWrapper = styled(MenuDuJourContainer)`
     & h2{
       margin-top: 1.75rem;
     }
+  }
+`
+export const FoodContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width : 776px;
+  height: 1056px;
+  align-items: center;
+  background-color: ${color.SECONDARY_WHITE};
+  margin-bottom: 6rem;
+  @media (max-width: 451px) {
+    width : 301px;
+    height: 628px;
+    margin: 0 auto 3.5rem;
+    overflow-x: scroll;
+  }
+`
+
+export const FoodItemWrapper = styled.div`
+  width: 80%;
+  padding: 0 3.5rem 0 2.5rem;
+  margin-bottom: 2rem;
+  @media (max-width: 451px) {
+    margin-bottom: 1rem;
+    padding: 0 1rem 0 0;
+  }
+`
+export const FoodSectionItemWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+export const FoodTitleWrapper = styled.div`
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  @media (max-width: 451px) {
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
+  }
+`
+
+export const FoodSeasonalTitleWrapper = styled.div`
+  position: absolute;
+  top: 3.5rem;
+  right: 6%;
+  text-align: left;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  @media (max-width: 451px) {
+    top: 1rem;
   }
 `

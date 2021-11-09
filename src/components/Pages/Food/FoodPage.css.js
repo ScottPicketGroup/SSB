@@ -226,13 +226,13 @@ export const FoodContainer = styled.div`
   display: flex;
   flex-direction: column;
   width : 776px;
-  height: 1056px;
+  height: 1156px;
   align-items: center;
   background-color: ${color.SECONDARY_WHITE};
   margin-bottom: 6rem;
   @media (max-width: 451px) {
     width : 301px;
-    height: 628px;
+    height: 728px;
     margin: 0 auto 3.5rem;
     overflow-x: scroll;
   }
@@ -270,5 +270,11 @@ export const FoodSeasonalTitleWrapper = styled.div`
   text-orientation: upright;
   @media (max-width: 451px) {
     top: 1rem;
+  }
+`
+export const BrunchHeadingWrapper = styled.div`
+  margin-top: 3.5rem;
+  @media (max-width: 451px) {
+    margin-top: 0rem;
   }
 `

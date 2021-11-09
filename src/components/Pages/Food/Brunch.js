@@ -9,6 +9,7 @@ import {
   BrunchHorizontalImageWrapper,
   BrunchVerticalImageWrapper,
   MenuDuJourItemWrapper,
+  BrunchHeadingWrapper
 } from "./FoodPage.css"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
@@ -31,9 +32,11 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
               <BC2 color="black">{item.menuItemDescription ? item.menuItemDescription : null}</BC2>
             </MenuDuJourItemWrapper>
           ))}
+          <BrunchHeadingWrapper>
           <Heading2 marginBottom="md" style={{fontSize: "1.75rem"}} color="black">
             {bottomMenuTitle}
           </Heading2>
+          </BrunchHeadingWrapper>
         </MenuDuJourContainer>
 
         <BrunchHiddenOnMobImage

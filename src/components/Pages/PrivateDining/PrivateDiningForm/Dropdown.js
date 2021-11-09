@@ -84,8 +84,8 @@ const DropDownListContainer = styled("div")`
     position:absolute;
     max-height: ${props => (props.isOpen ? "15rem" : "0rem")};
     transition: max-height 0.2s ease-in-out;
-    overflow-y: ${props => (props.isOpen ? "scroll" : "hidden")};
-    width: ${props=>props.dropWidth ? props.dropWidth : "19%"};
+    overflow-y: hidden;
+    width: ${props=>props.dropWidth ? props.dropWidth : "19.2%"};
     @media(max-width: 451px){
         width: ${props=>props.dropWidth ? "90%" : "43%"};
     }
@@ -95,9 +95,10 @@ const DropDownList = styled("ul")`
   padding: 0;
   margin: 0;
   background: #ffffff;
-  border: 2px solid #e5e5e5;
-  border-right: none;
+  border: 1px solid black;
   box-sizing: border-box;
+  max-height: 15rem;
+  overflow-y: scroll;
   color: #3faffa;
   font-size: 1.3rem;
   font-weight: 500;
@@ -116,7 +117,7 @@ const ListItem = styled("li")`
   color: ${props=>props.color ? "grey" : "black"};
   background: #ffffff;
   &:hover{
-      background: grey;
+      background: black;
       color: white;
   }
 `;

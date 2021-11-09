@@ -185,7 +185,7 @@ const PrivateDiningForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <Dropdown title="Type Of Events" options={eventsTypes} dropWidth="40%" />
+                <Dropdown title="Type Of Events" options={eventsTypes} dropWidth="40.1%" />
               </InputContainer>
 
               <InputContainer>

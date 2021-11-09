@@ -19,8 +19,8 @@ const Header = ({ landing }) => {
     <HeaderContainer ref={headerRef}>
       {elementWidth > 450 ? (
         <HeaderLogoWrapper>
-          <div style={{width: "20%"}}>
-          <Link to="/book-a-table">
+          <div style={{width: "10%"}}>
+          <Link to="/reservations">
             <BC1 style={{ fontWeight: "bold" }}>BOOK A TABLE</BC1>
           </Link>
           </div>

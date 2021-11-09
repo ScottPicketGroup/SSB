@@ -38,7 +38,7 @@ const Desserts = ({ dessertData }) => {
         ))}
         <DessertDrinkSectionContainer>
           {drinksSection.drinkMenuItems.map((item, index) => (
-            <DessertDrinkSectionWrapper>
+            <DessertDrinkSectionWrapper key={index}>
               <DessertDrinkSectionItemWrapper>
                 <BC2 color="black" bold>
                   {item.menuItem}

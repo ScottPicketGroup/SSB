@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "gatsby"
 
-import { BC1, BC2 } from "../StyledComponents/typography.css"
+import { BC1 } from "../StyledComponents/typography.css"
 import { HeaderContainer, HeaderLogoWrapper } from "./Header.css"
 import MenuHamburgerIcon from "../Icons/MenuHamburgerIcon"
 import useActiveMenu from "../hooks/ActiveMenu"

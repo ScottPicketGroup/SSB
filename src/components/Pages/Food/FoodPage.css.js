@@ -49,7 +49,7 @@ export const BrunchHiddenOnMobImage = styled(GatsbyImage)`
   width: 335px;
   height: 419px;
   @media (max-width: 451px) {
-    display: none;
+    display: none !important;
     width: 26vw;
   height: 32vw;
   }

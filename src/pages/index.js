@@ -21,36 +21,20 @@ const IndexPage = ({ data }) => {
     privateDiningImage,
     privateDiningIntro,
     whatsOnEvents,
-    gallery,
+    weekdaySpecials,
+    gallery
   } = data.allContentfulLandingPageContent.edges[0].node
 
-  const weekdays = [
-    { day: "Mondays", description: "Lorem ipsum dolor sit amet, consectetur" },
-    { day: "Tuesdays", description: "Lorem ipsum dolor sit amet, consectetur" },
-    {
-      day: "Wednesdays",
-      description: "Lorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      day: "Thursdays",
-      description: "Lorem ipsum dolor sit amet, consectetur",
-    },
-    { day: "Fridays", description: "Lorem ipsum dolor sit amet, consectetur" },
-  ]
 
   return (
     <Layout landing>
       <Seo title="Home" />
-      <Hero
-        heroImage={heroImage}
-        heroImageTitle={heroImageTitle}
-        alt="landing-hero-image"
-      />
+      <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} alt="landing-hero-image" />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
       <WineAndFood />
       <Gallery gallery={gallery} />
       <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
-      <Weekday data={weekdays} />
+      <Weekday data={weekdaySpecials} />
       <PrivateDining
         privateDiningHeading={privateDiningHeading}
         privateDiningImage={privateDiningImage}
@@ -64,17 +48,11 @@ export default IndexPage
 
 export const landingPageData = graphql`
   query LandingPageQuery {
-    allContentfulLandingPageContent(
-      filter: { id: { eq: "697e74b8-78b0-5e7e-a5b7-8083468156be" } }
-    ) {
+    allContentfulLandingPageContent {
       edges {
         node {
           heroImage {
-            gatsbyImageData(
-              placeholder: BLURRED
-              layout: FULL_WIDTH
-              aspectRatio: 1.9
-            )
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
           heroImageTitle
           quoteHeading
@@ -82,26 +60,25 @@ export const landingPageData = graphql`
             raw
           }
           gallery {
-            gatsbyImageData(
-              placeholder: BLURRED
-              layout: FULL_WIDTH
-              aspectRatio: 1.5
-            )
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
           whatsOnEvents {
             events {
               id
               eventMenuImage {
-                gatsbyImageData(
-                  placeholder: BLURRED
-                  layout: FULL_WIDTH
-                  aspectRatio: 1.5
-                )
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 1.5)
               }
               eventDescription {
                 raw
               }
               eventTitle
+            }
+          }
+          weekdaySpecials {
+            circularMenuText
+              menuDuJourMenuItems {
+              menuItem
+              day
             }
           }
           privateDiningHeading

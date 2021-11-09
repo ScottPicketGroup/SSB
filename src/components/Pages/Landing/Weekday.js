@@ -19,13 +19,12 @@ const Weekday = ({ data }) => {
             width={400}
           />
         </CircleImageWrapper>
-
         <WeekdayItemsWrapper>
-          {data.map((item, index) => (
+          {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem
               key={index}
               day={item.day}
-              description={item.description}
+              description={item.menuItem}
             />
           ))}
         </WeekdayItemsWrapper>

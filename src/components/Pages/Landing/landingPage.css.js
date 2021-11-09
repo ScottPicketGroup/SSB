@@ -169,7 +169,7 @@ export const WeekdayItemDescriptionWrapper = styled.div`
 `
 export const CircleImageWrapper = styled.div`
   position: relative;
-  width: 16vw;
+  width: 26vw;
   @media (max-width: 451px) {
     position: absolute;
     width: 40vw;

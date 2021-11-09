@@ -24,8 +24,8 @@ const DrinksPage = ({ data }) => {
   } = data.allContentfulWineMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
-    const pos = itemsRef.current[el].getBoundingClientRect().top -150
-    window.scrollTo({top: pos, behavior: "smooth"})
+    const pos = itemsRef.current[el].getBoundingClientRect().top - 150
+    window.scrollTo({ top: pos, behavior: "smooth" })
   }
 
   return (
@@ -61,7 +61,9 @@ export default DrinksPage
 
 export const drinksPageData = graphql`
   query MyQuery {
-    allContentfulWineMenuPageContent {
+    allContentfulWineMenuPageContent(
+      filter: { id: { eq: "804fda2b-67d4-560e-a295-cc60e22096fa" } }
+    ) {
       nodes {
         pageHeading
         wineByTheGlassMenu {
@@ -98,6 +100,7 @@ export const drinksPageData = graphql`
           gatsbyImageData(
             layout: FULL_WIDTH
             placeholder: BLURRED
+            aspectRatio: 1.5
           )
         }
       }

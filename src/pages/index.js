@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
     privateDiningImage,
     privateDiningIntro,
     whatsOnEvents,
-    gallery
+    gallery,
   } = data.allContentfulLandingPageContent.edges[0].node
 
   const weekdays = [
@@ -41,7 +41,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout landing>
       <Seo title="Home" />
-      <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} alt="landing-hero-image" />
+      <Hero
+        heroImage={heroImage}
+        heroImageTitle={heroImageTitle}
+        alt="landing-hero-image"
+      />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
       <WineAndFood />
       <Gallery gallery={gallery} />
@@ -60,11 +64,17 @@ export default IndexPage
 
 export const landingPageData = graphql`
   query LandingPageQuery {
-    allContentfulLandingPageContent {
+    allContentfulLandingPageContent(
+      filter: { id: { eq: "697e74b8-78b0-5e7e-a5b7-8083468156be" } }
+    ) {
       edges {
         node {
           heroImage {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              aspectRatio: 1.9
+            )
           }
           heroImageTitle
           quoteHeading
@@ -72,13 +82,21 @@ export const landingPageData = graphql`
             raw
           }
           gallery {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              aspectRatio: 1.5
+            )
           }
           whatsOnEvents {
             events {
               id
               eventMenuImage {
-                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 1.5)
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  layout: FULL_WIDTH
+                  aspectRatio: 1.5
+                )
               }
               eventDescription {
                 raw

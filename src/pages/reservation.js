@@ -34,17 +34,16 @@ export default ReservationPage
 
 export const reservationPageData = graphql`
   query ReservationQuery {
-    allContentfulReservationsPageContent {
+    allContentfulReservationsPageContent(
+      filter: { id: { eq: "22f1b23c-cd97-5652-8a58-d8c038e6a1f7" } }
+    ) {
       nodes {
         pageTitle
         introduction {
           raw
         }
         image {
-          gatsbyImageData(
-            layout: FULL_WIDTH
-            placeholder: BLURRED
-          )
+          gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, aspectRatio: 1.5)
         }
         privateFunctionsHeading
         bookATableHeading

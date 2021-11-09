@@ -22,7 +22,7 @@ const FoodPage = ({ data }) => {
     brunch,
     desserts,
     imageAdjacentToBrunchMenuHiddenOnMob,
-    lunchAndDinner
+    lunchAndDinner,
   } = data.allContentfulFoodMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
@@ -72,7 +72,9 @@ export default FoodPage
 
 export const foodPageData = graphql`
   query FoodPageQuery {
-    allContentfulFoodMenuPageContent {
+    allContentfulFoodMenuPageContent(
+      filter: { id: { eq: "f6da1586-4740-58e3-80ab-f21842256b5a" } }
+    ) {
       nodes {
         pageTitle
         menuDuJour {
@@ -88,7 +90,7 @@ export const foodPageData = graphql`
         brunch {
           bottomMenuTitle
           menuLogo {
-            gatsbyImageData
+            gatsbyImageData(aspectRatio: 4.2)
           }
           menuItems {
             menuItem
@@ -97,7 +99,7 @@ export const foodPageData = graphql`
           }
         }
         imageAdjacentToBrunchMenuHiddenOnMob {
-          gatsbyImageData
+          gatsbyImageData(aspectRatio: 1.8)
         }
         lunchAndDinner {
           menuItems {

@@ -1,5 +1,5 @@
 import React from "react"
-import { BC1, Heading3, RedDecorationLink } from "../../StyledComponents/typography.css"
+import { BC1, Heading2, RedDecorationLink } from "../../StyledComponents/typography.css"
 import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
@@ -23,7 +23,7 @@ const PrivateDining = ({
           first="true"
         />
         <PrivateDiningTextWrapper dining="true">
-          <Heading3 marginBottom="md">{privateDiningHeading}</Heading3>
+          <Heading2 marginBottom="md">{privateDiningHeading}</Heading2>
           <RenderTextOverHiddenWrapper first="true">
             <BC1>{privateDiningIntro}</BC1>
           </RenderTextOverHiddenWrapper>

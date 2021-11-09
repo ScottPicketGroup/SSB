@@ -6,8 +6,8 @@ import WhatsOnEvents from "../components/Pages/WhatsOn/WhatsOnEvents"
 import Intro from "../components/Pages/WhatsOn/Intro"
 
 const WhatsOnPage = ({ data }) => {
-
-    const { events, pageHeading } = data.allContentfulWhatsOnPageEventsLandingPageContent.edges[0].node
+  const { events, pageHeading } =
+    data.allContentfulWhatsOnPageEventsLandingPageContent.edges[0].node
   return (
     <Layout>
       <Seo title="Home" />
@@ -20,8 +20,10 @@ const WhatsOnPage = ({ data }) => {
 export default WhatsOnPage
 
 export const whatsOnPageData = graphql`
-query WhatsOnQuery {
-    allContentfulWhatsOnPageEventsLandingPageContent {
+  query WhatsOnQuery {
+    allContentfulWhatsOnPageEventsLandingPageContent(
+      filter: { id: { eq: "4437fbd8-135c-5422-b690-67964664d1f9" } }
+    ) {
       edges {
         node {
           id
@@ -33,7 +35,11 @@ query WhatsOnQuery {
               raw
             }
             eventMenuImage {
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(
+                layout: FULL_WIDTH
+                placeholder: BLURRED
+                aspectRatio: 1.5
+              )
             }
           }
         }

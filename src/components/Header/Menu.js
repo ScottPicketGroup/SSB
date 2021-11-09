@@ -24,18 +24,28 @@ const MenuComponent = () => {
   const { menuOpen, setMenuOpen, giftOpen, setGiftOpen } = useActiveMenu()
   const data = useStaticQuery(graphql`
     query giftVouchersQuery {
-      allContentfulGiftVouchersPageContent {
+      allContentfulGiftVouchersPageContent(
+        filter: { id: { eq: "2aba3ce8-60f6-5edb-b6cd-37b5e9cfddfb" } }
+      ) {
         nodes {
           address
           phoneNumber
           venueGiftVoucherHeading
           venueGiftVoucherImage {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              aspectRatio: 1.5
+            )
           }
           smithStBistroGiftVoucherLink
           scottPicketGroupGiftVoucherHeading
           spgGiftVoucherImageOnlyImageOnMob {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              aspectRatio: 1.5
+            )
           }
           spgGvLink
         }

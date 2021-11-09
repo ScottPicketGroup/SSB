@@ -20,7 +20,11 @@ const PrivateDingingPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <Intro pageHeading={pageHeadnig} introduction={introduction} />
-      <GallaryAndDescription gallery={gallery} description={description} eventsPackageLinkText={eventsPackageLinkText} />
+      <GallaryAndDescription
+        gallery={gallery}
+        description={description}
+        eventsPackageLinkText={eventsPackageLinkText}
+      />
       <PrivateDiningForm makeAndEnquiryHeading={makeAndEnquiryHeading} />
     </Layout>
   )
@@ -30,7 +34,9 @@ export default PrivateDingingPage
 
 export const privateDiningPageData = graphql`
   query PrivateDiningQuery {
-    allContentfulPrivateDiningPageContent {
+    allContentfulPrivateDiningPageContent(
+      filter: { id: { eq: "1d66eb88-1242-5a61-9f0a-5643609cee15" } }
+    ) {
       nodes {
         pageHeadnig
         introduction
@@ -38,6 +44,7 @@ export const privateDiningPageData = graphql`
           gatsbyImageData(
             layout: FULL_WIDTH
             placeholder: BLURRED
+            aspectRatio: 1.4
           )
         }
         description {

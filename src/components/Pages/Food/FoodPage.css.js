@@ -32,17 +32,25 @@ export const BrunchContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
+  // width: 80%;
+  width: 850px;
+  margin: 0 auto;
+  @media (max-width: 900px) {
+    width: 80%;
+  }
   @media (max-width: 451px) {
     height: 100%;
+    width: 80%;
   }
 `
 export const BrunchHiddenOnMobImage = styled(GatsbyImage)`
   margin-top: 6rem;
-  width: 40%;
-  height: 32vw;
+  width: 335px;
+  height: 419px;
   @media (max-width: 451px) {
     display: none;
+    width: 26vw;
+  height: 32vw;
   }
 `
 export const BrunchVerticalImageWrapper = styled.div`
@@ -92,11 +100,16 @@ export const DessertContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 95%;
+  width: 900px;
+  margin:0 auto;
   text-align: left;
+  @media (max-width: 900px) {
+    width: 80%;
+  }
   @media (max-width: 451px) {
     height: 100%;
     flex-direction: column;
+    width: 100%;
   }
 `
 export const DessertSeasonalTitleWrapper = styled.div`
@@ -111,8 +124,8 @@ export const DessertSeasonalTitleWrapper = styled.div`
 `
 export const DessertImage = styled(GatsbyImage)`
   margin-top: 6rem;
-  width: 45%;
-  height: 30vw;
+  width: 383px;
+  height: 395px;
   margin-bottom: 6rem;
   @media (max-width: 451px) {
     width: 70%;
@@ -193,7 +206,7 @@ export const DessertDrinkSectionItemWrapper = styled.div`
   justify-content: space-between;
 `
 export const DessertWrapper = styled(MenuDuJourContainer)`
-  background-color: #ac785b;
+  background-color: #D39C6E;
   padding-top: 3.5rem;
   padding-left: 5.5rem;
   padding-right: 5.25rem;

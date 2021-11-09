@@ -141,7 +141,11 @@ export const WinesByTheGlassWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 90%;
+  width: 900px;
+  @media(max-width: 451px){
+    width: 90%;
+    margin:0 auto;
+  }
 `
 export const WineSectionWrapper = styled.div`
   margin-bottom: 1.75rem;
@@ -155,7 +159,11 @@ export const WineSectionItemWrapper = styled.div`
 export const CocktailContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 71%;
+  width: 1050px;
+  @media(max-width: 1000px){
+    flex-direction: column;
+    width: 70%;
+  }
   @media(max-width: 451px){
     flex-direction: column;
     width: 100%;

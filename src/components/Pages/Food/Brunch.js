@@ -28,7 +28,7 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
               <BC2 color="black" bold>
                 {item.menuItem}{item.menuItem.includes(",") ? "" : ","} {item.menuItemPrice}$$
               </BC2>
-              <BC2 color="black">{item.menuItemDescription ? item.menuItemDescription : "No Description"}</BC2>
+              <BC2 color="black">{item.menuItemDescription ? item.menuItemDescription : null}</BC2>
             </MenuDuJourItemWrapper>
           ))}
           <Heading2 marginBottom="md" style={{fontSize: "1.75rem"}} color="black">

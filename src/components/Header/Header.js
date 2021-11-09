@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "gatsby"
 
-import { BC1 } from "../StyledComponents/typography.css"
+import { BC1, BC2 } from "../StyledComponents/typography.css"
 import { HeaderContainer, HeaderLogoWrapper } from "./Header.css"
 import MenuHamburgerIcon from "../Icons/MenuHamburgerIcon"
 import useActiveMenu from "../hooks/ActiveMenu"
@@ -36,13 +36,13 @@ const Header = ({ landing }) => {
         </HeaderLogoWrapper>
       ) : (
         <HeaderLogoWrapper>
-          <div style={{width: "10%"}}>
-          <Link to="/book-a-table">
+          <div style={{width: "12%"}}>
+          <Link to="/reservations">
             <BC1 style={{ fontWeight: "bold" }}>BOOK A TABLE</BC1>
           </Link>
           </div>
           {scrollPosition > 150 && <Link to="/" style={{width: "75%", textAlign: "center"}}><LogoIcon mobile="true" /></Link>}
-          <div style={{width: "10%"}}>
+          <div style={{width: "12%"}}>
           <MenuHamburgerIcon
             mobile
             menuOpen={menuOpen}

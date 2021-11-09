@@ -83,7 +83,7 @@ const DropDownListContainer = styled("div")`
     position:absolute;
     max-height: ${props => (props.isOpen ? "15rem" : "0rem")};
     transition: max-height 0.2s ease-in-out;
-    overflow-y: hidden;
+    overflow: hidden;
     width: ${props=>props.dropWidth ? props.dropWidth : "19.2%"};
     @media(max-width: 451px){
         width: ${props=>props.dropWidth ? "90%" : "43%"};
@@ -98,7 +98,8 @@ const DropDownList = styled("ul")`
   border-top: none;
   box-sizing: border-box;
   max-height: 15rem;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   color: #3faffa;
   font-size: 1.3rem;
   font-weight: 500;

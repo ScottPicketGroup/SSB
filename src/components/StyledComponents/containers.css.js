@@ -152,7 +152,8 @@ export const MenuContainer = styled.div`
   flex-direction: column;
   position: -webkit-sticky;
   position: fixed;
-  overflow-y: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
   height: 100vh;
   width: 100%;
   transform: translateX(${props => (props.menuOpen ? "unset" : "100%")});

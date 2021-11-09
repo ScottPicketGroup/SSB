@@ -15,7 +15,8 @@ export const MenuDuJourContainer = styled.div`
     width : 301px;
     height: ${props => props.menus === "brunch" ? "529px" : "445px"};
     margin: 0 auto;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 `
 export const SeasonalTitleWrapper = styled.div`
@@ -234,7 +235,8 @@ export const FoodContainer = styled.div`
     width : 301px;
     height: 728px;
     margin: 0 auto 3.5rem;
-    overflow-x: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 `
 

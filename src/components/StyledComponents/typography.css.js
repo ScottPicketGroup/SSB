@@ -511,5 +511,5 @@ export const RedDecorationLink = styled(Link)`
 `
 
 export const RenderBC1 = styled(BC1)`
-  font-size: 18px;
+  font-size: 10px;
 `

@@ -129,9 +129,7 @@ export const Logo = styled.div`
 `
 
 export const SocialLinks = styled.div`
-  width: 10vw;
   display: flex;
-  justify-content: space-evenly;
   & a{
     text-decoration: none;
   }
@@ -141,10 +139,11 @@ export const SocialLinks = styled.div`
   }
   @media(max-width: 451px){
     width: 30vw;
+    justify-content: space-evenly;
   }
 `
 export const PageLinks = styled.div`
-  width: 15vw;
+  width: 20vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -42,7 +42,7 @@ const StyledCheckbox = styled.div`
   width: 24px;
   height: 24px;
 
-  background: ${props => (props.checked ? color.PRIMARY_RED_WINE : "#FDF9EE")};
+  background: ${props => (props.checked ? color.PRIMARY_RED_WINE : color.SECONDARY_WHITE)};
   border: 1px solid black;
   border-radius: 1px;
   transition: all 150ms;

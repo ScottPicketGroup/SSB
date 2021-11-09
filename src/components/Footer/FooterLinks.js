@@ -9,25 +9,15 @@ import {
   TimeWrapper,
   MobileWrapper,
   MobileSocialWrapper,
-  FooterLink
+  FooterLink,
 } from "./Footer.css"
-import {
-  FBC1,
-} from "../StyledComponents/typography.css"
+import { FBC1 } from "../StyledComponents/typography.css"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
 const FooterLinks = () => {
   return (
     <>
       <FooterLinksGrid>
-        <SocialLinks>
-          <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
-            {/* <FacebookIcon /> */}<FBC1 color="white" marginBottom="sm">FaceBook</FBC1>
-          </a>
-          <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
-            {/* <InstagramIcon /> */}<FBC1 color="white" marginBottom="sm">Instagram</FBC1>
-          </a>
-        </SocialLinks>
         <PageLinks>
           <FooterLink to="">
             <FBC1 color="white" marginBottom="sm">
@@ -49,6 +39,18 @@ const FooterLinks = () => {
               Terms and Conditions
             </FBC1>
           </FooterLink>
+          <SocialLinks>
+            <a href="http://www.facebook.com" target="_blank" rel="noreferrer" style={{marginRight: "1rem"}}>
+              <FBC1 color="white" marginBottom="sm">
+                FaceBook
+              </FBC1>
+            </a>
+            <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
+              <FBC1 color="white" marginBottom="sm">
+                Instagram
+              </FBC1>
+            </a>
+          </SocialLinks>
         </PageLinks>
         <ServiceTime>
           <Lunch>

@@ -57,7 +57,6 @@ const DropDownContainer = styled("div")`
 `;
 
 const DropDownHeader = styled("div")`
-  margin-bottom: 0.2rem;
   height: 1.75rem;
   padding: 1.5rem 0.5em 2rem 0;
   border-bottom: 1px solid black;
@@ -96,6 +95,7 @@ const DropDownList = styled("ul")`
   margin: 0;
   background: #ffffff;
   border: 1px solid black;
+  border-top: none;
   box-sizing: border-box;
   max-height: 15rem;
   overflow-y: scroll;

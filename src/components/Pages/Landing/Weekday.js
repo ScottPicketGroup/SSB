@@ -5,6 +5,7 @@ import {
   CircleImageWrapper,
 } from "./landingPage.css"
 import WeekdayItem from "./WeekdayItem"
+import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import { StaticImage } from "gatsby-plugin-image"
 
@@ -13,11 +14,12 @@ const Weekday = ({ data }) => {
     <SectionContainer marginBottom="xxl">
       <WeekdayWrapper>
         <CircleImageWrapper>
-          <StaticImage
+          {/* <StaticImage
             src="../../../images/weekday-icon.png"
             alt="weekday"
             width={400}
-          />
+          /> */}
+          <WeekdaySpecialsIcon text={data.circularMenuText}/>
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
           {data.menuDuJourMenuItems.map((item, index) => (

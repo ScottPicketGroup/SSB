@@ -63,6 +63,7 @@ export const WineAndFoodWrapper = styled.div`
 `
 export const WeekdayWrapper = styled.div`
   display: flex;
+  padding-top: 5rem;
 `
 
 export const WeekdayItemsWrapper = styled.div`
@@ -170,8 +171,13 @@ export const WeekdayItemDescriptionWrapper = styled.div`
 export const CircleImageWrapper = styled.div`
   position: relative;
   width: 26vw;
+  @media (min-width: 452px) {
+    margin-top: -5rem;
+  }
   @media (max-width: 451px) {
     position: absolute;
     width: 40vw;
+    margin-top: 2rem;
+    right: 205px;
   }
 `

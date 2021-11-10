@@ -112,6 +112,7 @@ export const DessertContainer = styled.div`
     height: 100%;
     flex-direction: column;
     width: 100%;
+    margin-bottom: 1.75rem;
   }
 `
 export const DessertSeasonalTitleWrapper = styled.div`
@@ -148,6 +149,7 @@ export const FoodScrollMenuDesktopWrapper = styled.div`
   width: 40%;
   & h2:hover {
     color: ${color.PRIMARY_RED_ROUGE};
+    cursor: pointer;
   }
   @media (max-width: 451px) {
     display: none;

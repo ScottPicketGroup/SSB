@@ -20,8 +20,8 @@ const GallaryAndDescription = ({
       <DescriptionWrapper>
         <Renderer node={description} />
       </DescriptionWrapper>
-      <Link to="">
-        <BC1 color="black">{eventsPackageLinkText}...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</BC1>
+      <Link to="" style={{textUnderlineOffset: "5px"}}>
+        <BC1 style={{fontSize: "10px"}} color="black">{eventsPackageLinkText}...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</BC1>
       </Link>
     </GallaryWrapper>
   )

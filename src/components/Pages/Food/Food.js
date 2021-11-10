@@ -13,7 +13,7 @@ const Food = ({ foodData }) => {
   return (
     <FoodContainer>
       <FoodTitleWrapper>
-        <Heading2>{topTitleIeFood}</Heading2>
+        <Heading2 style={{fontSize: "1.75rem"}}>{topTitleIeFood}</Heading2>
       </FoodTitleWrapper>
       {menuItems.map((item, index) =>
         index === 0 ? (

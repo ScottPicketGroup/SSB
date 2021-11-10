@@ -89,6 +89,9 @@ export const Input = styled.input`
     font-size: 1rem;
     background: transperant;
     font-family: PitchRegular;
+    @media(max-width: 451px){
+      font-size: 10px;
+    }
   }
   :focus {
     outline: none;
@@ -110,6 +113,7 @@ export const Input = styled.input`
   @media screen and (max-width: 450px) {
     width: 100%;
     height: 1rem;
+    font-size: 10px;
   }
 `
 
@@ -148,6 +152,9 @@ export const InputMessage = styled.textarea`
   }
   ::-moz-focus-outer {
     color: ${color.PRIMARY_RICH_BLACK};
+  }
+  @media(max-width: 451px){
+    font-size: 10px;
   }
 `
 

@@ -489,8 +489,8 @@ export const FBC1 = styled.p`
   }};
 
   @media (max-width: 450px) {
-    font-size: 1rem;
-    margin-bottom: 2.35rem;
+    font-size: 10px;
+    margin-bottom: 1.25rem;
     line-height: 1.15;
   }
 `

@@ -47,7 +47,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
                     <Renderer node={item.eventDescription} />
                   </RenderTextOverHiddenWrapper>
                   <RedDecorationLink to={`events/${item.id}`}>
-                    <BC1>Learn more...&nbsp;</BC1>
+                    <BC1 marginBottom="xs">Learn more...&nbsp;</BC1>
                   </RedDecorationLink>
                 </PrivateDiningTextWrapper>
                 <PrivateDiningImage

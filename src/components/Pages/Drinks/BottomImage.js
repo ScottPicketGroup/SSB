@@ -7,7 +7,7 @@ const BottomImage = ({ bottomImage }) => {
   return (
     <SectionContainer
       marginBottom="xxl"
-      width="50%"
+      width="40%"
       centered={true}
     >
       <BottomGatsByImage image={getImage(bottomImage)} alt="drinks-bottom-image" />

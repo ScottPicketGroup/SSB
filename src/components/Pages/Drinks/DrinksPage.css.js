@@ -104,6 +104,7 @@ export const DrinksScrollMenuDesktopWrapper = styled.div`
   width: 40%;
   & h2:hover {
     color: ${color.PRIMARY_RED_ROUGE};
+    cursor: pointer;
   }
   @media (max-width: 451px) {
     display: none;
@@ -213,7 +214,7 @@ export const NonAlcoholicSeasonalTitleWrapper = styled.div`
 `
 export const BottomGatsByImage = styled(GatsbyImage)`
   width: 100%;
-  height: 35vw;
+  height: 28vw;
   @media (max-width: 451px) {
     height: 65vw;
   }

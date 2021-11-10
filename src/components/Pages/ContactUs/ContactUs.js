@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import Renderer from "../../../components/rich-text-renderers/BlackSample"
+import Renderer from "../../../components/rich-text-renderers/ContactSample"
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {

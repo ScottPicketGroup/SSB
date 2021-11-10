@@ -38,8 +38,8 @@ export const ReservationImage = styled(GatsbyImage)`
   width: 45%;
   height: 30vw;
   @media (max-width: 451px) {
-    width: 70%;
-    height: 45vw;
+    width: 90%;
+    height: 55vw;
     margin: 0 auto 2.5rem;
   }
 `

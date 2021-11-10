@@ -63,6 +63,6 @@ export const WhatsOnEventsContainer = styled.div`
   margin-bottom: 11.25rem;
   @media(max-width: 451px) {
     margin-top: 3.5rem;
-    margin-bottom: 6rem;
+    margin-bottom: 2.5rem;
   }
 `

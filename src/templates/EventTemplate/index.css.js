@@ -34,14 +34,15 @@ export const MenuDuJourContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  // width: 25vw;
-  width: 50%;
+  width: 481px;
+  height: 713px;
+  overflow: auto;
   align-items: center;
   background-color: ${props =>
     props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
-    height: 100%;
-    width: 90%;
+    width: 301px;
+    height: 445px;
     margin: 0 auto;
   }
 `
@@ -59,25 +60,26 @@ export const SeasonalTitleWrapper = styled.div`
 
 export const BrunchHiddenOnMobImage = styled(GatsbyImage)`
   margin-top: 6rem;
-  width: 45%;
-  height: 35vw;
+  width: 340px;
+  height: 420px;
   margin-bottom: 6em;
   @media (max-width: 451px) {
-      width: 80%;
-      height: 90vw;
-      margin: 3.5rem auto 0;
+    width: 70%;
+    height: 80vw;
+    margin: 3.5rem auto 0;
   }
 `
 
 export const BrunchFirstWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 70vw;
+  // width: 70vw;
+  width: 870px;
   justify-content: space-between;
-  margin:0 auto 11.25rem;
+  margin: 0 auto 11.25rem;
   @media (max-width: 451px) {
-      flex-direction: column;
-      width: 90vw;
+    flex-direction: column;
+    width: 90vw;
     height: 100%;
     margin-bottom: 6rem;
   }
@@ -87,13 +89,12 @@ export const MenuDuJourItemWrapper = styled.div`
   margin-bottom: 3.5rem;
   text-align: center;
   @media (max-width: 451px) {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1rem;
   }
 `
 export const MenuHeadingWrapper = styled.div`
-
-  margin: 3.5rem auto 3.5rem;
+  margin: 3.5rem auto;
   @media (max-width: 451px) {
-    margin-bottom: 1.75rem;
+    margin: 1.75rem auto 0.75rem;
   }
 `

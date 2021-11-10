@@ -39,7 +39,7 @@ const FooterLinks = () => {
               Terms and Conditions
             </FBC1>
           </FooterLink>
-          <SocialLinks>
+        
             <a href="http://www.facebook.com" target="_blank" rel="noreferrer" style={{marginRight: "1rem"}}>
               <FBC1 color="white" marginBottom="sm">
                 FaceBook
@@ -50,7 +50,7 @@ const FooterLinks = () => {
                 Instagram
               </FBC1>
             </a>
-          </SocialLinks>
+        
         </PageLinks>
         <ServiceTime>
           <Lunch>

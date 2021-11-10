@@ -184,14 +184,6 @@ const ContactUsForm = () => {
                   <span></span>
                 ) : null}
               </InputContainer>
-              <Button
-                onClick={handleSubmit}
-                err={error.email}
-                type="submit"
-                submit
-              >
-                <BC1 color="black" bold>Submit</BC1>
-              </Button>
               <TixboxContainer>
                 <div
                   onClick={() =>
@@ -205,6 +197,15 @@ const ContactUsForm = () => {
                   Receive updates from the Scott Pickett Group
                 </BC1>
               </TixboxContainer>
+              <Button
+                onClick={handleSubmit}
+                err={error.email}
+                type="submit"
+                submit
+              >
+                <BC1 color="black" bold>Submit</BC1>
+              </Button>
+              
               
             </ContactDetailsContainer>
           </SignUp>

@@ -36,14 +36,21 @@ const ContactUs = ({...data}) => {
           <BC1 color="black" marginBottom="md">
             {data.address}
           </BC1>
-          <BC1 color="black">{data.findUsOnGoogleMapsHeading}</BC1>
+          <BC1>
           <NoneDecorationLink
             to={data.findUsOnGoogleMapsUrl}
             style={{ marginBottom: "4.5rem" }}
           >
-            <BC1 color="black">{data.findUsOnGoogleMapsUrl}</BC1>
+            Find us on &nbsp;
+            <span
+            style={{
+              marginBottom: `1rem`,
+              textDecoration: `underline`,
+              textUnderlineOffset: `5px`
+            }}>Google Maps</span>
           </NoneDecorationLink>
-          <BC1 color="black" bold marginBottom="md">
+          </BC1>
+          <BC1 color="black" bold marginBottom="md" marginTop="lg">
             {data.openingHoursHeading}
           </BC1>
           <Renderer node={data.hoursToBeDisplayed} />
@@ -60,7 +67,11 @@ const ContactUs = ({...data}) => {
           <BC1 color="black" marginTop="md">
             View our{" "}
             <Link to="/terms-conditions">
-              privacy policy and terms & conditions
+              privacy policy 
+            </Link>
+            &nbsp; and &nbsp;
+            <Link to="/terms-conditions">
+            terms & conditions
             </Link>
           </BC1>
         </InformationWrapper>

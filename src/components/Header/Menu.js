@@ -104,7 +104,7 @@ const MenuComponent = () => {
         </MenuItemWrapper>
         <GiftVouchersContainer giftOpen={giftOpen}>
           <BC1 marginBottom="md" color="white">
-            Select your gift voucher bellow
+            Select your gift voucher below
           </BC1>
           <GiftVouchersItemContainer>
             <GiftVouchersItemWrapper>

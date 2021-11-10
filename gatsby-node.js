@@ -14,7 +14,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             bookNowLinkText
             bookNowLinkUrl
             galleryImages {
-              gatsbyImageData(layout: FULL_WIDTH)
+              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 0.75)
             }
             eventDescription {
               raw

@@ -185,7 +185,7 @@ const PrivateDiningForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <Dropdown title="Type Of Events" options={eventsTypes} dropWidth="40.1%" />
+                <Dropdown title="Type Of Event" options={eventsTypes} dropWidth="40.1%" />
               </InputContainer>
 
               <InputContainer>
@@ -201,7 +201,7 @@ const PrivateDiningForm = () => {
 
               <InputContainer>
                 <Input
-                  placeholder="Additional Note"
+                  placeholder="Additional Notes"
                   name="addintionalNote"
                   type="text"
                   value={inputs.addintionalNote}
@@ -211,10 +211,10 @@ const PrivateDiningForm = () => {
               </InputContainer>
               <ContactFormRow>
                 <InputContainer hour>
-                  <Dropdown title="Start Hours" options={hourOpptions} />
+                  <Dropdown title="Start Hour" options={hourOpptions} />
                 </InputContainer>
                 <InputContainer hour>
-                  <Dropdown title="Finish Hours" options={hourOpptions} />
+                  <Dropdown title="Finish Hour" options={hourOpptions} />
                 </InputContainer>
               </ContactFormRow>
               <TixboxContainer>

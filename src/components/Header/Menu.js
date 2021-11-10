@@ -84,7 +84,7 @@ const MenuComponent = () => {
                 to="#"
                 style={{ textDecoration: "none" }}
               >
-                <Heading2 color="white" marginBottom="sm">
+                <Heading2 color="white" marginBottom="none">
                   {item.title}
                 </Heading2>
               </Link>
@@ -95,7 +95,7 @@ const MenuComponent = () => {
                 to={item.to}
                 style={{ textDecoration: "none" }}
               >
-                <Heading2 color="white" marginBottom="sm">
+                <Heading2 color="white" marginBottom="none">
                   {item.title}
                 </Heading2>
               </Link>

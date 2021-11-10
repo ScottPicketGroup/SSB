@@ -43,7 +43,7 @@ export const TitleWrapper = styled.div`
   }
 `
 export const DescriptionWrapper = styled.div`
-  width: 38vw;
+  width: 60vw;
   @media (max-width: 451px) {
     width: 90%;
   }

@@ -97,6 +97,8 @@ export const Heading2 = styled.h2`
         return "6rem"
       case "xxl":
         return "11.25rem"
+        case "none":
+        return "0rem"
       default:
         return "0"
     }

@@ -7,7 +7,7 @@ import {
   Heading1,
   NoneDecorationLink,
   BBHeading2,
-  BBHeading3
+  BBHeading3,
 } from "../../StyledComponents/typography.css"
 import {
   IntroductionWrapper,
@@ -23,6 +23,7 @@ const Reservation = ({
   image,
   privateFunctionsHeading,
   bookATableHeading,
+  bookATableUrl,
 }) => {
   return (
     <SectionContainer column centered full red={true}>
@@ -33,17 +34,27 @@ const Reservation = ({
         <Renderer node={introduction} />
       </IntroductionWrapper>
       <DesktopLinkWrapper>
-        <NoneDecorationLink to="">
+        <a
+          href={bookATableUrl}
+          target="_blank"
+          rel="noreferrer"
+          style={{ textDecoration: "none" }}
+        >
           <BBHeading2 color="white">{bookATableHeading}</BBHeading2>
-        </NoneDecorationLink>
-        <NoneDecorationLink to="">
+        </a>
+        <NoneDecorationLink to="/private-dining">
           <BBHeading2 color="white">{privateFunctionsHeading}</BBHeading2>
         </NoneDecorationLink>
       </DesktopLinkWrapper>
       <MobileLinkWrapper>
-        <NoneDecorationLink to="">
+        <a
+          href={bookATableUrl}
+          target="_blank"
+          rel="noreferrer"
+          style={{ textDecoration: "none" }}
+        >
           <BBHeading3 color="white">{bookATableHeading}</BBHeading3>
-        </NoneDecorationLink>
+        </a>
         <NoneDecorationLink to="">
           <BBHeading3 color="white">{privateFunctionsHeading}</BBHeading3>
         </NoneDecorationLink>

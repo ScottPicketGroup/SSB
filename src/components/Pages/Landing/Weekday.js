@@ -7,7 +7,6 @@ import {
 import WeekdayItem from "./WeekdayItem"
 import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { StaticImage } from "gatsby-plugin-image"
 
 const Weekday = ({ data }) => {
   return (

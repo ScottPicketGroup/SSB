@@ -31,7 +31,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
         <PrivateDiningImage
-          image={getImage(events[1].eventMenuImage)}
+          image={getImage(events[0].eventMenuImage)}
           first="true"
           alt="private-dining"
         />

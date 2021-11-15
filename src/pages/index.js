@@ -55,7 +55,7 @@ export const landingPageData = graphql`
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
           heroImageTitle
-          quoteHeading
+    
           quoteText {
             raw
           }

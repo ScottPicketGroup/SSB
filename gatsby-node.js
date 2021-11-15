@@ -2,6 +2,8 @@ const path = require("path")
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.
+  // NOTE bookNowLinkText
+  // bookNowLinkUrl have been removed for now and will need to be added back in conditionally at some stage!
   const result = await graphql(`
     query EventsQuery {
       allContentfulWhatsOnPageContent {
@@ -11,8 +13,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             eventTitle
             eventDateAndStartTime(formatString: "dddd MMM DD YYYY LT")
             eventEndDateAndTime(formatString: "dddd MMM DD YYYY LT")
-            bookNowLinkText
-            bookNowLinkUrl
+            
             galleryImages {
               gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 0.75)
             }

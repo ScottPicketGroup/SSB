@@ -45,7 +45,7 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-
+  // NOTE quote heading has been removed for now and will need to be added back in conditionally at some stage!
 export const landingPageData = graphql`
   query LandingPageQuery {
     allContentfulLandingPageContent {

@@ -43,7 +43,7 @@ export const HeroTextWrapper = styled.div`
   }
 `
 export const HeroImage = styled(GatsbyImage)`
-  aspect-ratio: 5/5;
+
 `
 
 export const WineAndFoodWrapper = styled.div`

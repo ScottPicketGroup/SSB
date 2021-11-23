@@ -110,7 +110,7 @@ const MenuComponent = () => {
             <GiftVouchersItemWrapper>
               <a
                 href={giftVouchersData.smithStBistroGiftVoucherLink}
-                style={{ textDecorationColor: color.SECONDARY_WHITE }}
+                style={{ textDecorationColor: color.SECONDARY_WHITE, textDecorationThickness: '1px'}}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -126,7 +126,7 @@ const MenuComponent = () => {
             <GiftVouchersItemWrapper>
               <a
                 href={giftVouchersData.spgGvLink}
-                style={{ textDecorationColor: color.SECONDARY_WHITE }}
+                style={{ textDecorationColor: color.SECONDARY_WHITE, textDecorationThickness: '1px' }}
                 target="_blank"
                 rel="noreferrer"
               >

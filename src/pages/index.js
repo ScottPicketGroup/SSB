@@ -57,7 +57,10 @@ export const landingPageData = graphql`
     allContentfulLandingPageContent{
       edges {
         node {
-       
+          heroImage {
+            gatsbyImageData(placeholder: BLURRED)
+          }
+          heroImageTitle
           quoteHeading
           quoteText {
             raw
@@ -65,7 +68,7 @@ export const landingPageData = graphql`
           wineMenuLabelText
           foodMenuLabelText
           gallery {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            gatsbyImageData(placeholder: BLURRED)
           }
           whatsOnEvents {
             events {

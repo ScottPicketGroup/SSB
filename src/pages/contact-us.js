@@ -14,12 +14,28 @@ const ContactUsPage = ({ data }) => {
     tcsLinkHeading,
     openingHoursHeading,
     hoursToBeDisplayed,
+    addressLineTwo,
+    openingTimesDinnerDaysOpen,
+    openingTimesDinnerOpenTimes,
+    openingTimesHeadingDinner,
+    openingTimesLunchHeading,
+    openingTimesLunchDaysOpen,
+    openingTimesLunchOpenTimes,
+    daysClosed
   } = data.allContentfulContactUsPageContent.nodes[0]
   return (
     <Layout>
       <Seo title="Home" />
       <ContactUs
         address={address}
+        addressLineTwo={addressLineTwo}
+        daysClosed={daysClosed}
+        openingTimesDinnerDaysOpen={openingTimesDinnerDaysOpen}
+        openingTimesDinnerOpenTimes={openingTimesDinnerOpenTimes}
+        openingTimesHeadingDinner={openingTimesHeadingDinner}
+        openingTimesLunchHeading={openingTimesLunchHeading}
+        openingTimesLunchDaysOpen={openingTimesLunchDaysOpen}
+        openingTimesLunchOpenTimes={openingTimesLunchOpenTimes}
         emailAddress={emailAddress}
         findUsOnGoogleMapsHeading={findUsOnGoogleMapsHeading}
         findUsOnGoogleMapsUrl={findUsOnGoogleMapsUrl}
@@ -41,15 +57,20 @@ export const contactPageData = graphql`
     ) {
       nodes {
         address
+        addressLineTwo
         emailAddress
+        openingTimesDinnerDaysOpen
+        openingTimesDinnerOpenTimes
+        openingTimesHeadingDinner
+        openingTimesLunchHeading
+        openingTimesLunchDaysOpen
+        openingTimesLunchOpenTimes
         findUsOnGoogleMapsHeading
         findUsOnGoogleMapsUrl
         phoneNumber
         tcsLinkHeading
-        openingHoursHeading
-        hoursToBeDisplayed {
-          raw
-        }
+        daysClosed
+       
       }
     }
   }

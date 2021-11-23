@@ -5,6 +5,7 @@ import Renderer from "../../../components/rich-text-renderers/ContactSample"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {
   BC1,
+  FBC1,
   Heading1,
   Heading3,
   NoneDecorationLink,
@@ -17,6 +18,7 @@ import {
   MobileHeadingWrapper,
 } from "./ContactUs.css"
 import ContactUsForm from "./ContactUsForm/ContactUsForm"
+import { DayWrapper, Lunch, ServiceTime, TimeWrapper } from "../../Footer/Footer.css"
 
 const ContactUs = ({...data}) => {
 
@@ -33,8 +35,11 @@ const ContactUs = ({...data}) => {
           <ContactUsForm />
         </FormWrapper>
         <InformationWrapper>
-          <BC1 color="black" marginBottom="md">
+          <BC1 color="black" marginBottom="">
             {data.address}
+          </BC1>
+          <BC1 color="black" marginBottom="md">
+            {data.addressLineTwo}
           </BC1>
           <BC1>
           <NoneDecorationLink
@@ -50,12 +55,55 @@ const ContactUs = ({...data}) => {
             }}>Google Maps</span>
           </NoneDecorationLink>
           </BC1>
-          <BC1 color="black" bold marginBottom="md" marginTop="lg">
-            {data.openingHoursHeading}
-          </BC1>
-          <Renderer node={data.hoursToBeDisplayed} />
+          <ServiceTime>
+            <BC1 style={{color: `black`}} marginTop="md" marginBottom="sm"> OPENING HOURS</BC1>
+          <Lunch>
+            <DayWrapper>
+              <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
+               {data.openingTimesLunchHeading}
+              </FBC1>
+              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
+              {data.openingTimesLunchDaysOpen}
+              </FBC1>
+            </DayWrapper>
+            <TimeWrapper>
+              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
+                {data.openingTimesLunchOpenTimes}
+              </FBC1>
+            </TimeWrapper>
+          </Lunch>
+          <Lunch style={{
+            marginBottom: ".75rem"
+          }}>
+            <DayWrapper>
+              <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
+              {data.openingTimesHeadingDinner}
+              </FBC1>
+              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
+              {data.openingTimesDinnerDaysOpen}
+              </FBC1>
+            </DayWrapper>
+            <TimeWrapper>
+              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
+              {data.openingTimesDinnerOpenTimes}
+              </FBC1>
+            </TimeWrapper>
+          </Lunch>
+          <Lunch>
+            <DayWrapper>
+              <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
+              {data.daysClosed && data.daysClosed}
+              </FBC1>
+            </DayWrapper>
+            <TimeWrapper>
+              <FBC1 color="black" marginBottom="sm"  style={{fontSize: `1rem`}}>
+              {data.daysClosed && "Closed"}
+              </FBC1>
+            </TimeWrapper>
+          </Lunch>
+        </ServiceTime>
           <Link to={data.phoneNumber}>
-            <BC1 color="black" marginTop="md" marginBottom="sm">
+            <BC1 color="black" marginTop="md" marginBottom="">
               {data.phoneNumber}
             </BC1>
           </Link>

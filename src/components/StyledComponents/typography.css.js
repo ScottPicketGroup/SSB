@@ -458,7 +458,7 @@ export const FBC1 = styled.p`
       case "xs":
         return ".25rem"
       case "sm":
-        return "1rem"
+        return "0"
       case "md":
         return "1.75rem"
       case "lg":
@@ -467,6 +467,10 @@ export const FBC1 = styled.p`
         return "6rem"
       case "xxl":
         return "11.25rem"
+        case "lunch":
+        return "-.75rem"
+        case "address":
+          return "-.75rem"
       default:
         return "0"
     }

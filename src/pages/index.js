@@ -17,21 +17,27 @@ const IndexPage = ({ data }) => {
     heroImageTitle,
     quoteHeading,
     quoteText,
+    wineMenuLabelText,
+    foodMenuLabelText,
     privateDiningHeading,
     privateDiningImage,
     privateDiningIntro,
     whatsOnEvents,
     weekdaySpecials,
-    gallery
+    gallery,
   } = data.allContentfulLandingPageContent.edges[0].node
-
 
   return (
     <Layout landing>
       <Seo title="Home" />
-      <Hero heroImage={heroImage} heroImageTitle={heroImageTitle} alt="landing-hero-image" />
+      <Hero
+        heroImage={heroImage}
+        heroImageTitle={heroImageTitle}
+        alt="landing-hero-image"
+      />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
-      <WineAndFood />
+      <WineAndFood wineMenuLabelText={wineMenuLabelText}
+          foodMenuLabelText={foodMenuLabelText}/>
       <Gallery gallery={gallery} />
       <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
       <Weekday data={weekdaySpecials} />
@@ -45,20 +51,24 @@ const IndexPage = ({ data }) => {
 }
 
 export default IndexPage
-  // NOTE quote heading has been removed for now and will need to be added back in conditionally at some stage!
+// NOTE quote heading has been removed for now and will need to be added back in conditionally at some stage!
 export const landingPageData = graphql`
   query LandingPageQuery {
-    allContentfulLandingPageContent {
+    allContentfulLandingPageContent(
+      filter: {id: {eq: "697e74b8-78b0-5e7e-a5b7-8083468156be"}}
+    ) {
       edges {
         node {
           heroImage {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
           heroImageTitle
-    
+          quoteHeading
           quoteText {
             raw
           }
+          wineMenuLabelText
+          foodMenuLabelText
           gallery {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
@@ -66,7 +76,11 @@ export const landingPageData = graphql`
             events {
               id
               eventMenuImage {
-                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 1.5)
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  layout: FULL_WIDTH
+                  aspectRatio: 1.5
+                )
               }
               eventDescription {
                 raw
@@ -76,14 +90,19 @@ export const landingPageData = graphql`
           }
           weekdaySpecials {
             circularMenuText
-              menuDuJourMenuItems {
+            menuDuJourMenuItems {
               menuItem
               day
+              showLearnMore
             }
           }
           privateDiningHeading
           privateDiningImage {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, aspectRatio: 1.5)
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: FULL_WIDTH
+              aspectRatio: 1.5
+            )
           }
           privateDiningIntro
         }

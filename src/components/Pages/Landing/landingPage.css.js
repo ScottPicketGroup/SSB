@@ -111,7 +111,7 @@ export const PrivateDiningTextWrapper = styled.div`
   // align-items: center;
   text-align: left;
   margin-top: 3.5rem;
-  width: ${props => (props.first ? "20%" : props.dining ? "25%" : "80%")};
+  width: ${props => (props.first ? "30%" : props.dining ? "30%" : "80%")};
   margin ${props => (props.dining ? "3.5rem auto 0" : "3.5rem 0 0")};
   order: ${props => (props.first ? "0" : "1")};
   @media (max-width: 451px) {

@@ -9,7 +9,7 @@ import { WineAndFoodWrapper } from "./landingPage.css"
 
 import { useStaticQuery, graphql } from "gatsby"
 
-const WineAndFood = () => {
+const WineAndFood = ({foodMenuLabelText, wineMenuLabelText}) => {
   const imageData = useStaticQuery(graphql`
     query FlowerURL {
       file(name: { eq: "flower" }) {
@@ -22,10 +22,10 @@ const WineAndFood = () => {
     <SectionContainer marginBottom="xl" full>
       <WineAndFoodWrapper backgroundImage={backgroundImage}>
         <NoneDecorationLink to="/drinks">
-          <BBHeading2>Wine</BBHeading2>
+          <BBHeading2>{wineMenuLabelText}</BBHeading2>
         </NoneDecorationLink>
         <NoneDecorationLink to="/food">
-          <BBHeading2>Food</BBHeading2>
+          <BBHeading2>{foodMenuLabelText}</BBHeading2>
         </NoneDecorationLink>
       </WineAndFoodWrapper>
     </SectionContainer>

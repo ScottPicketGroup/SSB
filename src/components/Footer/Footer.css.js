@@ -90,7 +90,7 @@ const moveSlideshow = keyframes`
 `
 
 export const Logos = styled.div`
-  background-color: rgba(128, 1, 3, 0.9);
+  background-color: rgba(140, 25, 27);
   display: flex;
   width: 4800px;
   align-items: center;
@@ -146,7 +146,7 @@ export const PageLinks = styled.div`
   width: 20vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  
   @media(max-width: 451px){
     width: 50vw;
   }
@@ -155,13 +155,14 @@ export const ServiceTime = styled.div`
   width: 30vw;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+ 
   @media(max-width: 451px){
     width: 70vw;
   }
 `
 export const Lunch = styled.div`
   display: flex;
+  line-height: 0 !important;
   justify-content: space-between;
   align-items: end;
   text-align: left;

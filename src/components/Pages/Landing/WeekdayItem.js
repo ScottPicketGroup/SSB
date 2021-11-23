@@ -10,7 +10,7 @@ import {
   WeekdayItemWrapper,
 } from "./landingPage.css"
 
-const WeekdayItem = ({ day, description }) => {
+const WeekdayItem = ({ day, description,showLearnMore }) => {
   return (
     <WeekdayItemWrapper>
       <Heading3 bold style={{ width: "30%" }}>
@@ -20,9 +20,11 @@ const WeekdayItem = ({ day, description }) => {
         <RenderTextOverHiddenWrapper>
           <BC1 marginBottom="md">{description}</BC1>
         </RenderTextOverHiddenWrapper>
-        <RedDecorationLink to="">
-          <BC1 marginBottom="xs">Learn more…</BC1>
-        </RedDecorationLink>
+       {
+         showLearnMore &&  <RedDecorationLink to="">
+         <BC1 marginBottom="xs">Learn more…</BC1>
+       </RedDecorationLink>
+       }
       </WeekdayItemDescriptionWrapper>
     </WeekdayItemWrapper>
   )

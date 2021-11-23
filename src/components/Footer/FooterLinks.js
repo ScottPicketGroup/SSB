@@ -14,14 +14,48 @@ import {
 import { FBC1 } from "../StyledComponents/typography.css"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
+
+import { graphql, useStaticQuery } from 'gatsby'
+
 const FooterLinks = () => {
+  const footerQuery = useStaticQuery(graphql`
+  query footerQuery {
+      allContentfulLandingPageContent(
+        filter: {id: {eq: "697e74b8-78b0-5e7e-a5b7-8083468156be"}}
+      ) {
+        edges {
+          node {
+            id
+            openingTimesDinnerDaysOpen
+            openingTimesDinnerOpenTimes
+            openingTimesHeadingDinner
+            openingTimesHeadingLunch
+            openingTimesLunchDaysOpen
+            openingTimesLunchOpenTimes
+            phoneNumberFooter
+            addressLineOne
+            addressLineTwo
+            emailFooterInfo
+            phoneNumberFooter
+            bottomLeftHeading
+            daysClosed
+            facebookLink
+            footerFirstColumnHeading
+            instagramLink
+          }
+        }
+      }
+    } 
+`)
+  const footerData = footerQuery.allContentfulLandingPageContent.edges[0].node
+  console.log(footerData)
   return (
     <>
       <FooterLinksGrid>
         <PageLinks>
-          <FooterLink to="">
-            <FBC1 color="white" marginBottom="sm">
-              Smith St Bistrot
+          <FooterLink to="" >
+            <FBC1 color="white" marginBottom="sm" style={{textDecoration: 'underline', textUnderlineOffset: `2px`}}>
+              {footerData.footerFirstColumnHeading}
             </FBC1>
           </FooterLink>
           <FooterLink to="/">
@@ -40,12 +74,12 @@ const FooterLinks = () => {
             </FBC1>
           </FooterLink>
         
-            <a href="http://www.facebook.com" target="_blank" rel="noreferrer" style={{marginRight: "1rem"}}>
+            <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{marginRight: "1rem"}}>
               <FBC1 color="white" marginBottom="sm">
                 FaceBook
               </FBC1>
             </a>
-            <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
+            <a href={footerData.instagramLink} target="_blank" rel="noreferrer">
               <FBC1 color="white" marginBottom="sm">
                 Instagram
               </FBC1>
@@ -55,38 +89,38 @@ const FooterLinks = () => {
         <ServiceTime>
           <Lunch>
             <DayWrapper>
-              <FBC1 color="white" marginBottom="xs">
-                Lunch
+              <FBC1 color="white" marginBottom="lunch">
+               {footerData.openingTimesHeadingLunch}
               </FBC1>
-              <FBC1 color="white" marginBottom="sm">
-                Monday-Friday
+              <FBC1 color="white" marginBottom="">
+              {footerData.openingTimesLunchDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-                Noon - 4.00 pm
+                {footerData.openingTimesLunchOpenTimes}
               </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
-              <FBC1 color="white" marginBottom="xs">
-                Dinner
+              <FBC1 color="white" marginBottom="lunch">
+              {footerData.openingTimesHeadingDinner}
               </FBC1>
               <FBC1 color="white" marginBottom="sm">
-                Tuesday-Sunday
+              {footerData.openingTimesDinnerDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-                6 pm - late
+              {footerData.openingTimesDinnerOpenTimes}
               </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="sm">
-                Monday
+               {footerData.daysClosed}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
@@ -97,20 +131,20 @@ const FooterLinks = () => {
           </Lunch>
         </ServiceTime>
         <PageLinks>
-          <FBC1 color="white" marginBottom="xs">
-            300 Smith St
+          <FBC1 color="white" marginBottom="address">
+        {footerData.addressLineOne}
           </FBC1>
           <FBC1 color="white" marginBottom="sm">
-            Colling Wood VIC 3066
+          {footerData.addressLineTwo}
           </FBC1>
-          <FBC1 color="white" marginBottom="xs">
-            info@smithstbistrot.com.au
-          </FBC1>
-          <FBC1 color="white" marginBottom="sm">
-            03 9419 2202
+          <FBC1 color="white" marginBottom="address">
+          {footerData.emailFooterInfo}
           </FBC1>
           <FBC1 color="white" marginBottom="sm">
-            Scott Pickett Group
+          {footerData.phoneNumberFooter}
+          </FBC1>
+          <FBC1 color="white" marginBottom="sm">
+           {footerData.bottomLeftHeading}
           </FBC1>
         </PageLinks>
       </FooterLinksGrid>
@@ -122,26 +156,26 @@ const FooterLinks = () => {
         <MobileSocialWrapper>
           <PageLinks>
             <FBC1 color="white" marginBottom="xs">
-              300 Smith St
+           {footerData.addressLineOne}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
-              Colling Wood VIC 3066
+            {footerData.addressLineTwo}
             </FBC1>
             <FBC1 color="white" marginBottom="xs">
-              info@smithstbistrot.com.au
+            {footerData.emailFooterInfo}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
-              03 9419 2202
+            {footerData.emailFooterInfo}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
               Scott Pickett Group
             </FBC1>
           </PageLinks>
           <SocialLinks>
-            <a href="http://www.facebook.com" target="_blank" rel="noreferrer">
+            <a href={footerData.facebookLink} target="_blank" rel="noreferrer">
               <FacebookIcon />
             </a>
-            <a href="http://www.instagram.com" target="_blank" rel="noreferrer">
+            <a href={footerData.instagramLink} target="_blank" rel="noreferrer">
               <InstagramIcon />
             </a>
           </SocialLinks>
@@ -150,37 +184,37 @@ const FooterLinks = () => {
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="xs">
-                Lunch
+              {footerData.openingTimesHeadingLunch}
               </FBC1>
               <FBC1 color="white" marginBottom="sm">
-                Monday-Friday
+              {footerData.openingTimesLunchDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-                Noon - 4.00 pm
+              {footerData.openingTimesLunchOpenTimes}
               </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="xs">
-                Dinner
+              {footerData.openingTimesHeadingDinner}
               </FBC1>
               <FBC1 color="white" marginBottom="sm">
-                Tuesday-Sunday
+              {footerData.openingTimesDinnerDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-                6 pm - late
+              {footerData.openingTimesDinnerDaysOpen}
               </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="sm">
-                Monday
+              {footerData.daysClosed}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>

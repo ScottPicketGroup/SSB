@@ -5,6 +5,7 @@ import LogoSlider from './LogoSlider'
 import FooterForm from './FooterForm'
 
 const Footer = () => {
+  
     return (
         <FooterWrapper >
             <FooterForm />

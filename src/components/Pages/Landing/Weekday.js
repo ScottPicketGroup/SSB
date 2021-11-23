@@ -13,12 +13,7 @@ const Weekday = ({ data }) => {
     <SectionContainer marginBottom="xxl">
       <WeekdayWrapper>
         <CircleImageWrapper>
-          {/* <StaticImage
-            src="../../../images/weekday-icon.png"
-            alt="weekday"
-            width={400}
-          /> */}
-          <WeekdaySpecialsIcon text={data.circularMenuText}/>
+           <WeekdaySpecialsIcon text={data.circularMenuText}/>
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
           {data.menuDuJourMenuItems.map((item, index) => (
@@ -26,6 +21,7 @@ const Weekday = ({ data }) => {
               key={index}
               day={item.day}
               description={item.menuItem}
+              showLearnMore={item.showLearnMore}
             />
           ))}
         </WeekdayItemsWrapper>

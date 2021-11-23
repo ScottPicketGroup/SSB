@@ -37,7 +37,7 @@ const PrivateDiningForm = () => {
     "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "0:00", 
   ]
 
-  const eventsTypes = ["Type 1", "Type 2", "Type 3"]
+  const eventsTypes = ["Sit down event", "Stand up event"]
 
   const [thankyou, setThankyou] = useState(false)
   const encode = data => {

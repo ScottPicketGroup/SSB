@@ -37,7 +37,7 @@ const EventTemplate = ({ pageContext }) => {
       <PageContainer red>
         <SectionContainer red full centerd column>
           <Intro>
-            <Heading1 color="white" marginBottom="lg">
+            <Heading1 color="white" marginBottom="md">
               {eventData.eventTitle
                 ? eventData.eventTitle
                 : "What's On - Special Event"}
@@ -49,16 +49,16 @@ const EventTemplate = ({ pageContext }) => {
               </BC1>
             ) : (
               <>
-                <BC1 color="white">Thuesdays throughout November</BC1>
+                <BC1 color="white">Day to be confirmed</BC1>
                 <BC1 color="white" marginBottom="md">
-                  12 noon - 2.30 pm
+                  Times to be confirmed
                 </BC1>
               </>
             )}
             <NoneDecorationLink
               to={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : "/"}
             >
-              <BBHeading2 color="white">
+              <BBHeading2 color="white" marginBottom="-2rem">
                 {eventData.bookNowLinkText
                   ? eventData.bookNowLinkText
                   : "BOOK NOW"}

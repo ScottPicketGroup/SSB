@@ -5,7 +5,7 @@ import { color } from "../../components/StyledComponents/variables"
 export const Intro = styled.div`
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 20vw;
   text-align: center;
   align-items: center;
   margin: 6rem auto 3.5rem;
@@ -23,8 +23,8 @@ export const GalleryWrapper = styled.div`
   }
 `
 export const DescriptionWrapper = styled.div`
-  width: 30vw;
-  margin: 3.5rem auto 6rem;
+  width: 40vw;
+  margin: -2rem 0 7rem 30vw;
   @media (max-width: 451px) {
     width: 90%;
     margin: 1.75rem auto 3.5rem;

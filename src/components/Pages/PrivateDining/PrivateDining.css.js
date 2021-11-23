@@ -1,9 +1,9 @@
 import styled from "styled-components"
 
 export const IntroWrapper = styled.div`
-  width: 53vw;
+  width: 60vw;
   display: flex;
-  max-width: 30vw;
+  max-width: 40vw;
   flex-direction: column;
   margin: 6rem auto 3.25rem;
   text-align: center;
@@ -43,7 +43,7 @@ export const TitleWrapper = styled.div`
   }
 `
 export const DescriptionWrapper = styled.div`
-  width: 60vw;
+  width: 40vw;
   @media (max-width: 451px) {
     width: 90%;
   }

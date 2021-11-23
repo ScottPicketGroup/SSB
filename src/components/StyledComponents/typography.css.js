@@ -503,6 +503,7 @@ export const FBC1 = styled.p`
 export const BBHeading2 = styled(Heading2)`
   line-height: 1.5;
   border-bottom: 1.5px solid;
+  margin-bottom: ${props => props.marginBottom ? props.marginBottom : ""};
 `
 export const BBHeading3 = styled(Heading3)`
   line-height: 1.5;
@@ -517,5 +518,5 @@ export const RedDecorationLink = styled(Link)`
 `
 
 export const RenderBC1 = styled(BC1)`
-  font-size: 10px;
+  font-size: 16px;
 `

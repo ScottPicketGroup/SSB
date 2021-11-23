@@ -450,7 +450,7 @@ export const FBC1 = styled.p`
       : props.color === "black"
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
-  font-size: 10px;
+  font-size: .75rem;
   line-height: 26px;
   font-weight: 500;
   margin-bottom: ${props => {

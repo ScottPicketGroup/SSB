@@ -20,9 +20,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 const FooterLinks = () => {
   const footerQuery = useStaticQuery(graphql`
   query footerQuery {
-      allContentfulLandingPageContent(
-        filter: {id: {eq: "697e74b8-78b0-5e7e-a5b7-8083468156be"}}
-      ) {
+      allContentfulLandingPageContent {
         edges {
           node {
             id

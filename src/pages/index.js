@@ -30,11 +30,11 @@ const IndexPage = ({ data }) => {
   return (
     <Layout landing>
       <Seo title="Home" />
-      {/* <Hero
+      <Hero
         heroImage={heroImage}
         heroImageTitle={heroImageTitle}
         alt="landing-hero-image"
-      /> */}
+      />
       <Intro quoteHeading={quoteHeading} quoteText={quoteText} />
       <WineAndFood wineMenuLabelText={wineMenuLabelText}
           foodMenuLabelText={foodMenuLabelText}/>
@@ -58,9 +58,10 @@ export const landingPageData = graphql`
       edges {
         node {
           heroImage {
-            fluid {
-              aspectRatio
-            }
+            gatsbyImageData(
+              placeholder: BLURRED
+              layout: CONSTRAINED
+             )
           }
           heroImageTitle
           quoteHeading

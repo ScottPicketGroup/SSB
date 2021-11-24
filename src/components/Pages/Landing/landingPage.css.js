@@ -111,8 +111,10 @@ export const PrivateDiningTextWrapper = styled.div`
   // align-items: center;
   text-align: left;
   margin-top: 3.5rem;
-  width: ${props => (props.first ? "30%" : props.dining ? "30%" : "80%")};
-  margin ${props => (props.dining ? "3.5rem auto 0" : "3.5rem 0 0")};
+  padding-left: ${props => (props.dining ? "2rem" : "")};
+  padding-right: ${props => (props.first ? "2rem" : "")};
+  width: ${props => (props.first ? "50%" : props.dining ? "70%" : "80%")};
+  margin ${props => (props.dining ? "3rem auto 0" : "3rem 0 0")};
   order: ${props => (props.first ? "0" : "1")};
   @media (max-width: 451px) {
     order: 1;
@@ -132,7 +134,7 @@ export const WhatsOnEventsWrapper = styled.div`
 `
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
-  -webkit-line-clamp: ${props => (props.first ? 3 : 2)};
+  -webkit-line-clamp: ${props => (props.first ? 4 : 2)};
   -webkit-box-orient: vertical;
   overflow: hidden;
 

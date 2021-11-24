@@ -21,6 +21,7 @@ const WeekDaySpecialsIcon = ({ text }) => {
             fill: `red`,
             stroke: `red`,
             fontSize: `3.5rem`,
+            fontStyle: `italic`
           }}
         >
           {text}

@@ -35,10 +35,10 @@ const ContactUs = ({...data}) => {
           <ContactUsForm />
         </FormWrapper>
         <InformationWrapper>
-          <BC1 color="black" marginBottom="">
+          <BC1 color="black" marginBottom="" style={{fontSize: `1rem`}}>
             {data.address}
           </BC1>
-          <BC1 color="black" marginBottom="md">
+          <BC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
             {data.addressLineTwo}
           </BC1>
           <BC1>
@@ -56,7 +56,7 @@ const ContactUs = ({...data}) => {
           </NoneDecorationLink>
           </BC1>
           <ServiceTime>
-            <BC1 style={{color: `black`}} marginTop="md" marginBottom="sm"> OPENING HOURS</BC1>
+            <BC1 style={{color: `black`}} marginTop="lg" marginBottom="openingHours"> OPENING HOURS</BC1>
           <Lunch>
             <DayWrapper>
               <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
@@ -108,7 +108,7 @@ const ContactUs = ({...data}) => {
             </BC1>
           </Link>
           <Link to={data.emailAddress}>
-            <BC1 color="black" marginBottom="xl">
+            <BC1 color="black" marginBottom="xl" style={{fontSize: `1rem`}}>
               {data.emailAddress}
             </BC1>
           </Link>

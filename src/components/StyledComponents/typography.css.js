@@ -252,11 +252,13 @@ export const BC1 = styled.p`
       case "md":
         return "1.75rem"
       case "lg":
-        return "3.5rem"
+        return "2.75rem"
       case "xl":
         return "6rem"
       case "xxl":
         return "11.25rem"
+        case "openingHours":
+        return "1.5rem"
       default:
         return "0"
     }

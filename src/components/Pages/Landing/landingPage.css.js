@@ -14,7 +14,7 @@ export const HeroWrapper = styled.div`
 `
 export const IntroWrapper = styled.div`
   text-align: center;
-  margin-top: 3.5rem;
+
   p {
     padding: 0 10%;
   }

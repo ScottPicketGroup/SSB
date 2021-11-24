@@ -19,7 +19,7 @@ import LogoIcon from "../../Icons/LogoIcon"
 
 const Hero = ({ heroImage, heroImageTitle }) => {
   return (
-    <SectionContainer marginBottom="xl" full>
+    <SectionContainer marginBottom="" full>
       <HeroWrapper>
         <HeroImage image={getImage(heroImage)} layout="fullWidth" alt="hero" />
         <HeroTextWrapper>

@@ -44,7 +44,7 @@ const ContactUs = ({...data}) => {
           <BC1>
           <NoneDecorationLink
             to={data.findUsOnGoogleMapsUrl}
-            style={{ marginBottom: "4.5rem" }}
+            style={{ marginBottom: "5.5rem" }}
           >
             Find us on &nbsp;
             <span
@@ -108,7 +108,7 @@ const ContactUs = ({...data}) => {
             </BC1>
           </Link>
           <Link to={data.emailAddress}>
-            <BC1 color="black" marginBottom="xl" style={{fontSize: `1rem`}}>
+            <BC1 color="black" marginBottom="contactEmail" style={{fontSize: `1rem`}}>
               {data.emailAddress}
             </BC1>
           </Link>

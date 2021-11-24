@@ -259,6 +259,8 @@ export const BC1 = styled.p`
         return "11.25rem"
         case "openingHours":
         return "1.5rem"
+        case "contactEmail":
+        return "3.5rem"
       default:
         return "0"
     }

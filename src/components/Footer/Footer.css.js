@@ -127,7 +127,9 @@ export const Logo = styled.div`
     fill: #ffffff;
   }
 #CL_LESHOPPE_NOCL_RGB_C, #CL_CHANCERY_RGB_C {
-transform: scale(1.2);
+transform: scale(1.3);
+margin-right: 1rem;
+margin-left: 1rem;
 .Audreys_WHT_Logo {
   margin-bottom: -.5rem
 }

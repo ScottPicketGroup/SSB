@@ -241,7 +241,7 @@ export const BC1 = styled.p`
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
   font-size: 16px;
-  line-height: 22px;
+  line-height: ${props => props.lineHeight ? "0px" : "22px"};
   font-weight: ${props => props.bold ? "bold" : "normal"};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -258,7 +258,7 @@ export const BC1 = styled.p`
       case "xxl":
         return "11.25rem"
         case "openingHours":
-        return "1.5rem"
+        return "1.15rem"
         case "contactEmail":
         return "3.5rem"
       default:
@@ -455,7 +455,7 @@ export const FBC1 = styled.p`
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
   font-size: .75rem;
-  line-height: 26px;
+  line-height: ${props => props.lineHeight ? "21px" : "22px"};
   font-weight: 500;
   margin-bottom: ${props => {
     switch (props.marginBottom) {

@@ -15,7 +15,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             eventEndDateAndTime(formatString: "dddd MMM DD YYYY LT")
             
             galleryImages {
-              gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 0.75)
+              gatsbyImageData
             }
             eventDescription {
               raw

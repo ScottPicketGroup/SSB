@@ -56,10 +56,10 @@ const ContactUs = ({...data}) => {
           </NoneDecorationLink>
           </BC1>
           <ServiceTime>
-            <BC1 style={{color: `black`}} marginTop="lg" marginBottom="openingHours"> OPENING HOURS</BC1>
+            <BC1 style={{color: `black`}} marginTop="lg"  marginBottom="openingHours"> OPENING HOURS</BC1>
           <Lunch>
             <DayWrapper>
-              <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
+              <FBC1 color="black" marginBottom="0" lineHeight="openingHours" style={{fontSize: `1rem`}}>
                {data.openingTimesLunchHeading}
               </FBC1>
               <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>

@@ -69,14 +69,14 @@ const EventTemplate = ({ pageContext }) => {
             {eventData.galleryImages ? (
               <GallerySlider images={eventData.galleryImages} bgRed />
             ) : (
-              <BC1 color="white">No Gallery</BC1>
+              <BC1 color="white"></BC1>
             )}
           </GalleryWrapper>
           <DescriptionWrapper>
             {eventData.eventDescription ? (
               <Renderer node={eventData.eventDescription} />
             ) : (
-              <BC1 color="white">No Description</BC1>
+              <BC1 color="white"></BC1>
             )}
             <Link
               to={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : ""}
@@ -89,7 +89,7 @@ const EventTemplate = ({ pageContext }) => {
               </BC1>
             </Link>
           </DescriptionWrapper>
-          <BrunchFirstWrapper>
+          {eventData.eventMenu && <BrunchFirstWrapper>
             <MenuDuJourContainer>
               <MenuHeadingWrapper>
                 <Heading2 color="black">
@@ -110,7 +110,7 @@ const EventTemplate = ({ pageContext }) => {
                   </MenuDuJourItemWrapper>
                 ))
               ) : (
-                <BC1 color="white">No Menu</BC1>
+                <BC1 color="white"></BC1>
               )}
 
               {eventData.eventMenu && (
@@ -125,9 +125,9 @@ const EventTemplate = ({ pageContext }) => {
                 alt="brunch-hidden"
               />
             ) : (
-              <BC1 color="white">No Image</BC1>
+              <BC1 color="white"></BC1>
             )}
-          </BrunchFirstWrapper>
+          </BrunchFirstWrapper> }
         </SectionContainer>
       </PageContainer>
     </Layout>

@@ -35,7 +35,12 @@ export const HeroTextWrapper = styled.div`
   justify-content: space-between;
   left: 50%;
   transform: translateX(-50%);
-
+  @media only screen and (max-width: 800px) and (min-width: 600px) {
+    top: 20%;
+    h1 {
+      font-size: 1rem;
+    }
+  } 
   @media (max-width: 451px) {
     top: 6rem;
     width: 96%;
@@ -150,7 +155,9 @@ export const LogoTopTextWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  @media only screen and (max-width: 1200px) and (min-width: 801px) {margin-bottom: 1rem;} 
+  @media only screen and (max-width: 799px) and (min-width: 600px) {margin-bottom: 0rem;} 
 `
 export const LogoBottomTextWrapper = styled.div`
   display: flex;

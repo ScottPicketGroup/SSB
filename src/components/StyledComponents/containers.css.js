@@ -63,7 +63,7 @@ export const SectionContainer = styled.div`
       case "lg":
         return "3.5rem"
       case "xl":
-        return "6rem"
+        return "7rem"
       case "xxl":
         return "11.25rem"
       default:

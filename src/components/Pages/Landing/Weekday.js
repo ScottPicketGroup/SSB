@@ -10,7 +10,7 @@ import { SectionContainer } from "../../StyledComponents/containers.css"
 
 const Weekday = ({ data }) => {
   return (
-    <SectionContainer marginBottom="xxl">
+    <SectionContainer marginBottom="xl">
       <WeekdayWrapper>
         <CircleImageWrapper>
            <WeekdaySpecialsIcon text={data.circularMenuText}/>

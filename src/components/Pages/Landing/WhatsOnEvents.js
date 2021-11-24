@@ -19,7 +19,7 @@ import { getImage } from "gatsby-plugin-image"
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
   return (
-    <SectionContainer column="true" marginBottom="lg">
+    <SectionContainer column="true">
       <PrivateDiningWrapper first="true">
         <PrivateDiningTextWrapper first="true">
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>

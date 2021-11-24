@@ -58,10 +58,7 @@ export const landingPageData = graphql`
       edges {
         node {
           heroImage {
-            gatsbyImageData(
-              placeholder: BLURRED
-              layout: CONSTRAINED
-             )
+            gatsbyImageData
           }
           heroImageTitle
           quoteHeading

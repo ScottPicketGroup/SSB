@@ -92,10 +92,10 @@ const moveSlideshow = keyframes`
 export const Logos = styled.div`
   background-color: rgba(140, 25, 27);
   display: flex;
-  width: 4800px;
+  width: 4000px;
   align-items: center;
   height: auto;
-  padding: 1.65rem 0;
+  padding: .8rem 0;
   border-top: white 1px solid;
   border-bottom: white 1px solid;
   transform: translate3d(0, 0, 0);
@@ -122,10 +122,16 @@ export const Logos = styled.div`
 `
 export const Logo = styled.div`
   fill: #ffffff;
-  margin-right: 100px;
+  margin-right: 50px;
   svg {
     fill: #ffffff;
   }
+#CL_LESHOPPE_NOCL_RGB_C, #CL_CHANCERY_RGB_C {
+transform: scale(1.2);
+.Audreys_WHT_Logo {
+  margin-bottom: -.5rem
+}
+}
 `
 
 export const SocialLinks = styled.div`

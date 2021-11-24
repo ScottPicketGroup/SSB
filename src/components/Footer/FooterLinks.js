@@ -72,13 +72,13 @@ const FooterLinks = () => {
             </FBC1>
           </FooterLink>
         
-            <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{marginRight: "1rem"}}>
-              <FBC1 color="white" marginBottom="sm">
-                FaceBook
+            <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{marginRight: "1rem", textDecoration: 'none'}}>
+              <FBC1 color="white" marginBottom="sm" style={{}}>
+                Facebook
               </FBC1>
             </a>
-            <a href={footerData.instagramLink} target="_blank" rel="noreferrer">
-              <FBC1 color="white" marginBottom="sm">
+            <a href={footerData.instagramLink} target="_blank" rel="noreferrer"style={{textDecoration: 'none'}}>
+              <FBC1 color="white" marginBottom="sm" >
                 Instagram
               </FBC1>
             </a>
@@ -170,10 +170,10 @@ const FooterLinks = () => {
             </FBC1>
           </PageLinks>
           <SocialLinks>
-            <a href={footerData.facebookLink} target="_blank" rel="noreferrer">
-              <FacebookIcon />
+            <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{textDecoration: `none`}}>
+              <FacebookIcon />hi
             </a>
-            <a href={footerData.instagramLink} target="_blank" rel="noreferrer">
+            <a href={footerData.instagramLink} target="_blank" rel="noreferrer" style={{textDecoration: `none`}}>
               <InstagramIcon />
             </a>
           </SocialLinks>

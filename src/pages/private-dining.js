@@ -22,6 +22,7 @@ const PrivateDingingPage = ({ data }) => {
       <Intro pageHeading={pageHeadnig} introduction={introduction} />
       <GallaryAndDescription
         gallery={gallery}
+        width={"55%"}
         description={description}
         eventsPackageLinkText={eventsPackageLinkText}
       />
@@ -42,7 +43,7 @@ export const privateDiningPageData = graphql`
         introduction
         gallery {
           gatsbyImageData(
-            layout: FULL_WIDTH
+           layout: FULL_WIDTH
             placeholder: BLURRED
             aspectRatio: 1.4
           )

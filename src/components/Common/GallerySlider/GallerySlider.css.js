@@ -26,7 +26,7 @@ export const ImageContainer = styled.div`
 `
 
 export const Card = styled.div`
-  width: 100%;
+  width: ${props => props.width ? "50%" : '100%'};
   margin-left: ${props =>
     props.active === props.i + 1
       ? "0vw"

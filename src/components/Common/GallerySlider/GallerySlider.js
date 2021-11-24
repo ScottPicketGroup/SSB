@@ -5,7 +5,7 @@ import { Card, GalleryContainer, ImageContainer } from "./GallerySlider.css"
 import Navigations from "./Navigations"
 import NavigationsBgRed from "./NavigationsBgRed"
 
-const GallerySlider = ({ images, bgRed, page }) => {
+const GallerySlider = ({ images, bgRed, page, width }) => {
   const [active, setActive] = React.useState(0)
   
   return (
@@ -15,7 +15,7 @@ const GallerySlider = ({ images, bgRed, page }) => {
           images.map(
             (item, i) =>
               item && (
-                <Card key={i} i={i} active={active}>
+                <Card key={i} i={i} active={active} width={width}>
                   <GatsbyImage image={item.gatsbyImageData} alt={`${i}`} />
                 </Card>
               )

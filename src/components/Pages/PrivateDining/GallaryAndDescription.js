@@ -8,13 +8,14 @@ import { Link } from "gatsby"
 
 const GallaryAndDescription = ({
   gallery,
+  width,
   description,
   eventsPackageLinkText,
 }) => {
   return (
     <GallaryWrapper>
       <GallerySliderWrapper>
-        <GallerySlider images={gallery} page="dining" />
+        <GallerySlider images={gallery} page="dining" width/>
       </GallerySliderWrapper>
 
       <DescriptionWrapper>

@@ -1,4 +1,5 @@
 import React from "react"
+
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
   MenuDuJourContainer,
@@ -12,7 +13,9 @@ const MenuDuJour = ({ menuDuJourData }) => {
     menuDuJourData
   return (
     <MenuDuJourContainer>
+
       <MenuDuJourTitleWrapper>
+      
         <BC2 bold color="black">
           {menuTitleTop}
         </BC2>
@@ -31,6 +34,7 @@ const MenuDuJour = ({ menuDuJourData }) => {
       <SeasonalTitleWrapper>
         <BC2 bold>{seasonalMenuTitle}</BC2>
       </SeasonalTitleWrapper>
+
     </MenuDuJourContainer>
   )
 }

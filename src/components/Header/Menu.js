@@ -59,7 +59,7 @@ const MenuComponent = () => {
     { title: "Home", pageNum: 0, to: "/" },
     { title: "Book a Table", pageNum: 1, to: "/reservations" },
     { title: "What's On", pageNum: 2, to: "/whats-on" },
-    { title: "Wine", pageNum: 4, to: "/drinks" },
+    { title: "Wine etc.", pageNum: 4, to: "/drinks" },
     { title: "Food", pageNum: 5, to: "/food" },
     { title: "Private Events", pageNum: 6, to: "/private-dining" },
     { title: "Vouchers", pageNum: 7, to: "" },

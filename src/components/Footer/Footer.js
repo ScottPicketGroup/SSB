@@ -4,12 +4,14 @@ import FooterItems from './FooterItems'
 import LogoSlider from './LogoSlider'
 import FooterForm from './FooterForm'
 
+
 const Footer = () => {
   
     return (
         <FooterWrapper >
             <FooterForm />
             <LogoSlider />
+         
             <FooterItems />
         </FooterWrapper>
     )

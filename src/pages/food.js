@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Parallax } from 'react-scroll-parallax';
 import { useRef } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
@@ -40,8 +41,14 @@ const FoodPage = ({ data }) => {
           centered
           red
           ref={el => (itemsRef.current[0] = el)}
+          
+        ><Parallax  y={[15, 0 ]}
+          styleOuter={{
+            marginTop: `-5rem`
+          }}  
         >
           <MenuDuJour menuDuJourData={menuDuJour} />
+          </Parallax>
         </SectionContainer>
         <SectionContainer
           marginBottom="xl"

@@ -1,6 +1,6 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
-
+import { Parallax } from 'react-scroll-parallax';
 import {
   DesktopContainer,
   MobileContainer,
@@ -21,7 +21,9 @@ const Hero = ({ heroImage, heroImageTitle }) => {
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
+      <Parallax key={1} y={[20, -20 ]}>
         <HeroImage image={getImage(heroImage)} layout="fullWidth" alt="hero" />
+        </Parallax>
         <HeroTextWrapper>
           <MobileContainer>
             <Heading2 marginBottom="md">{heroImageTitle}</Heading2>

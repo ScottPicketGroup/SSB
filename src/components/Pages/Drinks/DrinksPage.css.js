@@ -195,7 +195,7 @@ export const NonAlcoholicItemWrapper = styled.div`
   flex-direction: column;
   width: 35%;
   align-self: flex-end;
-  margin-right: 5.5rem;
+  margin-right: 3.5rem;
   @media (max-width: 451px) {
     width: 48%;
     margin-right: 1rem;

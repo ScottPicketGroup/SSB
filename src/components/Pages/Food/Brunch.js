@@ -1,4 +1,6 @@
 import React from "react"
+
+import { useStaticQuery, graphql } from "gatsby"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
   MenuDuJourContainer,
@@ -14,6 +16,27 @@ import {
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 
 const Brunch = ({ brunchData, hiddenOnMobImg }) => {
+
+  const data = useStaticQuery(graphql`
+  query brunchMenuImages {
+    allContentfulFoodMenuPageContent {
+      edges {
+        node {
+          vertImgUnderMenu {
+            id
+            gatsbyImageData(aspectRatio: 0.8)
+          }
+          horizontalImageUnderFoodMenu {
+            id
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+  
+`)
+const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodMenuPageContent.edges[0].node
   const { menuLogo, menuItems, bottomMenuTitle } = brunchData
   return (
     <BrunchContainer>
@@ -46,19 +69,18 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
       </BrunchFirstWrapper>
       <BrunchSecondWrapper>
         <BrunchVerticalImageWrapper>
-          <StaticImage
-            src="../../../images/brunch-second-left.png"
-            alt="brunch-second-left"
-            layout="fullWidth"
-            aspectRatio="0.8"
+          
+          <GatsbyImage
+            image={getImage(vertImgUnderMenu)}
+            style={{ margin: "1rem 1rem 1.75rem", overflow: "visible", aspectRatio: `3/2` }}
+            alt="menu-dujour"
           />
         </BrunchVerticalImageWrapper>
         <BrunchHorizontalImageWrapper>
-          <StaticImage
-            src="../../../images/brunch-second-right.png"
-            layout="fullWidth"
-            alt="brunch-second-right"
-            aspectRatio="1.4"
+        <GatsbyImage
+            image={getImage(horizontalImageUnderFoodMenu)}
+            style={{ margin: "1rem 1rem 1.75rem", overflow: "visible", aspectRatio: `3/2` }}
+            alt="menu-dujour"
           />
         </BrunchHorizontalImageWrapper>
       </BrunchSecondWrapper>

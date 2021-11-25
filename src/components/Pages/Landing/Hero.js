@@ -6,7 +6,7 @@ import {
   MobileContainer,
   SectionContainer,
 } from "../../StyledComponents/containers.css"
-import { BC2, Heading1, Heading2 } from "../../StyledComponents/typography.css"
+import { BC1, BC2, Heading1, Heading2 } from "../../StyledComponents/typography.css"
 import {
   HeroImage,
   HeroTextWrapper,
@@ -17,7 +17,7 @@ import {
 } from "./landingPage.css"
 import LogoIcon from "../../Icons/LogoIcon"
 
-const Hero = ({ heroImage, heroImageTitle }) => {
+const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => {
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
@@ -31,9 +31,9 @@ const Hero = ({ heroImage, heroImageTitle }) => {
           </MobileContainer>
           <DesktopContainer>
             <LogoTopTextWrapper>
-              <BC2>300 SMITH STREET</BC2>
-              <Heading1>{heroImageTitle}</Heading1>
-              <BC2>INFO@SMITHSTBISTROT.COM.AU</BC2>
+              <BC1>{heroAddress}</BC1>
+              <Heading1>{heroTopCenterText}</Heading1>
+              <BC1>INFO@SMITHSTBISTROT.COM.AU</BC1>
             </LogoTopTextWrapper>
             <LogoIcon />
             <LogoBottomTextWrapper>

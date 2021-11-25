@@ -22,6 +22,8 @@ const FoodPage = ({ data }) => {
     menuDuJour,
     brunch,
     desserts,
+    vertImageUnderMenuHiddenOnMob,
+    image3,
     imageAdjacentToBrunchMenuHiddenOnMob,
     lunchAndDinner,
   } = data.allContentfulFoodMenuPageContent.nodes[0]
@@ -61,7 +63,7 @@ const FoodPage = ({ data }) => {
             hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
         </SectionContainer>
-        <Food foodData={lunchAndDinner} />
+        <Food foodData={lunchAndDinner} vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob} image3={image3}/>
         <SectionContainer
           marginBottom="xxl"
           centered
@@ -79,9 +81,7 @@ export default FoodPage
 
 export const foodPageData = graphql`
   query FoodPageQuery {
-    allContentfulFoodMenuPageContent(
-      filter: { id: { eq: "f6da1586-4740-58e3-80ab-f21842256b5a" } }
-    ) {
+    allContentfulFoodMenuPageContent {
       nodes {
         pageTitle
         menuDuJour {
@@ -136,6 +136,8 @@ export const foodPageData = graphql`
               menuItemPrice
             }
           }
+         
+         
           food_menu_page_content {
             imageAdjacentToDessertMenu {
               gatsbyImageData(aspectRatio: 1, layout: FULL_WIDTH)

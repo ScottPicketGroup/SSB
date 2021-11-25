@@ -174,13 +174,14 @@ export const Lunch = styled.div`
   justify-content: space-between;
   align-items: end;
   text-align: left;
+  margin-bottom: .5rem;
 `
 export const DayWrapper = styled.div`
   width: 45%;
   text-align: left;
 `
 export const TimeWrapper = styled.div`
-  width: 45%;
+  width: 55%;
   text-align: left;
 `
 export const FooterFormWrapper = styled.div`

@@ -472,9 +472,11 @@ export const FBC1 = styled.p`
       case "xxl":
         return "11.25rem"
         case "lunch":
-        return "-.75rem"
+        return "-.4rem"
         case "address":
-          return "-.75rem"
+          return "-.4rem"
+          case "addressLinetwo":
+          return ".5rem"
       default:
         return "0"
     }
@@ -503,6 +505,16 @@ export const FBC1 = styled.p`
     margin-bottom: 1.25rem;
     line-height: 1.15;
   }
+`
+export const FBC1External = styled(FBC1)`
+:hover {
+text-decoration: underline;
+}
+`
+export const FBC1First = styled(FBC1)`
+text-decoration: underline;
+text-underline-offset: 3px;
+
 `
 export const BBHeading2 = styled(Heading2)`
   line-height: 1.5;

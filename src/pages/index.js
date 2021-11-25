@@ -25,12 +25,15 @@ const IndexPage = ({ data }) => {
     whatsOnEvents,
     weekdaySpecials,
     gallery,
+    heroTopCenterText, heroAddress 
   } = data.allContentfulLandingPageContent.edges[0].node
-
+console.log(`heroTopCenterText`, heroAddress)
   return (
     <Layout landing>
       <Seo title="Home" />
       <Hero
+      heroTopCenterText={heroTopCenterText}
+      heroAddress={heroAddress} 
         heroImage={heroImage}
         heroImageTitle={heroImageTitle}
         alt="landing-hero-image"
@@ -60,6 +63,8 @@ export const landingPageData = graphql`
           heroImage {
             gatsbyImageData
           }
+          heroAddress
+          heroTopCenterText
           heroImageTitle
           quoteHeading
           quoteText {

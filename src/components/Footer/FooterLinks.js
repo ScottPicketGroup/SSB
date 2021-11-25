@@ -11,15 +11,19 @@ import {
   MobileSocialWrapper,
   FooterLink,
 } from "./Footer.css"
-import { FBC1 } from "../StyledComponents/typography.css"
+import {
+  FBC1,
+  FBC1External,
+  FBC1First,
+} from "../StyledComponents/typography.css"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
 
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from "gatsby"
 
 const FooterLinks = () => {
   const footerQuery = useStaticQuery(graphql`
-  query footerQuery {
+    query footerQuery {
       allContentfulLandingPageContent {
         edges {
           node {
@@ -43,19 +47,18 @@ const FooterLinks = () => {
           }
         }
       }
-    } 
-`)
+    }
+  `)
   const footerData = footerQuery.allContentfulLandingPageContent.edges[0].node
   console.log(footerData)
   return (
     <>
       <FooterLinksGrid>
         <PageLinks>
-          <FooterLink to="" >
-            <FBC1 color="white" marginBottom="sm" style={{textDecoration: 'underline', textUnderlineOffset: `2px`}}>
-              {footerData.footerFirstColumnHeading}
-            </FBC1>
-          </FooterLink>
+          <FBC1First color="white" marginBottom="sm">
+            {footerData.footerFirstColumnHeading}
+          </FBC1First>
+
           <FooterLink to="/">
             <FBC1 color="white" marginBottom="sm">
               Home
@@ -71,27 +74,26 @@ const FooterLinks = () => {
               Terms and Conditions
             </FBC1>
           </FooterLink>
-        
-            <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{marginRight: "1rem", textDecoration: 'none'}}>
-              <FBC1 color="white" marginBottom="sm" style={{}}>
-                Facebook
-              </FBC1>
-            </a>
-            <a href={footerData.instagramLink} target="_blank" rel="noreferrer"style={{textDecoration: 'none'}}>
-              <FBC1 color="white" marginBottom="sm" >
-                Instagram
-              </FBC1>
-            </a>
-        
+
+          <a href={footerData.facebookLink} target="_blank" rel="noreferrer">
+            <FBC1External color="white" marginBottom="sm">
+              Facebook
+            </FBC1External>
+          </a>
+          <a href={footerData.instagramLink} target="_blank" rel="noreferrer">
+            <FBC1External color="white" marginBottom="sm">
+              Instagram
+            </FBC1External>
+          </a>
         </PageLinks>
         <ServiceTime>
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="lunch">
-               {footerData.openingTimesHeadingLunch}
+                {footerData.openingTimesHeadingLunch}
               </FBC1>
               <FBC1 color="white" marginBottom="">
-              {footerData.openingTimesLunchDaysOpen}
+                {footerData.openingTimesLunchDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
@@ -103,46 +105,59 @@ const FooterLinks = () => {
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="lunch">
-              {footerData.openingTimesHeadingDinner}
+                {footerData.openingTimesHeadingDinner}
               </FBC1>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.openingTimesDinnerDaysOpen}
+                {footerData.openingTimesDinnerDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.openingTimesDinnerOpenTimes}
+                {footerData.openingTimesDinnerOpenTimes}
               </FBC1>
             </TimeWrapper>
           </Lunch>
-          <Lunch>
+          {/* {footerData.daysClosed ? (
+            <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="sm">
                {footerData.daysClosed}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
-              <FBC1 color="white" marginBottom="sm">
+              {footerData.daysClosed ? (<FBC1 color="white" marginBottom="sm">
                 Closed
-              </FBC1>
+              </FBC1>) : "boobs"}
             </TimeWrapper>
           </Lunch>
+          ): null} */}
         </ServiceTime>
         <PageLinks>
           <FBC1 color="white" marginBottom="address">
-        {footerData.addressLineOne}
+            {footerData.addressLineOne}
           </FBC1>
-          <FBC1 color="white" marginBottom="sm">
-          {footerData.addressLineTwo}
+          <FBC1 color="white" marginBottom="addressLinetwo">
+            {footerData.addressLineTwo}
           </FBC1>
           <FBC1 color="white" marginBottom="address">
-          {footerData.emailFooterInfo}
+            {footerData.emailFooterInfo}
           </FBC1>
-          <FBC1 color="white" marginBottom="sm">
-          {footerData.phoneNumberFooter}
+          <FBC1 color="white" marginBottom="addressLinetwo">
+            {footerData.phoneNumberFooter}
           </FBC1>
+
           <FBC1 color="white" marginBottom="sm">
-           {footerData.bottomLeftHeading}
+            <a
+              href="http://scottpickettgroup.com.au"
+              target="_blank"
+              rel="no rel"
+              style={{
+                color: `white`,
+                textUnderlineOffset: `.2px`
+              }}
+            >
+              {footerData.bottomLeftHeading}
+            </a>
           </FBC1>
         </PageLinks>
       </FooterLinksGrid>
@@ -154,26 +169,37 @@ const FooterLinks = () => {
         <MobileSocialWrapper>
           <PageLinks>
             <FBC1 color="white" marginBottom="xs">
-           {footerData.addressLineOne}
+              {footerData.addressLineOne}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
-            {footerData.addressLineTwo}
+              {footerData.addressLineTwo}
             </FBC1>
             <FBC1 color="white" marginBottom="xs">
-            {footerData.emailFooterInfo}
+              {footerData.emailFooterInfo}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
-            {footerData.emailFooterInfo}
+              {footerData.emailFooterInfo}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
               Scott Pickett Group
             </FBC1>
           </PageLinks>
           <SocialLinks>
-            <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{textDecoration: `none`}}>
-              <FacebookIcon />hi
+            <a
+              href={footerData.facebookLink}
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: `none` }}
+            >
+              <FacebookIcon />
+              hi
             </a>
-            <a href={footerData.instagramLink} target="_blank" rel="noreferrer" style={{textDecoration: `none`}}>
+            <a
+              href={footerData.instagramLink}
+              target="_blank"
+              rel="noreferrer"
+              style={{ textDecoration: `none` }}
+            >
               <InstagramIcon />
             </a>
           </SocialLinks>
@@ -182,37 +208,37 @@ const FooterLinks = () => {
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="xs">
-              {footerData.openingTimesHeadingLunch}
+                {footerData.openingTimesHeadingLunch}
               </FBC1>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.openingTimesLunchDaysOpen}
+                {footerData.openingTimesLunchDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.openingTimesLunchOpenTimes}
+                {footerData.openingTimesLunchOpenTimes}
               </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="xs">
-              {footerData.openingTimesHeadingDinner}
+                {footerData.openingTimesHeadingDinner}
               </FBC1>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.openingTimesDinnerDaysOpen}
+                {footerData.openingTimesDinnerDaysOpen}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.openingTimesDinnerDaysOpen}
+                {footerData.openingTimesDinnerDaysOpen}
               </FBC1>
             </TimeWrapper>
           </Lunch>
           <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="sm">
-              {footerData.daysClosed}
+                {footerData.daysClosed}
               </FBC1>
             </DayWrapper>
             <TimeWrapper>

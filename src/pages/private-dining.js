@@ -14,6 +14,7 @@ const PrivateDingingPage = ({ data }) => {
     description,
     eventsPackageLinkText,
     makeAndEnquiryHeading,
+    eventsPackagePdf
   } = data.allContentfulPrivateDiningPageContent.nodes[0]
 
   return (
@@ -25,6 +26,7 @@ const PrivateDingingPage = ({ data }) => {
         width={"55%"}
         description={description}
         eventsPackageLinkText={eventsPackageLinkText}
+        eventsPackagePdf={eventsPackagePdf}
       />
       <DiningForm makeAndEnquiryHeading={makeAndEnquiryHeading} />
     </Layout>
@@ -53,6 +55,11 @@ export const privateDiningPageData = graphql`
         }
         eventsPackageLinkText
         makeAndEnquiryHeading
+        eventsPackagePdf {
+          file {
+            url
+          }
+        }
       }
     }
   }

@@ -21,6 +21,7 @@ const DrinksPage = ({ data }) => {
     cocktailMenu,
     nonAlcoholicDrinksMenu,
     wineByTheGlassMenu,
+    wineMenuPdf
   } = data.allContentfulWineMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
@@ -33,7 +34,7 @@ const DrinksPage = ({ data }) => {
       <Seo title="Home" />
       <PageContainer>
         <DrinksIntro pageTitle={pageHeading} />
-        <DrinksScrollMenu excuteScroll={excuteScroll} />
+        <DrinksScrollMenu excuteScroll={excuteScroll} wineMenuPdf={wineMenuPdf}/>
         <SectionContainer
           marginBottom="xl"
           ref={el => (itemsRef.current[0] = el)}
@@ -66,6 +67,12 @@ export const drinksPageData = graphql`
     ) {
       nodes {
         pageHeading
+        wineMenuPdf {
+          id
+          file {
+            url
+          }
+        }
         wineByTheGlassMenu {
           wineMenuSection {
             sectionHeadingIeRed

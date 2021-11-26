@@ -21,9 +21,7 @@ const Reservation = ({
   pageTitle,
   introduction,
   image,
-  privateFunctionsHeading,
-  bookATableHeading,
-  bookATableUrl,
+  reserverationsLinks
 }) => {
   return (
     <SectionContainer column centered full red={true}>
@@ -34,30 +32,29 @@ const Reservation = ({
         <Renderer node={introduction} />
       </IntroductionWrapper>
       <DesktopLinkWrapper>
+      {reserverationsLinks.map((link, i) => (
         <a
-          href={bookATableUrl}
+          href={link.url}
           target="_blank"
           rel="noreferrer"
           style={{ textDecoration: "none" }}
         >
-          <BBHeading2 color="white">{bookATableHeading}</BBHeading2>
+          <BBHeading2 color="white">{link.label}</BBHeading2>
         </a>
-        <NoneDecorationLink to="/private-dining">
-          <BBHeading2 color="white">{privateFunctionsHeading}</BBHeading2>
-        </NoneDecorationLink>
+      ))}
+       
       </DesktopLinkWrapper>
       <MobileLinkWrapper>
+      {reserverationsLinks.map((link, i) => (
         <a
-          href={bookATableUrl}
+          href={link.url}
           target="_blank"
           rel="noreferrer"
           style={{ textDecoration: "none" }}
         >
-          <BBHeading3 color="white">{bookATableHeading}</BBHeading3>
+          <BBHeading2 color="white">{link.label}</BBHeading2>
         </a>
-        <NoneDecorationLink to="">
-          <BBHeading3 color="white">{privateFunctionsHeading}</BBHeading3>
-        </NoneDecorationLink>
+      ))}
       </MobileLinkWrapper>
       <ReservationImage image={getImage(image)} alt="reservation-image" />
     </SectionContainer>

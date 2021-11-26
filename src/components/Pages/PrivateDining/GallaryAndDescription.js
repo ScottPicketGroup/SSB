@@ -11,6 +11,7 @@ const GallaryAndDescription = ({
   width,
   description,
   eventsPackageLinkText,
+  eventsPackagePdf
 }) => {
   return (
     <GallaryWrapper>
@@ -21,9 +22,9 @@ const GallaryAndDescription = ({
       <DescriptionWrapper>
         <Renderer node={description} />
       </DescriptionWrapper>
-      <Link to="" style={{textUnderlineOffset: "5px"}}>
+      <a href={eventsPackagePdf.file.url} target="_blank" style={{textUnderlineOffset: "5px"}}>
         <BC1 style={{fontSize: "1rem"}} color="black">{eventsPackageLinkText}…</BC1>
-      </Link>
+      </a>
     </GallaryWrapper>
   )
 }

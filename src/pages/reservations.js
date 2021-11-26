@@ -12,7 +12,8 @@ const ReservationPage = ({ data }) => {
     image,
     privateFunctionsHeading,
     bookATableHeading,
-    bookATableUrl
+    bookATableUrl,
+    reserverationsLinks
   } = data.allContentfulReservationsPageContent.nodes[0]
 
   return (
@@ -23,9 +24,7 @@ const ReservationPage = ({ data }) => {
           pageTitle={pageTitle}
           introduction={introduction}
           image={image}
-          privateFunctionsHeading={privateFunctionsHeading}
-          bookATableHeading={bookATableHeading}
-          bookATableUrl={bookATableUrl}
+          reserverationsLinks={reserverationsLinks}
         />
       </PageContainer>
     </Layout>
@@ -47,9 +46,11 @@ export const reservationPageData = graphql`
         image {
           gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, aspectRatio: 1.5)
         }
-        privateFunctionsHeading
-        bookATableHeading
-        bookATableUrl
+        reserverationsLinks {
+          id
+          url
+          label
+        }
       }
     }
   }

@@ -33,7 +33,9 @@ const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => 
             <LogoTopTextWrapper>
               <BC1>{heroAddress}</BC1>
               <Heading1>{heroTopCenterText}</Heading1>
-              <BC1>INFO@SMITHSTBISTROT.COM.AU</BC1>
+              <BC1><a href="mailto: INFO@SMITHSTBISTROT.COM.AU" rel="no rel"
+              style={{textDecoration: `none`, color: `inherit`}}
+              >INFO@SMITHSTBISTROT.COM.AU</a></BC1>
             </LogoTopTextWrapper>
             <LogoIcon />
             <LogoBottomTextWrapper>

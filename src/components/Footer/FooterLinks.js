@@ -140,7 +140,7 @@ const FooterLinks = () => {
             {footerData.addressLineTwo}
           </FBC1>
           <FBC1 color="white" marginBottom="address">
-            {footerData.emailFooterInfo}
+       <a href={`mailto: ${footerData.emailFooterInfo}`} rel="no rel" style={{textDecoration: 'none', color: 'inherit'}}>     {footerData.emailFooterInfo}</a>
           </FBC1>
           <FBC1 color="white" marginBottom="addressLinetwo">
             {footerData.phoneNumberFooter}
@@ -153,7 +153,7 @@ const FooterLinks = () => {
               rel="no rel"
               style={{
                 color: `white`,
-                textUnderlineOffset: `.2px`
+                textUnderlineOffset: `4px`
               }}
             >
               {footerData.bottomLeftHeading}

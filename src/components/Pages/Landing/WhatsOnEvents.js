@@ -1,4 +1,5 @@
 import React from "react"
+import { ParallaxBanner } from 'react-scroll-parallax';
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {
@@ -18,6 +19,15 @@ import { getImage } from "gatsby-plugin-image"
 
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
+  const { images } = getImage(events[0].eventMenuImage);
+
+  const layers = [
+    {
+      image: images.fallback.src,
+      amount: 1,
+      expanded: false,
+    },
+  ];
   return (
     <SectionContainer column="true">
       <PrivateDiningWrapper first="true">
@@ -30,10 +40,9 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
             <BC1>Learn more…</BC1>
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
-        <PrivateDiningImage
-          image={getImage(events[0].eventMenuImage)}
-          first="true"
-          alt="private-dining"
+        <ParallaxBanner
+          layers={layers}
+          style={{ width: "60%" }}
         />
       </PrivateDiningWrapper>
       <WhatsOnEventsWrapper>

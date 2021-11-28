@@ -45,8 +45,8 @@ export const Controls = styled.div`
 `
 
 export const Control = styled.div`
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
   margin: 0.5rem;
   text-align: center;
   display: flex;
@@ -58,8 +58,8 @@ export const Control = styled.div`
   }
 `
 export const ActiveControl = styled.div`
-  width: 12px;
-  height: 12px;
+  width: 20px;
+  height: 20px;
   margin: 0.5rem;
   text-align: center;
   border-radius: 50%;

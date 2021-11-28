@@ -1,14 +1,13 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
-import { Parallax } from 'react-scroll-parallax';
+import { ParallaxBanner } from 'react-scroll-parallax';
 import {
   DesktopContainer,
   MobileContainer,
   SectionContainer,
 } from "../../StyledComponents/containers.css"
-import { BC1, BC2, Heading1, Heading2 } from "../../StyledComponents/typography.css"
+import { BC1, Heading1, Heading2 } from "../../StyledComponents/typography.css"
 import {
-  HeroImage,
   HeroTextWrapper,
   HeroWrapper,
   LogoTopTextWrapper,
@@ -18,12 +17,23 @@ import {
 import LogoIcon from "../../Icons/LogoIcon"
 
 const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => {
+  const { images } = getImage(heroImage);
+
+  const layers = [
+    {
+      image: images.fallback.src,
+      amount: 1,
+      expanded: false,
+    },
+  ];
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
-      <Parallax key={1} y={[20, -20 ]}>
-        <HeroImage image={getImage(heroImage)} layout="fullWidth" alt="hero" />
-        </Parallax>
+        <ParallaxBanner
+          className="hero-banner"
+          layers={layers}
+          style={{ height: "50vw" }}
+        />
         <HeroTextWrapper>
           <MobileContainer>
             <Heading2 marginBottom="md">{heroImageTitle}</Heading2>

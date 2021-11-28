@@ -108,14 +108,6 @@ export const Logos = styled.div`
   g {
     fill: #ffffff;
   }
-
-  /* @media screen and (max-width: 450px) {
-    .slick-list {
-      width: 1500px;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-  } */
   @media (max-width: 450px) {
     padding: 20px 0;
   }

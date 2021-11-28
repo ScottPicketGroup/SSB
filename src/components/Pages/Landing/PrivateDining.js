@@ -28,7 +28,7 @@ const PrivateDining = ({
       <PrivateDiningWrapper first="true" dining="true">
         <ParallaxBanner
           layers={layers}
-          style={{ width: "60%" }}
+          style={{ width: "70%" }}
         />
         <PrivateDiningTextWrapper dining="true">
           <Heading2 marginBottom="md">{privateDiningHeading}</Heading2>

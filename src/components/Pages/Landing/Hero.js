@@ -30,7 +30,6 @@ const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => 
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
         <ParallaxBanner
-          className="hero-banner"
           layers={layers}
           style={{ height: "50vw" }}
         />

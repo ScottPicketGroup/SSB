@@ -1,9 +1,9 @@
 import React from "react"
 import { BC1, Heading2, RedDecorationLink } from "../../StyledComponents/typography.css"
+import { ParallaxBanner } from "react-scroll-parallax";
 import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
-  PrivateDiningImage,
   RenderTextOverHiddenWrapper,
 } from "./landingPage.css"
 import { getImage } from "gatsby-plugin-image"
@@ -14,13 +14,21 @@ const PrivateDining = ({
   privateDiningImage,
   privateDiningIntro,
 }) => {
+  const { images } = getImage(privateDiningImage);
+
+  const layers = [
+    {
+      image: images.fallback.src,
+      amount: 1,
+      expanded: false,
+    },
+  ];
   return (
     <SectionContainer marginBottom="xl">
       <PrivateDiningWrapper first="true" dining="true">
-        <PrivateDiningImage
-          image={getImage(privateDiningImage)}
-          alt="private-dining"
-          first="true"
+        <ParallaxBanner
+          layers={layers}
+          style={{ width: "60%" }}
         />
         <PrivateDiningTextWrapper dining="true">
           <Heading2 marginBottom="md">{privateDiningHeading}</Heading2>

@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Parallax } from 'react-scroll-parallax';
+import { Parallax } from "react-scroll-parallax"
 import { useRef } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
@@ -43,13 +43,14 @@ const FoodPage = ({ data }) => {
           centered
           red
           ref={el => (itemsRef.current[0] = el)}
-          
-        ><Parallax  y={[15, 0 ]}
-          styleOuter={{
-            marginTop: `-5rem`
-          }}  
         >
-          <MenuDuJour menuDuJourData={menuDuJour} />
+          <Parallax
+            y={[15, 0]}
+            styleOuter={{
+              marginTop: `-5rem`,
+            }}
+          >
+            <MenuDuJour menuDuJourData={menuDuJour} />
           </Parallax>
         </SectionContainer>
         <SectionContainer
@@ -58,19 +59,44 @@ const FoodPage = ({ data }) => {
           red
           ref={el => (itemsRef.current[1] = el)}
         >
-          <Brunch
-            brunchData={brunch}
-            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
-          />
+          <Parallax
+            y={[15, 0]}
+            styleOuter={{
+              marginTop: `-5rem`,
+            }}
+          >
+            <Brunch
+              brunchData={brunch}
+              hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
+            />
+          </Parallax>
         </SectionContainer>
-        <Food foodData={lunchAndDinner} vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob} image3={image3}/>
+        <Parallax
+          y={[15, 0]}
+          styleOuter={{
+            marginTop: `-5rem`,
+          }}
+        >
+          <Food
+            foodData={lunchAndDinner}
+            vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
+            image3={image3}
+          />
+        </Parallax>
         <SectionContainer
           marginBottom="xxl"
           centered
           red
           ref={el => (itemsRef.current[2] = el)}
         >
-          <Desserts dessertData={desserts} />
+          <Parallax
+            y={[15, 0]}
+            styleOuter={{
+              marginTop: `-5rem`,
+            }}
+          >
+            <Desserts dessertData={desserts} />
+          </Parallax>
         </SectionContainer>
       </PageContainer>
     </Layout>
@@ -136,8 +162,7 @@ export const foodPageData = graphql`
               menuItemPrice
             }
           }
-         
-         
+
           food_menu_page_content {
             imageAdjacentToDessertMenu {
               gatsbyImageData(aspectRatio: 1, layout: FULL_WIDTH)

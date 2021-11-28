@@ -60,9 +60,9 @@ const FoodPage = ({ data }) => {
           ref={el => (itemsRef.current[1] = el)}
         >
           <Parallax
-            y={[15, 0]}
+            y={[25, 0]}
             styleOuter={{
-              marginTop: `-5rem`,
+              marginTop: `-15rem`,
             }}
           >
             <Brunch
@@ -72,9 +72,9 @@ const FoodPage = ({ data }) => {
           </Parallax>
         </SectionContainer>
         <Parallax
-          y={[15, 0]}
+          y={[40, -15]}
           styleOuter={{
-            marginTop: `-5rem`,
+            marginTop: `-15rem`,
           }}
         >
           <Food

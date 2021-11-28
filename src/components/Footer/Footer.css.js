@@ -24,6 +24,7 @@ export const FooterLinksGrid = styled.div`
   width: 78%;
   padding-bottom: 8.65rem;
   display: flex;
+  justify-content: space-between;
   @media (max-width: 450px) {
     padding-bottom: 1.5rem;
     display: none;
@@ -143,7 +144,7 @@ export const SocialLinks = styled.div`
   }
 `
 export const PageLinks = styled.div`
-  width: 20vw;
+  max-width: 20vw;
   display: flex;
   flex-direction: column;
   
@@ -152,7 +153,7 @@ export const PageLinks = styled.div`
   }
 `
 export const ServiceTime = styled.div`
-  width: 30vw;
+  max-width: 30vw;
   display: flex;
   flex-direction: column;
  
@@ -163,17 +164,15 @@ export const ServiceTime = styled.div`
 export const Lunch = styled.div`
   display: flex;
   line-height: 0 !important;
-  justify-content: space-between;
   align-items: end;
   text-align: left;
   margin-bottom: .5rem;
 `
 export const DayWrapper = styled.div`
-  width: 45%;
+  width: 14vw;
   text-align: left;
 `
 export const TimeWrapper = styled.div`
-  width: 55%;
   text-align: left;
 `
 export const FooterFormWrapper = styled.div`

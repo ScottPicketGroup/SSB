@@ -21,7 +21,7 @@ const WeekDaySpecialsIcon = ({ text }) => {
             fill: `red`,
             stroke: `red`,
             fontSize: `3.5rem`,
-            fontStyle: `italic`
+            fontStyle: `italic`,
           }}
         >
           {text}
@@ -38,8 +38,9 @@ export const SVGWrapper = styled.svg`
   height: 286;
 `
 export const TextWrapper = styled.text`
-    transform: rotate(285deg);
-    transform-origin: center;
-    /* transform-origin: left; */
-    transform: translate(-155px, 0px) rotate(174deg);
+  // transform: rotate(285deg);
+  // transform-origin: center;
+  // /* transform-origin: left; */
+  // transform: translate(-155px, 0px) rotate(174deg);
+  transform: translate(329px, 505px) rotate(174deg);
 `

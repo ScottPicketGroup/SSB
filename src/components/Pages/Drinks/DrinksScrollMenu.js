@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import { BBHeading2 } from "../../StyledComponents/typography.css"
-import { DrinksScrollMenuDesktopWrapper, DrinksScrollMenuMobileWrapper, wineMenuPdf } from "./DrinksPage.css"
+import { DrinksScrollMenuDesktopWrapper, DrinksScrollMenuMobileWrapper } from "./DrinksPage.css"
 
 const DrinksScrollMenu = ({ excuteScroll, wineMenuPdf }) => {
   return (

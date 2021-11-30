@@ -5,9 +5,7 @@ import { getImage } from "gatsby-plugin-image"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {
   Heading1,
-  NoneDecorationLink,
   BBHeading2,
-  BBHeading3,
 } from "../../StyledComponents/typography.css"
 import {
   IntroductionWrapper,

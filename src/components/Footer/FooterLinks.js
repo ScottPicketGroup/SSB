@@ -140,7 +140,7 @@ const FooterLinks = () => {
             {footerData.addressLineTwo}
           </FBC1>
           <FBC1 color="white" marginBottom="address">
-       <a href={`mailto: ${footerData.emailFooterInfo}`} rel="no rel" style={{textDecoration: 'none', color: 'inherit'}}>     {footerData.emailFooterInfo}</a>
+       <a href={`mailto: ${footerData.emailFooterInfo}`} rel="noreferrer" style={{textDecoration: 'none', color: 'inherit'}}>     {footerData.emailFooterInfo}</a>
           </FBC1>
           <FBC1 color="white" marginBottom="addressLinetwo">
             {footerData.phoneNumberFooter}
@@ -150,7 +150,7 @@ const FooterLinks = () => {
             <a
               href="http://scottpickettgroup.com.au"
               target="_blank"
-              rel="no rel"
+              rel="noreferrer"
               style={{
                 color: `white`,
                 textUnderlineOffset: `4px`

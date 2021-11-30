@@ -12,7 +12,6 @@ import {
   DessertDrinkSectionContainer,
 } from "./FoodPage.css"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Desserts = ({ dessertData }) => {
   const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =

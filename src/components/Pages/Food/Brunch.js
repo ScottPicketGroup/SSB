@@ -13,9 +13,8 @@ import {
   MenuDuJourItemWrapper,
   BrunchHeadingWrapper
 } from "./FoodPage.css"
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
 const Brunch = ({ brunchData, hiddenOnMobImg }) => {
 
   const data = useStaticQuery(graphql`

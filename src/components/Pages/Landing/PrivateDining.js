@@ -4,18 +4,15 @@ import {
   Heading2,
   RedDecorationLink,
 } from "../../StyledComponents/typography.css"
-import { ParallaxBanner } from "react-scroll-parallax"
 import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
   RenderTextOverHiddenWrapper,
   PrivateDiningImageWrapepr,
   PrivateDiningImage,
-  LandingImageWrapper,
 } from "./landingPage.css"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import useScrollPosition from "../../hooks/ScrollPosition"
 
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -24,7 +21,7 @@ const PrivateDining = ({
   privateDiningImage,
   privateDiningIntro,
 }) => {
-  const image = getImage(privateDiningImage)
+  // const image = getImage(privateDiningImage)
 
   gsap.registerPlugin(ScrollTrigger)
   const ref = useRef(null)

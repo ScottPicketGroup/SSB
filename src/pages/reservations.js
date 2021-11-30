@@ -10,9 +10,6 @@ const ReservationPage = ({ data }) => {
     pageTitle,
     introduction,
     image,
-    privateFunctionsHeading,
-    bookATableHeading,
-    bookATableUrl,
     reserverationsLinks
   } = data.allContentfulReservationsPageContent.nodes[0]
 

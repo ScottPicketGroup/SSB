@@ -4,7 +4,6 @@ import { BC1 } from "../../StyledComponents/typography.css"
 import { GallaryWrapper, DescriptionWrapper, GallerySliderWrapper } from "./PrivateDining.css"
 import GallerySlider from "../../Common/GallerySlider/GallerySlider"
 import Renderer from "../../rich-text-renderers/BlackSample"
-import { Link } from "gatsby"
 
 const GallaryAndDescription = ({
   gallery,
@@ -22,7 +21,7 @@ const GallaryAndDescription = ({
       <DescriptionWrapper>
         <Renderer node={description} />
       </DescriptionWrapper>
-      <a href={eventsPackagePdf.file.url} target="_blank" style={{textUnderlineOffset: "5px"}}>
+      <a href={eventsPackagePdf.file.url} target="_blank" style={{textUnderlineOffset: "5px"}} rel="noreferrer">
         <BC1 style={{fontSize: "1rem"}} color="black">{eventsPackageLinkText}…</BC1>
       </a>
     </GallaryWrapper>

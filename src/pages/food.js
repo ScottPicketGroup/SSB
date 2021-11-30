@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Parallax } from "react-scroll-parallax"
 import { useRef } from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"

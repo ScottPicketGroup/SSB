@@ -1,5 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
-import { Parallax, Background } from 'react-parallax';
+import React, { useRef, useEffect } from "react"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {
   BC1,
@@ -10,21 +9,19 @@ import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
   PrivateDiningImage,
-  LandingImageWrapper,
   WhatsOnEventsWrapper,
   RenderTextOverHiddenWrapper,
   PrivateDiningImageWrapepr,
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/sample"
 import { getImage } from "gatsby-plugin-image"
-import useWindowSize from "../../hooks/useWindowSize"
 
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
-  const image = getImage(events[0].eventMenuImage)
+  // const image = getImage(events[0].eventMenuImage)
 
 
   gsap.registerPlugin(ScrollTrigger);

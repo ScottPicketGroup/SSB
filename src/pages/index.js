@@ -2,7 +2,6 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Hero from "../components/Pages/Landing/Hero"
 import Intro from "../components/Pages/Landing/Intro"
 import WineAndFood from "../components/Pages/Landing/WineAndFood"

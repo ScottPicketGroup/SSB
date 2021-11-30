@@ -142,11 +142,7 @@ export const WinesByTheGlassWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 900px;
-  @media(max-width: 451px){
-    width: 90%;
-    margin:0 auto;
-  }
+  width: 95%;
 `
 export const WineSectionWrapper = styled.div`
   margin-bottom: 1.75rem;
@@ -217,5 +213,24 @@ export const BottomGatsByImage = styled(GatsbyImage)`
   height: 28vw;
   @media (max-width: 451px) {
     height: 65vw;
+  }
+`
+export const WinesByTheGlassContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 900px;
+  @media (max-width: 451px) {
+    width: 90%;
+    margin: 0 auto;
+  }
+`
+
+export const ByGlassTitleWrapper = styled.div`
+  width: 5%;
+  text-align: left;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  @media (max-width: 451px) {
   }
 `

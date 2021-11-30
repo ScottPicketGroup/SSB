@@ -52,7 +52,7 @@ const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodM
         scrollTrigger: {
           trigger: element.querySelector(".menuTop"),
           start: " 27.5% ",
-          end: "top -25%",        
+          end: "top 0%",        
           pin: true
    
         },

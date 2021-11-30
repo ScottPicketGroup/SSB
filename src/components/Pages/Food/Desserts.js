@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useLayoutEffect, useRef} from "react"
 import { getImage } from "gatsby-plugin-image"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
@@ -11,17 +11,38 @@ import {
   DessertDrinkSectionItemWrapper,
   DessertDrinkSectionContainer,
 } from "./FoodPage.css"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Desserts = ({ dessertData }) => {
   const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =
     dessertData[0]
+  const ref = useRef(null)
+  useLayoutEffect(() => {
+    const element = ref.current
+
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      { y: 0 },
+      {
+        y: 0,
+        scrollTrigger: {
+          trigger: element.querySelector(".menuTop"),
+          start: " 27.5% ",
+          end: "top 5%",
+          pin: true,
+        },
+      }
+    )
+  }, [])
   return (
-    <DessertContainer>
+    <DessertContainer ref={ref}>
       <DessertImage
+        className="menuTop"
         image={getImage(food_menu_page_content[0].imageAdjacentToDessertMenu)}
         alt="dessert"
       />
-      <DessertWrapper>
+      <DessertWrapper  className="first-paragraph">
         {menuItems.map((item, index) => (
           <DessertItemWrapper key={index}>
             <DessertDrinkSectionItemWrapper>
@@ -53,7 +74,12 @@ const Desserts = ({ dessertData }) => {
           ))}
         </DessertDrinkSectionContainer>
 
-        <Heading2 marginTop="xl" marginBottom="md" color="black" style={{fontSize: "1.75rem"}}>
+        <Heading2
+          marginTop="xl"
+          marginBottom="md"
+          color="black"
+          style={{ fontSize: "1.75rem" }}
+        >
           {bottomHeading}
         </Heading2>
         <DessertSeasonalTitleWrapper>

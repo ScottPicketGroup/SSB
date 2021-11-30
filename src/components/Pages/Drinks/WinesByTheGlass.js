@@ -29,9 +29,11 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
         maxWidth: 10,
         scrollTrigger: {
           trigger: element.querySelector(".menuTop"),
-          start: " 25% ",
-          end: "36%",
-
+          start: " 15% ",
+          end: "47%",
+          scrub: 1,
+          onToggle: self =>
+            gsap.set(self.trigger, { autoAlpha: self.isActive ? 1 : 0 }),
           pin: true,
         },
       }
@@ -40,7 +42,15 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
 
   return (
     <WinesByTheGlassContainer ref={ref}>
+      <ByGlassTitleWrapper className="menuTop">
+        <BC1 color="red" bold>
+          BY THE GLASS
+        </BC1>
+      </ByGlassTitleWrapper>
       <WinesByTheGlassWrapper className="first-paragraph">
+        <BC1 color="red" bold>
+          BY THE GLASS
+        </BC1>
         {wineData.map((item, index) => (
           <WineSectionWrapper key={index}>
             <BC1 color="black" bold>
@@ -62,11 +72,6 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
           </WineSectionWrapper>
         ))}
       </WinesByTheGlassWrapper>
-      <ByGlassTitleWrapper className="menuTop">
-        <BC1 color="red" bold>
-          BY THE GLASS
-        </BC1>
-      </ByGlassTitleWrapper>
     </WinesByTheGlassContainer>
   )
 }

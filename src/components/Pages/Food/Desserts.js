@@ -28,7 +28,7 @@ const Desserts = ({ dessertData }) => {
         scrollTrigger: {
           trigger: element.querySelector(".menuTop"),
           start: " 27.5% ",
-          end: "top 5%",
+          end: "top 0%",
           pin: true,
         },
       }

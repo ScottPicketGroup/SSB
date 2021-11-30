@@ -1,4 +1,5 @@
 const path = require("path")
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.
@@ -57,5 +58,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         eventData: node,
       },
     })
+  })
+}
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+   
+   resolve: {
+      fallback: {
+        path: require.resolve('path-browserify'),
+        assert: require.resolve("assert/"),
+        fs: false
+
+      },
+    },
   })
 }

@@ -1,44 +1,71 @@
-import React from "react"
-import { BC1, Heading2, RedDecorationLink } from "../../StyledComponents/typography.css"
-import { ParallaxBanner } from "react-scroll-parallax";
+import React, { useRef, useEffect } from "react"
+import {
+  BC1,
+  Heading2,
+  RedDecorationLink,
+} from "../../StyledComponents/typography.css"
+import { ParallaxBanner } from "react-scroll-parallax"
 import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
   RenderTextOverHiddenWrapper,
+  PrivateDiningImageWrapepr,
+  PrivateDiningImage,
+  LandingImageWrapper,
 } from "./landingPage.css"
-import { getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { SectionContainer } from "../../StyledComponents/containers.css"
+import useScrollPosition from "../../hooks/ScrollPosition"
 
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 const PrivateDining = ({
   privateDiningHeading,
   privateDiningImage,
   privateDiningIntro,
 }) => {
-  const { images } = getImage(privateDiningImage);
+  const image = getImage(privateDiningImage)
 
-  const layers = [
-    {
-      image: images.fallback.src,
-      amount: 1,
-      expanded: false,
-    },
-  ];
+  gsap.registerPlugin(ScrollTrigger)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const element = ref.current
+
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      { y: 0 },
+      {
+        y: -50,
+        scrollTrigger: {
+          trigger: element.querySelector(".first-paragraph"),
+          start: " 50% ",
+          end: "bottom ",
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
   return (
     <SectionContainer marginBottom="xl">
-      <PrivateDiningWrapper first="true" dining="true">
-        <ParallaxBanner
-          layers={layers}
-          style={{ width: "70%" }}
-        />
+      <PrivateDiningWrapper first="true" dining="true" ref={ref}>
+        <PrivateDiningImageWrapepr>
+          <div className="first-paragraph">
+            <PrivateDiningImage
+              image={getImage(privateDiningImage)}
+              alt="private-dining"
+              first="true"
+            />
+          </div>
+        </PrivateDiningImageWrapepr>
         <PrivateDiningTextWrapper dining="true">
           <Heading2 marginBottom="md">{privateDiningHeading}</Heading2>
           <RenderTextOverHiddenWrapper first="true">
-            <BC1 dangerouslySetInnerHTML={{__html: privateDiningIntro}} />
+            <BC1 dangerouslySetInnerHTML={{ __html: privateDiningIntro }} />
           </RenderTextOverHiddenWrapper>
           <RedDecorationLink to="/private-dining">
-          <BC1>Learn more…
-
-          </BC1>
+            <BC1>Learn more…</BC1>
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
       </PrivateDiningWrapper>

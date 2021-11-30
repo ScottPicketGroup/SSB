@@ -1,6 +1,5 @@
-import React from "react"
-import { ParallaxBanner } from 'react-scroll-parallax';
-
+import React, { useRef, useState, useEffect } from "react"
+import { Parallax, Background } from 'react-parallax';
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {
   BC1,
@@ -11,26 +10,54 @@ import {
   PrivateDiningWrapper,
   PrivateDiningTextWrapper,
   PrivateDiningImage,
+  LandingImageWrapper,
   WhatsOnEventsWrapper,
   RenderTextOverHiddenWrapper,
+  PrivateDiningImageWrapepr,
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/sample"
 import { getImage } from "gatsby-plugin-image"
+import useWindowSize from "../../hooks/useWindowSize"
+
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
-  const { images } = getImage(events[0].eventMenuImage);
+  const image = getImage(events[0].eventMenuImage)
 
-  const layers = [
-    {
-      image: images.fallback.src,
-      amount: 1,
-      expanded: false,
-    },
-  ];
+
+  gsap.registerPlugin(ScrollTrigger);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const element = ref.current;
+    gsap.set(".first-paragraph", {xPercent: 0, yPercent: 0})
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      {css:{scale: 0}},
+      {
+        
+        css:{scaleX:1.5, scaleY: 1.5, },
+        scrollTrigger: {
+          trigger: element.querySelector(".first"),
+          start: " top ",
+          end: "bottom ",
+          scrub:true,
+         delay: 0.7
+        },
+      }
+    );
+
+
+
+  }, []);
+ 
   return (
+  
     <SectionContainer column="true">
-      <PrivateDiningWrapper first="true">
+
+      <PrivateDiningWrapper first="true" ref={ref}>
         <PrivateDiningTextWrapper first="true">
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
           <RenderTextOverHiddenWrapper first="true">
@@ -40,10 +67,23 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
             <BC1>Learn more…</BC1>
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
-        <ParallaxBanner
-          layers={layers}
-          style={{ width: "60%" }}
-        />
+
+    
+  <PrivateDiningImageWrapepr  >
+    <div
+     className="first-paragraph">
+    <PrivateDiningImage
+            image={getImage(events[0].eventMenuImage)}
+            alt="private-dining"
+            first="true"
+           
+          />
+    </div>
+      
+       </PrivateDiningImageWrapepr>
+
+   
+       
       </PrivateDiningWrapper>
       <WhatsOnEventsWrapper>
         {events.map(
@@ -67,7 +107,9 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
             )
         )}
       </WhatsOnEventsWrapper>
+
     </SectionContainer>
+
   )
 }
 

@@ -101,8 +101,17 @@ export const PrivateDiningWrapper = styled.div`
       props.dining ? "0" : props.first ? "3.25rem" : "0"};
   }
 `
+
+export const PrivateDiningImageWrapepr = styled.div`
+ --r: 478.94 / 319.29;
+
+aspect-ratio: var(--r);
+width:min(90%, min(478.94px, 90vh*(var(--r))));
+
+overflow: hidden;
+`
 export const PrivateDiningImage = styled(GatsbyImage)`
-  width: ${props => (props.first ? "60%" : "100%")};
+
   order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
     order: 0;

@@ -17,6 +17,7 @@ import Food from "../components/Pages/Food/Food"
 
 const FoodPage = ({ data }) => {
   const itemsRef = useRef([])
+
   const {
     pageTitle,
     menuDuJour,
@@ -32,6 +33,8 @@ const FoodPage = ({ data }) => {
     const pos = itemsRef.current[el].getBoundingClientRect().top - 150
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
+
+
   return (
     <Layout>
       <Seo title="Home" />
@@ -44,14 +47,7 @@ const FoodPage = ({ data }) => {
           red
           ref={el => (itemsRef.current[0] = el)}
         >
-          <Parallax
-            y={[15, 0]}
-            styleOuter={{
-              marginTop: `-5rem`,
-            }}
-          >
-            <MenuDuJour menuDuJourData={menuDuJour} />
-          </Parallax>
+          <MenuDuJour menuDuJourData={menuDuJour} />
         </SectionContainer>
         <SectionContainer
           marginBottom="xl"
@@ -59,44 +55,25 @@ const FoodPage = ({ data }) => {
           red
           ref={el => (itemsRef.current[1] = el)}
         >
-          <Parallax
-            y={[25, 0]}
-            styleOuter={{
-              marginTop: `-15rem`,
-            }}
-          >
-            <Brunch
-              brunchData={brunch}
-              hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
-            />
-          </Parallax>
-        </SectionContainer>
-        <Parallax
-          y={[40, -15]}
-          styleOuter={{
-            marginTop: `-15rem`,
-          }}
-        >
-          <Food
-            foodData={lunchAndDinner}
-            vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
-            image3={image3}
+          <Brunch
+            brunchData={brunch}
+            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
-        </Parallax>
+        </SectionContainer>
+
+        <Food
+          foodData={lunchAndDinner}
+          vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
+          image3={image3}
+        />
+
         <SectionContainer
           marginBottom="xxl"
           centered
           red
           ref={el => (itemsRef.current[2] = el)}
         >
-          <Parallax
-            y={[15, 0]}
-            styleOuter={{
-              marginTop: `-5rem`,
-            }}
-          >
-            <Desserts dessertData={desserts} />
-          </Parallax>
+          <Desserts dessertData={desserts} />
         </SectionContainer>
       </PageContainer>
     </Layout>

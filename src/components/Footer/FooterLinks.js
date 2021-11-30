@@ -50,7 +50,7 @@ const FooterLinks = () => {
     }
   `)
   const footerData = footerQuery.allContentfulLandingPageContent.edges[0].node
-  console.log(footerData)
+
   return (
     <>
       <FooterLinksGrid>

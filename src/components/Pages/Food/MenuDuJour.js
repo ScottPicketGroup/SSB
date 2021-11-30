@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect, useRef} from "react"
 
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
@@ -7,16 +7,40 @@ import {
   MenuDuJourTitleWrapper,
   SeasonalTitleWrapper,
 } from "./FoodPage.css"
-
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 const MenuDuJour = ({ menuDuJourData }) => {
   const { menuTitleTop, menuItems, bottomTitle, seasonalMenuTitle } =
     menuDuJourData
+    gsap.registerPlugin(ScrollTrigger)
+    const ref = useRef(null)
+
+    useEffect(() => {
+      const element = ref.current;
+  
+      gsap.fromTo(
+        element.querySelector(".first-paragraph"),
+        {opacity: 1},
+        {
+          opacity: 1,
+        
+         maxWidth: 10,
+          scrollTrigger: {
+            trigger: element.querySelector(".menuTop"),
+            start: " 25% ",
+            end: "bottom ",
+            
+            pin: true
+     
+          },
+        }
+      );}, []);
   return (
-    <MenuDuJourContainer>
+    <MenuDuJourContainer ref={ref}>
 
       <MenuDuJourTitleWrapper>
       
-        <BC2 bold color="black">
+        <BC2 bold color="black" >
           {menuTitleTop}
         </BC2>
       </MenuDuJourTitleWrapper>
@@ -32,7 +56,11 @@ const MenuDuJour = ({ menuDuJourData }) => {
         {bottomTitle.substr(0, 1).toUpperCase() + bottomTitle.substr(1).toLowerCase()}
       </Heading2>
       <SeasonalTitleWrapper>
-        <BC2 bold>{seasonalMenuTitle}</BC2>
+        <BC2 bold className="menuTop"
+        style={{
+          maxWidth: `10px !important`
+        }}
+        >{seasonalMenuTitle}</BC2>
       </SeasonalTitleWrapper>
 
     </MenuDuJourContainer>

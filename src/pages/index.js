@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
+import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 import Hero from "../components/Pages/Landing/Hero"
 import Intro from "../components/Pages/Landing/Intro"
 import WineAndFood from "../components/Pages/Landing/WineAndFood"
@@ -27,10 +27,11 @@ const IndexPage = ({ data }) => {
     gallery,
     heroTopCenterText, heroAddress 
   } = data.allContentfulLandingPageContent.edges[0].node
-console.log(`heroTopCenterText`, heroAddress)
+
   return (
     <Layout landing>
       <Seo title="Home" />
+      
       <Hero
       heroTopCenterText={heroTopCenterText}
       heroAddress={heroAddress} 
@@ -42,13 +43,17 @@ console.log(`heroTopCenterText`, heroAddress)
       <WineAndFood wineMenuLabelText={wineMenuLabelText}
           foodMenuLabelText={foodMenuLabelText}/>
       <Gallery gallery={gallery} />
+   
+      
       <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
+
       <Weekday data={weekdaySpecials} />
       <PrivateDining
         privateDiningHeading={privateDiningHeading}
         privateDiningImage={privateDiningImage}
         privateDiningIntro={privateDiningIntro}
       />
+      
     </Layout>
   )
 }

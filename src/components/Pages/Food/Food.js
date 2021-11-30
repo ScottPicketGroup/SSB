@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef, useEffect } from "react"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
   FoodContainer,
@@ -7,12 +7,39 @@ import {
   FoodTitleWrapper,
   FoodSeasonalTitleWrapper,
 } from "./FoodPage.css"
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const Food = ({ foodData }) => {
   const { topTitleIeFood, menuItems, seasonalTitleTopRight } = foodData
+
+  gsap.registerPlugin(ScrollTrigger)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const element = ref.current;
+
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      {opacity: 1},
+      {
+        opacity: 1,
+      
+       maxWidth: 10,
+        scrollTrigger: {
+          trigger: element.querySelector(".menuTop"),
+          start: " 25% ",
+          end: "bottom -75%",
+          
+          pin: true
+   
+        },
+      }
+    );}, []);
+
   return (
-    <FoodContainer>
-      <FoodTitleWrapper>
+    <FoodContainer ref={ref}>
+      <FoodTitleWrapper >
         <Heading2 style={{fontSize: "1.75rem"}}>{topTitleIeFood}</Heading2>
       </FoodTitleWrapper>
       {menuItems.map((item, index) =>
@@ -50,7 +77,10 @@ const Food = ({ foodData }) => {
           </FoodItemWrapper>
         )
       )}
-      <FoodSeasonalTitleWrapper>
+      <FoodSeasonalTitleWrapper className="menuTop"
+        style={{
+          maxWidth: `10px !important`
+        }}>
         <BC2 bold>{seasonalTitleTopRight}</BC2>
       </FoodSeasonalTitleWrapper>
     </FoodContainer>

@@ -5,10 +5,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby - Styled Components - Contentful Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Welcome to Smith St Bistrot`,
+    description: `Welcome to Smith St Bistrot, Scott Pickett's take on a classic French Bistrot with influence from all over Europe.`,
+    author: `@marek.reid`,
+    siteUrl: `https://smithstbistrot.com.au/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

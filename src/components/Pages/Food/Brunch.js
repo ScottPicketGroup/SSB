@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useLayoutEffect, useRef} from "react"
 
 import { useStaticQuery, graphql } from "gatsby"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
@@ -14,7 +14,8 @@ import {
   BrunchHeadingWrapper
 } from "./FoodPage.css"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
-
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 const Brunch = ({ brunchData, hiddenOnMobImg }) => {
 
   const data = useStaticQuery(graphql`
@@ -38,17 +39,37 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
 `)
 const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodMenuPageContent.edges[0].node
   const { menuLogo, menuItems, bottomMenuTitle } = brunchData
+  const ref = useRef(null)
+  useLayoutEffect(() => {
+    const element = ref.current;
+
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      {y: 0},
+      {
+        
+       y: 0,
+        scrollTrigger: {
+          trigger: element.querySelector(".menuTop"),
+          start: " 27.5% ",
+          end: "top -25%",        
+          pin: true
+   
+        },
+      }
+    );}, []);
+
   return (
-    <BrunchContainer>
+    <BrunchContainer ref={ref}>
       <BrunchFirstWrapper>
-        <MenuDuJourContainer menus="brunch">
+        <MenuDuJourContainer menus="brunch" className="first-paragraph" >
           <GatsbyImage
             image={getImage(menuLogo)}
             style={{ margin: "1rem 1rem 1.75rem", overflow: "visible" }}
             alt="menu-dujour"
           />
           {menuItems.map((item, index) => (
-            <MenuDuJourItemWrapper key={index} menus="brunch">
+            <MenuDuJourItemWrapper key={index} menus="brunch" >
               <BC2 color="black" bold>
                 {item.menuItem}{item.menuItem.includes(",") ? "" : ","} {item.menuItemPrice}$$
               </BC2>
@@ -63,12 +84,13 @@ const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodM
         </MenuDuJourContainer>
 
         <BrunchHiddenOnMobImage
+        className="menuTop"
           image={getImage(hiddenOnMobImg)}
           alt="brunch-hidden"
         />
       </BrunchFirstWrapper>
       <BrunchSecondWrapper>
-        <BrunchVerticalImageWrapper>
+        <BrunchVerticalImageWrapper >
           
           <GatsbyImage
             image={getImage(vertImgUnderMenu)}

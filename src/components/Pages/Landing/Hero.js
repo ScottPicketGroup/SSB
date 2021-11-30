@@ -1,6 +1,6 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
-import { ParallaxBanner } from 'react-scroll-parallax';
+import { ParallaxBanner } from "react-scroll-parallax"
 import {
   DesktopContainer,
   MobileContainer,
@@ -16,8 +16,13 @@ import {
 } from "./landingPage.css"
 import LogoIcon from "../../Icons/LogoIcon"
 
-const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => {
-  const { images } = getImage(heroImage);
+const Hero = ({
+  heroImage,
+  heroImageTitle,
+  heroTopCenterText,
+  heroAddress,
+}) => {
+  const { images } = getImage(heroImage)
 
   const layers = [
     {
@@ -25,14 +30,11 @@ const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => 
       amount: 1,
       expanded: false,
     },
-  ];
+  ]
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
-        <ParallaxBanner
-          layers={layers}
-          style={{ height: "50vw" }}
-        />
+        <ParallaxBanner layers={layers} style={{ height: "52vw" }} />
         <HeroTextWrapper>
           <MobileContainer>
             <Heading2 marginBottom="md">{heroImageTitle}</Heading2>
@@ -42,9 +44,15 @@ const Hero = ({ heroImage, heroImageTitle, heroTopCenterText, heroAddress }) => 
             <LogoTopTextWrapper>
               <BC1>{heroAddress}</BC1>
               <Heading1>{heroTopCenterText}</Heading1>
-              <BC1><a href="mailto: INFO@SMITHSTBISTROT.COM.AU" rel="no rel"
-              style={{textDecoration: `none`, color: `inherit`}}
-              >INFO@SMITHSTBISTROT.COM.AU</a></BC1>
+              <BC1>
+                <a
+                  href="mailto: INFO@SMITHSTBISTROT.COM.AU"
+                  rel="noreferrer"
+                  style={{ textDecoration: `none`, color: `inherit` }}
+                >
+                  INFO@SMITHSTBISTROT.COM.AU
+                </a>
+              </BC1>
             </LogoTopTextWrapper>
             <LogoIcon />
             <LogoBottomTextWrapper>

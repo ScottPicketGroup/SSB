@@ -14,7 +14,7 @@ const WeekDaySpecialsIcon = ({ text }) => {
 
       <TextWrapper>
         <textPath
-          alignment-baseline="top"
+          // alignment-baseline="top"
           xlinkHref="#circle"
           style={{
             fontFamily: `Ogg`,

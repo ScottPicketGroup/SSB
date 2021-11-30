@@ -18,23 +18,23 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
     nonAlcoholicDrinksMenu
 
     const ref = useRef(null)
-  // useLayoutEffect(() => {
-  //   const element = ref.current
+  useLayoutEffect(() => {
+    const element = ref.current
 
-  //   gsap.fromTo(
-  //     element.querySelector(".first-paragraph"),
-  //     { y: 0 },
-  //     {
-  //       y: 0,
-  //       scrollTrigger: {
-  //         trigger: element.querySelector(".menuTop"),
-  //         start: " 27.5% ",
-  //         end: "top 0%",
-  //         pin: false,
-  //       },
-  //     }
-  //   )
-  // }, [])
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      { y: 0 },
+      {
+        y: 0,
+        scrollTrigger: {
+          trigger: element.querySelector(".menuTop"),
+          start: "10%",
+          end: "50%",
+          pin: false,
+        },
+      }
+    )
+  }, [])
   return (
     <CocktailContainer>
       <Parallax

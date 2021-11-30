@@ -9,12 +9,28 @@ import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 
 const Weekday = ({ data }) => {
+  const isSafari =
+    /constructor/i.test(window.HTMLElement) ||
+    (function (p) {
+      return p.toString() === "[object SafariRemoteNotification]"
+    })(
+      !window["safari"] ||
+        (typeof window["safari"] !== "undefined" &&
+          window["safari"].pushNotification)
+    )
   return (
     <SectionContainer marginBottom="xl">
       <WeekdayWrapper>
-        <CircleImageWrapper>
-           <WeekdaySpecialsIcon text={data.circularMenuText}/>
-        </CircleImageWrapper>
+        {isSafari ? (
+          <CircleImageWrapper>
+            {/* <WeekdaySpecialsIcon text={data.circularMenuText} /> */}
+          </CircleImageWrapper>
+        ) : (
+          <CircleImageWrapper>
+            <WeekdaySpecialsIcon text={data.circularMenuText} />
+          </CircleImageWrapper>
+        )}
+
         <WeekdayItemsWrapper>
           {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem
@@ -31,3 +47,5 @@ const Weekday = ({ data }) => {
 }
 
 export default Weekday
+
+

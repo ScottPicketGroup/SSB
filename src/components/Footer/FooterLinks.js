@@ -75,12 +75,12 @@ const FooterLinks = () => {
             </FBC1>
           </FooterLink>
 
-          <a href={footerData.facebookLink} target="_blank" rel="noreferrer">
+          <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
             <FBC1External color="white" marginBottom="sm">
               Facebook
             </FBC1External>
           </a>
-          <a href={footerData.instagramLink} target="_blank" rel="noreferrer">
+          <a href={footerData.instagramLink} target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
             <FBC1External color="white" marginBottom="sm">
               Instagram
             </FBC1External>

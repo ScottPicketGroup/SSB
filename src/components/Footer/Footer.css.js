@@ -86,7 +86,7 @@ export const FooterLinksColumn = styled.div`
 
 const moveSlideshow = keyframes`
 100% { 
-  transform: translateX(-2025px);  
+  transform: translateX(-50%);  
 }
 `
 
@@ -115,7 +115,7 @@ export const Logos = styled.div`
 `
 export const Logo = styled.div`
   fill: #ffffff;
-  margin-right: 50px;
+  margin-right: 45.5px;
   svg {
     fill: #ffffff;
   }

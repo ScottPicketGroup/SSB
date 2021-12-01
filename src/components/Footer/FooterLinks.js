@@ -192,7 +192,6 @@ const FooterLinks = () => {
               style={{ textDecoration: `none` }}
             >
               <FacebookIcon />
-              hi
             </a>
             <a
               href={footerData.instagramLink}

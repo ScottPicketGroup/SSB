@@ -28,7 +28,7 @@ const Food = ({ foodData }) => {
        maxWidth: 10,
         scrollTrigger: {
           trigger: element.querySelector(".menuTop"),
-          start: " 25% ",
+          start: " 30% ",
           end: "top -60%",
           
           pin: true

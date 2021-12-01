@@ -10,7 +10,8 @@ export const MenuDuJourContainer = styled.div`
   height: 842px;
   align-items: center;
   padding-top: 3.5rem;
-  margin-bottom: 6rem;
+  // margin-bottom: 6rem;
+  margin-bottom: 52rem;
   background-color: ${props =>
     props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
@@ -232,5 +233,15 @@ export const ByGlassTitleWrapper = styled.div`
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
+  }
+`
+export const DesktopContainer = styled.div`
+  @media (max-width: 451px) {
+    display: none;
+  }
+`
+export const MobileContainer = styled.div`
+  @media (min-width: 452px) {
+    display: none;
   }
 `

@@ -31,7 +31,7 @@ const Desserts = ({ dessertData }) => {
           endTrigger: element.querySelector(".first-paragraph"),
           end: "bottom 92%",
           pin: true,
-          // markers: true
+          markers: true
         },
       }
     )

@@ -29,7 +29,7 @@ const Desserts = ({ dessertData }) => {
           trigger: element.querySelector(".menuTop"),
           start: " 27.5% ",
           end: "top 3.5%",
-          pin: true,
+          pin: true
         },
       }
     )

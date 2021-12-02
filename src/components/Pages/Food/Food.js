@@ -30,15 +30,13 @@ const Food = ({ foodData }) => {
           trigger: element.querySelector(".menuTop"),
           start: " 30% ",
           end: "top -60%",
-          
-          pin: true
-   
+          pin: true,
         },
       }
     );}, []);
 
   return (
-    <FoodContainer ref={ref}>
+    <FoodContainer ref={ref} className="first-paragraph">
       <FoodTitleWrapper >
         <Heading2 style={{fontSize: "1.75rem"}}>{topTitleIeFood}</Heading2>
       </FoodTitleWrapper>

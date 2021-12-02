@@ -38,12 +38,6 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
   }, [])
   return (
     <CocktailContainer ref={ref} className="first-paragraph">
-      {/* <Parallax
-        y={[15, 0]}
-        styleOuter={{
-          marginTop: `-5rem`,
-        }}
-      > */}
       <MenuDuJourContainer coffee>
         {menuItems.map((item, index) => (
           <MenuDuJourItemWrapper key={index} cocktail>
@@ -64,13 +58,6 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
           <BC2 bold>{seasonHeading}</BC2>
         </SeasonalTitleWrapper>
       </MenuDuJourContainer>
-      {/* </Parallax>
-      <Parallax
-        y={[15, 0]}
-        styleOuter={{
-          marginTop: `-5rem`,
-        }}
-      > */}
       <DesktopContainer>
         <NonAlcoholicContainer
           backgroundImage={backgroundImage.file.url}
@@ -118,8 +105,6 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
           </NonAlcoholicSeasonalTitleWrapper>
         </NonAlcoholicContainer>
       </MobileContainer>
-
-      {/* </Parallax> */}
     </CocktailContainer>
   )
 }

@@ -21,7 +21,7 @@ const Desserts = ({ dessertData }) => {
     const element = ref.current
 
     gsap.fromTo(
-      element.querySelector(".first-paragraph"),
+      element.querySelector(".menuTop"),
       { y: 0 },
       {
         y: 0,

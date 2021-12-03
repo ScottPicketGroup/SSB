@@ -23,10 +23,10 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
     const element = ref.current
 
     gsap.fromTo(
-      element.querySelector(".first-paragraph"),
+      element.querySelector(".menuTop"),
       { y: 0 },
       {
-        y: 0,
+        y: 100,
         scrollTrigger: {
           trigger: element.querySelector(".menuTop"),
           start: "top 95% ",

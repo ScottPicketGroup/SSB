@@ -34,6 +34,22 @@ const Food = ({ foodData }) => {
         },
       }
     );}, []);
+//needs to map the node => display sectionHeadingIeEntress and map => menuItems to display itemName and itemDescriptin
+// ie 
+// query PrivateDiningQuery {
+//   allContentfulMenuSection {
+//     edges {
+//       node {
+//         id
+//         sectionHeadingIeEntrees
+//         menuItems {
+//           menuItem
+//           menuItemPrice
+//         }
+//       }
+//     }
+//   }
+// }
 
   return (
     <FoodContainer ref={ref} className="first-paragraph">

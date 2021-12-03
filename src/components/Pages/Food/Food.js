@@ -20,7 +20,7 @@ const Food = ({ foodData }) => {
     const element = ref.current;
 
     gsap.fromTo(
-      element.querySelector(".first-paragraph"),
+      element.querySelector(".menuTop"),
       {opacity: 1},
       {
         opacity: 1,

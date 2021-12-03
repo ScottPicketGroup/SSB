@@ -28,7 +28,7 @@ const MenuDuJour = ({ menuDuJourData }) => {
           scrollTrigger: {
             trigger: element.querySelector(".menuTop"),
             start: " 25% ",
-            end: "bottom ",
+            end: "bottom 5%",
             
             pin: true
      

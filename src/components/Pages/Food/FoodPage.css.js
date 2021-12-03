@@ -225,11 +225,12 @@ export const DessertWrapper = styled(MenuDuJourContainer)`
   }
 `
 export const FoodContainer = styled.div`
-  position: relative;
+  // position: relative;
   display: flex;
   flex-direction: column;
   width : 776px;
   height: 1156px;
+  overflow-y: auto;
   align-items: center;
   background-color: ${color.SECONDARY_WHITE};
   margin-bottom: 6rem;

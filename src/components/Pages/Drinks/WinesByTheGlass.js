@@ -10,6 +10,7 @@ import {
 } from "./DrinksPage.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { element } from "prop-types"
 
 const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
   const wineData = wineByTheGlassMenu.wineMenuSection
@@ -32,14 +33,26 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
           start: " 20% ",
           end: "47%",
           scrub: 1,
-          onToggle: self =>{
-            gsap.set(self.trigger, { autoAlpha: self.isActive ? 1 : 0 })
-            gsap.set(element.querySelector(".menuHide"), { autoAlpha: self.isActive ? 0 : 1 })
-          },
+          markers: true,
+          // onToggle: self =>{
+          //   gsap.set(self.trigger, { autoAlpha: 1 })
+          //   gsap.set(element.querySelector(".menuHide"), { autoAlpha: self.isActive ? 0 : 1 })
+          // },
           pin: true,
         },
       }
     )
+
+    window.addEventListener('scroll', (e) => {
+      console.log(document.documentElement.scrollTop)
+      if(document.documentElement.scrollTop > 500){
+        element.querySelector(".menuTop").style.opacity = "1"
+        element.querySelector(".menuHide").style.opacity = "0"
+      } else {
+        element.querySelector(".menuTop").style.opacity = "0"
+        element.querySelector(".menuHide").style.opacity = "1"
+      }
+    })
   }, [])
 
   return (

@@ -14,47 +14,41 @@ const Food = ({ foodData }) => {
   const { topTitleIeFood, menuItems, seasonalTitleTopRight } = foodData
 
   gsap.registerPlugin(ScrollTrigger)
+  const container = useRef(null)
   const ref = useRef(null)
 
   useEffect(() => {
-    const element = ref.current;
+    const element = ref.current
+    ScrollTrigger.create({
+      trigger: element,
+      start: "top 20%",
+      end: "bottom 70%",
+      markers: true,
+      pin: element.querySelector(".menuTop"),
+    })
+  }, [])
 
-    gsap.fromTo(
-      element.querySelector(".menuTop"),
-      {opacity: 1},
-      {
-        opacity: 1,
-      
-       maxWidth: 10,
-        scrollTrigger: {
-          trigger: element.querySelector(".menuTop"),
-          start: " 30% ",
-          end: "top -60%",
-          pin: true,
-        },
-      }
-    );}, []);
-//needs to map the node => display sectionHeadingIeEntress and map => menuItems to display itemName and itemDescriptin
-// ie 
-// query PrivateDiningQuery {
-//   allContentfulMenuSection {
-//     edges {
-//       node {
-//         id
-//         sectionHeadingIeEntrees
-//         menuItems {
-//           menuItem
-//           menuItemPrice
-//         }
-//       }
-//     }
-//   }
-// }
+  //needs to map the node => display sectionHeadingIeEntress and map => menuItems to display itemName and itemDescriptin
+  // ie
+  // query PrivateDiningQuery {
+  //   allContentfulMenuSection {
+  //     edges {
+  //       node {
+  //         id
+  //         sectionHeadingIeEntrees
+  //         menuItems {
+  //           menuItem
+  //           menuItemPrice
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
 
   return (
-    <FoodContainer ref={ref} className="first-paragraph">
-      <FoodTitleWrapper >
-        <Heading2 style={{fontSize: "1.75rem"}}>{topTitleIeFood}</Heading2>
+    <FoodContainer ref={ref}>
+      <FoodTitleWrapper className="container">
+        <Heading2 style={{ fontSize: "1.75rem" }}>{topTitleIeFood}</Heading2>
       </FoodTitleWrapper>
       {menuItems.map((item, index) =>
         index === 0 ? (
@@ -91,10 +85,12 @@ const Food = ({ foodData }) => {
           </FoodItemWrapper>
         )
       )}
-      <FoodSeasonalTitleWrapper className="menuTop"
+      <FoodSeasonalTitleWrapper
+        className="menuTop"
         style={{
-          maxWidth: `10px !important`
-        }}>
+          maxWidth: `10px !important`,
+        }}
+      >
         <BC2 bold>{seasonalTitleTopRight}</BC2>
       </FoodSeasonalTitleWrapper>
     </FoodContainer>

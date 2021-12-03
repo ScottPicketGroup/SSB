@@ -44,8 +44,7 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
     )
 
     window.addEventListener('scroll', (e) => {
-      console.log(document.documentElement.scrollTop)
-      if(document.documentElement.scrollTop > 500){
+      if(document.documentElement.scrollTop > 600){
         element.querySelector(".menuTop").style.opacity = "1"
         element.querySelector(".menuHide").style.opacity = "0"
       } else {

@@ -229,7 +229,7 @@ export const FoodContainer = styled.div`
   display: flex;
   flex-direction: column;
   width : 776px;
-  height: 1156px;
+
   align-items: center;
   background-color: ${color.SECONDARY_WHITE};
   margin-bottom: 6rem;

@@ -18,18 +18,18 @@ const Desserts = ({ dessertData }) => {
     dessertData[0]
     const ref = useRef(null)
     gsap.registerPlugin(ScrollTrigger)
-    useLayoutEffect(() => {
-      const element = ref.current;
+    // useLayoutEffect(() => {
+    //   const element = ref.current;
   
-      ScrollTrigger.create({
-        trigger: element.querySelector(".imageSide"),
-        start: "center 60%",
-        endTrigger: element.querySelector(".menu"),
-        end: "bottom 87%",
-        markers: true,
-        pin: true,
-      })
-      }, []);
+    //   ScrollTrigger.create({
+    //     trigger: element.querySelector(".imageSide"),
+    //     start: "center 60%",
+    //     endTrigger: element.querySelector(".menu"),
+    //     end: "bottom 87%",
+    //     markers: true,
+    //     pin: true,
+    //   })
+    //   }, []);
   return (
     <DessertContainer ref={ref}>
       <DessertImage

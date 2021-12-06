@@ -48,6 +48,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
           </MenuDuJourItemWrapper>
         ))}
         <Heading2
+        marginTop="lg"
           marginBottom="md"
           color="black"
           style={{ fontSize: "1.75rem" }}

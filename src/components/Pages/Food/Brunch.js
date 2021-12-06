@@ -1,5 +1,5 @@
 import React, {useLayoutEffect, useRef} from "react"
-
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useStaticQuery, graphql } from "gatsby"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
@@ -39,29 +39,25 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
 const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodMenuPageContent.edges[0].node
   const { menuLogo, menuItems, bottomMenuTitle } = brunchData
   const ref = useRef(null)
+  gsap.registerPlugin(ScrollTrigger)
+
   useLayoutEffect(() => {
     const element = ref.current;
 
-    gsap.fromTo(
-      element.querySelector(".first-paragraph"),
-      {y: 0},
-      {
-        
-       y: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".menuTop"),
-          start: " 27.5% ",
-          end: "top -7.5%",        
-          pin: true
-   
-        },
-      }
-    );}, []);
+    ScrollTrigger.create({
+      trigger: element.querySelector(".image"),
+      start: "center 59%",
+      endTrigger: element.querySelector(".menu"),
+      end: "bottom 90.5%",
+      scrub: 1,
+      pin: true,
+    })
+    }, []);
 
   return (
     <BrunchContainer ref={ref}>
       <BrunchFirstWrapper>
-        <MenuDuJourContainer menus="brunch" className="first-paragraph" >
+        <MenuDuJourContainer menus="brunch" className="menu" >
           <GatsbyImage
             image={getImage(menuLogo)}
             style={{ margin: "1rem 1rem 1.75rem", overflow: "visible" }}
@@ -70,7 +66,7 @@ const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodM
           {menuItems.map((item, index) => (
             <MenuDuJourItemWrapper key={index} menus="brunch" >
               <BC2 color="black" bold>
-                {item.menuItem}{item.menuItem.includes(",") ? "" : ","} {item.menuItemPrice}$$
+                {item.menuItem}{item.menuItem.includes(",") ? "" : ","} {item.menuItemPrice}
               </BC2>
               <BC2 color="black">{item.menuItemDescription ? item.menuItemDescription : null}</BC2>
             </MenuDuJourItemWrapper>
@@ -83,7 +79,7 @@ const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodM
         </MenuDuJourContainer>
 
         <BrunchHiddenOnMobImage
-        className="menuTop"
+        className="image"
           image={getImage(hiddenOnMobImg)}
           alt="brunch-hidden"
         />

@@ -23,7 +23,6 @@ const Food = ({ foodData }) => {
       trigger: element,
       start: "top 20%",
       end: "bottom 70%",
-      markers: true,
       pin: element.querySelector(".menuTop"),
     })
   }, [])
@@ -74,7 +73,7 @@ const Food = ({ foodData }) => {
                     {it.menuItem}
                   </BC2>
                   <BC2 color="black" marginBottom="xs" bold>
-                    {it.menuItemPrice}$$
+                    {it.menuItemPrice}
                   </BC2>
                 </FoodSectionItemWrapper>
                 <BC2 color="black" marginBottom="sm">

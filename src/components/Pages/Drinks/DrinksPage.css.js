@@ -7,13 +7,11 @@ export const MenuDuJourContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 482px;
-  height: 842px;
-  align-items: center;
+  align-items: space-between;
   padding-top: 3.5rem;
-  // margin-bottom: 6rem;
-  margin-bottom: 58rem;
+  padding: 3.5rem 2rem 0rem 2rem;
   background-color: ${props =>
-    props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
+  props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
     height: 500px;
     width: 254px;
@@ -128,7 +126,7 @@ export const MenuDuJourItemWrapper = styled.div`
   margin-bottom: 3.5rem;
   @media (max-width: 451px) {
     margin-bottom: 1rem;
-    width: ${props=>props.cocktail ? "80%" : "100%"};
+    width: ${props => (props.cocktail ? "80%" : "100%")};
   }
 `
 export const MenuDuJourTitleWrapper = styled.div`
@@ -158,11 +156,11 @@ export const CocktailContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 1050px;
-  @media(max-width: 1000px){
+  @media (max-width: 1000px) {
     flex-direction: column;
     width: 70%;
   }
-  @media(max-width: 451px){
+  @media (max-width: 451px) {
     flex-direction: column;
     width: 100%;
   }
@@ -171,15 +169,15 @@ export const NonAlcoholicContainer = styled.div`
   position: relative;
   display: flex;
   width: 482px;
-  height: 842px;
+  height: 942px;
   align-items: center;
   justify-content: flex-end;
- 
+
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 55% 50%;
-  background-color: #AC785B;
-  background-image: url("${props=>props.backgroundImage}");
+  background-size: 250%;
+  background-position: 53% 0;
+  background-color: #ac785b;
+  background-image: url("${props => props.backgroundImage}");
   @media (max-width: 451px) {
     height: 500px;
     width: 254px;
@@ -228,6 +226,15 @@ export const WinesByTheGlassContainer = styled.div`
 `
 
 export const ByGlassTitleWrapper = styled.div`
+  opacity: 0;
+  width: 5%;
+  text-align: left;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  @media (max-width: 451px) {
+  }
+`
+export const VerticalByGlassTitleWrapper = styled.div`
   width: 5%;
   text-align: left;
   writing-mode: vertical-lr;

@@ -12,37 +12,32 @@ import {
   DessertDrinkSectionContainer,
 } from "./FoodPage.css"
 import { gsap } from "gsap"
-
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 const Desserts = ({ dessertData }) => {
   const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =
     dessertData[0]
-  const ref = useRef(null)
-  useLayoutEffect(() => {
-    const element = ref.current
-
-    gsap.fromTo(
-      element.querySelector(".menuTop"),
-      { y: 0 },
-      {
-        y: 0,
-        scrollTrigger: {
-          trigger: element.querySelector(".menuTop"),
-          start: "top center",
-          endTrigger: element.querySelector(".first-paragraph"),
-          end: "bottom 92%",
-          pin: true,
-        },
-      }
-    )
-  }, [])
+    const ref = useRef(null)
+    gsap.registerPlugin(ScrollTrigger)
+    useLayoutEffect(() => {
+      const element = ref.current;
+  
+      ScrollTrigger.create({
+        trigger: element.querySelector(".image"),
+        start: "center 59%",
+        endTrigger: element.querySelector(".menu"),
+        end: "bottom 88%",
+        scrub: 1,
+        pin: true,
+      })
+      }, []);
   return (
     <DessertContainer ref={ref}>
       <DessertImage
-        className="menuTop"
+        className="image"
         image={getImage(food_menu_page_content[0].imageAdjacentToDessertMenu)}
         alt="dessert"
       />
-      <DessertWrapper  className="first-paragraph">
+      <DessertWrapper  className="menu">
         {menuItems.map((item, index) => (
           <DessertItemWrapper key={index}>
             <DessertDrinkSectionItemWrapper>
@@ -50,7 +45,7 @@ const Desserts = ({ dessertData }) => {
                 {item.menuItem}
               </BC2>
               <BC2 color="black" bold>
-                {item.menuItemPrice}$$
+                {item.menuItemPrice}
               </BC2>
             </DessertDrinkSectionItemWrapper>
 
@@ -65,7 +60,7 @@ const Desserts = ({ dessertData }) => {
                   {item.menuItem}
                 </BC2>
                 <BC2 color="black" bold>
-                  {item.menuItemPrice}$$
+                  {item.menuItemPrice}
                 </BC2>
               </DessertDrinkSectionItemWrapper>
 

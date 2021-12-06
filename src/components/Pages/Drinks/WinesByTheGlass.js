@@ -21,48 +21,60 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
   useEffect(() => {
     const element = ref.current
 
-    gsap.fromTo(
-      element.querySelector(".first-paragraph"),
-      { opacity: 1 },
+    gsap.to(
+      element.querySelector(".menuSide"),
+      
       {
-        opacity: 1,
-
+        autoAlpha: 1,
         maxWidth: 10,
         scrollTrigger: {
-          trigger: element.querySelector(".menuTop"),
-          start: " 20% ",
-          end: "47%",
-          scrub: 1,
-          markers: true,
-          // onToggle: self =>{
-          //   gsap.set(self.trigger, { autoAlpha: 1 })
-          //   gsap.set(element.querySelector(".menuHide"), { autoAlpha: self.isActive ? 0 : 1 })
-          // },
-          pin: true,
+          trigger: element,
+          start: "top 60% ",
+          end: "top 35%",
+          scrub: 0,
         },
       }
     )
-
-    window.addEventListener('scroll', (e) => {
-      if(document.documentElement.scrollTop > 600){
-        element.querySelector(".menuTop").style.opacity = "1"
-        element.querySelector(".menuHide").style.opacity = "0"
-      } else {
-        element.querySelector(".menuTop").style.opacity = "0"
-        element.querySelector(".menuHide").style.opacity = "1"
+    gsap.to(
+      element.querySelector(".menuTop"),
+      
+      {
+        autoAlpha: 0,
+        maxWidth: 10,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 65% ",
+          end: "top 50%",
+          scrub: 0,
+         
+        },
       }
+    )
+    ScrollTrigger.create({
+      trigger: element.querySelector(".menuSide"),
+      start: "top 65%",
+      endTrigger: element,
+      end: "bottom bottom",
+      scrub: 1,
+      pin: true,
     })
+
+   
   }, [])
 
   return (
     <WinesByTheGlassContainer ref={ref}>
-      <ByGlassTitleWrapper className="menuTop">
-        <BC1 color="red" style={{fontSize: "15px", letterSpacing: "-4px"}} bold>
+      <ByGlassTitleWrapper className="menuSide">
+        <BC1
+          color="red"
+          style={{ fontSize: "15px", letterSpacing: "-4px", marginTop: "1.5rem" }}
+          bold
+        >
           BY THE GLASS
         </BC1>
       </ByGlassTitleWrapper>
       <WinesByTheGlassWrapper className="first-paragraph">
-        <BC1 color="red" className="menuHide" bold>
+        <BC1 color="red" className="menuTop" bold>
           BY THE GLASS
         </BC1>
         {wineData.map((item, index) => (

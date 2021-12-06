@@ -22,18 +22,18 @@ const Desserts = ({ dessertData }) => {
       const element = ref.current;
   
       ScrollTrigger.create({
-        trigger: element.querySelector(".image"),
-        start: "center 59%",
+        trigger: element.querySelector(".imageSide"),
+        start: "center 60%",
         endTrigger: element.querySelector(".menu"),
-        end: "bottom 88%",
-        scrub: 1,
+        end: "bottom 87%",
+        markers: true,
         pin: true,
       })
       }, []);
   return (
     <DessertContainer ref={ref}>
       <DessertImage
-        className="image"
+        className="imageSide"
         image={getImage(food_menu_page_content[0].imageAdjacentToDessertMenu)}
         alt="dessert"
       />

@@ -125,11 +125,12 @@ export const DessertSeasonalTitleWrapper = styled.div`
     bottom: 3.5rem;
   }
 `
+
 export const DessertImage = styled(GatsbyImage)`
-  margin-top: 6rem;
+  
   width: 383px;
   height: 395px;
-  margin-bottom: 6rem;
+  
   @media (max-width: 451px) {
     width: 70%;
     height: 64vw;

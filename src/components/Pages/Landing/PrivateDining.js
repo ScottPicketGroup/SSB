@@ -53,6 +53,7 @@ const PrivateDining = ({
               image={getImage(privateDiningImage)}
               alt="private-dining"
               first="true"
+              
             />
           </div>
         </PrivateDiningImageWrapepr>

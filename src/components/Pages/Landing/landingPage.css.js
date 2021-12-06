@@ -106,16 +106,27 @@ export const PrivateDiningWrapper = styled.div`
   }
 `
 
+export const LandingEventImageWrapepr = styled.div`
+ --r: 536 / 356;
+
+aspect-ratio: var(--r);
+width:min(90%, min(536px, 90vh*(var(--r))));
+
+overflow: hidden;
+`
 export const PrivateDiningImageWrapepr = styled.div`
- --r: 478.94 / 319.29;
+ --r: 4/ 3;
 
 aspect-ratio: var(--r);
 width:min(90%, min(478.94px, 90vh*(var(--r))));
 
 overflow: hidden;
+
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
-
+  aspect-ratio: 4/3;
+ min-width: 115%;
+  
   order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
     order: 0;

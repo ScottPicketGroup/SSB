@@ -127,18 +127,19 @@ export const DessertSeasonalTitleWrapper = styled.div`
 `
 
 export const DessertImage = styled(GatsbyImage)`
-  
+  margin-top: 6rem;
   width: 383px;
   height: 395px;
   
   @media (max-width: 451px) {
+    margin-top: 3.5rem;
     width: 70%;
     height: 64vw;
     margin: 0 auto 3.5rem;
   }
 `
 export const FoodIntroWrapper = styled.div`
-  margin-top: 6rem;
+  
   @media (max-width: 451px) {
     margin-top: 3.5rem;
   }

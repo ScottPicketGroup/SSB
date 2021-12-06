@@ -118,7 +118,7 @@ export const PrivateDiningImageWrapepr = styled.div`
  --r: 4/ 3;
 
 aspect-ratio: var(--r);
-width:min(90%, min(478.94px, 90vh*(var(--r))));
+width:min(90%, min(600px, 90vh*(var(--r))));
 
 overflow: hidden;
 
@@ -126,7 +126,7 @@ overflow: hidden;
 export const PrivateDiningImage = styled(GatsbyImage)`
   aspect-ratio: 4/3;
  min-width: 115%;
-  
+  margin-right: 1rem;
   order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
     order: 0;
@@ -142,7 +142,7 @@ export const PrivateDiningTextWrapper = styled.div`
   margin-top: 3.5rem;
   padding-left: ${props => (props.dining ? "2rem" : "")};
   padding-right: ${props => (props.first ? "2rem" : "")};
-  width: ${props => (props.first ? "50%" : props.dining ? "70%" : "80%")};
+  width: ${props => (props.first ? "50%" : props.dining ? "50%" : "80%")};
   margin ${props => (props.dining ? "3rem auto 0" : "3rem 0 0")};
   order: ${props => (props.first ? "0" : "1")};
   @media (max-width: 451px) {

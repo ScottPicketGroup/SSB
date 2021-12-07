@@ -73,7 +73,9 @@ const MenuComponent = () => {
       </MenuCancelIconWrapper>
       <MenuWrapper>
         <MenuLogoWrapper>
-          <StaticImage src="../../images/menu-logo.png" alt="menu-logo" />
+          <StaticImage src="../../images/SSB_Tertiary_Black_RGB@2x.png" alt="menu-logo" 
+          style={{width: `247px`}}
+          />
         </MenuLogoWrapper>
         <MenuItemWrapper giftOpen={giftOpen}>
           {menuItems.map((item, index) =>

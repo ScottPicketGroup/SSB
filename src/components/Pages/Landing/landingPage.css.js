@@ -140,7 +140,8 @@ export const PrivateDiningTextWrapper = styled.div`
   // align-items: center;
   text-align: left;
   margin-top: 3.5rem;
-  padding-left: ${props => (props.dining ? "2rem" : "")};
+  
+  padding-left: ${props => (props.dining ? "4rem" : "")};
   padding-right: ${props => (props.first ? "2rem" : "")};
   width: ${props => (props.first ? "50%" : props.dining ? "50%" : "80%")};
   margin ${props => (props.dining ? "3rem auto 0" : "3rem 0 0")};

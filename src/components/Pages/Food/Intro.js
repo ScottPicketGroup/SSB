@@ -7,6 +7,7 @@ import { FoodIntroWrapper } from "./FoodPage.css"
 const Intro = ({ pageTitle }) => {
   return (
     <SectionContainer
+    marginTop="lg"
       marginBottom="lg"
       width="40%"
       centered={true}

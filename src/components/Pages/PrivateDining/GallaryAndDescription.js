@@ -22,7 +22,7 @@ const GallaryAndDescription = ({
         <Renderer node={description} />
       </DescriptionWrapper>
       <a href={eventsPackagePdf.file.url} target="_blank" style={{textUnderlineOffset: "5px"}} rel="noreferrer">
-        <BC1 style={{fontSize: "1rem"}} color="black">{eventsPackageLinkText}…</BC1>
+        <BC1 style={{fontSize: "1rem"}} color="black" bold>{eventsPackageLinkText}…</BC1>
       </a>
     </GallaryWrapper>
   )

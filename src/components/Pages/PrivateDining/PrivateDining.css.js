@@ -14,7 +14,7 @@ export const IntroWrapper = styled.div`
   }
 `
 export const GallaryWrapper = styled.div`
-  width: 53vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   margin: 0 auto 6rem;
@@ -43,7 +43,7 @@ export const TitleWrapper = styled.div`
   }
 `
 export const DescriptionWrapper = styled.div`
-  width: 65vw;
+  width: 45vw;
   @media (max-width: 451px) {
     width: 90%;
   }

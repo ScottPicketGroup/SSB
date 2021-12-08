@@ -1,6 +1,5 @@
 import React from "react"
-import { getImage } from "gatsby-plugin-image"
-import { ParallaxBanner } from "react-scroll-parallax"
+// import { getImage } from "gatsby-plugin-image"
 import {
   DesktopContainer,
   MobileContainer,
@@ -22,19 +21,18 @@ const Hero = ({
   heroTopCenterText,
   heroAddress,
 }) => {
-  const { images } = getImage(heroImage)
+  // const { images } = getImage(heroImage)
 
-  const layers = [
-    {
-      image: images.fallback.src,
-      amount: 1,
-      expanded: false,
-    },
-  ]
+  // const layers = [
+  //   {
+  //     image: images.fallback.src,
+  //     amount: 1,
+  //     expanded: false,
+  //   },
+  // ]
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
-       
         <HeroTextWrapper>
           <MobileContainer>
             <Heading2 marginBottom="md">{heroImageTitle}</Heading2>

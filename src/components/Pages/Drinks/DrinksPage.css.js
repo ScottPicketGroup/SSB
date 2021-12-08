@@ -9,14 +9,15 @@ export const MenuDuJourContainer = styled.div`
   width: 482px;
   align-items: space-between;
   justify-content: space-between;
-  padding-top: 3.5rem;
-  padding: 3.5rem 2rem 0rem 2rem;
+  // padding: 3.5rem 2rem 0rem 2rem;
+  padding: 3.5rem 3rem 0rem 3.5rem;
   background-color: ${props =>
   props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
     height: 500px;
     width: 254px;
-    padding-top: 1.75rem;
+    // padding-top: 1.75rem;
+    padding: 1.75rem 2rem 0rem 2rem;
     margin: 0 auto 1.75rem;
   }
 `

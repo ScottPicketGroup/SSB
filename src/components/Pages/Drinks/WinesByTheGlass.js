@@ -10,7 +10,6 @@ import {
 } from "./DrinksPage.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { element } from "prop-types"
 
 const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
   const wineData = wineByTheGlassMenu.wineMenuSection

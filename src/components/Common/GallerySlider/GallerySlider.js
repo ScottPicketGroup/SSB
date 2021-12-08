@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import { Card, GalleryContainer, ImageContainer } from "./GallerySlider.css"

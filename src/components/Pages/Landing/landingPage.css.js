@@ -101,8 +101,7 @@ export const PrivateDiningWrapper = styled.div`
   margin-bottom: ${props => (props.first ? "6rem" : "0")};
   @media (max-width: 451px) {
     flex-direction: column;
-    margin-bottom: ${props =>
-      props.dining ? "0" : props.first ? "3.25rem" : "0"};
+    margin-bottom: 0;
   }
 `
 
@@ -213,5 +212,14 @@ export const CircleImageWrapper = styled.div`
     width: 40vw;
     margin-top: 2rem;
     right: 240px;
+  }
+`
+export const WeekdayHeadingWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3.5rem;
+
+  @media (max-width: 451px) {
+    margin-bottom: 5.25rem;
   }
 `

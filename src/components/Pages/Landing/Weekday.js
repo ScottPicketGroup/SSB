@@ -3,10 +3,12 @@ import {
   WeekdayItemsWrapper,
   WeekdayWrapper,
   CircleImageWrapper,
+  WeekdayHeadingWrapper
 } from "./landingPage.css"
 import WeekdayItem from "./WeekdayItem"
 import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
 import { SectionContainer } from "../../StyledComponents/containers.css"
+import { Heading1 } from "../../StyledComponents/typography.css"
 
 const Weekday = ({ data }) => {
   // const isSafari =
@@ -19,18 +21,14 @@ const Weekday = ({ data }) => {
   //         window["safari"].pushNotification)
   //   )
   return (
-    <SectionContainer marginBottom="xl">
+    <SectionContainer marginBottom="xl" column>
+      <WeekdayHeadingWrapper>
+        <Heading1>{data.sectionHeading}</Heading1>
+      </WeekdayHeadingWrapper>
       <WeekdayWrapper>
-        {/* {isSafari ? (
-          <CircleImageWrapper>
-            <WeekdaySpecialsIcon text={data.circularMenuText} />
-          </CircleImageWrapper>
-        ) : ( */}
-          <CircleImageWrapper>
-            <WeekdaySpecialsIcon text={data.circularMenuText} />
-          </CircleImageWrapper>
-        {/* )} */}
-
+        <CircleImageWrapper>
+          <WeekdaySpecialsIcon text={data.circularMenuText} />
+        </CircleImageWrapper>
         <WeekdayItemsWrapper>
           {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem
@@ -47,5 +45,3 @@ const Weekday = ({ data }) => {
 }
 
 export default Weekday
-
-

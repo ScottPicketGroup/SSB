@@ -14,7 +14,6 @@ import {
 import {
   FBC1,
   FBC1External,
-  FBC1First,
 } from "../StyledComponents/typography.css"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
@@ -55,10 +54,6 @@ const FooterLinks = () => {
     <>
       <FooterLinksGrid>
         <PageLinks>
-          <FBC1First color="white" marginBottom="sm">
-            {footerData.footerFirstColumnHeading}
-          </FBC1First>
-
           <FooterLink to="/">
             <FBC1 color="white" marginBottom="sm">
               Home

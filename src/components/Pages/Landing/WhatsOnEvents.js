@@ -16,44 +16,36 @@ import {
 import Renderer from "../../rich-text-renderers/sample"
 import { getImage } from "gatsby-plugin-image"
 
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
-  // const image = getImage(events[0].eventMenuImage)
 
-
-  gsap.registerPlugin(ScrollTrigger);
-  const ref = useRef(null);
+  gsap.registerPlugin(ScrollTrigger)
+  const ref = useRef(null)
 
   useEffect(() => {
-    const element = ref.current;
-    gsap.set(".first-paragraph", {xPercent: 0, yPercent: 0})
+    const element = ref.current
+    gsap.set(".first-paragraph", { xPercent: 0, yPercent: 0 })
     gsap.fromTo(
       element.querySelector(".first-paragraph"),
-      {css:{scale: 0}},
+      { css: { scale: 0 } },
       {
-        
-        css:{scaleX:1.5, scaleY: 1.5, },
+        css: { scaleX: 1.5, scaleY: 1.5 },
         scrollTrigger: {
           trigger: element.querySelector(".first"),
           start: " top ",
           end: "bottom ",
-          scrub:true,
-         delay: 0.7
+          scrub: true,
+          delay: 0.7,
         },
       }
-    );
+    )
+  }, [])
 
-
-
-  }, []);
- 
   return (
-  
     <SectionContainer column="true">
-
       <PrivateDiningWrapper first="true" ref={ref}>
         <PrivateDiningTextWrapper first="true">
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
@@ -65,22 +57,15 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
 
-    
-  <PrivateDiningImageWrapepr  >
-    <div
-     className="first-paragraph">
-    <PrivateDiningImage
-            image={getImage(events[0].eventMenuImage)}
-            alt="private-dining"
-            first="true"
-           
-          />
-    </div>
-      
-       </PrivateDiningImageWrapepr>
-
-   
-       
+        <PrivateDiningImageWrapepr>
+          <div className="first-paragraph">
+            <PrivateDiningImage
+              image={getImage(events[0].eventMenuImage)}
+              alt="private-dining"
+              first="true"
+            />
+          </div>
+        </PrivateDiningImageWrapepr>
       </PrivateDiningWrapper>
       <WhatsOnEventsWrapper>
         {events.map(
@@ -104,9 +89,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
             )
         )}
       </WhatsOnEventsWrapper>
-
     </SectionContainer>
-
   )
 }
 

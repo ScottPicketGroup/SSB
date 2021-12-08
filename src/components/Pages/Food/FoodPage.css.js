@@ -6,14 +6,15 @@ export const MenuDuJourContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width : 481px;
-  height: ${props => props.menus === "brunch" ? "842px" : "714px"};
+  justify-content: space-between;
+  width: 481px;
+  height: ${props => (props.menus === "brunch" ? "842px" : "714px")};
   align-items: center;
   background-color: ${props =>
     props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
-    width : 301px;
-    height: ${props => props.menus === "brunch" ? "529px" : "445px"};
+    width: 301px;
+    height: ${props => (props.menus === "brunch" ? "529px" : "445px")};
     margin: 0 auto;
     overflow-x: hidden;
     overflow-y: auto;
@@ -24,6 +25,7 @@ export const SeasonalTitleWrapper = styled.div`
   top: 1.75rem;
   right: 6%;
   text-align: left;
+  -webkit-line-clamp: 1;
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
@@ -52,7 +54,7 @@ export const BrunchHiddenOnMobImage = styled(GatsbyImage)`
   @media (max-width: 451px) {
     display: none !important;
     width: 26vw;
-  height: 32vw;
+    height: 32vw;
   }
 `
 export const BrunchVerticalImageWrapper = styled.div`
@@ -103,7 +105,7 @@ export const DessertContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 900px;
-  margin:0 auto;
+  margin: 0 auto;
   text-align: left;
   @media (max-width: 900px) {
     width: 80%;
@@ -119,6 +121,7 @@ export const DessertSeasonalTitleWrapper = styled.div`
   position: absolute;
   bottom: 6rem;
   left: 6.5%;
+  -webkit-line-clamp: 1;
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
@@ -130,7 +133,7 @@ export const DessertImage = styled(GatsbyImage)`
   margin-top: 6rem;
   width: 383px;
   height: 395px;
-  
+
   @media (max-width: 451px) {
     margin-top: 3.5rem;
     width: 70%;
@@ -139,7 +142,6 @@ export const DessertImage = styled(GatsbyImage)`
   }
 `
 export const FoodIntroWrapper = styled.div`
-  
   @media (max-width: 451px) {
     margin-top: 3.5rem;
   }
@@ -172,9 +174,12 @@ export const FoodScrollMenuMobileWrapper = styled.div`
 `
 export const MenuDuJourItemWrapper = styled.div`
   width: 60%;
-  margin-bottom: ${props=>props.menus === "brunch" ? "1.75rem" : "3.5rem"};
+  margin-bottom: ${props => (props.menus === "brunch" ? "1.75rem" : "3.5rem")};
+  margin-right: auto;
+  margin-left: auto;
   @media (max-width: 451px) {
-    margin-bottom: ${props=>props.menus === "brunch" ? "0.75rem" : "1.75rem"};
+    margin-bottom: ${props =>
+      props.menus === "brunch" ? "0.75rem" : "1.75rem"};
   }
 `
 export const MenuDuJourTitleWrapper = styled.div`
@@ -201,8 +206,9 @@ export const DessertDrinkSectionWrapper = styled.div`
 export const DessertDrinkSectionContainer = styled.div`
   align-self: flex-end;
   padding-top: 1.75rem;
+  width: 60%;
   @media (max-width: 451px) {
-    padding-left: 2.4rem;
+    // padding-left: 2.4rem;
   }
 `
 
@@ -212,16 +218,19 @@ export const DessertDrinkSectionItemWrapper = styled.div`
   justify-content: space-between;
 `
 export const DessertWrapper = styled(MenuDuJourContainer)`
-  background-color: #D39C6E;
+  background-color: #d39c6e;
   padding-top: 3.5rem;
   padding-left: 5.5rem;
   padding-right: 5.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media (max-width: 451px) {
     padding-top: 1.75rem;
     margin: 0 auto;
     padding-left: 3.5rem;
     padding-right: 3.25rem;
-    & h2{
+    & h2 {
       margin-top: 1.75rem;
     }
   }
@@ -230,13 +239,13 @@ export const FoodContainer = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  width : 776px;
+  width: 776px;
 
   align-items: center;
   background-color: ${color.SECONDARY_WHITE};
   margin-bottom: 6rem;
   @media (max-width: 451px) {
-    width : 301px;
+    width: 301px;
     height: 728px;
     margin: 0 auto 3.5rem;
     overflow-x: hidden;
@@ -272,6 +281,7 @@ export const FoodSeasonalTitleWrapper = styled.div`
   top: 3.5rem;
   right: 6%;
   text-align: left;
+  -webkit-line-clamp: 1;
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
@@ -283,4 +293,9 @@ export const BrunchHeadingWrapper = styled.div`
   @media (max-width: 451px) {
     margin-top: 0rem;
   }
+`
+export const DessertDrinkContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 `

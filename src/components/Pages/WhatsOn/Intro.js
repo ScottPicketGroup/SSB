@@ -6,7 +6,7 @@ import { IntroWrapper } from "./WhatsOn.css"
 const Intro = ({ pageHeading }) => {
   return (
       <IntroWrapper>
-        <Heading1 color="black">{pageHeading}</Heading1>
+        <Heading1>{pageHeading}</Heading1>
       </IntroWrapper>
   )
 }

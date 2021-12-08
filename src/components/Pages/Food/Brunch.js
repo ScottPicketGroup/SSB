@@ -1,4 +1,4 @@
-import React, {useLayoutEffect, useRef} from "react"
+import React, { useLayoutEffect, useRef } from "react"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useStaticQuery, graphql } from "gatsby"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
@@ -11,38 +11,37 @@ import {
   BrunchHorizontalImageWrapper,
   BrunchVerticalImageWrapper,
   MenuDuJourItemWrapper,
-  BrunchHeadingWrapper
+  BrunchHeadingWrapper,
 } from "./FoodPage.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { gsap } from "gsap"
 const Brunch = ({ brunchData, hiddenOnMobImg }) => {
-
   const data = useStaticQuery(graphql`
-  query brunchMenuImages {
-    allContentfulFoodMenuPageContent {
-      edges {
-        node {
-          vertImgUnderMenu {
-            id
-            gatsbyImageData(aspectRatio: 0.8)
-          }
-          horizontalImageUnderFoodMenu {
-            id
-            gatsbyImageData
+    query brunchMenuImages {
+      allContentfulFoodMenuPageContent {
+        edges {
+          node {
+            vertImgUnderMenu {
+              id
+              gatsbyImageData(aspectRatio: 0.8)
+            }
+            horizontalImageUnderFoodMenu {
+              id
+              gatsbyImageData
+            }
           }
         }
       }
     }
-  }
-  
-`)
-const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodMenuPageContent.edges[0].node
+  `)
+  const { vertImgUnderMenu, horizontalImageUnderFoodMenu } =
+    data.allContentfulFoodMenuPageContent.edges[0].node
   const { menuLogo, menuItems, bottomMenuTitle } = brunchData
   const ref = useRef(null)
   gsap.registerPlugin(ScrollTrigger)
 
   useLayoutEffect(() => {
-    const element = ref.current;
+    const element = ref.current
 
     ScrollTrigger.create({
       trigger: element.querySelector(".image"),
@@ -52,51 +51,66 @@ const {vertImgUnderMenu, horizontalImageUnderFoodMenu} = data.allContentfulFoodM
       scrub: 1,
       pin: true,
     })
-    }, []);
+  }, [])
 
   return (
     <BrunchContainer ref={ref}>
       <BrunchFirstWrapper>
-        <MenuDuJourContainer menus="brunch" className="menu" >
-          <GatsbyImage
-            image={getImage(menuLogo)}
-            style={{ margin: "1rem 1rem 1.75rem", overflow: "visible" }}
-            alt="menu-dujour"
-          />
-          {menuItems.map((item, index) => (
-            <MenuDuJourItemWrapper key={index} menus="brunch" >
-              <BC2 color="black" bold>
-                {item.menuItem}{item.menuItem.includes(",") ? "" : ","} {item.menuItemPrice}
-              </BC2>
-              <BC2 color="black">{item.menuItemDescription ? item.menuItemDescription : null}</BC2>
-            </MenuDuJourItemWrapper>
-          ))}
+        <MenuDuJourContainer menus="brunch" className="menu">
+          <div>
+            <GatsbyImage
+              image={getImage(menuLogo)}
+              style={{ margin: "1rem 1rem 1.75rem", overflow: "visible" }}
+              alt="menu-dujour"
+            />
+            {menuItems.map((item, index) => (
+              <MenuDuJourItemWrapper key={index} menus="brunch">
+                <BC2 color="black" bold>
+                  {item.menuItem + " " + item.menuItemPrice}
+                </BC2>
+                <BC2 color="black">
+                  {item.menuItemDescription ? item.menuItemDescription : null}
+                </BC2>
+              </MenuDuJourItemWrapper>
+            ))}
+          </div>
           <BrunchHeadingWrapper>
-          <Heading2 marginBottom="md" style={{fontSize: "1.75rem"}} color="black">
-            {bottomMenuTitle}
-          </Heading2>
+            <Heading2
+              marginBottom="md"
+              style={{ fontSize: "1.75rem" }}
+              color="black"
+            >
+              {bottomMenuTitle}
+            </Heading2>
           </BrunchHeadingWrapper>
         </MenuDuJourContainer>
 
         <BrunchHiddenOnMobImage
-        className="image"
+          className="image"
           image={getImage(hiddenOnMobImg)}
           alt="brunch-hidden"
         />
       </BrunchFirstWrapper>
       <BrunchSecondWrapper>
-        <BrunchVerticalImageWrapper >
-          
+        <BrunchVerticalImageWrapper>
           <GatsbyImage
             image={getImage(vertImgUnderMenu)}
-            style={{ margin: "1rem 1rem 1.75rem", overflow: "visible", aspectRatio: `3/2` }}
+            style={{
+              margin: "1rem 1rem 1.75rem",
+              overflow: "visible",
+              aspectRatio: `3/2`,
+            }}
             alt="menu-dujour"
           />
         </BrunchVerticalImageWrapper>
         <BrunchHorizontalImageWrapper>
-        <GatsbyImage
+          <GatsbyImage
             image={getImage(horizontalImageUnderFoodMenu)}
-            style={{ margin: "1rem 1rem 1.75rem", overflow: "visible", aspectRatio: `3/2` }}
+            style={{
+              margin: "1rem 1rem 1.75rem",
+              overflow: "visible",
+              aspectRatio: `3/2`,
+            }}
             alt="menu-dujour"
           />
         </BrunchHorizontalImageWrapper>

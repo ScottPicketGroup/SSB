@@ -14,7 +14,6 @@ const Food = ({ foodData }) => {
   const { topTitleIeFood, menuItems, seasonalTitleTopRight } = foodData
 
   gsap.registerPlugin(ScrollTrigger)
-  const container = useRef(null)
   const ref = useRef(null)
 
   useEffect(() => {

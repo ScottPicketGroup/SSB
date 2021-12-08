@@ -99,7 +99,7 @@ export const foodPageData = graphql`
         brunch {
           bottomMenuTitle
           menuLogo {
-            gatsbyImageData(aspectRatio: 4.2)
+            gatsbyImageData(aspectRatio: 4.19)
           }
           menuItems {
             menuItem

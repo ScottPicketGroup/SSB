@@ -39,6 +39,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
   return (
     <CocktailContainer ref={ref} className="first-paragraph">
       <MenuDuJourContainer coffee>
+        <div>
         {menuItems.map((item, index) => (
           <MenuDuJourItemWrapper key={index} cocktail>
             <BC2 bold color="black">
@@ -47,6 +48,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
             <BC2 color="black">{item.menuItemDescription}</BC2>
           </MenuDuJourItemWrapper>
         ))}
+        </div>
         <Heading2
         marginTop="lg"
           marginBottom="md"

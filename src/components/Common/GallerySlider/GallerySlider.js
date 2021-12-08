@@ -8,20 +8,20 @@ import NavigationsBgRed from "./NavigationsBgRed"
 const GallerySlider = ({ images, bgRed, page, width }) => {
   const [active, setActive] = React.useState(0)
 
-  // useEffect(() => {
-  //   const i_id = setInterval(() => {
-  //     setActive(active => {
-  //       if (active >= images.length - 1) {
-  //         return 0
-  //       } else {
-  //         return active + 1
-  //       }
-  //     })
-  //   }, 4000)
-  //   return () => {
-  //     clearInterval(i_id)
-  //   }
-  // }, [])
+  useEffect(() => {
+    const i_id = setInterval(() => {
+      setActive(active => {
+        if (active >= images.length - 1) {
+          return 0
+        } else {
+          return active + 1
+        }
+      })
+    }, 4000)
+    return () => {
+      clearInterval(i_id)
+    }
+  }, [])
 
   return (
     <GalleryContainer column full>

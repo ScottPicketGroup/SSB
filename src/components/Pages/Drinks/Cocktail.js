@@ -45,7 +45,24 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
             <BC2 bold color="black">
               {item.menuItem}
             </BC2>
-            <BC2 color="black">{item.menuItemDescription}</BC2>
+            {
+                  item.menuItemDescription && item.menuItemDescription.includes('<br/>') ? (
+                    <>
+                    <BC2 color="black">
+                      {item.menuItemDescription.slice(0, item.menuItemDescription.indexOf('<br/>'))}
+                    </BC2>
+                    <BC2 color="black" marginBottom="sm">
+                      {item.menuItemDescription
+                      .slice(item.menuItemDescription
+                      .indexOf('>'), 500)
+                      .replace('>', '')}
+                    </BC2>
+                    </>
+                  ) :
+                  <BC2 color="black" marginBottom="sm">
+                    {item.menuItemDescription}
+                  </BC2>
+                }
           </MenuDuJourItemWrapper>
         ))}
         </div>

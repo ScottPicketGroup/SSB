@@ -75,9 +75,25 @@ const Food = ({ foodData }) => {
                     {it.menuItemPrice}
                   </BC2>
                 </FoodSectionItemWrapper>
-                <BC2 color="black" marginBottom="sm">
-                  {it.menuItemDescription}
-                </BC2>
+  
+                {
+                  it.menuItemDescription && it.menuItemDescription.includes('<br/>') ? (
+                    <>
+                    <BC2 color="black">
+                      {it.menuItemDescription.slice(0, it.menuItemDescription.indexOf('<br/>'))}
+                    </BC2>
+                    <BC2 color="black" marginBottom="sm">
+                      {it.menuItemDescription
+                      .slice(it.menuItemDescription
+                      .indexOf('>'), 500)
+                      .replace('>', '')}
+                    </BC2>
+                    </>
+                  ) :
+                  <BC2 color="black" marginBottom="sm">
+                    {it.menuItemDescription}
+                  </BC2>
+                }
               </React.Fragment>
             ))}
           </FoodItemWrapper>

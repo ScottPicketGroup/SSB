@@ -22,14 +22,15 @@ const Weekday = ({ data }) => {
   //   )
   return (
     <SectionContainer marginBottom="xl" column>
-      <WeekdayHeadingWrapper>
-        <Heading1>{data.sectionHeading}</Heading1>
-      </WeekdayHeadingWrapper>
+     
       <WeekdayWrapper>
         <CircleImageWrapper>
           <WeekdaySpecialsIcon text={data.circularMenuText} />
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
+      
+        <Heading1>{data.sectionHeading}</Heading1>
+    
           {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem
               key={index}

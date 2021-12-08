@@ -66,7 +66,9 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
           backgroundImage={backgroundImage.file.url}
           className="menuTop"
         >
-          <NonAlcoholicItemWrapper>
+          <NonAlcoholicItemWrapper style={{
+            transform: `translateY(-130px)`
+          }}>
             <BC2 marginBottom="md" bold color="black">
               {menuTitle}
             </BC2>

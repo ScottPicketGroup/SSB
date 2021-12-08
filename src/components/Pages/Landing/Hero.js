@@ -1,5 +1,6 @@
 import React from "react"
-// import { getImage } from "gatsby-plugin-image"
+import { getImage } from "gatsby-plugin-image"
+import { ParallaxBanner } from "react-scroll-parallax"
 import {
   DesktopContainer,
   MobileContainer,
@@ -12,6 +13,7 @@ import {
   LogoTopTextWrapper,
   LogoBottomTextWrapper,
   MobileLogoBottomTextWrapper,
+  HeroImage,
 } from "./landingPage.css"
 import LogoIcon from "../../Icons/LogoIcon"
 
@@ -21,18 +23,11 @@ const Hero = ({
   heroTopCenterText,
   heroAddress,
 }) => {
-  // const { images } = getImage(heroImage)
-
-  // const layers = [
-  //   {
-  //     image: images.fallback.src,
-  //     amount: 1,
-  //     expanded: false,
-  //   },
-  // ]
+ 
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
+      <HeroImage image={getImage(heroImage)} layout="fullWidth" alt="hero" />
         <HeroTextWrapper>
           <MobileContainer>
             <Heading2 marginBottom="md">{heroImageTitle}</Heading2>

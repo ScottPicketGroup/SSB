@@ -34,7 +34,7 @@ const Hero = ({
   return (
     <SectionContainer marginBottom="" full>
       <HeroWrapper>
-        <ParallaxBanner layers={layers} style={{ height: "52vw" }} />
+       
         <HeroTextWrapper>
           <MobileContainer>
             <Heading2 marginBottom="md">{heroImageTitle}</Heading2>

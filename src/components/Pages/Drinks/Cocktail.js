@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from "react"
+import React, { useLayoutEffect, useRef, useState } from "react"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
   MenuDuJourContainer,
@@ -19,7 +19,11 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
     nonAlcoholicDrinksMenu
 
   const ref = useRef(null)
+  const cocktailRef = useRef(null)
+  const [refHeight, setRefHeight] = useState(0)
+
   useLayoutEffect(() => {
+    setRefHeight(cocktailRef.current.offsetHeight)
     const element = ref.current
 
     gsap.fromTo(
@@ -31,43 +35,44 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
           trigger: element.querySelector(".menuTop"),
           start: "top 95% ",
           end: "top 17%",
-      
         },
       }
     )
   }, [])
   return (
     <CocktailContainer ref={ref} className="first-paragraph">
-      <MenuDuJourContainer coffee>
+      <MenuDuJourContainer coffee ref={cocktailRef}>
         <div>
-        {menuItems.map((item, index) => (
-          <MenuDuJourItemWrapper key={index} cocktail>
-            <BC2 bold color="black">
-              {item.menuItem}
-            </BC2>
-            {
-                  item.menuItemDescription && item.menuItemDescription.includes('<br/>') ? (
-                    <>
-                    <BC2 color="black">
-                      {item.menuItemDescription.slice(0, item.menuItemDescription.indexOf('<br/>'))}
-                    </BC2>
-                    <BC2 color="black" marginBottom="sm">
-                      {item.menuItemDescription
-                      .slice(item.menuItemDescription
-                      .indexOf('>'), 500)
-                      .replace('>', '')}
-                    </BC2>
-                    </>
-                  ) :
-                  <BC2 color="black" marginBottom="sm">
-                    {item.menuItemDescription}
+          {menuItems.map((item, index) => (
+            <MenuDuJourItemWrapper key={index} cocktail>
+              <BC2 bold color="black">
+                {item.menuItem}
+              </BC2>
+              {item.menuItemDescription &&
+              item.menuItemDescription.includes("<br/>") ? (
+                <>
+                  <BC2 color="black">
+                    {item.menuItemDescription.slice(
+                      0,
+                      item.menuItemDescription.indexOf("<br/>")
+                    )}
                   </BC2>
-                }
-          </MenuDuJourItemWrapper>
-        ))}
+                  <BC2 color="black" marginBottom="sm">
+                    {item.menuItemDescription
+                      .slice(item.menuItemDescription.indexOf(">"), 500)
+                      .replace(">", "")}
+                  </BC2>
+                </>
+              ) : (
+                <BC2 color="black" marginBottom="sm">
+                  {item.menuItemDescription}
+                </BC2>
+              )}
+            </MenuDuJourItemWrapper>
+          ))}
         </div>
         <Heading2
-        marginTop="lg"
+          marginTop="lg"
           marginBottom="md"
           color="black"
           style={{ fontSize: "1.75rem" }}
@@ -82,10 +87,13 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
         <NonAlcoholicContainer
           backgroundImage={backgroundImage.file.url}
           className="menuTop"
+          style={{ height: refHeight }}
         >
-          <NonAlcoholicItemWrapper style={{
-            transform: `translateY(-130px)`
-          }}>
+          <NonAlcoholicItemWrapper
+            // style={{
+            //   transform: `translateY(-130px)`,
+            // }}
+          >
             <BC2 marginBottom="md" bold color="black">
               {menuTitle}
             </BC2>

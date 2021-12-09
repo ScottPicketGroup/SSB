@@ -11,6 +11,7 @@ export const MenuDuJourContainer = styled.div`
   justify-content: space-between;
   // padding: 3.5rem 2rem 0rem 2rem;
   padding: 3.5rem 3rem 0rem 3.5rem;
+  margin-bottom: ${props => props.coffee ? "6rem" : "0"};
   background-color: ${props =>
   props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
@@ -23,7 +24,7 @@ export const MenuDuJourContainer = styled.div`
 `
 export const SeasonalTitleWrapper = styled.div`
   position: absolute;
-  top: 1.75rem;
+  top: 4.5rem;
   right: 6%;
   text-align: left;
   -webkit-line-clamp: 1;
@@ -172,7 +173,7 @@ export const NonAlcoholicContainer = styled.div`
   position: relative;
   display: flex;
   width: 482px;
-  height: 942px;
+  // height: 942px;
   align-items: center;
   justify-content: flex-end;
 
@@ -194,6 +195,8 @@ export const NonAlcoholicItemWrapper = styled.div`
   width: 35%;
   align-self: flex-end;
   margin-right: 3.5rem;
+  position: absolute;
+  bottom: 1.75rem;
   @media (max-width: 451px) {
     width: 48%;
     margin-right: 1rem;

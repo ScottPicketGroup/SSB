@@ -60,7 +60,7 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
           <div>
             <GatsbyImage
               image={getImage(menuLogo)}
-              style={{ margin: "1rem 1rem 1.75rem", overflow: "visible" }}
+              style={{ margin: "1rem 1rem 3.5rem", overflow: "visible" }}
               alt="menu-dujour"
             />
             {menuItems.map((item, index) => (

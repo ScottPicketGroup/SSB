@@ -35,7 +35,7 @@ const Hero = ({
           </MobileContainer>
           <DesktopContainer>
             <LogoTopTextWrapper>
-              <BC1>{heroAddress}</BC1>
+              <BC1>{heroAddress.toUpperCase()}</BC1>
               <Heading1>{heroTopCenterText}</Heading1>
               <BC1>
                 <a

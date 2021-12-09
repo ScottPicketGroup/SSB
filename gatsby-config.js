@@ -4,6 +4,9 @@ require("dotenv").config({
 
 
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+  },
   siteMetadata: {
     title: `Welcome to Smith St Bistrot`,
     description: `Welcome to Smith St Bistrot, Scott Pickett's take on a classic French Bistrot with influence from all over Europe.`,

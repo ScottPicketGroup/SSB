@@ -17,7 +17,7 @@ export const Typography = createGlobalStyle`
   }
 `
 export const Heading1 = styled.h1`
-  font-family: OggRegularItalic;
+  font-family: ${props => props.font === "pitch" ? 'PitchRegular' : "OggRegularItalic"};
   color: ${props =>
     props.color === "white"
       ? color.SECONDARY_WHITE

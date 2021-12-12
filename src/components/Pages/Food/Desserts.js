@@ -1,4 +1,4 @@
-import React, { useRef } from "react"
+import React, { useRef, useEffect } from "react"
 import { getImage } from "gatsby-plugin-image"
 import { BC2, Heading2 } from "../../StyledComponents/typography.css"
 import {
@@ -14,30 +14,43 @@ import {
 } from "./FoodPage.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { PrivateDiningImageWrapepr } from "../Landing/landingPage.css"
 const Desserts = ({ dessertData }) => {
   const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =
     dessertData[0]
-  const ref = useRef(null)
-  gsap.registerPlugin(ScrollTrigger)
-  // useLayoutEffect(() => {
-  //   const element = ref.current;
-
-  //   ScrollTrigger.create({
-  //     trigger: element.querySelector(".imageSide"),
-  //     start: "center 60%",
-  //     endTrigger: element.querySelector(".menu"),
-  //     end: "bottom 87%",
-  //     markers: true,
-  //     pin: true,
-  //   })
-  //   }, []);
+    gsap.registerPlugin(ScrollTrigger)
+    const ref = useRef(null)
+  
+    useEffect(() => {
+      const element = ref.current
+  
+      gsap.fromTo(
+        element.querySelector(".first-paragraph"),
+        { y: 0},
+        {
+          y: 425,
+          scrollTrigger: {
+            trigger: element,
+            start: " top bottom",
+            end: "bottom ",
+            scrub: true,
+          },
+        }
+      )
+    }, [])
   return (
     <DessertContainer ref={ref}>
+  
+        <PrivateDiningImageWrapepr >
+          <div className="first-paragraph" >
       <DessertImage
-        className="imageSide"
+        className="first-paragraph"
         image={getImage(food_menu_page_content[0].imageAdjacentToDessertMenu)}
         alt="dessert"
       />
+         </div>
+          </PrivateDiningImageWrapepr>
+       
       <DessertWrapper className="menu">
         <div style={{ width: "100%" }}>
           {menuItems.map((item, index) => (

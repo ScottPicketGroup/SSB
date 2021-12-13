@@ -17,16 +17,16 @@ import Food from "../components/Pages/Food/Food"
 const FoodPage = ({ data }) => {
   const itemsRef = useRef([])
 
-  const {
-    pageTitle,
-    menuDuJour,
-    brunch,
-    desserts,
-    vertImageUnderMenuHiddenOnMob,
-    image3,
-    imageAdjacentToBrunchMenuHiddenOnMob,
-    lunchAndDinner,
-  } = data.allContentfulFoodMenuPageContent.nodes[0]
+  // const {
+  //   pageTitle,
+  //   menuDuJour,
+  //   brunch,
+  //   desserts,
+  //   vertImageUnderMenuHiddenOnMob,
+  //   image3,
+  //   imageAdjacentToBrunchMenuHiddenOnMob,
+  //   lunchAndDinner,
+  // } = data.allContentfulFoodMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
     const pos = itemsRef.current[el].getBoundingClientRect().top - 150
@@ -38,8 +38,7 @@ const FoodPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <PageContainer red={true}>
-        <Intro pageTitle={pageTitle} />
-        
+      food page
       </PageContainer>
     </Layout>
   )
@@ -47,71 +46,3 @@ const FoodPage = ({ data }) => {
 
 export default FoodPage
 
-export const foodPageData = graphql`
-  query FoodPageQuery {
-    allContentfulFoodMenuPageContent {
-      nodes {
-        pageTitle
-        menuDuJour {
-          menuTitleTop
-          menuItems {
-            day
-            menuItem
-          }
-          bottomTitle
-          scrollToMenuItem
-          seasonalMenuTitle
-        }
-        brunch {
-          bottomMenuTitle
-          menuLogo {
-            gatsbyImageData(aspectRatio: 4.19)
-          }
-          menuItems {
-            menuItem
-            menuItemDescription
-            menuItemPrice
-          }
-        }
-        imageAdjacentToBrunchMenuHiddenOnMob {
-          gatsbyImageData(aspectRatio: 1.8)
-        }
-        lunchAndDinner {
-          menuItems {
-            id
-            sectionHeadingIeEntrees
-            menuItems {
-              menuItem
-              menuItemDescription
-              menuItemPrice
-            }
-          }
-          topTitleIeFood
-          seasonalTitleTopRight
-        }
-        desserts {
-          bottomHeading
-          scrollToMenuItem
-          menuItems {
-            menuItem
-            menuItemDescription
-            menuItemPrice
-          }
-          drinksSection {
-            drinkMenuItems {
-              menuItem
-              menuItemDescription
-              menuItemPrice
-            }
-          }
-
-          food_menu_page_content {
-            imageAdjacentToDessertMenu {
-              gatsbyImageData(aspectRatio: 1, layout: FULL_WIDTH)
-            }
-          }
-        }
-      }
-    }
-  }
-`

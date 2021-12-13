@@ -17,16 +17,16 @@ import Food from "../components/Pages/Food/Food"
 const FoodPage = ({ data }) => {
   const itemsRef = useRef([])
 
-  // const {
-  //   pageTitle,
-  //   menuDuJour,
-  //   brunch,
-  //   desserts,
-  //   vertImageUnderMenuHiddenOnMob,
-  //   image3,
-  //   imageAdjacentToBrunchMenuHiddenOnMob,
-  //   lunchAndDinner,
-  // } = data.allContentfulFoodMenuPageContent.nodes[0]
+  const {
+    pageTitle,
+    menuDuJour,
+    brunch,
+    desserts,
+    vertImageUnderMenuHiddenOnMob,
+    image3,
+    imageAdjacentToBrunchMenuHiddenOnMob,
+    lunchAndDinner,
+  } = data.allContentfulFoodMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
     const pos = itemsRef.current[el].getBoundingClientRect().top - 150
@@ -38,7 +38,42 @@ const FoodPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <PageContainer red={true}>
-      food page
+        <Intro pageTitle={pageTitle} />
+        <FoodScrollMenu excuteScroll={excuteScroll} />
+        <SectionContainer
+          marginBottom="xl"
+          centered
+          red
+          ref={el => (itemsRef.current[0] = el)}
+        >
+          <MenuDuJour menuDuJourData={menuDuJour} />
+        </SectionContainer>
+        <SectionContainer
+          marginBottom="xl"
+          centered
+          red
+          ref={el => (itemsRef.current[1] = el)}
+        >
+          <Brunch
+            brunchData={brunch}
+            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
+          />
+        </SectionContainer>
+
+        <Food
+          foodData={lunchAndDinner}
+          vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
+          image3={image3}
+        />
+
+        <SectionContainer
+          marginBottom="xxl"
+          centered
+          red
+          ref={el => (itemsRef.current[2] = el)}
+        >
+          <Desserts dessertData={desserts} />
+        </SectionContainer>
       </PageContainer>
     </Layout>
   )

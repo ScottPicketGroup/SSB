@@ -8,7 +8,7 @@ import {
 import WeekdayItem from "./WeekdayItem"
 import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { Heading1 } from "../../StyledComponents/typography.css"
+import { Heading1, Heading3 } from "../../StyledComponents/typography.css"
 
 const Weekday = ({ data }) => {
   // const isSafari =
@@ -29,7 +29,7 @@ const Weekday = ({ data }) => {
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
       
-        <Heading1 font="pitch" style={{fontWeight: `bold`}}>{data.sectionHeading}</Heading1>
+        <Heading3 bold >{data.sectionHeading}</Heading3>
     
           {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem

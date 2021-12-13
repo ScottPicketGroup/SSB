@@ -39,41 +39,7 @@ const FoodPage = ({ data }) => {
       <Seo title="Home" />
       <PageContainer red={true}>
         <Intro pageTitle={pageTitle} />
-        <FoodScrollMenu excuteScroll={excuteScroll} />
-        <SectionContainer
-          marginBottom="xl"
-          centered
-          red
-          ref={el => (itemsRef.current[0] = el)}
-        >
-          <MenuDuJour menuDuJourData={menuDuJour} />
-        </SectionContainer>
-        <SectionContainer
-          marginBottom="xl"
-          centered
-          red
-          ref={el => (itemsRef.current[1] = el)}
-        >
-          <Brunch
-            brunchData={brunch}
-            hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
-          />
-        </SectionContainer>
-
-        <Food
-          foodData={lunchAndDinner}
-          vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
-          image3={image3}
-        />
-
-        <SectionContainer
-          marginBottom="xxl"
-          centered
-          red
-          ref={el => (itemsRef.current[2] = el)}
-        >
-          <Desserts dessertData={desserts} />
-        </SectionContainer>
+        
       </PageContainer>
     </Layout>
   )

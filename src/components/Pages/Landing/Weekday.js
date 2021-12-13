@@ -29,7 +29,7 @@ const Weekday = ({ data }) => {
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
       
-        <Heading1 font="pitch">{data.sectionHeading}</Heading1>
+        <Heading1 font="pitch" style={{fontWeight: `bold`}}>{data.sectionHeading}</Heading1>
     
           {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem

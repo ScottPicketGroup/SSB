@@ -173,7 +173,7 @@ export const FoodScrollMenuMobileWrapper = styled.div`
   }
 `
 export const MenuDuJourItemWrapper = styled.div`
-  width: 60%;
+  width: 90%;
   margin-bottom: ${props => (props.menus === "brunch" ? "1.75rem" : "3.5rem")};
   margin-right: auto;
   margin-left: auto;

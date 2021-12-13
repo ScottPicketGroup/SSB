@@ -96,21 +96,24 @@ const ContactUs = ({...data}) => {
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="black" marginBottom="sm"  style={{fontSize: `1rem`}}>
-              {data.daysClosed && "Closed"}
+              {/* {data.daysClosed && "Closed"} */}
               </FBC1>
             </TimeWrapper>
           </Lunch>
         </ServiceTime>
-          <Link to={data.phoneNumber}>
-            <BC1 color="black" marginTop="md" marginBottom="">
+        <a href="tel:+4733378901">
+            <BC1 color="black" marginTop="md" marginBottom=""
+            style={{textDecoration: 'underline'}}>
               {data.phoneNumber}
             </BC1>
-          </Link>
-          <Link to={data.emailAddress}>
-            <BC1 color="black" marginBottom="contactEmail" style={{fontSize: `1rem`}}>
+         </a>
+         <a href={`mailto:${data.emailAddress}`}>
+         <BC1 color="black" marginBottom="contactEmail" style={{fontSize: `1rem`}}>
               {data.emailAddress}
             </BC1>
-          </Link>
+           </a> 
+           
+      
           <BC1 color="black" marginTop="md">
             View our{" "}
             <Link to="/terms-conditions">

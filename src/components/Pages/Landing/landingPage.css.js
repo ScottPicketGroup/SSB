@@ -83,7 +83,7 @@ export const WeekdayItemsWrapper = styled.div`
   flex-direction: column;
   @media (max-width: 451px) {
     margin-left: 35%;
-    margin-top: 4.5rem;
+    margin-top: 5.5rem;
   }
 `
 export const WeekdayItemWrapper = styled.div`

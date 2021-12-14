@@ -2,7 +2,7 @@ import React from "react"
 import {
   WeekdayItemsWrapper,
   WeekdayWrapper,
-  CircleImageWrapper
+  CircleImageWrapper,
 } from "./landingPage.css"
 import WeekdayItem from "./WeekdayItem"
 import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
@@ -26,9 +26,10 @@ const Weekday = ({ data }) => {
           <WeekdaySpecialsIcon text={data.circularMenuText} />
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
-      
-        <Heading3 bold >{data.sectionHeading}</Heading3>
-    
+          <Heading3 bold marginTop="xs" lineHeight="1.2">
+            {data.sectionHeading}
+          </Heading3>
+
           {data.menuDuJourMenuItems.map((item, index) => (
             <WeekdayItem
               key={index}

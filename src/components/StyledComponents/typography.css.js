@@ -180,6 +180,7 @@ export const Heading3 = styled.h3`
   @media (max-width: 450px) {
     font-size: 16px;
     margin-bottom: 1rem;
+    line-height: ${props => props.lineHeight};
   }
 `
 

@@ -44,11 +44,39 @@ const PrivateDining = ({
     )
   }, [])
 
+  useEffect(() => {
+    const element = ref.current
+
+    gsap.fromTo(
+      element.querySelector(".mobile-paragraph"),
+      { y: 0 },
+      {
+        y: -50,
+        scrollTrigger: {
+          trigger: element.querySelector(".mobile-paragraph"),
+          start: " 50% ",
+          end: "bottom ",
+          scrub: true,
+        },
+      }
+    )
+  }, [])
+
   return (
     <SectionContainer marginBottom="xl">
       <PrivateDiningWrapper first="true" dining="true" ref={ref}>
         <PrivateDiningImageWrapepr>
           <div className="first-paragraph">
+            <PrivateDiningImage
+              image={getImage(privateDiningImage)}
+              alt="private-dining"
+              first="true"
+              
+            />
+          </div>
+        </PrivateDiningImageWrapepr>
+        <PrivateDiningImageWrapepr mobile>
+          <div className="mobile-paragraph">
             <PrivateDiningImage
               image={getImage(privateDiningImage)}
               alt="private-dining"

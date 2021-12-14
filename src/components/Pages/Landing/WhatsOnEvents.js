@@ -44,6 +44,25 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
     )
   }, [])
 
+  useEffect(() => {
+    const element = ref.current
+    gsap.set(".mobile-paragraph", { xPercent: 0, yPercent: 0 })
+    gsap.fromTo(
+      element.querySelector(".mobile-paragraph"),
+      { css: { scale: 1 } },
+      {
+        css: { scaleX: 3, scaleY: 3 },
+        scrollTrigger: {
+          trigger: element.querySelector(".first"),
+          start: " top ",
+          end: "bottom ",
+          scrub: true,
+          delay: 0.7,
+        },
+      }
+    )
+  }, [])
+
   return (
     <SectionContainer column="true" mbOnMob="5.5rem">
       <PrivateDiningWrapper first="true" ref={ref}>
@@ -59,6 +78,15 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
 
         <PrivateDiningImageWrapepr>
           <div className="first-paragraph">
+            <PrivateDiningImage
+              image={getImage(events[0].eventMenuImage)}
+              alt="private-dining"
+              first="true"
+            />
+          </div>
+        </PrivateDiningImageWrapepr>
+        <PrivateDiningImageWrapepr mobile>
+          <div className="mobile-paragraph">
             <PrivateDiningImage
               image={getImage(events[0].eventMenuImage)}
               alt="private-dining"

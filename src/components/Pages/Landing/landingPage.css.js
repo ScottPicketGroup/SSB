@@ -120,8 +120,11 @@ export const PrivateDiningImageWrapepr = styled.div`
 
   overflow: hidden;
 
+  display: ${props => props.mobile ? "none" : "block"};
+
   @media (max-width: 451px) {
     width: 100%;
+    display: ${props => props.mobile ? "block" : "none"};
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`

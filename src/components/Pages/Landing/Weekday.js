@@ -26,7 +26,7 @@ const Weekday = ({ data }) => {
           <WeekdaySpecialsIcon text={data.circularMenuText} />
         </CircleImageWrapper>
         <WeekdayItemsWrapper>
-          <Heading3 bold marginTop="xs" lineHeight="1.2">
+          <Heading3 bold marginTop="1rem" lineHeight="1.2">
             {data.sectionHeading}
           </Heading3>
 

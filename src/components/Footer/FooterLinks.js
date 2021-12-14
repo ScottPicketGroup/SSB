@@ -11,10 +11,7 @@ import {
   MobileSocialWrapper,
   FooterLink,
 } from "./Footer.css"
-import {
-  FBC1,
-  FBC1External,
-} from "../StyledComponents/typography.css"
+import { FBC1, FBC1External } from "../StyledComponents/typography.css"
 import FacebookIcon from "../Icons/FacebookIcon"
 import InstagramIcon from "../Icons/InstagramIcon"
 
@@ -70,12 +67,22 @@ const FooterLinks = () => {
             </FBC1>
           </FooterLink>
 
-          <a href={footerData.facebookLink} target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
+          <a
+            href={footerData.facebookLink}
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
             <FBC1External color="white" marginBottom="sm">
               Facebook
             </FBC1External>
           </a>
-          <a href={footerData.instagramLink} target="_blank" rel="noreferrer" style={{textDecoration: "none"}}>
+          <a
+            href={footerData.instagramLink}
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none" }}
+          >
             <FBC1External color="white" marginBottom="sm">
               Instagram
             </FBC1External>
@@ -135,7 +142,14 @@ const FooterLinks = () => {
             {footerData.addressLineTwo}
           </FBC1>
           <FBC1 color="white" marginBottom="address">
-       <a href={`mailto: ${footerData.emailFooterInfo}`} rel="noreferrer" style={{textDecoration: 'none', color: 'inherit'}}>     {footerData.emailFooterInfo}</a>
+            <a
+              href={`mailto: ${footerData.emailFooterInfo}`}
+              rel="noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {" "}
+              {footerData.emailFooterInfo}
+            </a>
           </FBC1>
           <FBC1 color="white" marginBottom="addressLinetwo">
             {footerData.phoneNumberFooter}
@@ -148,7 +162,7 @@ const FooterLinks = () => {
               rel="noreferrer"
               style={{
                 color: `white`,
-                textUnderlineOffset: `4px`
+                textUnderlineOffset: `4px`,
               }}
             >
               {footerData.bottomLeftHeading}
@@ -157,23 +171,23 @@ const FooterLinks = () => {
         </PageLinks>
       </FooterLinksGrid>
       <MobileWrapper>
-        <FBC1 color="white" bold>
+        <FBC1 color="white" bold marginBottom="xsf"> 
           LOCATION & CONTACT DETAILS
         </FBC1>
 
         <MobileSocialWrapper>
           <PageLinks>
-            <FBC1 color="white" marginBottom="xs">
+            <FBC1 color="white" marginBottom="sm">
               {footerData.addressLineOne}
             </FBC1>
-            <FBC1 color="white" marginBottom="sm">
+            <FBC1 color="white" marginBottom="fmd">
               {footerData.addressLineTwo}
             </FBC1>
-            <FBC1 color="white" marginBottom="xs">
-              {footerData.emailFooterInfo}
-            </FBC1>
             <FBC1 color="white" marginBottom="sm">
               {footerData.emailFooterInfo}
+            </FBC1>
+            <FBC1 color="white" marginBottom="fmd">
+              {footerData.phoneNumberFooter}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
               Scott Pickett Group
@@ -225,11 +239,11 @@ const FooterLinks = () => {
             </DayWrapper>
             <TimeWrapper>
               <FBC1 color="white" marginBottom="sm">
-                {footerData.openingTimesDinnerDaysOpen}
+                {footerData.openingTimesDinnerOpenTimes}
               </FBC1>
             </TimeWrapper>
           </Lunch>
-          <Lunch>
+          {/* <Lunch>
             <DayWrapper>
               <FBC1 color="white" marginBottom="sm">
                 {footerData.daysClosed}
@@ -240,7 +254,7 @@ const FooterLinks = () => {
                 Closed
               </FBC1>
             </TimeWrapper>
-          </Lunch>
+          </Lunch> */}
         </ServiceTime>
       </MobileWrapper>
     </>

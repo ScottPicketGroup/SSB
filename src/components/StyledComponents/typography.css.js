@@ -464,10 +464,13 @@ export const FBC1 = styled.p`
     switch (props.marginBottom) {
       case "xs":
         return ".25rem"
+     
       case "sm":
         return "0"
       case "md":
         return "1.75rem"
+        case "fmd":
+        return "1.rem"
       case "lg":
         return "3.5rem"
       case "xl":
@@ -505,7 +508,32 @@ export const FBC1 = styled.p`
 
   @media (max-width: 450px) {
     font-size: 10px;
-    margin-bottom: 1.25rem;
+    margin-bottom: ${props => {
+    switch (props.marginBottom) {
+      case "xs":
+        return ".25rem"
+        case "xsf":
+        return ".5rem"
+      case "sm":
+        return "0"
+      case "md":
+        return "1.75rem"
+      case "lg":
+        return "3.5rem"
+      case "xl":
+        return "6rem"
+      case "xxl":
+        return "11.25rem"
+      case "lunch":
+        return "-.4rem"
+      case "address":
+        return "-.4rem"
+      case "addressLinetwo":
+        return ".5rem"
+      default:
+        return "1.25rem"
+    }
+  }};
     line-height: 1.15;
   }
 `

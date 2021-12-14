@@ -149,7 +149,7 @@ export const PageLinks = styled.div`
   flex-direction: column;
   
   @media(max-width: 451px){
-    width: 50vw;
+    max-width: 70vw;
   }
 `
 export const ServiceTime = styled.div`
@@ -158,7 +158,7 @@ export const ServiceTime = styled.div`
   flex-direction: column;
  
   @media(max-width: 451px){
-    width: 70vw;
+    max-width: 80vw;
   }
 `
 export const Lunch = styled.div`
@@ -171,6 +171,9 @@ export const Lunch = styled.div`
 export const DayWrapper = styled.div`
   width: 14vw;
   text-align: left;
+  @media(max-width: 451px){
+    width: 40vw;
+  } 
 `
 export const TimeWrapper = styled.div`
   text-align: left;
@@ -247,7 +250,7 @@ export const MobileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 90vw;
-  margin: 3.5rem auto 6rem;
+  margin: 1.5rem auto;
   text-align: left;
   @media(min-width: 450px){
     display: none;

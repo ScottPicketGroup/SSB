@@ -52,6 +52,18 @@ const Desserts = ({ dessertData }) => {
         </div>
       </DessertsImageWrapepr>
 
+      <DessertsImageWrapepr mobile>
+        <div className="first-paragraph">
+          <DessertImage
+            className="first-paragraph"
+            image={getImage(
+              food_menu_page_content[0].imageAdjacentToDessertMenu
+            )}
+            alt="dessert"
+          />
+        </div>
+      </DessertsImageWrapepr>
+
       <DessertWrapper className="menu">
         <div style={{ width: "100%" }}>
           {menuItems.map((item, index) => (

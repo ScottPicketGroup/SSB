@@ -21,7 +21,7 @@ const Food = ({ foodData }) => {
     ScrollTrigger.create({
       trigger: element,
       start: "top 20%",
-      end: "bottom 70%",
+      end: "bottom 50%",
       pin: element.querySelector(".menuTop"),
     })
   }, [])

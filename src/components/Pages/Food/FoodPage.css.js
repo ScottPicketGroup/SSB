@@ -305,7 +305,6 @@ export const BrunchHorizontalImage = styled(GatsbyImage)`
   }
 `
 export const DessertsImageWrapepr = styled(PrivateDiningImageWrapepr)`
-  display: block;
   @media (max-width: 451px) {
     overflow: unset;
   }

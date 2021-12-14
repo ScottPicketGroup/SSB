@@ -18,22 +18,27 @@ const MenuDuJour = ({ menuDuJourData }) => {
   useEffect(() => {
     const element = ref.current
 
-    gsap.fromTo(
-      element.querySelector(".first-paragraph"),
-      { opacity: 1 },
-      {
-        opacity: 1,
-
-        maxWidth: 10,
-        scrollTrigger: {
-          trigger: element.querySelector(".menuTop"),
-          start: " 25% ",
-          end: "bottom 5%",
-
-          pin: true,
-        },
-      }
-    )
+    ScrollTrigger.matchMedia({
+      "(min-width: 400px)": function() {
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top 20%",
+          end: "bottom 50%",
+          pin: element.querySelector(".menuTop"),
+        })
+      },
+     
+      "(max-width: 399px)": function() {
+        ScrollTrigger.create({
+          trigger: element,
+          start: "top 20%",
+          end: "bottom 57%",
+          pin: element.querySelector(".menuTop"),
+        })
+      },
+    })
+    
+    
   }, [])
   return (
     <MenuDuJourContainer ref={ref}>

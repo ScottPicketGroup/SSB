@@ -1,6 +1,7 @@
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image"
 import styled from "styled-components"
 import { color } from "../../StyledComponents/variables"
+import { PrivateDiningImageWrapepr } from "../Landing/landingPage.css"
 
 export const MenuDuJourContainer = styled.div`
   position: relative;
@@ -16,8 +17,6 @@ export const MenuDuJourContainer = styled.div`
     width: 301px;
     height: ${props => (props.menus === "brunch" ? "529px" : "445px")};
     margin: 0 auto;
-    overflow-x: hidden;
-    overflow-y: auto;
   }
 `
 export const SeasonalTitleWrapper = styled.div`
@@ -67,7 +66,7 @@ export const BrunchHorizontalImageWrapper = styled.div`
   width: 55%;
   margin: auto 0;
   @media (max-width: 451px) {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
   }
 `
@@ -246,10 +245,8 @@ export const FoodContainer = styled.div`
   margin-bottom: 6rem;
   @media (max-width: 451px) {
     width: 301px;
-    height: 728px;
+    // height: 728px;
     margin: 0 auto 3.5rem;
-    overflow-x: hidden;
-    overflow-y: auto;
   }
 `
 
@@ -298,4 +295,18 @@ export const DessertDrinkContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+`
+export const BrunchHorizontalImage = styled(GatsbyImage)`
+  margin: 1rem 1rem 1.75rem;
+  overflow: visible;
+  aspectratio: 3/2;
+  @media (max-width: 451px) {
+    margin: 0;
+  }
+`
+export const DessertsImageWrapepr = styled(PrivateDiningImageWrapepr)`
+  display: block;
+  @media (max-width: 451px) {
+    overflow: unset;
+  }
 `

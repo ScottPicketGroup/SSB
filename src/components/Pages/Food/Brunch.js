@@ -12,6 +12,7 @@ import {
   BrunchVerticalImageWrapper,
   MenuDuJourItemWrapper,
   BrunchHeadingWrapper,
+  BrunchHorizontalImage
 } from "./FoodPage.css"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { gsap } from "gsap"
@@ -120,13 +121,8 @@ const Brunch = ({ brunchData, hiddenOnMobImg }) => {
           />
         </BrunchVerticalImageWrapper>
         <BrunchHorizontalImageWrapper>
-          <GatsbyImage
+          <BrunchHorizontalImage
             image={getImage(horizontalImageUnderFoodMenu)}
-            style={{
-              margin: "1rem 1rem 1.75rem",
-              overflow: "visible",
-              aspectRatio: `3/2`,
-            }}
             alt="menu-dujour"
           />
         </BrunchHorizontalImageWrapper>

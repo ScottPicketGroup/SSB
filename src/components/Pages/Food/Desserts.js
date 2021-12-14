@@ -10,47 +10,48 @@ import {
   DessertDrinkSectionWrapper,
   DessertDrinkSectionItemWrapper,
   DessertDrinkSectionContainer,
-  DessertDrinkContainer
+  DessertDrinkContainer,
+  DessertsImageWrapepr
 } from "./FoodPage.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { PrivateDiningImageWrapepr } from "../Landing/landingPage.css"
 const Desserts = ({ dessertData }) => {
   const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =
     dessertData[0]
-    gsap.registerPlugin(ScrollTrigger)
-    const ref = useRef(null)
-  
-    useEffect(() => {
-      const element = ref.current
-  
-      gsap.fromTo(
-        element.querySelector(".first-paragraph"),
-        { y: 0},
-        {
-          y: 425,
-          scrollTrigger: {
-            trigger: element,
-            start: " top bottom",
-            end: "bottom ",
-            scrub: true,
-          },
-        }
-      )
-    }, [])
+  gsap.registerPlugin(ScrollTrigger)
+  const ref = useRef(null)
+
+  useEffect(() => {
+    const element = ref.current
+
+    gsap.fromTo(
+      element.querySelector(".first-paragraph"),
+      { y: 0 },
+      {
+        y: 425,
+        scrollTrigger: {
+          trigger: element,
+          start: " top bottom",
+          end: "bottom ",
+          scrub: true,
+        },
+      }
+    )
+  }, [])
   return (
     <DessertContainer ref={ref}>
-  
-        <PrivateDiningImageWrapepr >
-          <div className="first-paragraph" >
-      <DessertImage
-        className="first-paragraph"
-        image={getImage(food_menu_page_content[0].imageAdjacentToDessertMenu)}
-        alt="dessert"
-      />
-         </div>
-          </PrivateDiningImageWrapepr>
-       
+      <DessertsImageWrapepr>
+        <div className="first-paragraph">
+          <DessertImage
+            className="first-paragraph"
+            image={getImage(
+              food_menu_page_content[0].imageAdjacentToDessertMenu
+            )}
+            alt="dessert"
+          />
+        </div>
+      </DessertsImageWrapepr>
+
       <DessertWrapper className="menu">
         <div style={{ width: "100%" }}>
           {menuItems.map((item, index) => (
@@ -64,24 +65,26 @@ const Desserts = ({ dessertData }) => {
                 </BC2>
               </DessertDrinkSectionItemWrapper>
 
-              {
-                  item.menuItemDescription && item.menuItemDescription.includes('<br/>') ? (
-                    <>
-                    <BC2 color="black">
-                      {item.menuItemDescription.slice(0, item.menuItemDescription.indexOf('<br/>'))}
-                    </BC2>
-                    <BC2 color="black" marginBottom="sm">
-                      {item.menuItemDescription
-                      .slice(item.menuItemDescription
-                      .indexOf('>'), 500)
-                      .replace('>', '')}
-                    </BC2>
-                    </>
-                  ) :
-                  <BC2 color="black" marginBottom="sm">
-                    {item.menuItemDescription}
+              {item.menuItemDescription &&
+              item.menuItemDescription.includes("<br/>") ? (
+                <>
+                  <BC2 color="black">
+                    {item.menuItemDescription.slice(
+                      0,
+                      item.menuItemDescription.indexOf("<br/>")
+                    )}
                   </BC2>
-                }
+                  <BC2 color="black" marginBottom="sm">
+                    {item.menuItemDescription
+                      .slice(item.menuItemDescription.indexOf(">"), 500)
+                      .replace(">", "")}
+                  </BC2>
+                </>
+              ) : (
+                <BC2 color="black" marginBottom="sm">
+                  {item.menuItemDescription}
+                </BC2>
+              )}
             </DessertItemWrapper>
           ))}
           <DessertDrinkContainer>

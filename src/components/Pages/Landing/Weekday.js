@@ -2,13 +2,12 @@ import React from "react"
 import {
   WeekdayItemsWrapper,
   WeekdayWrapper,
-  CircleImageWrapper,
-  WeekdayHeadingWrapper
+  CircleImageWrapper
 } from "./landingPage.css"
 import WeekdayItem from "./WeekdayItem"
 import WeekdaySpecialsIcon from "../../Icons/WeekDaySpecialsIcon"
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import { Heading1, Heading3 } from "../../StyledComponents/typography.css"
+import { Heading3 } from "../../StyledComponents/typography.css"
 
 const Weekday = ({ data }) => {
   // const isSafari =

@@ -1,8 +1,7 @@
 import React, { useRef } from "react"
 import { Link } from "gatsby"
 
-import { BC1 } from "../StyledComponents/typography.css"
-import { HeaderContainer, HeaderLogoWrapper } from "./Header.css"
+import { HeaderContainer, HeaderLogoWrapper, HamburgerMenuWrapper, ReservationMenuWrapper, BookATableText } from "./Header.css"
 import MenuHamburgerIcon from "../Icons/MenuHamburgerIcon"
 import useActiveMenu from "../hooks/ActiveMenu"
 import LogoIcon from "../Icons/LogoIcon"
@@ -19,36 +18,46 @@ const Header = ({ landing }) => {
     <HeaderContainer ref={headerRef}>
       {elementWidth > 450 ? (
         <HeaderLogoWrapper>
-          <div >
-          <Link to="/reservations">
-            <BC1 style={{ fontWeight: "bold" }}>BOOK A TABLE</BC1>
-          </Link>
-          </div>
-          
+          <ReservationMenuWrapper>
+            <Link to="/reservations">
+              <BookATableText>BOOK A TABLE</BookATableText>
+            </Link>
+          </ReservationMenuWrapper>
+
           {landing ? (
-            scrollPosition > 400 && <Link to="/" style={{ textAlign: "center"}}><LogoIcon header /></Link>
+            scrollPosition > 400 && (
+              <Link to="/" style={{ textAlign: "center" }}>
+                <LogoIcon header />
+              </Link>
+            )
           ) : (
-            <Link to="/" style={{textAlign: "center"}}><LogoIcon header /></Link>
+            <Link to="/" style={{ textAlign: "center" }}>
+              <LogoIcon header />
+            </Link>
           )}
-          <div>
-          <MenuHamburgerIcon menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-          </div>
+          <HamburgerMenuWrapper>
+            <MenuHamburgerIcon menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          </HamburgerMenuWrapper>
         </HeaderLogoWrapper>
       ) : (
         <HeaderLogoWrapper>
-          <div>
-          <Link to="/reservations">
-            <BC1 style={{ fontWeight: "bold" }}>BOOK A TABLE</BC1>
-          </Link>
-          </div>
-          {scrollPosition > 150 && <Link to="/" style={{textAlign: "center"}}><LogoIcon mobile="true" /></Link>}
-          <div >
-          <MenuHamburgerIcon
-            mobile
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-          />
-          </div>
+          <ReservationMenuWrapper>
+            <Link to="/reservations">
+              <BookATableText>BOOK A TABLE</BookATableText>
+            </Link>
+          </ReservationMenuWrapper>
+          {scrollPosition > 150 && (
+            <Link to="/" style={{ textAlign: "center" }}>
+              <LogoIcon mobile="true" />
+            </Link>
+          )}
+          <HamburgerMenuWrapper>
+            <MenuHamburgerIcon
+              mobile
+              menuOpen={menuOpen}
+              setMenuOpen={setMenuOpen}
+            />
+          </HamburgerMenuWrapper>
         </HeaderLogoWrapper>
       )}
     </HeaderContainer>

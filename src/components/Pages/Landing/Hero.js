@@ -1,6 +1,5 @@
 import React from "react"
 import { getImage } from "gatsby-plugin-image"
-import { ParallaxBanner } from "react-scroll-parallax"
 import {
   DesktopContainer,
   MobileContainer,

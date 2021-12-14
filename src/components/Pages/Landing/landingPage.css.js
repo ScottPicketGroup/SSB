@@ -49,10 +49,10 @@ export const HeroTextWrapper = styled.div`
   }
 `
 export const HeroImage = styled(GatsbyImage)`
-  @media(max-width: 451px) {
+  @media (max-width: 451px) {
     height: 100%;
   }
-`;
+`
 
 export const WineAndFoodWrapper = styled.div`
   background-image: ${props =>
@@ -159,6 +159,8 @@ export const PrivateDiningTextWrapper = styled.div`
     order: 1;
     width: 100%;
     margin-top: 1.75rem;
+    padding-left: ${props => props.dining && "0"};
+    padding-right: ${props => props.dining && "2rem"};
   }
 `
 

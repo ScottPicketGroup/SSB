@@ -21,7 +21,6 @@ const PrivateDining = ({
   privateDiningImage,
   privateDiningIntro,
 }) => {
-  // const image = getImage(privateDiningImage)
 
   gsap.registerPlugin(ScrollTrigger)
   const ref = useRef(null)

@@ -48,7 +48,11 @@ export const HeroTextWrapper = styled.div`
     height: 100%;
   }
 `
-export const HeroImage = styled(GatsbyImage)``
+export const HeroImage = styled(GatsbyImage)`
+  @media(max-width: 451px) {
+    height: 100%;
+  }
+`;
 
 export const WineAndFoodWrapper = styled.div`
   background-image: ${props =>
@@ -120,11 +124,11 @@ export const PrivateDiningImageWrapepr = styled.div`
 
   overflow: hidden;
 
-  display: ${props => props.mobile ? "none" : "block"};
+  display: ${props => (props.mobile ? "none" : "block")};
 
   @media (max-width: 451px) {
     width: 100%;
-    display: ${props => props.mobile ? "block" : "none"};
+    display: ${props => (props.mobile ? "block" : "none")};
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
@@ -201,7 +205,7 @@ export const MobileLogoBottomTextWrapper = styled(LogoBottomTextWrapper)`
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0;
   width: 96%;
   left: 2%;
 `
@@ -231,5 +235,10 @@ export const WeekdayHeadingWrapper = styled.div`
 
   @media (max-width: 451px) {
     margin-bottom: 5.25rem;
+  }
+`
+export const LandingHeroContainer = styled(SectionContainer)`
+  @media (max-width: 451px) {
+    height: 90vw;
   }
 `

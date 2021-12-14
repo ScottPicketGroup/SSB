@@ -21,7 +21,7 @@ const GallerySlider = ({ images, bgRed, page, width }) => {
     return () => {
       clearInterval(i_id)
     }
-  }, [])
+  }, [images.length])
 
   return (
     <GalleryContainer column full>

@@ -3,7 +3,6 @@ import { getImage } from "gatsby-plugin-image"
 import {
   DesktopContainer,
   MobileContainer,
-  SectionContainer,
 } from "../../StyledComponents/containers.css"
 import { BC1, Heading1, Heading2 } from "../../StyledComponents/typography.css"
 import {
@@ -13,6 +12,7 @@ import {
   LogoBottomTextWrapper,
   MobileLogoBottomTextWrapper,
   HeroImage,
+  LandingHeroContainer,
 } from "./landingPage.css"
 import LogoIcon from "../../Icons/LogoIcon"
 
@@ -22,14 +22,13 @@ const Hero = ({
   heroTopCenterText,
   heroAddress,
 }) => {
- 
   return (
-    <SectionContainer marginBottom="" full>
+    <LandingHeroContainer marginBottom="" full>
       <HeroWrapper>
-      <HeroImage image={getImage(heroImage)} layout="fullWidth" alt="hero" />
+        <HeroImage image={getImage(heroImage)} layout="fullWidth" alt="hero" />
         <HeroTextWrapper>
           <MobileContainer>
-            <Heading2 marginBottom="md">{heroImageTitle}</Heading2>
+            <Heading2 marginBottom="md" mbOnMob="1.75rem">{heroImageTitle}</Heading2>
             <LogoIcon />
           </MobileContainer>
           <DesktopContainer>
@@ -60,7 +59,7 @@ const Hero = ({
           </MobileLogoBottomTextWrapper>
         </MobileContainer>
       </HeroWrapper>
-    </SectionContainer>
+    </LandingHeroContainer>
   )
 }
 

@@ -17,7 +17,8 @@ export const Typography = createGlobalStyle`
   }
 `
 export const Heading1 = styled.h1`
-  font-family: ${props => props.font === "pitch" ? 'PitchRegular' : "OggRegularItalic"};
+  font-family: ${props =>
+    props.font === "pitch" ? "PitchRegular" : "OggRegularItalic"};
   color: ${props =>
     props.color === "white"
       ? color.SECONDARY_WHITE
@@ -97,7 +98,7 @@ export const Heading2 = styled.h2`
         return "6rem"
       case "xxl":
         return "11.25rem"
-        case "none":
+      case "none":
         return "0rem"
       default:
         return "0"
@@ -124,7 +125,7 @@ export const Heading2 = styled.h2`
   @media (max-width: 450px) {
     font-size: 20px;
     line-height: 32px;
-    margin-bottom: 1rem;
+    margin-bottom: ${props => (props.mbOnMob ? props.mbOnMob : "1rem")};
   }
 `
 
@@ -138,7 +139,7 @@ export const Heading3 = styled.h3`
       : color.PRIMARY_RED_ROUGE};
   font-size: 22px;
   line-height: 30px;
-  font-weight: ${props => props.bold ? "bold" : "normal"};
+  font-weight: ${props => (props.bold ? "bold" : "normal")};
 
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -192,7 +193,7 @@ export const Heading4 = styled.h4`
       : color.PRIMARY_RED_ROUGE};
   font-size: 16px;
   line-height: 21px;
-  font-weight: ${props => props.bold ? "bold" : "normal"};
+  font-weight: ${props => (props.bold ? "bold" : "normal")};
 
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -241,8 +242,8 @@ export const BC1 = styled.p`
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
   font-size: 16px;
-  line-height: ${props => props.lineHeight ? "0px" : "22px"};
-  font-weight: ${props => props.bold ? "bold" : "normal"};
+  line-height: ${props => (props.lineHeight ? "0px" : "22px")};
+  font-weight: ${props => (props.bold ? "bold" : "normal")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -257,9 +258,9 @@ export const BC1 = styled.p`
         return "6rem"
       case "xxl":
         return "11.25rem"
-        case "openingHours":
+      case "openingHours":
         return "1.15rem"
-        case "contactEmail":
+      case "contactEmail":
         return "3.5rem"
       default:
         return "0"
@@ -300,7 +301,7 @@ export const BC2 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 12px;
   line-height: 16px;
-  font-weight: ${props => props.bold ? "bold" : "normal"};
+  font-weight: ${props => (props.bold ? "bold" : "normal")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -353,7 +354,7 @@ export const BC3 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 10px;
   line-height: 26px;
-  font-weight: ${props => props.bold ? "bold" : "normal"};
+  font-weight: ${props => (props.bold ? "bold" : "normal")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -407,7 +408,7 @@ export const BC4 = styled.p`
       : color.PRIMARY_RED_ROUGE};
   font-size: 6px;
   line-height: 8px;
-  font-weight: ${props => props.bold ? "bold" : "normal"};
+  font-weight: ${props => (props.bold ? "bold" : "normal")};
   margin-bottom: ${props => {
     switch (props.marginBottom) {
       case "xs":
@@ -454,8 +455,8 @@ export const FBC1 = styled.p`
       : props.color === "black"
       ? color.PRIMARY_RICH_BLACK
       : color.PRIMARY_RED_ROUGE};
-  font-size: .75rem;
-  line-height: ${props => props.lineHeight ? "21px" : "22px"};
+  font-size: 0.75rem;
+  line-height: ${props => (props.lineHeight ? "21px" : "22px")};
   font-weight: 500;
   margin-bottom: ${props => {
     switch (props.marginBottom) {
@@ -471,12 +472,12 @@ export const FBC1 = styled.p`
         return "6rem"
       case "xxl":
         return "11.25rem"
-        case "lunch":
+      case "lunch":
         return "-.4rem"
-        case "address":
-          return "-.4rem"
-          case "addressLinetwo":
-          return ".5rem"
+      case "address":
+        return "-.4rem"
+      case "addressLinetwo":
+        return ".5rem"
       default:
         return "0"
     }
@@ -507,19 +508,18 @@ export const FBC1 = styled.p`
   }
 `
 export const FBC1External = styled(FBC1)`
-:hover {
-text-decoration: underline;
-}
+  :hover {
+    text-decoration: underline;
+  }
 `
 export const FBC1First = styled(FBC1)`
-text-decoration: underline;
-text-underline-offset: 3px;
-
+  text-decoration: underline;
+  text-underline-offset: 3px;
 `
 export const BBHeading2 = styled(Heading2)`
   line-height: 1.5;
   border-bottom: 1.5px solid;
-  margin-bottom: ${props => props.marginBottom ? props.marginBottom : ""};
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "")};
 `
 export const BBHeading3 = styled(Heading3)`
   line-height: 1.5;

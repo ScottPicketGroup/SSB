@@ -1,5 +1,6 @@
 import { GatsbyImage } from "gatsby-plugin-image"
 import styled from "styled-components"
+import { SectionContainer } from "../../StyledComponents/containers.css"
 
 export const HeroWrapper = styled.div`
   position: relative;
@@ -40,16 +41,14 @@ export const HeroTextWrapper = styled.div`
     h1 {
       font-size: 1rem;
     }
-  } 
+  }
   @media (max-width: 451px) {
     top: 6rem;
     width: 96%;
     height: 100%;
   }
 `
-export const HeroImage = styled(GatsbyImage)`
-
-`
+export const HeroImage = styled(GatsbyImage)``
 
 export const WineAndFoodWrapper = styled.div`
   background-image: ${props =>
@@ -69,7 +68,7 @@ export const WineAndFoodWrapper = styled.div`
 export const WeekdayWrapper = styled.div`
   display: flex;
   padding-top: 5rem;
-  @media(max-width: 451px){
+  @media (max-width: 451px) {
     padding-top: 0;
     margin-top: -6rem;
   }
@@ -106,25 +105,24 @@ export const PrivateDiningWrapper = styled.div`
 `
 
 export const LandingEventImageWrapepr = styled.div`
- --r: 536 / 356;
+  --r: 536 / 356;
 
-aspect-ratio: var(--r);
-width:min(90%, min(536px, 90vh*(var(--r))));
+  aspect-ratio: var(--r);
+  width: min(90%, min(536px, 90vh * (var(--r))));
 
-overflow: hidden;
+  overflow: hidden;
 `
 export const PrivateDiningImageWrapepr = styled.div`
- --r: 4/ 3;
+  --r: 4/ 3;
 
-aspect-ratio: var(--r);
-width:min(90%, min(600px, 90vh*(var(--r))));
+  aspect-ratio: var(--r);
+  width: min(90%, min(600px, 90vh * (var(--r))));
 
-overflow: hidden;
-
+  overflow: hidden;
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
   aspect-ratio: 4/3;
- min-width: 115%;
+  min-width: 115%;
   margin-right: 1rem;
   order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
@@ -180,8 +178,12 @@ export const LogoTopTextWrapper = styled.div`
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 2rem;
-  @media only screen and (max-width: 1200px) and (min-width: 801px) {margin-bottom: 1rem;} 
-  @media only screen and (max-width: 799px) and (min-width: 600px) {margin-bottom: 0rem;} 
+  @media only screen and (max-width: 1200px) and (min-width: 801px) {
+    margin-bottom: 1rem;
+  }
+  @media only screen and (max-width: 799px) and (min-width: 600px) {
+    margin-bottom: 0rem;
+  }
 `
 export const LogoBottomTextWrapper = styled.div`
   display: flex;
@@ -221,5 +223,10 @@ export const WeekdayHeadingWrapper = styled.div`
 
   @media (max-width: 451px) {
     margin-bottom: 5.25rem;
+  }
+`
+export const WhatsOnEventContainer = styled(SectionContainer)`
+  @media (max-width: 451px) {
+    margin-bottom: 6.5rem;
   }
 `

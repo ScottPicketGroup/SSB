@@ -15,10 +15,9 @@ export const MenuDuJourContainer = styled.div`
   background-color: ${props =>
   props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
-    height: 500px;
+    // height: 500px;
     width: 254px;
-    // padding-top: 1.75rem;
-    padding: 1.75rem 2rem 0rem 2rem;
+    padding: 1.75rem 0 0;
     margin: 0 auto 1.75rem;
   }
 `
@@ -31,7 +30,7 @@ export const SeasonalTitleWrapper = styled.div`
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
-    top: 1rem;
+    top: 1.75rem;
   }
 `
 export const BrunchContainer = styled.div`
@@ -129,8 +128,9 @@ export const DrinksScrollMenuMobileWrapper = styled.div`
 export const MenuDuJourItemWrapper = styled.div`
   margin-bottom: 1.75rem;
   @media (max-width: 451px) {
-    margin-bottom: 1rem;
-    width: ${props => (props.cocktail ? "80%" : "100%")};
+    // margin: ${props => (props.cocktail && "0 1rem auto" )};
+    // width: ${props => (props.cocktail ? "80%" : "100%")};
+    width: 100%;
   }
 `
 export const MenuDuJourTitleWrapper = styled.div`
@@ -200,6 +200,7 @@ export const NonAlcoholicItemWrapper = styled.div`
   @media (max-width: 451px) {
     width: 48%;
     margin-right: 1rem;
+    bottom: 0;
   }
 `
 export const NonAlcoholicSeasonalTitleWrapper = styled.div`
@@ -211,7 +212,7 @@ export const NonAlcoholicSeasonalTitleWrapper = styled.div`
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
-    top: 3.5rem;
+    top: 1.75rem;
   }
 `
 export const BottomGatsByImage = styled(GatsbyImage)`
@@ -255,7 +256,13 @@ export const DesktopContainer = styled.div`
   }
 `
 export const MobileContainer = styled.div`
-  @media (min-width: 452px) {
+  @media (min-width: 451px) {
     display: none;
+  }
+`
+export const ItemsWrapper = styled.div`
+  @media (max-width: 451px) {
+    width: 80%;
+    margin: 0 auto;
   }
 `

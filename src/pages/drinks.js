@@ -38,6 +38,7 @@ const DrinksPage = ({ data }) => {
         <SectionContainer
           marginBottom="xl"
           ref={el => (itemsRef.current[0] = el)}
+          mbOnMob="0.75rem"
         >
           <WinesByTheGlass wineByTheGlassMenu={wineByTheGlassMenu} />
         </SectionContainer>

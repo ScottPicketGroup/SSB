@@ -10,6 +10,7 @@ import {
   NonAlcoholicSeasonalTitleWrapper,
   DesktopContainer,
   MobileContainer,
+  ItemsWrapper
 } from "./DrinksPage.css"
 import { gsap } from "gsap"
 
@@ -42,7 +43,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
   return (
     <CocktailContainer ref={ref} className="first-paragraph">
       <MenuDuJourContainer coffee ref={cocktailRef}>
-        <div>
+        <ItemsWrapper>
           {menuItems.map((item, index) => (
             <MenuDuJourItemWrapper key={index} cocktail>
               <BC2 bold color="black">
@@ -70,7 +71,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
               )}
             </MenuDuJourItemWrapper>
           ))}
-        </div>
+        </ItemsWrapper>
         <Heading2
           marginTop="lg"
           marginBottom="md"
@@ -116,6 +117,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
         <NonAlcoholicContainer
           backgroundImage={backgroundImage.file.url}
           className="menuTop"
+          style={{ height: refHeight }}
         >
           <NonAlcoholicItemWrapper>
             <BC2 marginBottom="md" bold color="black">

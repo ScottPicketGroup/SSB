@@ -7,7 +7,7 @@ import Renderer from "../../rich-text-renderers/sample"
 
 const Intro = ({ quoteHeading, quoteText }) => {
   return (
-  <SectionContainer marginTop="xl" marginBottom="lg" width="50%">
+  <SectionContainer marginTop="xl" marginBottom="lg" width="50%" mbOnMob="2.5rem">
       <IntroWrapper>
   {quoteHeading &&   <Heading1 marginBottom="md">{quoteHeading}</Heading1>}
   {quoteText &&      <Renderer node={quoteText} />}

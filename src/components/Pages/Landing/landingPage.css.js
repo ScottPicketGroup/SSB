@@ -113,12 +113,16 @@ export const LandingEventImageWrapepr = styled.div`
   overflow: hidden;
 `
 export const PrivateDiningImageWrapepr = styled.div`
-  --r: 4/ 3;
+  --r: 318 / 211;
 
   aspect-ratio: var(--r);
   width: min(90%, min(600px, 90vh * (var(--r))));
 
   overflow: hidden;
+
+  @media (max-width: 451px) {
+    width: 100%;
+  }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
   aspect-ratio: 4/3;
@@ -128,6 +132,7 @@ export const PrivateDiningImage = styled(GatsbyImage)`
   @media (max-width: 451px) {
     order: 0;
     width: 100%;
+    min-width: 100%;
   }
 `
 
@@ -212,8 +217,8 @@ export const CircleImageWrapper = styled.div`
   @media (max-width: 451px) {
     position: absolute;
     width: 40vw;
-    margin-top: 2rem;
-    right: 240px;
+    margin-top: 9vw;
+    right: 52%;
   }
 `
 export const WeekdayHeadingWrapper = styled.div`
@@ -223,10 +228,5 @@ export const WeekdayHeadingWrapper = styled.div`
 
   @media (max-width: 451px) {
     margin-bottom: 5.25rem;
-  }
-`
-export const WhatsOnEventContainer = styled(SectionContainer)`
-  @media (max-width: 451px) {
-    margin-bottom: 6.5rem;
   }
 `

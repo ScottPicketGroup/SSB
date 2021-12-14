@@ -17,7 +17,7 @@ const WeekDaySpecialsIcon = ({ text }) => {
           // alignment-baseline="top"
           xlinkHref="#circle"
           style={{
-            fontFamily: `Ogg`,
+            fontFamily: `OggRegularItalic`,
             fill: `red`,
             stroke: `red`,
             fontSize: `3.5rem`,

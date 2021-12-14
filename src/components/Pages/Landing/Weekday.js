@@ -21,7 +21,6 @@ const Weekday = ({ data }) => {
   //   )
   return (
     <SectionContainer marginBottom="xl" column>
-     
       <WeekdayWrapper>
         <CircleImageWrapper>
           <WeekdaySpecialsIcon text={data.circularMenuText} />

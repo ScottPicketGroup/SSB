@@ -19,7 +19,7 @@ const WineAndFood = ({foodMenuLabelText, wineMenuLabelText}) => {
   `)
   const backgroundImage = imageData.file.publicURL
   return (
-    <SectionContainer marginBottom="md" full>
+    <SectionContainer marginBottom="md" mbOnMob="1rem" full>
       <WineAndFoodWrapper backgroundImage={backgroundImage}>
         <NoneDecorationLink to="/drinks">
           <BBHeading2>{wineMenuLabelText}</BBHeading2>

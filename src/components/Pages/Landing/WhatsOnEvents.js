@@ -12,7 +12,6 @@ import {
   WhatsOnEventsWrapper,
   RenderTextOverHiddenWrapper,
   PrivateDiningImageWrapepr,
-  WhatsOnEventContainer
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/sample"
 import { getImage } from "gatsby-plugin-image"
@@ -46,7 +45,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
   }, [])
 
   return (
-    <WhatsOnEventContainer column="true">
+    <SectionContainer column="true" mbOnMob="5.5rem">
       <PrivateDiningWrapper first="true" ref={ref}>
         <PrivateDiningTextWrapper first="true">
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
@@ -90,7 +89,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
             )
         )}
       </WhatsOnEventsWrapper>
-    </WhatsOnEventContainer>
+    </SectionContainer>
   )
 }
 

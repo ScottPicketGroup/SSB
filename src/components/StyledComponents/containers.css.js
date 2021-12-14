@@ -92,7 +92,7 @@ export const SectionContainer = styled.div`
   @media (max-width: 450px) {
     width: 90%;
     background: none;
-    margin-bottom: 3.5rem;
+    margin-bottom: ${props => (props.mbOnMob ? props.mbOnMob : "3.5rem")};
     flex-direction: column;
     margin-top: 0;
     display: ${props => (props.hiddenOnMob ? "none" : "block")};

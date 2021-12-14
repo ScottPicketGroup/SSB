@@ -45,7 +45,7 @@ export const TitleWrapper = styled.div`
 export const DescriptionWrapper = styled.div`
   width: 45vw;
   @media (max-width: 451px) {
-    width: 90%;
+    width: 100%;
   }
 `
 export const GallerySliderWrapper = styled.div`

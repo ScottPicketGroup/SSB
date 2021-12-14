@@ -12,8 +12,8 @@ export const GalleryContainer = styled(SectionContainer)`
 
 export const ImageContainer = styled.div`
   margin-top: 2.25rem;
-  ${props=>props.page==="dining" && "width:100vw"};
-  height: ${props=>props.page==="dining" ? "35vw" : "46vw"};
+  ${props => props.page === "dining" && "width:100%"};
+  height: ${props => (props.page === "dining" ? "35vw" : "43vw")};
   position: relative;
   display: flex;
   flex-direction: row;
@@ -21,12 +21,12 @@ export const ImageContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 451px) {
-    height: 60vw;
+    height: ${props => (props.page === "dining" ? "60vw" : "58vw")};
   }
 `
 
 export const Card = styled.div`
-  width: ${props => props.width ? "50%" : '100%'};
+  width: ${props => (props.width ? "100%" : "100%")};
   margin-left: ${props =>
     props.active === props.i + 1
       ? "0vw"

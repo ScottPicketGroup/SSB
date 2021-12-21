@@ -55,10 +55,9 @@ export const HeroImage = styled(GatsbyImage)`
 `
 
 export const WineAndFoodWrapper = styled.div`
-  background-image: ${props =>
-    props.backgroundImage ? `url(${props.backgroundImage})` : `url("")`};
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 1rem;
   align-items: center;
   width: 50%;
   height: 35vw;
@@ -212,9 +211,9 @@ export const MobileLogoBottomTextWrapper = styled(LogoBottomTextWrapper)`
   left: 2%;
 `
 export const WeekdayItemDescriptionWrapper = styled.div`
-  width: 60%;
+  width: 65%;
   @media (max-width: 451px) {
-    width: 70%;
+    width: 100%;
   }
 `
 export const CircleImageWrapper = styled.div`

@@ -4,15 +4,13 @@ import {
   NoneDecorationLink,
 } from "../../StyledComponents/typography.css"
 import { SectionContainer } from "../../StyledComponents/containers.css"
-
 import { WineAndFoodWrapper } from "./landingPage.css"
-
 import { useStaticQuery, graphql } from "gatsby"
 
-const WineAndFood = ({foodMenuLabelText, wineMenuLabelText}) => {
+const WineAndFood = ({ foodMenuLabelText, wineMenuLabelText }) => {
   const imageData = useStaticQuery(graphql`
     query FlowerURL {
-      file(name: { eq: "flower" }) {
+      file(name: { eq: "flower-1" }) {
         publicURL
       }
     }
@@ -20,10 +18,11 @@ const WineAndFood = ({foodMenuLabelText, wineMenuLabelText}) => {
   const backgroundImage = imageData.file.publicURL
   return (
     <SectionContainer marginBottom="md" mbOnMob="1rem" full>
-      <WineAndFoodWrapper backgroundImage={backgroundImage}>
+      <WineAndFoodWrapper>
         <NoneDecorationLink to="/drinks">
           <BBHeading2>{wineMenuLabelText}</BBHeading2>
         </NoneDecorationLink>
+        <img src={backgroundImage} alt="rose" style={{width: "30%"}} />
         <NoneDecorationLink to="/food">
           <BBHeading2>{foodMenuLabelText}</BBHeading2>
         </NoneDecorationLink>

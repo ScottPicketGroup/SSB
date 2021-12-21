@@ -262,7 +262,7 @@ export const MobileContainer = styled.div`
 `
 export const ItemsWrapper = styled.div`
   @media (max-width: 451px) {
-    width: 80%;
+    width: 75%;
     margin: 0 auto;
   }
 `

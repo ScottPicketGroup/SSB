@@ -55,7 +55,7 @@ const Food = ({ foodData }) => {
               <BC2 style={{ color: "#800103" }} bold>
                 {item.menuItems[0].menuItem}
               </BC2>
-              <BC2 color="black" bold>
+              <BC2 style={{ color: "#800103" }} bold>
                 {item.menuItems[0].menuItemPrice}PP
               </BC2>
             </FoodSectionItemWrapper>

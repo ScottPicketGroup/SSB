@@ -234,6 +234,7 @@ export const Button = styled.button`
   :hover {
     color: #2b3c31;
     background: white;
+    cursor: pointer;
   }
   @media(max-width: 451px){
     align-self: center;

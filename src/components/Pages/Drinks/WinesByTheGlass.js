@@ -7,6 +7,8 @@ import {
   WineSectionItemWrapper,
   WinesByTheGlassContainer,
   ByGlassTitleWrapper,
+  MobileContainer,
+  DesktopContainer,
 } from "./DrinksPage.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -22,7 +24,7 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
 
     gsap.to(
       element.querySelector(".menuSide"),
-      
+
       {
         autoAlpha: 1,
         maxWidth: 10,
@@ -36,7 +38,7 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
     )
     gsap.to(
       element.querySelector(".menuTop"),
-      
+
       {
         autoAlpha: 0,
         maxWidth: 10,
@@ -45,7 +47,6 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
           start: "top 65% ",
           end: "top 50%",
           scrub: 0,
-         
         },
       }
     )
@@ -57,8 +58,6 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
       scrub: 1,
       pin: true,
     })
-
-   
   }, [])
 
   return (
@@ -66,16 +65,28 @@ const WinesByTheGlass = ({ wineByTheGlassMenu }) => {
       <ByGlassTitleWrapper className="menuSide">
         <BC1
           color="red"
-          style={{ fontSize: "15px", letterSpacing: "-4px", marginTop: "1.5rem" }}
+          style={{
+            fontSize: "15px",
+            letterSpacing: "-4px",
+            marginTop: "1.5rem",
+          }}
           bold
         >
           BY THE GLASS
         </BC1>
       </ByGlassTitleWrapper>
       <WinesByTheGlassWrapper className="first-paragraph">
-        <BC1 color="red" className="menuTop" bold>
-          BY THE GLASS
-        </BC1>
+        <MobileContainer>
+          <BC1 color="red" bold>
+            BY THE GLASS
+          </BC1>
+        </MobileContainer>
+        <DesktopContainer>
+          <BC1 color="red" className="menuTop" bold>
+            BY THE GLASS
+          </BC1>
+        </DesktopContainer>
+
         {wineData.map((item, index) => (
           <WineSectionWrapper key={index}>
             <BC1 color="black" bold>

@@ -16,7 +16,7 @@ export const MenuDuJourContainer = styled.div`
   props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
     // height: 500px;
-    width: 254px;
+    width: 80%;
     padding: 1.75rem 0 0;
     margin: 0 auto 1.75rem;
   }
@@ -146,6 +146,9 @@ export const WinesByTheGlassWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   width: 95%;
+  @media(max-width: 451px) {
+    width: 100%;
+  }
 `
 export const WineSectionWrapper = styled.div`
   margin-bottom: 1.75rem;
@@ -155,6 +158,9 @@ export const WineSectionItemWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   text-align: left;
+  @media(max-width: 451px){
+    gap: 13px;
+  }
 `
 export const CocktailContainer = styled.div`
   display: flex;
@@ -183,8 +189,8 @@ export const NonAlcoholicContainer = styled.div`
   background-color: #ac785b;
   background-image: url("${props => props.backgroundImage}");
   @media (max-width: 451px) {
-    height: 500px;
-    width: 254px;
+    // height: 500px;
+    width: 80%;
     margin: 0 auto;
     background-position: 55% 50%;
   }
@@ -240,6 +246,7 @@ export const ByGlassTitleWrapper = styled.div`
   writing-mode: vertical-lr;
   text-orientation: upright;
   @media (max-width: 451px) {
+    display: none;
   }
 `
 export const VerticalByGlassTitleWrapper = styled.div`

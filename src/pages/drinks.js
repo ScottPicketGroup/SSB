@@ -25,7 +25,7 @@ const DrinksPage = ({ data }) => {
   } = data.allContentfulWineMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
-    const pos = itemsRef.current[el].getBoundingClientRect().top - 150
+    const pos = itemsRef.current[el].getBoundingClientRect().top + window.pageYOffset - 150
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
 

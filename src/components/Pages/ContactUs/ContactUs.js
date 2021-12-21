@@ -55,7 +55,7 @@ const ContactUs = ({...data}) => {
           </NoneDecorationLink>
           </BC1>
           <ServiceTime>
-            <BC1 style={{color: `black`}} marginTop="lg"  marginBottom="openingHours"> OPENING HOURS</BC1>
+            <BC1 style={{color: `black`}} marginTop="lg"  marginBottom="openingHours" bold> OPENING HOURS</BC1>
           <Lunch>
             <DayWrapper>
               <FBC1 color="black" marginBottom="0" lineHeight="openingHours" style={{fontSize: `1rem`}}>
@@ -101,7 +101,7 @@ const ContactUs = ({...data}) => {
             </TimeWrapper>
           </Lunch>
         </ServiceTime>
-        <a href="tel:+4733378901">
+        <a href={`tel:${data.phoneNumber}`}>
             <BC1 color="black" marginTop="md" marginBottom=""
             style={{textDecoration: 'underline'}}>
               {data.phoneNumber}

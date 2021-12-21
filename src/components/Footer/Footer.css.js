@@ -187,12 +187,14 @@ export const FormWrapper = styled.div`
   justify-content: center;
   width: 50%;
   margin: 3.5rem auto 3.5rem;
-  align-items: self-start;
+  // align-items: self-start;
   text-align: left;
+  gap: 30px;
   @media(max-width: 451px){
     flex-direction: column;
     text-align: center;
     margin: 1.75rem auto 1.75rem;
+    gap: 0;
   }
 `
 

@@ -152,7 +152,13 @@ const FooterLinks = () => {
             </a>
           </FBC1>
           <FBC1 color="white" marginBottom="addressLinetwo">
-            {footerData.phoneNumberFooter}
+            <a
+              href={`tel: ${footerData.phoneNumberFooter}`}
+              rel="noreferrer"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {footerData.phoneNumberFooter}
+            </a>
           </FBC1>
 
           <FBC1 color="white" marginBottom="sm">
@@ -171,7 +177,7 @@ const FooterLinks = () => {
         </PageLinks>
       </FooterLinksGrid>
       <MobileWrapper>
-        <FBC1 color="white" bold marginBottom="xsf"> 
+        <FBC1 color="white" bold marginBottom="xsf">
           LOCATION & CONTACT DETAILS
         </FBC1>
 
@@ -184,13 +190,35 @@ const FooterLinks = () => {
               {footerData.addressLineTwo}
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
-              {footerData.emailFooterInfo}
+              <a
+                href={`mailto: ${footerData.emailFooterInfo}`}
+                rel="noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {footerData.emailFooterInfo}
+              </a>
             </FBC1>
             <FBC1 color="white" marginBottom="fmd">
-              {footerData.phoneNumberFooter}
+              <a
+                href={`tel: ${footerData.phoneNumberFooter}`}
+                rel="noreferrer"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {footerData.phoneNumberFooter}
+              </a>
             </FBC1>
             <FBC1 color="white" marginBottom="sm">
-              Scott Pickett Group
+              <a
+                href="http://scottpickettgroup.com.au"
+                target="_blank"
+                rel="noreferrer"
+                style={{
+                  color: `white`,
+                  textUnderlineOffset: `4px`,
+                }}
+              >
+                {footerData.bottomLeftHeading}
+              </a>
             </FBC1>
           </PageLinks>
           <SocialLinks>

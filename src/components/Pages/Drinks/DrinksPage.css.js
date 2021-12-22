@@ -16,7 +16,7 @@ export const MenuDuJourContainer = styled.div`
   props.coffee ? "#AC785B" : color.SECONDARY_WHITE};
   @media (max-width: 451px) {
     // height: 500px;
-    width: 80%;
+    width: ${props => props.coffee ? "90%" : "80%"};
     padding: 1.75rem 0 0;
     margin: 0 auto 1.75rem;
   }

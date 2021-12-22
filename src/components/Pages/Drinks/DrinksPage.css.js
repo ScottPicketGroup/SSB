@@ -159,7 +159,7 @@ export const WineSectionItemWrapper = styled.div`
   justify-content: space-between;
   text-align: left;
   @media(max-width: 451px){
-    gap: 13px;
+    gap: 18px;
   }
 `
 export const CocktailContainer = styled.div`
@@ -234,7 +234,7 @@ export const WinesByTheGlassContainer = styled.div`
   justify-content: space-between;
   width: 900px;
   @media (max-width: 451px) {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
 `

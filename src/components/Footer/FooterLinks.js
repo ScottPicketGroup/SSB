@@ -214,7 +214,7 @@ const FooterLinks = () => {
                 rel="noreferrer"
                 style={{
                   color: `white`,
-                  textUnderlineOffset: `4px`,
+                  textDecoration: 'none'
                 }}
               >
                 {footerData.bottomLeftHeading}

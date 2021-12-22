@@ -185,6 +185,7 @@ export const MenuDuJourTitleWrapper = styled.div`
   margin-top: 3.5rem;
   margin-bottom: 2.25rem;
   @media (max-width: 451px) {
+    max-width: 90%;
     margin-top: 1.75rem;
     margin-bottom: 1rem;
   }

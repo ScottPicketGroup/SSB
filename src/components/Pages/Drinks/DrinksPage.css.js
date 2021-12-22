@@ -139,6 +139,7 @@ export const MenuDuJourTitleWrapper = styled.div`
   @media (max-width: 451px) {
     margin-top: 1.75rem;
     margin-bottom: 1rem;
+    max-width: 90%;
   }
 `
 export const WinesByTheGlassWrapper = styled.div`

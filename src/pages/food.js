@@ -59,18 +59,21 @@ const FoodPage = ({ data }) => {
             hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
         </SectionContainer>
-
+    <div 
+      ref={el => (itemsRef.current[2] = el)}>
         <Food
+          ref={el => (itemsRef.current[2] = el)}
           foodData={lunchAndDinner}
           vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
           image3={image3}
         />
+        </div>
 
         <SectionContainer
           marginBottom="xxl"
           centered
           red
-          ref={el => (itemsRef.current[2] = el)}
+        
         >
           <Desserts dessertData={desserts} />
         </SectionContainer>

@@ -120,7 +120,10 @@ export const DrinksScrollMenuMobileWrapper = styled.div`
   width: 100%;
   & h2:hover {
     color: ${color.PRIMARY_RED_ROUGE};
-  }
+    }
+  &  a:hover {
+      color: ${color.PRIMARY_RED_ROUGE}; 
+    }
   @media (min-width: 451px) {
     display: none;
   }

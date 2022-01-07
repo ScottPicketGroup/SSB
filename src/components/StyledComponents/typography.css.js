@@ -555,6 +555,11 @@ export const FBC1First = styled(FBC1)`
   text-underline-offset: 3px;
 `
 export const BBHeading2 = styled(Heading2)`
+a {
+  :hover {
+    color: ${color.PRIMARY_RED_ROUGE};
+  }
+}
   line-height: 1.5;
   border-bottom: 1.5px solid;
   margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "")};

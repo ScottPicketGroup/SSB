@@ -236,6 +236,14 @@ export const Heading4 = styled.h4`
 `
 
 export const BC1 = styled.p`
+a {
+  color: ${props =>
+    props.color === "white"
+      ? color.SECONDARY_WHITE
+      : props.color === "black"
+      ? color.PRIMARY_RICH_BLACK
+      : color.PRIMARY_RED_ROUGE};
+}
   font-family: PitchRegular;
   color: ${props =>
     props.color === "white"

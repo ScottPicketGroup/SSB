@@ -9,11 +9,16 @@ import {
 } from "../StyledComponents/typography.css"
 
 const Renderer = ({ node }) => {
+  console.log(`node`, node)
   const options = {
     renderNode: {
+      
       [BLOCKS.HEADING_1]: (node, children) => <Heading1>{children}</Heading1>,
       [BLOCKS.HEADING_2]: (node, children) => <Heading2>{children}</Heading2>,
       [BLOCKS.HEADING_3]: (node, children) => <Heading3>{children}</Heading3>,
+      [BLOCKS.HYPERLINK]: (node, children) => (
+        <BC1 marginBottom="sm" style={{color: `red !important`}}>BOOB{children}</BC1>
+      ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <BC1 marginBottom="sm">{children}</BC1>
       ),

@@ -20,7 +20,11 @@ const DrinksScrollMenu = ({ excuteScroll, wineMenuPdf }) => {
       <DrinksScrollMenuMobileWrapper>
           <BBHeading2 color="black" onClick={()=>excuteScroll(0)}>Wines by the Glass</BBHeading2>
           <BBHeading2 color="black" onClick={()=>excuteScroll(1)}>Cocktails</BBHeading2>
-          <BBHeading2 color="black">Download Menu</BBHeading2>
+          <BBHeading2 color="black">
+          <a href={wineMenuPdf.file.url} target="_blank" rel="noreferrer" style={{textDecoration: `none`}}>
+          Download Menu
+        </a>
+          </BBHeading2>
       </DrinksScrollMenuMobileWrapper>
     </SectionContainer>
   )

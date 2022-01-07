@@ -188,8 +188,16 @@ export const NonAlcoholicContainer = styled.div`
   justify-content: flex-end;
 
   background-repeat: no-repeat;
-  background-size: 200%;
-  background-position: 57% 0;
+  background-size: ${props => 
+                              props.position <  4 ? 
+                                  "225%" :
+                                  "150%"
+                            };
+  background-position: ${props => 
+                              props.position <  4 ? 
+                              "58% 60%" :
+                                  "91.5% 0%"
+                            };
   background-color: #ac785b;
   background-image: url("${props => props.backgroundImage}");
   @media (max-width: 451px) {

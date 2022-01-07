@@ -86,19 +86,17 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
       </MenuDuJourContainer>
       <DesktopContainer>
         <NonAlcoholicContainer
+        position={nonAlcoholicMenuItems && nonAlcoholicMenuItems.length}
           backgroundImage={backgroundImage.file.url}
           className="menuTop"
           style={{ height: refHeight }}
         >
-          <NonAlcoholicItemWrapper
-            // style={{
-            //   transform: `translateY(-130px)`,
-            // }}
-          >
+          <NonAlcoholicItemWrapper>
             <BC2 marginBottom="md" bold color="black">
               {menuTitle}
             </BC2>
-            {nonAlcoholicMenuItems.map((item, index) => (
+            
+             {nonAlcoholicMenuItems.map((item, index) => (
               <MenuDuJourItemWrapper key={index}>
                 <BC2 bold color="black">
                   {item.menuItem}
@@ -106,6 +104,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
                 <BC2 color="black">{item.menuItemDescription}</BC2>
               </MenuDuJourItemWrapper>
             ))}
+            
           </NonAlcoholicItemWrapper>
           <NonAlcoholicSeasonalTitleWrapper>
             <BC2 bold>{seasonHeading}</BC2>

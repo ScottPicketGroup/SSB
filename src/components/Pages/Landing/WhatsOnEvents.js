@@ -25,24 +25,24 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
   gsap.registerPlugin(ScrollTrigger)
   const ref = useRef(null)
 
-  useEffect(() => {
-    const element = ref.current
-    gsap.set(".first-paragraph", { xPercent: 0, yPercent: 0 })
-    gsap.fromTo(
-      element.querySelector(".first-paragraph"),
-      { css: { scale: 0 } },
-      {
-        css: { scaleX: 1.5, scaleY: 1.5 },
-        scrollTrigger: {
-          trigger: element.querySelector(".first"),
-          start: " top ",
-          end: "bottom ",
-          scrub: true,
-          delay: 0.7,
-        },
-      }
-    )
-  }, [])
+  // useEffect(() => {
+  //   const element = ref.current
+  //   gsap.set(".first-paragraph", { xPercent: 0, yPercent: 0 })
+  //   gsap.fromTo(
+  //     element.querySelector(".first-paragraph"),
+  //     { css: { scale: 0 } },
+  //     {
+  //       css: { scaleX: 1.5, scaleY: 1.5 },
+  //       scrollTrigger: {
+  //         trigger: element.querySelector(".first"),
+  //         start: " top ",
+  //         end: "bottom ",
+  //         scrub: true,
+  //         delay: 0.7,
+  //       },
+  //     }
+  //   )
+  // }, [])
 
   useEffect(() => {
     const element = ref.current
@@ -62,10 +62,10 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
       }
     )
   }, [])
-
+console.log(events)
   return (
-    <SectionContainer column="true" mbOnMob="5.5rem">
-      <PrivateDiningWrapper first="true" ref={ref}>
+    <SectionContainer column="true" mbOnMob="5.5rem" ref={ref} marginBottom="lg">
+      {/* <PrivateDiningWrapper first="true" ref={ref}>
         <PrivateDiningTextWrapper first="true">
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
           <RenderTextOverHiddenWrapper first="true">
@@ -94,11 +94,11 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
             />
           </div>
         </PrivateDiningImageWrapepr>
-      </PrivateDiningWrapper>
+      </PrivateDiningWrapper> */}
       <WhatsOnEventsWrapper>
         {events.map(
           (item, index) =>
-            index > 1 && (
+            index > -1 && (
               <PrivateDiningWrapper key={index}>
                 <PrivateDiningTextWrapper>
                   <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
@@ -110,6 +110,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
                   </RedDecorationLink>
                 </PrivateDiningTextWrapper>
                 <PrivateDiningImage
+                className="first-paragraph"
                   image={getImage(item.eventMenuImage)}
                   alt="private-dining"
                 />

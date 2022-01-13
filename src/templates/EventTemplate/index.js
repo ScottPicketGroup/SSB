@@ -31,6 +31,8 @@ import {
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
+
+  console.log(eventData)
   return (
     <Layout>
       <Seo title="Home" />

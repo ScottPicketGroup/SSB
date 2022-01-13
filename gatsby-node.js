@@ -1,6 +1,20 @@
 const path = require("path")
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions;
+      //  type ContentfulWhatsOnPageContent implements Node {
+  //   eventMenu: EventMenu
+  //  }
+  //  type EventMenu {
+  //    menuName: String!
+  //    sideMenuName: String!
+  //    eventMenuItems: EventMenuitems! 
+  //  }
+  //  type EventMenuitems {
+  //    menuITem: String!
+  //    menuItemLongDescription: String!
+  //    menuItemShortDescription: String!
+  // will have to sort this out! - just returns null instead of value if there :(
+  // 
   const typeDefs = `
   type ContentfulPrivateDiningPageContent implements Node {
     eventsPackagePdf: File
@@ -11,23 +25,11 @@ exports.createSchemaCustomization = ({ actions }) => {
    type URL {
      url: String
    }
-    type ContentfulWhatsOnPageContent implements Node {
-     eventMenu: EventMenu
-    }
-    type EventMenu {
-      menuName: String
-      sideMenuName: String
-      eventMenuItems: EventMenuitems    
-    }
-    type EventMenuitems {
-      menuITem: String
-      menuItemLongDescription: String
-      menuItemShortDescription: String
-    }
           
   `;
   createTypes(typeDefs);
 };
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.

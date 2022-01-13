@@ -1,5 +1,5 @@
 import React, { useRef } from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import {
   HeaderContainer,
@@ -19,15 +19,34 @@ const Header = ({ landing }) => {
   const scrollPosition = useScrollPosition()
   const headerRef = useRef(null)
   const { elementWidth } = useGetElementSize(headerRef)
+  const data = useStaticQuery(
+    graphql`
+    query  {
+      allContentfulReservationsLinks(
+        filter: {id: {eq: "0d647c38-723b-54d9-9f32-8c8b5714f9d7"}}
+      ) {
+        edges {
+          node {
+            label
+            url
+            id
+          }
+        }
+      }
+    }
+    `
+  )
 
+ 
+  const bookATableLink = data.allContentfulReservationsLinks.edges[0].node.url
   return (
     <HeaderContainer ref={headerRef}>
       {elementWidth > 450 ? (
         <HeaderLogoWrapper>
           <ReservationMenuWrapper>
-            <Link to="/reservations">
+          <a href={`${bookATableLink}`} target="_blank">
               <BookATableText>BOOK A TABLE</BookATableText>
-            </Link>
+              </a>  
           </ReservationMenuWrapper>
 
           {landing ? (

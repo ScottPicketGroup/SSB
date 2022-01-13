@@ -98,7 +98,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
       <WhatsOnEventsWrapper>
         {events.map(
           (item, index) =>
-            index > 0 && (
+            index > 1 && (
               <PrivateDiningWrapper key={index}>
                 <PrivateDiningTextWrapper>
                   <Heading2 marginBottom="md">{item.eventTitle}</Heading2>

@@ -575,6 +575,14 @@ export const RedDecorationLink = styled(Link)`
   text-decoration-color: ${color.PRIMARY_RED_ROUGE};
   text-underline-offset: 5px;
 `
+export const ExtRedDecorationLink = styled.a `
+  text-decoration-color: ${color.PRIMARY_RED_ROUGE};
+  text-underline-offset: 5px;
+`
+export const ExtWhiteDecorationLink = styled.a `
+  text-decoration-color: white;
+  text-underline-offset: 5px;
+`
 
 export const RenderBC1 = styled(BC1)`
   font-size: 16px;

@@ -16,6 +16,7 @@ import {
   BC1,
   Heading1,
   NoneDecorationLink,
+  ExtWhiteDecorationLink
 } from "../../components/StyledComponents/typography.css"
 import {
   Intro,
@@ -32,7 +33,7 @@ import {
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
 
-  console.log(eventData)
+  console.log(eventData, 'stuff')
   return (
     <Layout>
       <Seo title="Home" />
@@ -57,15 +58,16 @@ const EventTemplate = ({ pageContext }) => {
                 </BC1>
               </>
             )}
-            <NoneDecorationLink
-              to={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : "/"}
+           <ExtWhiteDecorationLink
+              href={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : ""}
+              style={{ textDecorationColor: "white" }}
             >
-              <BBHeading2 color="white" marginBottom="-2rem">
+              <BC1 color="white" marginTop="md">
                 {eventData.bookNowLinkText
                   ? eventData.bookNowLinkText
-                  : "Book now"}
-              </BBHeading2>
-            </NoneDecorationLink>
+                  : ""}…
+              </BC1>
+            </ExtWhiteDecorationLink>
           </Intro>
           <GalleryWrapper>
             {eventData.galleryImages ? (
@@ -80,18 +82,18 @@ const EventTemplate = ({ pageContext }) => {
             ) : (
               <BC1 color="white"></BC1>
             )}
-            <Link
-              to={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : ""}
+            <ExtWhiteDecorationLink
+              href={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : ""}
               style={{ textDecorationColor: "white" }}
             >
               <BC1 color="white" marginTop="md">
                 {eventData.bookNowLinkText
                   ? eventData.bookNowLinkText
-                  : "Book Now..."}
+                  : ""}…
               </BC1>
-            </Link>
+            </ExtWhiteDecorationLink>
           </DescriptionWrapper>
-          {eventData.eventMenu && <BrunchFirstWrapper>
+          {eventData.eventMenu.evetnMenuItems  && <BrunchFirstWrapper>
             <MenuDuJourContainer height="auto">
               <MenuHeadingWrapper>
                 <Heading2 color="black">
@@ -99,7 +101,7 @@ const EventTemplate = ({ pageContext }) => {
                 </Heading2>
               </MenuHeadingWrapper>
 
-              {eventData.eventMenu ? (
+              {eventData.eventMenu.eventMenuItems ? (
                 eventData.eventMenu.eventMenuItems.map((item, index) => (
                   <MenuDuJourItemWrapper key={index}>
                     <BC2 color="black" bold>

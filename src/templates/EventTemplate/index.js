@@ -92,7 +92,7 @@ const EventTemplate = ({ pageContext }) => {
             </Link>
           </DescriptionWrapper>
           {eventData.eventMenu && <BrunchFirstWrapper>
-            <MenuDuJourContainer>
+            <MenuDuJourContainer height="auto">
               <MenuHeadingWrapper>
                 <Heading2 color="black">
                   {eventData.eventMenu ? eventData.eventMenu.menuName : "Menu"}

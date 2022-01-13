@@ -35,7 +35,7 @@ export const MenuDuJourContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 481px;
-  height: 713px;
+  height: ${props => props.height === "auto" ? "auto" : "713px"};
   overflow: auto;
   align-items: center;
   background-color: ${props =>

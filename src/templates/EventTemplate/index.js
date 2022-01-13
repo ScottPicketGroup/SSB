@@ -16,7 +16,7 @@ import {
   BC1,
   Heading1,
   NoneDecorationLink,
-  ExtWhiteDecorationLink
+  ExtWhiteDecorationLink,
 } from "../../components/StyledComponents/typography.css"
 import {
   Intro,
@@ -33,7 +33,7 @@ import {
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
 
-  console.log(eventData, 'stuff')
+  console.log(eventData, "stuff")
   return (
     <Layout>
       <Seo title="Home" />
@@ -58,14 +58,12 @@ const EventTemplate = ({ pageContext }) => {
                 </BC1>
               </>
             )}
-           <ExtWhiteDecorationLink
+            <ExtWhiteDecorationLink
               href={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : ""}
               style={{ textDecorationColor: "white" }}
             >
               <BC1 color="white" marginTop="md">
-                {eventData.bookNowLinkText
-                  ? eventData.bookNowLinkText
-                  : ""}…
+                {eventData.bookNowLinkText ? eventData.bookNowLinkText : ""}…
               </BC1>
             </ExtWhiteDecorationLink>
           </Intro>
@@ -87,51 +85,55 @@ const EventTemplate = ({ pageContext }) => {
               style={{ textDecorationColor: "white" }}
             >
               <BC1 color="white" marginTop="md">
-                {eventData.bookNowLinkText
-                  ? eventData.bookNowLinkText
-                  : ""}…
+                {eventData.bookNowLinkText ? eventData.bookNowLinkText : ""}…
               </BC1>
             </ExtWhiteDecorationLink>
           </DescriptionWrapper>
-          {eventData.eventMenu.evetnMenuItems  && <BrunchFirstWrapper>
-            <MenuDuJourContainer height="auto">
-              <MenuHeadingWrapper>
-                <Heading2 color="black">
-                  {eventData.eventMenu ? eventData.eventMenu.menuName : "Menu"}
-                </Heading2>
-              </MenuHeadingWrapper>
+          {eventData.eventMenu.menuName !== null ? (
+            <BrunchFirstWrapper>
+              {eventData.eventMenu.menuName !== null ? (
+                <MenuDuJourContainer height="auto">
+                  <MenuHeadingWrapper>
+                    <Heading2 color="black">
+                      {eventData.eventMenu
+                        ? eventData.eventMenu.menuName
+                        : "Menu"}
+                    </Heading2>
+                  </MenuHeadingWrapper>
 
-              {eventData.eventMenu.eventMenuItems ? (
-                eventData.eventMenu.eventMenuItems.map((item, index) => (
-                  <MenuDuJourItemWrapper key={index}>
-                    <BC2 color="black" bold>
-                      {item.menuITem}
-                    </BC2>
-                    <BC2 color="black" bold>
-                      {item.menuItemShortDescription}
-                    </BC2>
-                    <BC2 color="black">{item.menuItemLongDescription}</BC2>
-                  </MenuDuJourItemWrapper>
-                ))
+                  {eventData.eventMenu.eventMenuItems ? (
+                    eventData.eventMenu.eventMenuItems.map((item, index) => (
+                      <MenuDuJourItemWrapper key={index}>
+                        <BC2 color="black" bold>
+                          {item.menuITem}
+                        </BC2>
+                        <BC2 color="black" bold>
+                          {item.menuItemShortDescription}
+                        </BC2>
+                        <BC2 color="black">{item.menuItemLongDescription}</BC2>
+                      </MenuDuJourItemWrapper>
+                    ))
+                  ) : (
+                    <BC1 color="white"></BC1>
+                  )}
+
+                  {eventData.eventMenu && (
+                    <SeasonalTitleWrapper>
+                      <BC2 bold>{eventData.eventMenu.sideMenuName}</BC2>
+                    </SeasonalTitleWrapper>
+                  )}
+                </MenuDuJourContainer>
+              ) : null}
+              {eventData.eventMenuImage ? (
+                <BrunchHiddenOnMobImage
+                  image={getImage(eventData.eventMenuImage)}
+                  alt="brunch-hidden"
+                />
               ) : (
                 <BC1 color="white"></BC1>
               )}
-
-              {eventData.eventMenu && (
-                <SeasonalTitleWrapper>
-                  <BC2 bold>{eventData.eventMenu.sideMenuName}</BC2>
-                </SeasonalTitleWrapper>
-              )}
-            </MenuDuJourContainer>
-            {eventData.eventMenuImage ? (
-              <BrunchHiddenOnMobImage
-                image={getImage(eventData.eventMenuImage)}
-                alt="brunch-hidden"
-              />
-            ) : (
-              <BC1 color="white"></BC1>
-            )}
-          </BrunchFirstWrapper> }
+            </BrunchFirstWrapper>
+          ) : null}
         </SectionContainer>
       </PageContainer>
     </Layout>

@@ -177,6 +177,8 @@ export const RenderTextOverHiddenWrapper = styled.div`
   -webkit-line-clamp: ${props => (props.first ? 4 : 2)};
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: 48px;
+
 
   margin-bottom: 1.75rem;
   p {

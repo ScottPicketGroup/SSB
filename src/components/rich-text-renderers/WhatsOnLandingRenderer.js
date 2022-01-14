@@ -9,7 +9,7 @@ import {
 } from "../StyledComponents/typography.css"
 
 const Renderer = ({ node, landing }) => {
-  console.log(`node`, node.raw)
+ 
   const options = {
     renderNode: {
       
@@ -19,9 +19,8 @@ const Renderer = ({ node, landing }) => {
       [BLOCKS.HYPERLINK]: (node, children) => (
         <BC1 marginBottom="sm" style={{color: `red !important`}}>{children}</BC1>
       ),
-      [BLOCKS.PARAGRAPH]: (node, children) => (
-        <BC1 marginBottom="sm">{children}</BC1>
-      ),
+     
+      [BLOCKS.PARAGRAPH]: (node, children) => (<><BC1>{children[0].split(" ").slice(0, 15).join(" ")}</BC1></>),
     },
   }
 
@@ -29,3 +28,4 @@ const Renderer = ({ node, landing }) => {
 }
 
 export default Renderer
+

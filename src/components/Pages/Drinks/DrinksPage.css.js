@@ -187,7 +187,7 @@ export const NonAlcoholicContainer = styled.div`
   // height: 942px;
   align-items: center;
   justify-content: flex-end;
-
+  height: auto;
   background-repeat: no-repeat;
   background-size: ${props => 
                               props.position <  4 ? 

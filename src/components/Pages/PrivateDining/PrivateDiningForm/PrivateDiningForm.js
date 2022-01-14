@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-
+import { Helmet } from "react-helmet"
+import styled from "styled-components"
 import { BC1 } from "../../../StyledComponents/typography.css"
 import {
   ContactUsFormContainer,
@@ -10,10 +11,11 @@ import {
   Input,
   Label,
   Button,
-  ContactFormRow
+  ContactFormRow,
 } from "./PrivateDiningForm.css"
 import CheckBox from "./CheckBox"
 import Dropdown from "./Dropdown"
+import { FormWrapper } from "../../ContactUs/ContactUs.css"
 const PrivateDiningForm = () => {
   const functionURL = "https://pear-cobra-4528.twil.io/send-email"
   const [error, setError] = useState({
@@ -30,11 +32,29 @@ const PrivateDiningForm = () => {
     guestNum: "",
     addintionalNote: "",
     startHour: "",
-    finishHour: ""
+    finishHour: "",
   })
 
   const hourOpptions = [
-    "6:00", "7:00", "8:00", "9:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00", "0:00", 
+    "6:00",
+    "7:00",
+    "8:00",
+    "9:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "23:00",
+    "0:00",
   ]
 
   const eventsTypes = ["Sit down event", "Stand up event"]
@@ -65,20 +85,18 @@ const PrivateDiningForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const timestamp = Date.now()
-    console.log(
-      [
-        inputs.fName,
-        inputs.sName,
-        inputs.email,
-        inputs.number,
-        inputs.eventType,
-        inputs.eventDate,
-        inputs.guestNum,
-        inputs.addintionalNote,
-        inputs.startHour,
-        inputs.finishHour
-        ]
-    )
+    console.log([
+      inputs.fName,
+      inputs.sName,
+      inputs.email,
+      inputs.number,
+      inputs.eventType,
+      inputs.eventDate,
+      inputs.guestNum,
+      inputs.addintionalNote,
+      inputs.startHour,
+      inputs.finishHour,
+    ])
     if (
       (inputs.fName &&
         inputs.sName &&
@@ -103,8 +121,8 @@ const PrivateDiningForm = () => {
             inputs.guestNum,
             inputs.addintionalNote,
             inputs.startHour,
-            inputs.finishHour
-            ],
+            inputs.finishHour,
+          ],
         }),
       })
         .then(setThankyou(true))
@@ -146,128 +164,29 @@ const PrivateDiningForm = () => {
   }
   return (
     <ContactUsFormContainer>
+
       {!thankyou ? (
-        <>
-          <SignUp
-            name="cont"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="bot-field" />
-            <input type="hidden" name="form-name" value="cont" />
-
-            <ContactDetailsContainer>
-              <InputContainer>
-                <Input
-                  placeholder="First Name*"
-                  name="fName"
-                  type="text"
-                  value={inputs.fName}
-                  onChange={handleChange}
-                  err={error.fName}
-                />
-              </InputContainer>
-              <InputContainer>
-                <Input
-                  placeholder="Surname*"
-                  name="sName"
-                  type="text"
-                  value={inputs.sName}
-                  onChange={handleChange}
-                  err={error.sName}
-                />
-              </InputContainer>
-              <InputContainer>
-                <Input
-                  placeholder="Mobile Number*"
-                  name="number"
-                  type="text"
-                  value={inputs.number}
-                  onChange={handleChange}
-                  err={error.number}
-                />
-              </InputContainer>
-              <InputContainer>
-                <Input
-                  placeholder="Email*"
-                  name="email"
-                  type="text"
-                  value={inputs.email}
-                  onChange={handleChange}
-                  err={error.email}
-                />
-              </InputContainer>
-              <InputContainer>
-                <Input
-                  placeholder="Event Date"
-                  name="eventDate"
-                  type="text"
-                  value={inputs.eventDate}
-                  onChange={handleChange}
-                  err={error.eventDate}
-                />
-              </InputContainer>
-              <InputContainer>
-                <Dropdown title="Type Of Event" options={eventsTypes} input="eventType" setInputs={setInputs} dropWidth="40.1%" />
-              </InputContainer>
-
-              <InputContainer>
-                <Input
-                  placeholder="Number Of Guests"
-                  name="guestNum"
-                  type="text"
-                  value={inputs.guestNum}
-                  onChange={handleChange}
-                  err={error.guestNum}
-                />
-              </InputContainer>
-
-              <InputContainer>
-                <Input
-                  placeholder="Additional Notes"
-                  name="addintionalNote"
-                  type="text"
-                  value={inputs.addintionalNote}
-                  onChange={handleChange}
-                  err={error.addintionalNote}
-                />
-              </InputContainer>
-              <ContactFormRow>
-                <InputContainer hour>
-                  <Dropdown title="Start Hour" options={hourOpptions} input="startHour" setInputs={setInputs}/>
-                </InputContainer>
-                <InputContainer hour>
-                  <Dropdown title="Finish Hour" options={hourOpptions} input="finishHour" setInputs={setInputs} />
-                </InputContainer>
-              </ContactFormRow>
-              <TixboxContainer>
-                <div
-                  onClick={() =>
-                    setInputs(inputs => ({ ...inputs, newsletter: true }))
-                  }
-                  aria-hidden="true"
-                >
-                  <CheckBox />
-                </div>
-                <BC1 color="black" style={{ width: `90%` }}>
-                  Receive updates from the Scott Pickett Group
-                </BC1>
-              </TixboxContainer>
-              <Button
-                onClick={handleSubmit}
-                err={error.email}
-                type="submit"
-                submit
-              >
-                <BC1 color="black" style={{ marginBottom: "0" }}>Submit</BC1>
-              </Button>
-            </ContactDetailsContainer>
-          </SignUp>
+      <>
+    <ExternalForm id="CONTACTA_61e1aae14478034ca15292b8" />
+        <FormWrapper>
+        <Helmet>
+       
+        <script type="text/javascript" async>
+                        var script = document.createElement("script");
+                        script.type = "text/javascript";
+                        script.src = "https://forms.contacta.io/61e1aae14478034ca15292b8.js";
+                        document.getElementsByTagName("head")[0].appendChild(script);
+                    </script>
+                    <div id="CONTACTA_61e161a92522549e0446d2be"></div>
+      </Helmet>
+        </FormWrapper>
         </>
       ) : (
         <>
-          <BC1 color="black" thankyou> Thank you for submitting your enquiry.</BC1>
+          <BC1 color="black" thankyou>
+            {" "}
+            Thank you for submitting your enquiry.
+          </BC1>
           <BC1 color="black" thankyou>
             A member of our staff will be in contact shortly.
           </BC1>
@@ -278,3 +197,173 @@ const PrivateDiningForm = () => {
 }
 
 export default PrivateDiningForm
+
+export const ExternalForm = styled.div`
+ .checkbox-option {
+   margin-top: -.75rem;
+   margin-left: -1rem;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: 2px solid black;
+	transform: scale(.4);
+	padding: 25px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+
+.checkbox-option:checked {
+	background-color: #0f231d;
+  border: none;
+}
+
+
+.no-full-width {
+  font-family: PitchRegular;
+  color: black;
+}
+
+select {
+  border: none;
+    border-bottom: 1px solid black;
+    padding: 1.5rem 0;
+    font-family: 'PitchRegular';
+    color: black;
+    font-size: .95rem;
+    background: white;
+}
+option {
+    background-color: white !important;
+}
+
+  .contacta-webform-table {
+    width: 100%;
+    table-layout: fixed;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .contacta-row {
+    width: 100%;
+    margin-bottom: 2.25rem;
+    :first-child {
+      width: 0;
+    }
+  
+    :nth-child(5) {
+      width: 100%;
+    }
+    :nth-child(6) {
+      width: 100%;
+      display: flex;
+    }
+  }
+
+  .label-option{
+    display: flex;
+    gap: 1.5rem;
+  }
+  input {
+    height: 2rem;
+    background: rgba(255, 255, 255, 0);
+    
+    padding: 1.5rem 0;
+    font-size: 0.75rem;
+    line-height: none;
+
+    border: none;
+    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "black ")} !important;
+    font-family: PitchRegular;
+    ::placeholder {
+      color: ${props => (props.err ? "#CB0000" : "black")};
+      font-size: 1rem;
+      margin-bottom: 10rem;
+      background: transperant;
+      font-family: normal;
+      font-family: PitchRegular;
+    }
+    :focus {
+      outline: none;
+      background: transparent;
+      font-family: normal;
+      height: 3rem;
+      font-size: 150%;
+    }
+    :valid {
+      color: white;
+      font-size: 1rem;
+      background: transperant;
+      font-family: normal;
+      color: black;
+      font-family: PitchRegular;
+    }
+    ::-moz-focus-outer {
+      color: white;
+    }
+    @media screen and (max-width: 450px) {
+      width: 100%;
+    }
+  }
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  label {
+    color: white;
+  }
+  textarea {
+    font-family: PitchRegular;
+    width: 100%;
+    height: 10rem;
+    background: rgba(255, 255, 255, 0);
+    border: none;
+    padding: 1.5rem 0;
+    color: white;
+    font-size: 0.75rem;
+    line-height: none;
+    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "black")};
+    overflow: hidden;
+    ::placeholder {
+      font-family: PitchRegular;
+
+      font-size: 1rem;
+      margin-bottom: 10rem;
+      color: ${props => (props.err ? "#CB0000" : "black")};
+    }
+    :focus {
+      outline: none;
+      background: transparent;
+
+      height: 3rem;
+      font-size: 150%;
+    }
+    :valid {
+      color: black;
+      font-size: 1rem;
+      font-family: PitchRegular;
+
+    }
+    ::-moz-focus-outer {
+      color: white;
+    }
+  }
+
+  button .btn, .btn-primary{
+    font-family: PitchRegular;
+    font-size: 1rem !important;
+    background: transparent !important;
+    text-transform: uppercase !important;
+    line-height: 46px !important;
+    border-radius: 0px !important;
+    border: 1px solid black !important;
+    width: 225px !important;
+    color: black !important;
+    padding: 0rem 2.75rem !important;
+    transition: all 0.2s ease-in-out;
+    :hover {
+      color: #2b3c31 !important;
+      background: white !important;
+    }
+  }
+`

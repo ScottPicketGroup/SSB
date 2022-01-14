@@ -164,6 +164,13 @@ export const ExternalForm = styled.div`
   border: none;
 }
 
+select {
+  :focus {
+      outline: none;
+      background: transparent;
+      
+    }
+}
 
 .no-full-width {
   font-family: PitchRegular;
@@ -204,6 +211,7 @@ export const ExternalForm = styled.div`
     padding: 1.5rem 0;
     font-size: 0.75rem;
     line-height: none;
+    border: none;
     border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "black")};
     font-family: PitchRegular;
     ::placeholder {

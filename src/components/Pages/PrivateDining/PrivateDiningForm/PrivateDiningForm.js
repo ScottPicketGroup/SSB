@@ -232,6 +232,11 @@ select {
     color: black;
     font-size: .95rem;
     background: white;
+    :focus {
+      outline: none;
+      background: transparent;
+      
+    }
 }
 option {
     background-color: white !important;

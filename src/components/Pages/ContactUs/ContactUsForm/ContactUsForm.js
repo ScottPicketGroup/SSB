@@ -71,7 +71,7 @@ const ContactUsForm = () => {
         // body: encode({ "form-name": "cont", ...inputs }),
         body: encode({
           fromEmail: inputs.email,
-          subject: "Longsong Contact Form",
+          subject: "SSB Contact Form",
           body: inputs.message,
         }),
       })

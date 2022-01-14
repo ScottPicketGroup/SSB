@@ -267,8 +267,8 @@ const PrivateDiningForm = () => {
         </>
       ) : (
         <>
-          <BC1 thankyou> Thank you for submitting your enquiry.</BC1>
-          <BC1 thankyou>
+          <BC1 color="black" thankyou> Thank you for submitting your enquiry.</BC1>
+          <BC1 color="black" thankyou>
             A member of our staff will be in contact shortly.
           </BC1>
         </>

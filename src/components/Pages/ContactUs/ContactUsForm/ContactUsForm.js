@@ -74,7 +74,7 @@ const ContactUsForm = () => {
           subject: "SSB Contact Form",
           body: inputs.message,
         }),
-      })
+      }).then(console.log(error))
         .then(setThankyou(true))
         .catch(error => alert(error))
 
@@ -212,10 +212,10 @@ const ContactUsForm = () => {
         </>
       ) : (
         <>
-          <LabelBC1 thankyou> Thank you for submitting your enquiry.</LabelBC1>
-          <LabelBC1 thankyou>
+          <BC1 color="black" thankyou> Thank you for submitting your enquiry.</BC1>
+          <BC1 color="black" black thankyou>
             A member of our staff will be in contact shortly.
-          </LabelBC1>
+          </BC1>
         </>
       )}
     </ContactUsFormContainer>

@@ -203,7 +203,7 @@ export const NonAlcoholicContainer = styled.div`
   background-image: url("${props => props.backgroundImage}");
   @media (max-width: 451px) {
     min-height: ${props => props.height ? `${props.position + 1}75px` : `auto`};
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     background-size: ${props => 
                               props.position <  4 ? 

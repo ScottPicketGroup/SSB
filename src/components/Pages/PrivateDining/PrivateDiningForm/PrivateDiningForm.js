@@ -79,8 +79,19 @@ const PrivateDiningForm = () => {
         // body: encode({ "form-name": "cont", ...inputs }),
         body: encode({
           fromEmail: inputs.email,
-          subject: "Longsong Contact Form",
-          body: inputs.message,
+          subject: "SSB Private Dining Form",
+          body: [
+            inputs.fName,
+            inputs.sName,
+            inputs.email,
+            inputs.number,
+            inputs.eventType,
+            inputs.eventDate,
+            inputs.guestNum,
+            inputs.addintionalNote,
+            inputs.startHour,
+            inputs.finishHour
+            ],
         }),
       })
         .then(setThankyou(true))

@@ -89,13 +89,13 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
           position={nonAlcoholicMenuItems && nonAlcoholicMenuItems.length}
           backgroundImage={backgroundImage.file.url}
           className="menuTop"
-          style={{ height: refHeight }}
+          height={refHeight}
         >
           <NonAlcoholicItemWrapper>
             <BC2 marginBottom="md" bold color="black">
               {menuTitle}
             </BC2>
-
+            {console.log(refHeight)}
             {nonAlcoholicMenuItems.map((item, index) => (
               <MenuDuJourItemWrapper key={index}>
                 <BC2 bold color="black">
@@ -117,9 +117,10 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
 
       <MobileContainer>
         <NonAlcoholicContainer
+        height={refHeight}
           backgroundImage={backgroundImage.file.url}
           className="menuTop"
-          style={{ height: refHeight }}
+          position={nonAlcoholicMenuItems && nonAlcoholicMenuItems.length}
         >
           <NonAlcoholicItemWrapper>
             <BC2 marginBottom="md" bold color="black">

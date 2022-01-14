@@ -187,7 +187,7 @@ export const NonAlcoholicContainer = styled.div`
   // height: 942px;
   align-items: center;
   justify-content: flex-end;
-  height: auto;
+  min-height: ${props => props.height ? `${props.height}px` : `auto`};
   background-repeat: no-repeat;
   background-size: ${props => 
                               props.position <  4 ? 
@@ -202,10 +202,19 @@ export const NonAlcoholicContainer = styled.div`
   background-color: #ac785b;
   background-image: url("${props => props.backgroundImage}");
   @media (max-width: 451px) {
-    // height: 500px;
+    min-height: ${props => props.height ? `${props.position + 1}75px` : `auto`};
     width: 80%;
     margin: 0 auto;
-    background-position: 55% 50%;
+    background-size: ${props => 
+                              props.position <  4 ? 
+                                  "225%" :
+                                  "150%"
+                            };
+  background-position: ${props => 
+                              props.position <  4 ? 
+                              "60% 0%" :
+                                  "91.5% 0%"
+                            };
   }
 `
 export const NonAlcoholicItemWrapper = styled.div`

@@ -2,7 +2,7 @@ import React from "react"
 import { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 
-const Dropdown = ({ title, options, dropWidth }) => {
+const Dropdown = ({ title, options, dropWidth, setInputs, input }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [selectedOption, setSelectedOption] = useState(null);
     const ref = useRef(null)
@@ -28,6 +28,14 @@ const Dropdown = ({ title, options, dropWidth }) => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref]);
+
+
+    useEffect(() => {
+        console.log(selectedOption)
+        console.log(input)
+        setInputs(inputs => ({ ...inputs, [input]: selectedOption }))
+        
+    }, [selectedOption])
 
     return (
         <DropDownContainer ref={ref}>

@@ -65,7 +65,20 @@ const PrivateDiningForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const timestamp = Date.now()
-
+    console.log(
+      [
+        inputs.fName,
+        inputs.sName,
+        inputs.email,
+        inputs.number,
+        inputs.eventType,
+        inputs.eventDate,
+        inputs.guestNum,
+        inputs.addintionalNote,
+        inputs.startHour,
+        inputs.finishHour
+        ]
+    )
     if (
       (inputs.fName &&
         inputs.sName &&
@@ -196,7 +209,7 @@ const PrivateDiningForm = () => {
                 />
               </InputContainer>
               <InputContainer>
-                <Dropdown title="Type Of Event" options={eventsTypes} dropWidth="40.1%" />
+                <Dropdown title="Type Of Event" options={eventsTypes} input="eventType" setInputs={setInputs} dropWidth="40.1%" />
               </InputContainer>
 
               <InputContainer>
@@ -222,10 +235,10 @@ const PrivateDiningForm = () => {
               </InputContainer>
               <ContactFormRow>
                 <InputContainer hour>
-                  <Dropdown title="Start Hour" options={hourOpptions} />
+                  <Dropdown title="Start Hour" options={hourOpptions} input="startHour" setInputs={setInputs}/>
                 </InputContainer>
                 <InputContainer hour>
-                  <Dropdown title="Finish Hour" options={hourOpptions} />
+                  <Dropdown title="Finish Hour" options={hourOpptions} input="finishHour" setInputs={setInputs} />
                 </InputContainer>
               </ContactFormRow>
               <TixboxContainer>

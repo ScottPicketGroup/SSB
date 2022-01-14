@@ -241,6 +241,9 @@ select {
 option {
     background-color: white !important;
 }
+.submission-message {
+  font-family: PitchRegular;
+}
 
   .contacta-webform-table {
     width: 100%;

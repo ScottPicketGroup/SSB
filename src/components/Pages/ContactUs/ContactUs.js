@@ -201,6 +201,10 @@ select {
     }
   }
 
+.submission-message {
+  font-family: PitchRegular;
+}
+
   .label-option{
     display: flex;
     gap: 1.5rem;
@@ -301,8 +305,8 @@ select {
     padding: 0rem 2.75rem !important;
     transition: all 0.2s ease-in-out;
     :hover {
-      color: #2b3c31 !important;
-      background: white !important;
+      color: white !important;
+      background: black !important;
     }
   }
 `

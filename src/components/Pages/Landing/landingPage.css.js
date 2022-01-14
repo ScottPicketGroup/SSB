@@ -186,6 +186,7 @@ export const RenderTextOverHiddenWrapper = styled.div`
   }
   @media (max-width: 451px) {
     margin-bottom: 1rem;
+    height: 30px;
   }
 `
 export const LogoTopTextWrapper = styled.div`

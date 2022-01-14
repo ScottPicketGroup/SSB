@@ -26,7 +26,7 @@ const Food = ({ foodData }) => {
     })
   }, [])
 
- 
+ console.log(menuItems)
 
   return (
     <FoodContainer ref={ref}>
@@ -34,7 +34,7 @@ const Food = ({ foodData }) => {
         <Heading2 style={{ fontSize: "1.75rem" }}>{topTitleIeFood}</Heading2>
       </FoodTitleWrapper>
       {menuItems.map((item, index) =>
-        index === 0 ? (
+        index === 0 && item.menuItems ? (
           <FoodItemWrapper key={index}>
             <FoodSectionItemWrapper>
               <BC2 style={{ color: "#800103" }} bold>
@@ -50,7 +50,7 @@ const Food = ({ foodData }) => {
             <BC2 marginBottom="sm" bold>
               {item.sectionHeadingIeEntrees}
             </BC2>
-            {item.menuItems.map((it, idx) => (
+            {item.menuItems && item.menuItems.map((it, idx) => (
               <React.Fragment key={idx}>
                 <FoodSectionItemWrapper>
                   <BC2 color="black" marginBottom="xs" bold>
@@ -82,7 +82,7 @@ const Food = ({ foodData }) => {
               </React.Fragment>
             ))}
           </FoodItemWrapper>
-        )
+        ) 
       )}
       <FoodSeasonalTitleWrapper
         className="menuTop"

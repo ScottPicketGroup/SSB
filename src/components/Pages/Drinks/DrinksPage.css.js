@@ -129,6 +129,7 @@ export const DrinksScrollMenuMobileWrapper = styled.div`
   }
 `
 export const MenuDuJourItemWrapper = styled.div`
+
   margin-bottom: 1.75rem;
   @media (max-width: 451px) {
     // margin: ${props => (props.cocktail && "0 1rem auto" )};
@@ -210,15 +211,17 @@ export const NonAlcoholicContainer = styled.div`
 export const NonAlcoholicItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 35%;
+
   align-self: flex-end;
   margin-right: 3.5rem;
   position: absolute;
+  right: -8%;
   bottom: 1.75rem;
   @media (max-width: 451px) {
     width: 48%;
     margin-right: 1rem;
     bottom: 0;
+    right: 0;
   }
 `
 export const NonAlcoholicSeasonalTitleWrapper = styled.div`

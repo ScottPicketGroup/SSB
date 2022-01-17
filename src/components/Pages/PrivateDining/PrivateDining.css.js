@@ -25,7 +25,7 @@ export const GallaryWrapper = styled.div`
   }
 `
 export const FormWrapper = styled.div`
-  width: 40vw;
+  width: 50vw;
   display: flex;
   flex-direction: column;
   margin: 0 auto 11.25rem;

@@ -41,7 +41,7 @@ const ContactUs = ({...data}) => {
                         script.src = "https://forms.contacta.io/61e161a92522549e0446d2be.js";
                         document.getElementsByTagName("head")[0].appendChild(script);
                     </script>
-                    <div id="CONTACTA_61e161a92522549e0446d2be"></div>
+                 
       </Helmet>
         </FormWrapper>
         <InformationWrapper>

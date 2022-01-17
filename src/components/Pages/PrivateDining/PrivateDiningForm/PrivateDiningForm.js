@@ -242,6 +242,7 @@ option {
     background-color: white !important;
 }
 .submission-message {
+  font-size: 16px;
   font-family: PitchRegular;
 }
 

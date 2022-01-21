@@ -174,10 +174,11 @@ export const WhatsOnEventsWrapper = styled.div`
 `
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
-  -webkit-line-clamp: ${props => (props.first ? 4 : 2)};
+  // -webkit-line-clamp: ${props => (props.first ? 4 : 3)};
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: 48px;
+  height: 65px;
 
 
   margin-bottom: 1.75rem;

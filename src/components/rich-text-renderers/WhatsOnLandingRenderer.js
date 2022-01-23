@@ -20,7 +20,7 @@ const Renderer = ({ node, landing }) => {
         <BC1 marginBottom="sm" style={{color: `red !important`}}>{children}</BC1>
       ),
      
-      [BLOCKS.PARAGRAPH]: (node, children) => (<><BC1>{children[0].split(" ").slice(0, 15).join(" ")}</BC1></>),
+      [BLOCKS.PARAGRAPH]: (node, children) => (<><BC1>{children[0].split(" ").slice(0, 15).join(" ")}…</BC1></>),
     },
   }
 

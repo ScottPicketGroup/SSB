@@ -103,7 +103,7 @@ console.log(events)
                 <PrivateDiningTextWrapper>
                   <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
                   <RenderTextOverHiddenWrapper>
-                    <Renderer node={item.eventDescription}/>
+                    <Renderer node={item.eventDescription}/>…
                   </RenderTextOverHiddenWrapper>
                   <RedDecorationLink to={`events/${item.id}`}>
                     <BC1 marginBottom="xs">Learn more…</BC1>

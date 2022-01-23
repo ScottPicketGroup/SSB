@@ -86,7 +86,7 @@ const PrivateDining = ({
         </PrivateDiningImageWrapepr>
         <PrivateDiningTextWrapper dining="true">
           <Heading2 marginBottom="md">{privateDiningHeading}</Heading2>
-          <RenderTextOverHiddenWrapper first="true">
+          <RenderTextOverHiddenWrapper privateDining={true}>
             <BC1 dangerouslySetInnerHTML={{ __html: privateDiningIntro }} />
           </RenderTextOverHiddenWrapper>
           <RedDecorationLink to="/private-dining">

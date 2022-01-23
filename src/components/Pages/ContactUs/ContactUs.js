@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import styled from 'styled-components';
+import styled from "styled-components"
 import { SectionContainer } from "../../StyledComponents/containers.css"
 import {
   BC1,
@@ -18,10 +18,14 @@ import {
   MobileHeadingWrapper,
 } from "./ContactUs.css"
 import ContactUsForm from "./ContactUsForm/ContactUsForm"
-import { DayWrapper, Lunch, ServiceTime, TimeWrapper } from "../../Footer/Footer.css"
+import {
+  DayWrapper,
+  Lunch,
+  ServiceTime,
+  TimeWrapper,
+} from "../../Footer/Footer.css"
 
-const ContactUs = ({...data}) => {
-
+const ContactUs = ({ ...data }) => {
   return (
     <SectionContainer marginBottom="lg" column>
       <DesktopHeadingWrapper>
@@ -31,109 +35,155 @@ const ContactUs = ({...data}) => {
         <Heading3>Contact Us</Heading3>
       </MobileHeadingWrapper>
       <ContactUsContainer>
-      <ExternalForm id="CONTACTA_61e161a92522549e0446d2be" />
+        <ExternalForm id="CONTACTA_61e161a92522549e0446d2be" />
         <FormWrapper>
-        <Helmet>
-       
-        <script type="text/javascript" async>
-                        var script = document.createElement("script");
-                        script.type = "text/javascript";
-                        script.src = "https://forms.contacta.io/61e161a92522549e0446d2be.js";
-                        document.getElementsByTagName("head")[0].appendChild(script);
-                    </script>
-                 
-      </Helmet>
+          <Helmet>
+            <script type="text/javascript" async>
+              var script = document.createElement("script"); script.type =
+              "text/javascript"; script.src =
+              "https://forms.contacta.io/61e161a92522549e0446d2be.js";
+              document.getElementsByTagName("head")[0].appendChild(script);
+            </script>
+          </Helmet>
         </FormWrapper>
         <InformationWrapper>
-          <BC1 color="black" marginBottom="" style={{fontSize: `1rem`}}>
+          <BC1 color="black" marginBottom="" style={{ fontSize: `1rem` }}>
             {data.address}
           </BC1>
-          <BC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
+          <BC1 color="black" marginBottom="md" style={{ fontSize: `1rem` }}>
             {data.addressLineTwo}
           </BC1>
           <BC1>
-          <NoneDecorationLink
-            to={data.findUsOnGoogleMapsUrl}
-            style={{ marginBottom: "5.5rem" }}
-          >
-            Find us on &nbsp;
-            <span
-            style={{
-              marginBottom: `1rem`,
-              textDecoration: `underline`,
-              textUnderlineOffset: `5px`
-            }}>Google Maps</span>
-          </NoneDecorationLink>
+            <NoneDecorationLink
+              to={data.findUsOnGoogleMapsUrl}
+              style={{ marginBottom: "5.5rem" }}
+            >
+              Find us on &nbsp;
+              <span
+                style={{
+                  marginBottom: `1rem`,
+                  textDecoration: `underline`,
+                  textUnderlineOffset: `5px`,
+                }}
+              >
+                Google Maps
+              </span>
+            </NoneDecorationLink>
           </BC1>
           <ServiceTime>
-            <BC1 style={{color: `black`}} marginTop="lg"  marginBottom="openingHours" bold> OPENING HOURS</BC1>
-          <Lunch>
-            <DayWrapper>
-              <FBC1 color="black" marginBottom="0" lineHeight="openingHours" style={{fontSize: `1rem`}}>
-               {data.openingTimesLunchHeading}
-              </FBC1>
-              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
-              {data.openingTimesLunchDaysOpen}
-              </FBC1>
-            </DayWrapper>
-            <TimeWrapper>
-              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
-                {data.openingTimesLunchOpenTimes}
-              </FBC1>
-            </TimeWrapper>
-          </Lunch>
-          <Lunch style={{
-            marginBottom: ".75rem"
-          }}>
-            <DayWrapper>
-              <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
-              {data.openingTimesHeadingDinner}
-              </FBC1>
-              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
-              {data.openingTimesDinnerDaysOpen}
-              </FBC1>
-            </DayWrapper>
-            <TimeWrapper>
-              <FBC1 color="black" marginBottom="md" style={{fontSize: `1rem`}}>
-              {data.openingTimesDinnerOpenTimes}
-              </FBC1>
-            </TimeWrapper>
-          </Lunch>
-          <Lunch>
-            <DayWrapper>
-              <FBC1 color="black" marginBottom="sm" style={{fontSize: `1rem`}}>
-              {data.daysClosed && data.daysClosed}
-              </FBC1>
-            </DayWrapper>
-            <TimeWrapper>
-              <FBC1 color="black" marginBottom="sm"  style={{fontSize: `1rem`}}>
-              {/* {data.daysClosed && "Closed"} */}
-              </FBC1>
-            </TimeWrapper>
-          </Lunch>
-        </ServiceTime>
-        <a href={`tel:${data.phoneNumber}`}>
-            <BC1 color="black" marginTop="md" marginBottom=""
-            style={{textDecoration: 'underline'}}>
+            <BC1
+              style={{ color: `black` }}
+              marginTop="lg"
+              marginBottom="openingHours"
+              bold
+            >
+              {" "}
+              OPENING HOURS
+            </BC1>
+            <Lunch>
+              <DayWrapper>
+                <FBC1
+                  color="black"
+                  marginBottom="0"
+                  lineHeight="openingHours"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.openingTimesLunchHeading}
+                </FBC1>
+                <FBC1
+                  color="black"
+                  marginBottom="md"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.openingTimesLunchDaysOpen}
+                </FBC1>
+              </DayWrapper>
+              <TimeWrapper>
+                <FBC1
+                  color="black"
+                  marginBottom="md"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.openingTimesLunchOpenTimes}
+                </FBC1>
+              </TimeWrapper>
+            </Lunch>
+            <Lunch
+              style={{
+                marginBottom: ".75rem",
+              }}
+            >
+              <DayWrapper>
+                <FBC1
+                  color="black"
+                  marginBottom="sm"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.openingTimesHeadingDinner}
+                </FBC1>
+                <FBC1
+                  color="black"
+                  marginBottom="md"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.openingTimesDinnerDaysOpen}
+                </FBC1>
+              </DayWrapper>
+              <TimeWrapper>
+                <FBC1
+                  color="black"
+                  marginBottom="md"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.openingTimesDinnerOpenTimes}
+                </FBC1>
+              </TimeWrapper>
+            </Lunch>
+            <Lunch>
+              <DayWrapper>
+                <FBC1
+                  color="black"
+                  marginBottom="sm"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {data.daysClosed && data.daysClosed}
+                </FBC1>
+              </DayWrapper>
+              <TimeWrapper>
+                <FBC1
+                  color="black"
+                  marginBottom="sm"
+                  style={{ fontSize: `1rem` }}
+                >
+                  {/* {data.daysClosed && "Closed"} */}
+                </FBC1>
+              </TimeWrapper>
+            </Lunch>
+          </ServiceTime>
+          <a href={`tel:${data.phoneNumber}`}>
+            <BC1
+              color="black"
+              marginTop="md"
+              marginBottom=""
+              style={{ textDecoration: "underline" }}
+            >
               {data.phoneNumber}
             </BC1>
-         </a>
-         <a href={`mailto:${data.emailAddress}`}>
-         <BC1 color="black" marginBottom="contactEmail" style={{fontSize: `1rem`}}>
+          </a>
+          <a href={`mailto:${data.emailAddress}`}>
+            <BC1
+              color="black"
+              marginBottom="contactEmail"
+              style={{ fontSize: `1rem` }}
+            >
               {data.emailAddress}
             </BC1>
-           </a> 
-           
-      
+          </a>
+
           <BC1 color="black" marginTop="md">
-            View our{" "}
-            <Link to="/terms-conditions">
-              privacy policy 
-            </Link>
+            View our <Link to="/terms-conditions">privacy policy</Link>
             &nbsp; and &nbsp;
-            <Link to="/terms-conditions">
-            terms & conditions
-            </Link>
+            <Link to="/terms-conditions">terms & conditions</Link>
           </BC1>
         </InformationWrapper>
       </ContactUsContainer>
@@ -143,40 +193,36 @@ const ContactUs = ({...data}) => {
 
 export default ContactUs
 
-
 export const ExternalForm = styled.div`
- .checkbox-option {
-   margin-top: -.75rem;
-   margin-left: -1rem;
-	-webkit-appearance: none;
-	background-color: transparent;
-	border: 2px solid black;
-	transform: scale(.4);
-	padding: 25px;
-	border-radius: 3px;
-	display: inline-block;
-	position: relative;
-}
+  .checkbox-option {
+    margin-top: -0.75rem;
+    margin-left: -1rem;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: 2px solid black;
+    transform: scale(0.4);
+    padding: 25px;
+    border-radius: 3px;
+    display: inline-block;
+    position: relative;
+  }
 
+  .checkbox-option:checked {
+    background-color: #0f231d;
+    border: none;
+  }
 
-.checkbox-option:checked {
-	background-color: #0f231d;
-  border: none;
-}
-
-select {
-  :focus {
+  select {
+    :focus {
       outline: none;
       background: transparent;
-      
     }
-}
+  }
 
-.no-full-width {
-  font-family: PitchRegular;
-  color: black;
-}
-
+  .no-full-width {
+    font-family: PitchRegular;
+    color: black;
+  }
 
   .contacta-webform-table {
     width: 100%;
@@ -191,7 +237,7 @@ select {
     :first-child {
       width: 0;
     }
-  
+
     :nth-child(5) {
       width: 100%;
     }
@@ -201,11 +247,11 @@ select {
     }
   }
 
-.submission-message {
-  font-family: PitchRegular;
-}
+  .submission-message {
+    font-family: PitchRegular;
+  }
 
-  .label-option{
+  .label-option {
     display: flex;
     gap: 1.5rem;
   }
@@ -285,14 +331,14 @@ select {
       color: black;
       font-size: 1rem;
       font-family: PitchRegular;
-
     }
     ::-moz-focus-outer {
       color: white;
     }
   }
 
-  button .btn, .btn-primary{
+  button .btn,
+  .btn-primary {
     font-family: PitchRegular;
     font-size: 1rem !important;
     background: transparent !important;

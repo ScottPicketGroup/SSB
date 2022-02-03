@@ -14,6 +14,14 @@ module.exports = {
     siteUrl: `https://smithstbistrot.com.au/`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-PXJL7GH",
+  
+        
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,

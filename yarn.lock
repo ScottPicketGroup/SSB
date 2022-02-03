@@ -6195,6 +6195,14 @@
     "lodash" "^4.17.21"
     "micromatch" "^4.0.4"
 
+"gatsby-plugin-google-tagmanager@^4.6.0":
+  "integrity" "sha512-zmAXj+Wrzxj61MP6xNGbkxlRZa/Q46pdTjr8F6pJa0m+sT+mBL1Wa5KhG1ZjZ38W5BP/u4/z4zy2ZMerrAemfw=="
+  "resolved" "https://registry.npmjs.org/gatsby-plugin-google-tagmanager/-/gatsby-plugin-google-tagmanager-4.6.0.tgz"
+  "version" "4.6.0"
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+    "web-vitals" "^1.1.2"
+
 "gatsby-plugin-image@^2.0.0-next", "gatsby-plugin-image@2.1.2":
   "integrity" "sha512-wus5ytEwBCKtMgmuFoJ6CzF1cb4z/3MgXB9eEXxpM6U/F+rdBlcDuowwUmT3S6p0y25D/jcn+/RSBYlugRnMvA=="
   "resolved" "https://registry.npmjs.org/gatsby-plugin-image/-/gatsby-plugin-image-2.1.2.tgz"
@@ -13640,6 +13648,11 @@
   "integrity" "sha512-5LDIv+sr6uzT94Hhcq7Qv7gt3jxol4iMWUqOgJSLYbB5oO7bTSMqIBtKsytm8N2BufYOdJw86/qu+SDfbo/wKQ=="
   "resolved" "https://registry.npmjs.org/weak-lru-cache/-/weak-lru-cache-1.1.3.tgz"
   "version" "1.1.3"
+
+"web-vitals@^1.1.2":
+  "integrity" "sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig=="
+  "resolved" "https://registry.npmjs.org/web-vitals/-/web-vitals-1.1.2.tgz"
+  "version" "1.1.2"
 
 "webidl-conversions@^3.0.0":
   "integrity" "sha1-JFNCdeKnvGvnvIZhHMFq4KVlSHE="

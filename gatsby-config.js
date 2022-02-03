@@ -18,8 +18,7 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PXJL7GH",
-  
-        
+       
       },
     },
     `gatsby-plugin-react-helmet`,

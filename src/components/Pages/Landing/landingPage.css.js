@@ -95,6 +95,19 @@ export const WeekdayItemWrapper = styled.div`
     flex-direction: column;
   }
 `
+
+export const WhatsOnEventsElementWrapper = styled.div`
+  display: flex;
+  flex-direction: ${props => (props.key === 0 ? "row" : "column")};
+  justify-content: ${props => props.key === 0 && "space-between"};
+  width: 100%;
+  margin-bottom: ${props => (props.key === 0 ? "6rem" : "0")};
+  @media (max-width: 451px) {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+`
+
 export const PrivateDiningWrapper = styled.div`
   display: flex;
   flex-direction: ${props => (props.first ? "row" : "column")};

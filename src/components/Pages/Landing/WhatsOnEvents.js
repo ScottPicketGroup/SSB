@@ -6,12 +6,13 @@ import {
   RedDecorationLink,
 } from "../../StyledComponents/typography.css"
 import {
-  PrivateDiningWrapper,
+  WhatsOnEventsElementWrapper,
   PrivateDiningTextWrapper,
   PrivateDiningImage,
   WhatsOnEventsWrapper,
   RenderTextOverHiddenWrapper,
   PrivateDiningImageWrapepr,
+  PrivateDiningWrapper,
 } from "./landingPage.css"
 import Renderer from "../../rich-text-renderers/WhatsOnLandingRenderer"
 import { getImage } from "gatsby-plugin-image"
@@ -65,41 +66,44 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
 console.log(events)
   return (
     <SectionContainer column="true" mbOnMob="5.5rem" ref={ref} marginBottom="lg">
-      {/* <PrivateDiningWrapper first="true" ref={ref}>
-        <PrivateDiningTextWrapper first="true">
-          <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
-          <RenderTextOverHiddenWrapper first="true">
-            <Renderer node={events[0].eventDescription} />
-          </RenderTextOverHiddenWrapper>
-          <RedDecorationLink to={`events/${events[0].id}`}>
-            <BC1>Learn more…</BC1>
-          </RedDecorationLink>
-        </PrivateDiningTextWrapper>
-
-        <PrivateDiningImageWrapepr>
-          <div className="first-paragraph">
-            <PrivateDiningImage
-              image={getImage(events[0].eventMenuImage)}
-              alt="private-dining"
-              first="true"
-            />
-          </div>
-        </PrivateDiningImageWrapepr>
-        <PrivateDiningImageWrapepr mobile>
-          <div className="mobile-paragraph">
-            <PrivateDiningImage
-              image={getImage(events[0].eventMenuImage)}
-              alt="private-dining"
-              first="true"
-            />
-          </div>
-        </PrivateDiningImageWrapepr>
-      </PrivateDiningWrapper> */}
+ 
       <WhatsOnEventsWrapper>
         {events.map(
           (item, index) =>
-            index > -1 && (
-              <PrivateDiningWrapper key={index}>
+          index === 0 ? (
+            <PrivateDiningWrapper first="true" ref={ref}>
+            <PrivateDiningTextWrapper first="true">
+              <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
+              <RenderTextOverHiddenWrapper first="true">
+                <Renderer node={events[0].eventDescription} />…
+              </RenderTextOverHiddenWrapper>
+              <RedDecorationLink to={`events/${events[0].id}`}>
+                <BC1>Learn more…</BC1>
+              </RedDecorationLink>
+            </PrivateDiningTextWrapper>
+    
+            <PrivateDiningImageWrapepr>
+              <div className="first-paragraph">
+                <PrivateDiningImage
+                  image={getImage(events[0].eventMenuImage)}
+                  alt="private-dining"
+                  first="true"
+                />
+              </div>
+            </PrivateDiningImageWrapepr>
+            <PrivateDiningImageWrapepr mobile>
+              <div className="mobile-paragraph">
+                <PrivateDiningImage
+                  image={getImage(events[0].eventMenuImage)}
+                  alt="private-dining"
+                  first="true"
+                />
+              </div>
+            </PrivateDiningImageWrapepr>
+          </PrivateDiningWrapper>
+          )
+          : (
+              <WhatsOnEventsElementWrapper key={index} first>
                 <PrivateDiningTextWrapper>
                   <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
                   <RenderTextOverHiddenWrapper>
@@ -110,11 +114,12 @@ console.log(events)
                   </RedDecorationLink>
                 </PrivateDiningTextWrapper>
                 <PrivateDiningImage
+                first="true"
                 className="first-paragraph"
                   image={getImage(item.eventMenuImage)}
                   alt="private-dining"
                 />
-              </PrivateDiningWrapper>
+              </WhatsOnEventsElementWrapper>
             )
         )}
       </WhatsOnEventsWrapper>

@@ -51,41 +51,41 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query for markdown nodes to use in creating pages.
   // NOTE bookNowLinkText
   // bookNowLinkUrl have been removed for now and will need to be added back in conditionally at some stage!
-  // const result = await graphql(`
-  //   query EventsQuery {
-  //     allContentfulWhatsOnPageContent {
-  //       edges {
-  //         node {
-  //           id
-  //           eventTitle
-  //           eventDateAndStartTime(formatString: "dddd MMM DD YYYY LT")
-  //           eventEndDateAndTime(formatString: "dddd MMM DD YYYY LT")
+  const result = await graphql(`
+    query EventsQuery {
+      allContentfulWhatsOnPageContent {
+        edges {
+          node {
+            id
+            eventTitle
+            eventDateAndStartTime(formatString: "dddd MMM DD YYYY LT")
+            eventEndDateAndTime(formatString: "dddd MMM DD YYYY LT")
             
-  //           galleryImages {
-  //             gatsbyImageData
-  //           }
-  //           eventDescription {
-  //             raw
-  //           }
-  //           eventMenu {
-  //             menuName
-  //             sideMenuName
-  //             eventMenuItems {
-  //               menuITem
-  //               menuItemLongDescription
-  //               menuItemShortDescription
-  //             }
-  //           }
-  //           bookNowLinkText
-  //           bookNowLinkUrl
-  //           eventMenuImage {
-  //             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
+            galleryImages {
+              gatsbyImageData
+            }
+            eventDescription {
+              raw
+            }
+            eventMenu {
+              menuName
+              sideMenuName
+              eventMenuItems {
+                menuITem
+                menuItemLongDescription
+                menuItemShortDescription
+              }
+            }
+            bookNowLinkText
+            bookNowLinkUrl
+            eventMenuImage {
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+            }
+          }
+        }
+      }
+    }
+  `)
 
   // Handle errors
   if (result.errors) {

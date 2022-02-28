@@ -1,35 +1,51 @@
 const path = require("path")
 exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
+ const { createTypes } = actions;
 
-  // type ContentfulWhatsOnPageContent implements Node {
-  //   eventMenu: EventMenu
-  //  }
-  //  type EventMenu {
-  //    menuName: String
-  //    sideMenuName: String
-  //    eventMenuItems: EventMenuitems    
-  //  }
-  //  type EventMenuitems {
-  //    menuITem: String
-  //    menuItemLongDescription: String
-  //    menuItemShortDescription: String
-  //  }
-//   const typeDefs = `
-//   type ContentfulPrivateDiningPageContent implements Node {
-//     eventsPackagePdf: File
-//    }
-//    type File {
-//      file: URL!
-//    }
-//    type URL {
-//      url: String!
-//    }
+ 
+  const typeDefs = `
+  type ContentfulPrivateDiningPageContent implements Node {
+    eventsPackagePdf: File
+   }
+   type File {
+     file: URL!
+   }
+   type URL {
+     url: String!
+   }
   
-          
-//   `;
-//   createTypes(typeDefs);
+          type ContentfulWhatsOnPageContent implements Node {
+    eventMenu: EventMenu
+   }
+   type EventMenu {
+     menuName: String
+     sideMenuName: String
+     eventMenuItems: EventMenuitems    
+   }
+   type EventMenuitems {
+     menuITem: String
+     menuItemLongDescription: String
+     menuItemShortDescription: String
+   } 
+  `;
+  createTypes(typeDefs);
 };
+
+
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions
+//   const typeDefs = `
+//     type EventFields {
+//       slug: String!
+//       formEmbed: String
+//     }
+//     type Event implements Node {
+//       fields: EventFields
+//     }
+//   `
+//   createTypes(typeDefs)
+// }
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.

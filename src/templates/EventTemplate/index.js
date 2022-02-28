@@ -50,14 +50,7 @@ const EventTemplate = ({ pageContext }) => {
               <BC1 color="white" marginBottom="md">
                 {`${eventData.eventDateAndStartTime} - ${eventData.eventEndDateAndTime}`}
               </BC1>
-            ) : (
-              <>
-                <BC1 color="white">Day to be confirmed</BC1>
-                <BC1 color="white" marginBottom="md">
-                  Times to be confirmed
-                </BC1>
-              </>
-            )}
+            ) : (<></>            )}
             <ExtWhiteDecorationLink
               href={eventData.bookNowLinkUrl ? eventData.bookNowLinkUrl : ""}
               style={{ textDecorationColor: "white" }}

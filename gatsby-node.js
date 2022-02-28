@@ -14,24 +14,24 @@ exports.createSchemaCustomization = ({ actions }) => {
      url: String!
    }
   
-type ContentfulWhatsOnPageContent implements Node {
-    eventMenu: EventMenu
-   }
-   type EventMenu {
-     menuName: String!
-     sideMenuName: String!
-     eventMenuItems: EventMenuitems!  
-   }
-   type EventMenuitems {
-     menuITem: String!
-     menuItemLongDescription: String!
-     menuItemShortDescription: String!
-   } 
+
   `;
   createTypes(typeDefs);
 };
 
-
+// type ContentfulWhatsOnPageContent implements Node {
+//     eventMenu: EventMenu
+//    }
+//    type EventMenu {
+//      menuName: String!
+//      sideMenuName: String!
+//      eventMenuItems: EventMenuitems    
+//    }
+//    type EventMenuitems {
+//      menuITem: String
+//      menuItemLongDescription: String
+//      menuItemShortDescription: String
+//    } 
 // exports.createSchemaCustomization = ({ actions }) => {
 //   const { createTypes } = actions
 //   const typeDefs = `
@@ -58,8 +58,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             eventTitle
-            eventDateAndStartTime(formatString: "dddd MMM DD YYYY LT")
-            eventEndDateAndTime(formatString: "dddd MMM DD YYYY LT")
+          
             
             galleryImages {
               gatsbyImageData

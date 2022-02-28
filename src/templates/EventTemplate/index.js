@@ -63,7 +63,7 @@ const EventTemplate = ({ pageContext }) => {
               style={{ textDecorationColor: "white" }}
             >
               <BC1 color="white" marginTop="md">
-                {eventData.bookNowLinkText ? eventData.bookNowLinkText : ""}…
+              {eventData.bookNowLinkText ? `${eventData.bookNowLinkText}…` : ""}
               </BC1>
             </ExtWhiteDecorationLink>
           </Intro>
@@ -85,7 +85,7 @@ const EventTemplate = ({ pageContext }) => {
               style={{ textDecorationColor: "white" }}
             >
               <BC1 color="white" marginTop="md">
-                {eventData.bookNowLinkText ? eventData.bookNowLinkText : ""}…
+                {eventData.bookNowLinkText ? `${eventData.bookNowLinkText}…` : ""}
               </BC1>
             </ExtWhiteDecorationLink>
           </DescriptionWrapper>

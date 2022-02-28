@@ -14,7 +14,7 @@ exports.createSchemaCustomization = ({ actions }) => {
      url: String!
    }
   
-          type ContentfulWhatsOnPageContent implements Node {
+type ContentfulWhatsOnPageContent implements Node {
     eventMenu: EventMenu
    }
    type EventMenu {

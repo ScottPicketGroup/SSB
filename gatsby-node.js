@@ -18,14 +18,14 @@ type ContentfulWhatsOnPageContent implements Node {
     eventMenu: EventMenu
    }
    type EventMenu {
-     menuName: String
-     sideMenuName: String
-     eventMenuItems: EventMenuitems    
+     menuName: String!
+     sideMenuName: String!
+     eventMenuItems: EventMenuitems!  
    }
    type EventMenuitems {
-     menuITem: String
-     menuItemLongDescription: String
-     menuItemShortDescription: String
+     menuITem: String!
+     menuItemLongDescription: String!
+     menuItemShortDescription: String!
    } 
   `;
   createTypes(typeDefs);

@@ -1,35 +1,35 @@
 const path = require("path")
-exports.createSchemaCustomization = ({ actions }) => {
- const { createTypes } = actions;
+// exports.createSchemaCustomization = ({ actions }) => {
+//  const { createTypes } = actions;
 
  
-  const typeDefs = `
-  type ContentfulPrivateDiningPageContent implements Node {
-    eventsPackagePdf: File
-   }
-   type File {
-     file: URL!
-   }
-   type URL {
-     url: String!
-   }
+//   const typeDefs = `
+//   type ContentfulPrivateDiningPageContent implements Node {
+//     eventsPackagePdf: File
+//    }
+//    type File {
+//      file: URL!
+//    }
+//    type URL {
+//      url: String!
+//    }
   
-type ContentfulWhatsOnPageContent implements Node {
-    eventMenu: EventMenu
-   }
-   type EventMenu {
-     menuName: String
-     sideMenuName: String
-     eventMenuItems: EventMenuitems    
-   }
-   type EventMenuitems {
-     menuITem: String
-     menuItemLongDescription: String
-     menuItemShortDescription: String
-   } 
-  `;
-  createTypes(typeDefs);
-};
+// type ContentfulWhatsOnPageContent implements Node {
+//     eventMenu: EventMenu
+//    }
+//    type EventMenu {
+//      menuName: String
+//      sideMenuName: String
+//      eventMenuItems: EventMenuitems    
+//    }
+//    type EventMenuitems {
+//      menuITem: String
+//      menuItemLongDescription: String
+//      menuItemShortDescription: String
+//    } 
+//   `;
+//   createTypes(typeDefs);
+// };
 
 
 // exports.createSchemaCustomization = ({ actions }) => {

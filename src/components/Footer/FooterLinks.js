@@ -36,7 +36,6 @@ const FooterLinks = () => {
             emailFooterInfo
             phoneNumberFooter
             bottomLeftHeading
-            daysClosed
             facebookLink
             footerFirstColumnHeading
             instagramLink

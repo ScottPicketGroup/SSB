@@ -46,9 +46,9 @@ const FoodPage = ({ data }) => {
           red
           ref={el => (itemsRef.current[0] = el)}
         >
-          <MenuDuJour menuDuJourData={menuDuJour} />
+          {/* <MenuDuJour menuDuJourData={menuDuJour} /> */}
         </SectionContainer>
-        <SectionContainer
+        {/* <SectionContainer
           marginBottom="xl"
           centered
           red
@@ -58,7 +58,7 @@ const FoodPage = ({ data }) => {
             brunchData={brunch}
             hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
-        </SectionContainer>
+        </SectionContainer> */}
     <div 
       ref={el => (itemsRef.current[2] = el)}>
         <Food
@@ -83,36 +83,38 @@ const FoodPage = ({ data }) => {
 }
 
 export default FoodPage
+// removed items from query to remove brunch and menu du jour menus
+// brunch {
+//   bottomMenuTitle
+//   menuLogo {
+//     gatsbyImageData(aspectRatio: 4.19)
+//   }
+//   menuItems {
+//     menuItem
+//     menuItemDescription
+//     menuItemPrice
+//   }
+// }
+// menuDuJour {
+//   menuTitleTop
+//   menuItems {
+//     day
+//     menuItem
+//   }
+//   bottomTitle
+//   scrollToMenuItem
+//   seasonalMenuTitle
+// }
 
+// imageAdjacentToBrunchMenuHiddenOnMob {
+//   gatsbyImageData(aspectRatio: 1.8)
+// }
 export const foodPageData = graphql`
   query FoodPageQuery {
     allContentfulFoodMenuPageContent {
       nodes {
         pageTitle
-        menuDuJour {
-          menuTitleTop
-          menuItems {
-            day
-            menuItem
-          }
-          bottomTitle
-          scrollToMenuItem
-          seasonalMenuTitle
-        }
-        brunch {
-          bottomMenuTitle
-          menuLogo {
-            gatsbyImageData(aspectRatio: 4.19)
-          }
-          menuItems {
-            menuItem
-            menuItemDescription
-            menuItemPrice
-          }
-        }
-        imageAdjacentToBrunchMenuHiddenOnMob {
-          gatsbyImageData(aspectRatio: 1.8)
-        }
+       
         lunchAndDinner {
           menuItems {
             id

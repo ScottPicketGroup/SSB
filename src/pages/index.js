@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => {
     privateDiningImage,
     privateDiningIntro,
     whatsOnEvents,
-    weekdaySpecials,
+   // weekdaySpecials,
     gallery,
     heroTopCenterText, heroAddress 
   } = data.allContentfulLandingPageContent.edges[0].node
@@ -46,7 +46,7 @@ const IndexPage = ({ data }) => {
       
       <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
 
-      <Weekday data={weekdaySpecials} />
+      {/* <Weekday data={weekdaySpecials} /> */}
       <PrivateDining
         privateDiningHeading={privateDiningHeading}
         privateDiningImage={privateDiningImage}
@@ -95,15 +95,7 @@ export const landingPageData = graphql`
               eventTitle
             }
           }
-          weekdaySpecials {
-            sectionHeading
-            circularMenuText
-            menuDuJourMenuItems {
-              menuItem
-              day
-              showLearnMore
-            }
-          }
+      
           privateDiningHeading
           privateDiningImage {
             gatsbyImageData(
@@ -118,3 +110,14 @@ export const landingPageData = graphql`
     }
   }
 `
+//menu du jour come off this page for now
+
+// weekdaySpecials {
+//   sectionHeading
+//   circularMenuText
+//   menuDuJourMenuItems {
+//     menuItem
+//     day
+//     showLearnMore
+//   }
+// }

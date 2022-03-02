@@ -51,6 +51,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query for markdown nodes to use in creating pages.
   // NOTE bookNowLinkText
   // bookNowLinkUrl have been removed for now and will need to be added back in conditionally at some stage!
+  // eventMenu {
+  //   menuName
+  //   sideMenuName
+  //   eventMenuItems {
+  //     menuITem
+  //     menuItemLongDescription
+  //     menuItemShortDescription
+  //   }
+  // }
   const result = await graphql(`
     query EventsQuery {
       allContentfulWhatsOnPageContent {
@@ -66,15 +75,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             eventDescription {
               raw
             }
-            eventMenu {
-              menuName
-              sideMenuName
-              eventMenuItems {
-                menuITem
-                menuItemLongDescription
-                menuItemShortDescription
-              }
-            }
+           
             bookNowLinkText
             bookNowLinkUrl
             eventMenuImage {

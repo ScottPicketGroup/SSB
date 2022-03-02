@@ -82,7 +82,7 @@ const EventTemplate = ({ pageContext }) => {
               </BC1>
             </ExtWhiteDecorationLink>
           </DescriptionWrapper>
-          {eventData.eventMenu.menuName !== null ? (
+          {/* {eventData.eventMenu.menuName !== null ? (
             <BrunchFirstWrapper>
               {eventData.eventMenu.menuName !== null ? (
                 <MenuDuJourContainer height="auto">
@@ -126,7 +126,7 @@ const EventTemplate = ({ pageContext }) => {
                 <BC1 color="white"></BC1>
               )}
             </BrunchFirstWrapper>
-          ) : null}
+          ) : null} */}
         </SectionContainer>
       </PageContainer>
     </Layout>

@@ -70,8 +70,8 @@ console.log(events)
       <WhatsOnEventsWrapper>
         {events.map(
           (item, index) =>
-          index === 0 ? (
-            <PrivateDiningWrapper first="true" ref={ref}>
+          events.length === 0 ? (
+            <PrivateDiningWrapper first="true" >
             <PrivateDiningTextWrapper first="true">
               <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
               <RenderTextOverHiddenWrapper first="true">

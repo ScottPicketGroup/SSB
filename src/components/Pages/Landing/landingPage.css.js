@@ -101,7 +101,9 @@ export const WhatsOnEventsElementWrapper = styled.div`
   flex-direction: ${props => (props.key === 0 ? "row" : "column")};
   justify-content: ${props => props.key === 0 && "space-between"};
   width: 100%;
-  margin-bottom: ${props => (props.key === 0 ? "6rem" : "0")};
+  margin-bottom: ${props => (props.key === 0 ? "6rem" : "9rem")};
+  min-height: 640px;
+justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
@@ -144,7 +146,7 @@ export const PrivateDiningImageWrapepr = styled.div`
   }
 `
 export const PrivateDiningImage = styled(GatsbyImage)`
-  aspect-ratio: 3/2;
+  aspect-ratio: 3/2 !important;
   min-width: 100%;
   margin-right: 1rem;
   order: ${props => (props.first ? "1" : "0")};

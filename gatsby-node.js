@@ -1,23 +1,23 @@
 const path = require("path")
-exports.createSchemaCustomization = ({ actions }) => {
- const { createTypes } = actions;
+// exports.createSchemaCustomization = ({ actions }) => {
+//  const { createTypes } = actions;
 
  
-  const typeDefs = `
-  type ContentfulPrivateDiningPageContent implements Node {
-    eventsPackagePdf: File
-   }
-   type File {
-     file: URL!
-   }
-   type URL {
-     url: String!
-   }
+//   const typeDefs = `
+//   type ContentfulPrivateDiningPageContent implements Node {
+//     eventsPackagePdf: File
+//    }
+//    type File {
+//      file: URL!
+//    }
+//    type URL {
+//      url: String!
+//    }
   
 
-  `;
-  createTypes(typeDefs);
-};
+//   `;
+//   createTypes(typeDefs);
+// };
 
 // type ContentfulWhatsOnPageContent implements Node {
 //     eventMenu: EventMenu

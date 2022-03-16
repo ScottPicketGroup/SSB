@@ -17,6 +17,9 @@ const Renderer = ({ node }) => {
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <BC1 marginBottom="sm" color="white">{children}</BC1>
       ),
+      [BLOCKS.HYPERLINK]: (node, children) => (
+        <BC1 marginBottom="sm" style={{color: `white !important`}}>{children}</BC1>
+      ),
     },
   }
 

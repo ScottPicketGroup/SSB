@@ -33,7 +33,12 @@ import {
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
 
-  console.log(eventData, "stuff")
+  console.log(
+    eventData.eventMenu === null ?
+    "im here" 
+    :
+    "im not here"
+  )
   return (
     <Layout>
       <Seo title="Home" />
@@ -82,7 +87,9 @@ const EventTemplate = ({ pageContext }) => {
               </BC1>
             </ExtWhiteDecorationLink>
           </DescriptionWrapper>
-          {/* {eventData.eventMenu.menuName !== null ? (
+
+        {/* 
+          {eventData.eventMenu !== null ? (
             <BrunchFirstWrapper>
               {eventData.eventMenu.menuName !== null ? (
                 <MenuDuJourContainer height="auto">
@@ -92,9 +99,9 @@ const EventTemplate = ({ pageContext }) => {
                         ? eventData.eventMenu.menuName
                         : "Menu"}
                     </Heading2>
-                  </MenuHeadingWrapper>
+               </MenuHeadingWrapper>
 
-                  {eventData.eventMenu.eventMenuItems ? (
+                   {eventData.eventMenu.eventMenuItems ? (
                     eventData.eventMenu.eventMenuItems.map((item, index) => (
                       <MenuDuJourItemWrapper key={index}>
                         <BC2 color="black" bold>

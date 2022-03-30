@@ -47,7 +47,7 @@ const Renderer = ({ node }) => {
   return <>
   {renderRichText(node, options)} 
   {
-  node.references && <GetMenu menu={node.references[0]} />
+  node.references ? <GetMenu menu={node.references[0]} />  : null
 }
   </>
 }

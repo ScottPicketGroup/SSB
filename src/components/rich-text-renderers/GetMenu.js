@@ -15,7 +15,7 @@ const DisplayMenu = ({menu}) => {
       <FoodTitleWrapper className="container">
         {/* <Heading2 style={{ fontSize: "1.75rem" }}>{topTitleIeFood}</Heading2> */}
       </FoodTitleWrapper>
-      {menu.menuItems.map((item, index) =>
+      {menu && menu.menuItems.map((item, index) =>
         index === 0 && item.menuItems ? (
           <FoodItemWrapper key={index}>
             <FoodSectionItemWrapper>

@@ -74,6 +74,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             eventDescription {
               raw
+              references {
+                id
+                menuItems {
+                  id
+                  sectionHeadingIeEntrees
+                  menuItems {
+                    menuItem
+                  }
+                }
+              }
             }
            
             bookNowLinkText

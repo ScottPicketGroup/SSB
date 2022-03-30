@@ -1,14 +1,23 @@
 import React from "react"
-import { BLOCKS } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { getRichTextEntityLinks } from '@contentful/rich-text-links';
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 import {
   Heading1,
   Heading2,
   Heading3,
   BC1,
 } from "../StyledComponents/typography.css"
+import GetMenu from './GetMenu'
+
 
 const Renderer = ({ node }) => {
+
+  console.log(node)
+
+  
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => <Heading1 color="white">{children}</Heading1>,
@@ -20,10 +29,28 @@ const Renderer = ({ node }) => {
       [BLOCKS.HYPERLINK]: (node, children) => (
         <BC1 marginBottom="sm" style={{color: `white !important`}}>{children}</BC1>
       ),
+      [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+        console.log('node', node)
+        // target the contentType of the EMBEDDED_ENTRY to display as you need
+        // if (node.data.target.sys.contentType.sys.id === "codeBlock") {
+        //    (
+        //     <pre>
+        //       <code>{node.data.target.fields.code}</code>
+        //     </pre>
+        //   );
+        }
     },
+    [INLINES.EMBEDDED_ENTRY]: (node, children) => {
+    
+      },
   }
 
-  return <>{renderRichText(node, options)}</>
+  return <>
+  {renderRichText(node, options)} 
+  {
+  node.references && <GetMenu menu={node.references[0]} />
+}
+  </>
 }
 
 export default Renderer

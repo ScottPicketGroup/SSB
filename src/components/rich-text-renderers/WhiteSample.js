@@ -1,8 +1,7 @@
 import React from "react"
 import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
-import { getRichTextEntityLinks } from '@contentful/rich-text-links';
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+
 
 import {
   Heading1,

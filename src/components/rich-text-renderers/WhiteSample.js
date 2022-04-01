@@ -28,27 +28,14 @@ const Renderer = ({ node }) => {
       [BLOCKS.HYPERLINK]: (node, children) => (
         <BC1 marginBottom="sm" style={{color: `white !important`}}>{children}</BC1>
       ),
-      [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-       
-        // target the contentType of the EMBEDDED_ENTRY to display as you need
-        // if (node.data.target.sys.contentType.sys.id === "codeBlock") {
-        //    (
-        //     <pre>
-        //       <code>{node.data.target.fields.code}</code>
-        //     </pre>
-        //   );
-        }
+  
     },
-    [INLINES.EMBEDDED_ENTRY]: (node, children) => {
-    
-      },
+   
   }
 
   return <>
   {renderRichText(node, options)} 
-  {
-  node.references ? <GetMenu menu={node.references[0]} />  : null
-}
+ 
   </>
 }
 

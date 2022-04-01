@@ -60,9 +60,11 @@ export const SeasonalTitleWrapper = styled.div`
 
 export const BrunchHiddenOnMobImage = styled(GatsbyImage)`
   margin-top: 6rem;
-  width: 340px;
-  height: 420px;
+  min-width: 340px;
+  max-height: 418px;
+  aspect-ratio: 4/3;
   margin-bottom: 6em;
+  
   @media (max-width: 451px) {
     width: 70%;
     height: 80vw;
@@ -74,8 +76,10 @@ export const BrunchFirstWrapper = styled.div`
   display: flex;
   flex-direction: row;
   // width: 70vw;
-  width: 870px;
-  justify-content: space-between;
+  width: ${props =>
+    props.lunchAndDinnerMenu ? "80vw" : "870px"};
+  justify-content: ${props =>
+    props.justify};
   margin: 0 auto 11.25rem;
   @media (max-width: 451px) {
     flex-direction: column;

@@ -31,7 +31,7 @@ const Dropdown = ({ title, options, dropWidth, setInputs, input }) => {
 
 
     useEffect(() => {
-       
+     
         setInputs(inputs => ({ ...inputs, [input]: selectedOption }))
         
     }, [selectedOption])

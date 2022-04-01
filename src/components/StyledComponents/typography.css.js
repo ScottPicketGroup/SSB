@@ -574,6 +574,7 @@ export const NoneDecorationLink = styled(Link)`
 export const RedDecorationLink = styled(Link)`
   text-decoration-color: ${color.PRIMARY_RED_ROUGE};
   text-underline-offset: 5px;
+  margin-bottom: ${props => (props.marginBottom ? props.marginBottom : "")};
 `
 export const ExtRedDecorationLink = styled.a `
   text-decoration-color: ${color.PRIMARY_RED_ROUGE};

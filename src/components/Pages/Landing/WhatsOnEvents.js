@@ -22,7 +22,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const events = whatsOnEvents.events
-
+console.log(events)
   gsap.registerPlugin(ScrollTrigger)
   const ref = useRef(null)
 
@@ -63,29 +63,34 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
       }
     )
   }, [])
-console.log(events)
+
   return (
     <SectionContainer column="true" mbOnMob="5.5rem" ref={ref} marginBottom="lg">
  
       <WhatsOnEventsWrapper>
         {events.map(
           (item, index) =>
-          events.length === 0 ? (
+          events.length === 1 ? (
             <PrivateDiningWrapper first="true" >
+              
             <PrivateDiningTextWrapper first="true">
-              <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
+              <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
               <RenderTextOverHiddenWrapper first="true">
                 <Renderer node={events[0].eventDescription} />…
               </RenderTextOverHiddenWrapper>
-              <RedDecorationLink to={`events/${events[0].id}`}>
-                <BC1>Learn more…</BC1>
+              <RedDecorationLink
+              marginBottom="lg"
+              to={`/events/${item.eventTitle.toLowerCase().replaceAll(' ' , '-')}`}>
+                <BC1
+               marginBottom="lg"
+                >Learn more…</BC1>
               </RedDecorationLink>
             </PrivateDiningTextWrapper>
     
             <PrivateDiningImageWrapepr>
               <div className="first-paragraph">
                 <PrivateDiningImage
-                  image={getImage(events[0].eventMenuImage)}
+                  image={getImage(item.eventMenuImage)}
                   alt="private-dining"
                   first="true"
                 />
@@ -94,7 +99,7 @@ console.log(events)
             <PrivateDiningImageWrapepr mobile>
               <div className="mobile-paragraph">
                 <PrivateDiningImage
-                  image={getImage(events[0].eventMenuImage)}
+                  image={getImage(item.eventMenuImage)}
                   alt="private-dining"
                   first="true"
                 />
@@ -109,8 +114,8 @@ console.log(events)
                   <RenderTextOverHiddenWrapper>
                     <Renderer node={item.eventDescription}/>…
                   </RenderTextOverHiddenWrapper>
-                  <RedDecorationLink to={`events/${item.id}`}>
-                    <BC1 marginBottom="xs">Learn more…</BC1>
+                  <RedDecorationLink to={`events/${item.eventTitle.toLowerCase().replaceAll(' ' , '-')}`}>
+                    <BC1   marginBottom="lg">Learn more…</BC1>
                   </RedDecorationLink>
                 </PrivateDiningTextWrapper>
                 <PrivateDiningImage

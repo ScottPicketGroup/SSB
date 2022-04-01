@@ -33,7 +33,7 @@ import {
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
 
-
+ 
   return (
     <Layout>
       <Seo title="Home" />

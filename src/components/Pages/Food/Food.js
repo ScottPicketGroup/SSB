@@ -26,7 +26,7 @@ const Food = ({ foodData }) => {
     })
   }, [])
 
- console.log(menuItems)
+
 
   return (
     <FoodContainer ref={ref}>

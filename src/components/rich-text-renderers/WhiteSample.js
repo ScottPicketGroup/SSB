@@ -14,7 +14,7 @@ import GetMenu from './GetMenu'
 
 const Renderer = ({ node }) => {
 
-  console.log(node)
+
 
   
   const options = {
@@ -29,7 +29,7 @@ const Renderer = ({ node }) => {
         <BC1 marginBottom="sm" style={{color: `white !important`}}>{children}</BC1>
       ),
       [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
-        console.log('node', node)
+       
         // target the contentType of the EMBEDDED_ENTRY to display as you need
         // if (node.data.target.sys.contentType.sys.id === "codeBlock") {
         //    (

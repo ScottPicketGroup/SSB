@@ -63,7 +63,7 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
       }
     )
   }, [])
-console.log(events)
+
   return (
     <SectionContainer column="true" mbOnMob="5.5rem" ref={ref} marginBottom="lg">
  
@@ -77,7 +77,7 @@ console.log(events)
               <RenderTextOverHiddenWrapper first="true">
                 <Renderer node={events[0].eventDescription} />…
               </RenderTextOverHiddenWrapper>
-              <RedDecorationLink to={`events/${events[0].id}`}>
+              <RedDecorationLink to={`/events/${events[0].toLowerCase().replaceAll(' ' , '-')}`}>
                 <BC1>Learn more…</BC1>
               </RedDecorationLink>
             </PrivateDiningTextWrapper>
@@ -109,7 +109,7 @@ console.log(events)
                   <RenderTextOverHiddenWrapper>
                     <Renderer node={item.eventDescription}/>…
                   </RenderTextOverHiddenWrapper>
-                  <RedDecorationLink to={`events/${item.id}`}>
+                  <RedDecorationLink to={`events/${item.eventTitle.toLowerCase().replaceAll(' ' , '-')}`}>
                     <BC1 marginBottom="xs">Learn more…</BC1>
                   </RedDecorationLink>
                 </PrivateDiningTextWrapper>

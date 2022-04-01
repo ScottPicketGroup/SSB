@@ -85,18 +85,7 @@ const PrivateDiningForm = () => {
   const handleSubmit = e => {
     e.preventDefault()
     const timestamp = Date.now()
-    console.log([
-      inputs.fName,
-      inputs.sName,
-      inputs.email,
-      inputs.number,
-      inputs.eventType,
-      inputs.eventDate,
-      inputs.guestNum,
-      inputs.addintionalNote,
-      inputs.startHour,
-      inputs.finishHour,
-    ])
+
     if (
       (inputs.fName &&
         inputs.sName &&

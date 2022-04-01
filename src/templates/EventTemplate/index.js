@@ -33,12 +33,7 @@ import {
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
 
-  console.log(
-    eventData.eventMenu === null ?
-    "im here" 
-    :
-    "im not here"
-  )
+ 
   return (
     <Layout>
       <Seo title="Home" />

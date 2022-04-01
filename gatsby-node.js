@@ -95,7 +95,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages for each markdown file.
   const EventTemplate = path.resolve(`src/templates/EventTemplate/index.js`)
   result.data.allContentfulWhatsOnPageContent.edges.forEach(({ node }) => {
-    const path = `/events/${node.id}`
+    const path = `/events/${node.eventTitle.toLowerCase().replaceAll(' ' , '-')}`
     createPage({
       path,
       component: EventTemplate,

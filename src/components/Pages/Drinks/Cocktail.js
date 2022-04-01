@@ -95,7 +95,7 @@ const Cocktail = ({ cocktailMenu, nonAlcoholicDrinksMenu }) => {
             <BC2 marginBottom="md" bold color="black">
               {menuTitle}
             </BC2>
-            {console.log(refHeight)}
+          
             {nonAlcoholicMenuItems.map((item, index) => (
               <MenuDuJourItemWrapper key={index}>
                 <BC2 bold color="black">

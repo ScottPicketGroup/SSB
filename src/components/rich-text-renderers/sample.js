@@ -9,7 +9,6 @@ import {
 } from "../StyledComponents/typography.css"
 
 const Renderer = ({ node, landing }) => {
-
   const options = {
     renderNode: {
       

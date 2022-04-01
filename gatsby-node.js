@@ -51,15 +51,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Query for markdown nodes to use in creating pages.
   // NOTE bookNowLinkText
   // bookNowLinkUrl have been removed for now and will need to be added back in conditionally at some stage!
-  // eventMenu {
-  //   menuName
-  //   sideMenuName
-  //   eventMenuItems {
-  //     menuITem
-  //     menuItemLongDescription
-  //     menuItemShortDescription
-  //   }
-  // }
+
   const result = await graphql(`
     query EventsQuery {
       allContentfulWhatsOnPageContent {
@@ -67,15 +59,54 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             eventTitle
-          
-            
+            eventDateAndTimeInfo
+            eventDateAndTimeInfoLineTwo
             galleryImages {
               gatsbyImageData
             }
             eventDescription {
               raw
+              references {
+                id
+                menuItems {
+                  id
+                  sectionHeadingIeEntrees
+                  menuItems {
+                    menuItem
+                  }
+                }
+              }
             }
-           
+            eventMenu {
+              ... on ContentfulEventMenu {
+                __typename
+                id
+                eventMenuItems {
+                  menuITem
+                  menuItemLongDescription
+                  menuItemShortDescription
+                  menuItemPrice
+                  __typename
+                }
+                sideMenuName
+                menuName
+              }
+              ... on ContentfulLunchDinnerMenu {
+                __typename
+                id
+                menuItems {
+                  id
+                  sectionHeadingIeEntrees
+                  menuItems {
+                    menuItem
+                    menuItemDescription
+                    menuItemPrice
+                  }
+                }
+                topTitleIeFood
+                seasonalTitleTopRight
+              }
+            }
             bookNowLinkText
             bookNowLinkUrl
             eventMenuImage {

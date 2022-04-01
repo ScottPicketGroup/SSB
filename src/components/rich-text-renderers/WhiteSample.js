@@ -1,14 +1,22 @@
 import React from "react"
-import { BLOCKS } from "@contentful/rich-text-types"
+import { BLOCKS, INLINES } from "@contentful/rich-text-types"
 import { renderRichText } from "gatsby-source-contentful/rich-text"
+
+
 import {
   Heading1,
   Heading2,
   Heading3,
   BC1,
 } from "../StyledComponents/typography.css"
+import GetMenu from './GetMenu'
+
 
 const Renderer = ({ node }) => {
+
+
+
+  
   const options = {
     renderNode: {
       [BLOCKS.HEADING_1]: (node, children) => <Heading1 color="white">{children}</Heading1>,
@@ -20,10 +28,15 @@ const Renderer = ({ node }) => {
       [BLOCKS.HYPERLINK]: (node, children) => (
         <BC1 marginBottom="sm" style={{color: `white !important`}}>{children}</BC1>
       ),
+  
     },
+   
   }
 
-  return <>{renderRichText(node, options)}</>
+  return <>
+  {renderRichText(node, options)} 
+ 
+  </>
 }
 
 export default Renderer

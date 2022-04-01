@@ -16,6 +16,7 @@ import { SectionContainer } from "../../StyledComponents/containers.css"
 import Renderer from "../../rich-text-renderers/sample"
 
 const WhatsOnEvents = ({ events }) => {
+  console.log(events)
   return (
     <SectionContainer width="62vw" column>
       <WhatsOnEventsContainer>
@@ -35,7 +36,7 @@ const WhatsOnEvents = ({ events }) => {
             <EventTextWrapper>
               <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
               <RenderTextOverHiddenWrapper>
-                <Renderer node={item.eventDescription} />
+                {item.eventDescription && <Renderer node={item.eventDescription} />}
               </RenderTextOverHiddenWrapper>
               <RedDecorationLink to={"/events/"+ item.eventTitle.toLowerCase().replaceAll(' ' , '-')}>
               {/* <RedDecorationLink to={"/events/"+ item.id}> */}

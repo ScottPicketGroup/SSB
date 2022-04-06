@@ -1,0 +1,1465 @@
+### Type definitions saved at 2022-04-02T15:50:12.894Z ###
+
+type File implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+  blksize: Int
+  blocks: Int
+}
+
+type Directory implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+}
+
+type Site implements Node @derivedTypes @dontInfer {
+  buildTime: Date @dateformat
+  siteMetadata: SiteSiteMetadata
+  port: Int
+  host: String
+  flags: SiteFlags
+  polyfill: Boolean
+  pathPrefix: String
+  jsxRuntime: String
+}
+
+type SiteSiteMetadata {
+  title: String
+  description: String
+  author: String
+  siteUrl: String
+}
+
+type SiteFlags {
+  FAST_DEV: Boolean
+}
+
+type SiteFunction implements Node @dontInfer {
+  functionRoute: String!
+  pluginName: String!
+  originalAbsoluteFilePath: String!
+  originalRelativeFilePath: String!
+  relativeCompiledFilePath: String!
+  absoluteCompiledFilePath: String!
+  matchPath: String
+}
+
+type SitePage implements Node @dontInfer {
+  path: String!
+  component: String!
+  internalComponentName: String!
+  componentChunkName: String!
+  matchPath: String
+  pageContext: JSON @proxy(from: "context", fromNode: false)
+  pluginCreator: SitePlugin @link(by: "id", from: "pluginCreatorId")
+}
+
+type SitePlugin implements Node @dontInfer {
+  resolve: String
+  name: String
+  version: String
+  nodeAPIs: [String]
+  browserAPIs: [String]
+  ssrAPIs: [String]
+  pluginFilepath: String
+  pluginOptions: JSON
+  packageJson: JSON
+}
+
+type SiteBuildMetadata implements Node @dontInfer {
+  buildTime: Date @dateformat
+}
+
+enum GatsbyImageFormat {
+  NO_CHANGE
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum GatsbyImageLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum GatsbyImagePlaceholder {
+  DOMINANT_COLOR
+  TRACED_SVG
+  BLURRED
+  NONE
+}
+
+enum ImageFormat {
+  NO_CHANGE
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum ImageFit {
+  COVER
+  CONTAIN
+  FILL
+  INSIDE
+  OUTSIDE
+}
+
+enum ImageLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum ImageCropFocus {
+  CENTER
+  NORTH
+  NORTHEAST
+  EAST
+  SOUTHEAST
+  SOUTH
+  SOUTHWEST
+  WEST
+  NORTHWEST
+  ENTROPY
+  ATTENTION
+}
+
+input DuotoneGradient {
+  highlight: String!
+  shadow: String!
+  opacity: Int
+}
+
+enum PotraceTurnPolicy {
+  TURNPOLICY_BLACK
+  TURNPOLICY_WHITE
+  TURNPOLICY_LEFT
+  TURNPOLICY_RIGHT
+  TURNPOLICY_MINORITY
+  TURNPOLICY_MAJORITY
+}
+
+input Potrace {
+  turnPolicy: PotraceTurnPolicy
+  turdSize: Float
+  alphaMax: Float
+  optCurve: Boolean
+  optTolerance: Float
+  threshold: Int
+  blackOnWhite: Boolean
+  color: String
+  background: String
+}
+
+type ImageSharpFixed {
+  base64: String
+  tracedSVG: String
+  aspectRatio: Float
+  width: Float!
+  height: Float!
+  src: String!
+  srcSet: String!
+  srcWebp: String
+  srcSetWebp: String
+  originalName: String
+}
+
+type ImageSharpFluid {
+  base64: String
+  tracedSVG: String
+  aspectRatio: Float!
+  src: String!
+  srcSet: String!
+  srcWebp: String
+  srcSetWebp: String
+  sizes: String!
+  originalImg: String
+  originalName: String
+  presentationWidth: Int!
+  presentationHeight: Int!
+}
+
+enum ImagePlaceholder {
+  DOMINANT_COLOR
+  TRACED_SVG
+  BLURRED
+  NONE
+}
+
+input BlurredOptions {
+  """Width of the generated low-res preview. Default is 20px"""
+  width: Int
+
+  """
+  Force the output format for the low-res preview. Default is to use the same
+  format as the input. You should rarely need to change this
+  """
+  toFormat: ImageFormat
+}
+
+input JPGOptions {
+  quality: Int
+  progressive: Boolean = true
+}
+
+input PNGOptions {
+  quality: Int
+  compressionSpeed: Int = 4
+}
+
+input WebPOptions {
+  quality: Int
+}
+
+input AVIFOptions {
+  quality: Int
+  lossless: Boolean
+  speed: Int
+}
+
+input TransformOptions {
+  grayscale: Boolean = false
+  duotone: DuotoneGradient
+  rotate: Int = 0
+  trim: Float = 0
+  cropFocus: ImageCropFocus = ATTENTION
+  fit: ImageFit = COVER
+}
+
+type ImageSharpOriginal {
+  width: Float
+  height: Float
+  src: String
+}
+
+type ImageSharpResize {
+  src: String
+  tracedSVG: String
+  width: Int
+  height: Int
+  aspectRatio: Float
+  originalName: String
+}
+
+type ImageSharp implements Node @childOf(types: ["File"]) @dontInfer {
+  fixed(width: Int, height: Int, base64Width: Int, jpegProgressive: Boolean = true, pngCompressionSpeed: Int = 4, grayscale: Boolean = false, duotone: DuotoneGradient, traceSVG: Potrace, quality: Int, jpegQuality: Int, pngQuality: Int, webpQuality: Int, toFormat: ImageFormat = AUTO, toFormatBase64: ImageFormat = AUTO, cropFocus: ImageCropFocus = ATTENTION, fit: ImageFit = COVER, background: String = "rgba(0,0,0,1)", rotate: Int = 0, trim: Float = 0): ImageSharpFixed
+  fluid(
+    maxWidth: Int
+    maxHeight: Int
+    base64Width: Int
+    grayscale: Boolean = false
+    jpegProgressive: Boolean = true
+    pngCompressionSpeed: Int = 4
+    duotone: DuotoneGradient
+    traceSVG: Potrace
+    quality: Int
+    jpegQuality: Int
+    pngQuality: Int
+    webpQuality: Int
+    toFormat: ImageFormat = AUTO
+    toFormatBase64: ImageFormat = AUTO
+    cropFocus: ImageCropFocus = ATTENTION
+    fit: ImageFit = COVER
+    background: String = "rgba(0,0,0,1)"
+    rotate: Int = 0
+    trim: Float = 0
+    sizes: String = ""
+
+    """
+    A list of image widths to be generated. Example: [ 200, 340, 520, 890 ]
+    """
+    srcSetBreakpoints: [Int] = []
+  ): ImageSharpFluid
+  gatsbyImageData(
+    """
+    The layout for the image.
+    FIXED: A static image sized, that does not resize according to the screen width
+    FULL_WIDTH: The image resizes to fit its container. Pass a "sizes" option if
+    it isn't going to be the full width of the screen.
+    CONSTRAINED: Resizes to fit its container, up to a maximum width, at which point it will remain fixed in size.
+    
+    """
+    layout: ImageLayout = CONSTRAINED
+
+    """
+    The display width of the generated image for layout = FIXED, and the maximum
+    display width of the largest image for layout = CONSTRAINED.
+    Ignored if layout = FLUID.
+    
+    """
+    width: Int
+
+    """
+    The display height of the generated image for layout = FIXED, and the
+    maximum display height of the largest image for layout = CONSTRAINED.
+    The image will be cropped if the aspect ratio does not match the source
+    image. If omitted, it is calculated from the supplied width,
+    matching the aspect ratio of the source image.
+    """
+    height: Int
+
+    """
+    If set along with width or height, this will set the value of the other
+    dimension to match the provided aspect ratio, cropping the image if needed.
+    If neither width or height is provided, height will be set based on the intrinsic width of the source image.
+    
+    """
+    aspectRatio: Float
+
+    """
+    Format of generated placeholder image, displayed while the main image loads.
+    BLURRED: a blurred, low resolution image, encoded as a base64 data URI (default)
+    DOMINANT_COLOR: a solid color, calculated from the dominant color of the image.
+    TRACED_SVG: a low-resolution traced SVG of the image.
+    NONE: no placeholder. Set "background" to use a fixed background color.
+    """
+    placeholder: ImagePlaceholder
+
+    """
+    Options for the low-resolution placeholder image. Set placeholder to "BLURRED" to use this
+    """
+    blurredOptions: BlurredOptions
+
+    """
+    Options for traced placeholder SVGs. You also should set placeholder to "TRACED_SVG".
+    """
+    tracedSVGOptions: Potrace
+
+    """
+    The image formats to generate. Valid values are "AUTO" (meaning the same
+    format as the source image), "JPG", "PNG", "WEBP" and "AVIF".
+    The default value is [AUTO, WEBP], and you should rarely need to change
+    this. Take care if you specify JPG or PNG when you do
+    not know the formats of the source images, as this could lead to unwanted
+    results such as converting JPEGs to PNGs. Specifying
+    both PNG and JPG is not supported and will be ignored.
+    
+    """
+    formats: [ImageFormat]
+
+    """
+    A list of image pixel densities to generate. It will never generate images
+    larger than the source, and will always include a 1x image.
+    Default is [ 1, 2 ] for FIXED images, meaning 1x and 2x and [0.25, 0.5, 1,
+    2] for CONSTRAINED. In this case, an image with a constrained layout
+    and width = 400 would generate images at 100, 200, 400 and 800px wide.
+    Ignored for FULL_WIDTH images, which use breakpoints instead
+    """
+    outputPixelDensities: [Float]
+
+    """
+    Specifies the image widths to generate. For FIXED and CONSTRAINED images it
+    is better to allow these to be determined automatically,
+    based on the image size. For FULL_WIDTH images this can be used to override
+    the default, which is [750, 1080, 1366, 1920].
+    It will never generate any images larger than the source.
+    
+    """
+    breakpoints: [Int]
+
+    """
+    The "sizes" property, passed to the img tag. This describes the display size of the image.
+    This does not affect the generated images, but is used by the browser to decide which images to download.
+    You should usually leave this blank, and a suitable value will be calculated. The exception is if a FULL_WIDTH image
+    does not actually span the full width of the screen, in which case you should pass the correct size here.
+    
+    """
+    sizes: String
+
+    """The default quality. This is overridden by any format-specific options"""
+    quality: Int
+
+    """Options to pass to sharp when generating JPG images."""
+    jpgOptions: JPGOptions
+
+    """Options to pass to sharp when generating PNG images."""
+    pngOptions: PNGOptions
+
+    """Options to pass to sharp when generating WebP images."""
+    webpOptions: WebPOptions
+
+    """Options to pass to sharp when generating AVIF images."""
+    avifOptions: AVIFOptions
+
+    """
+    Options to pass to sharp to control cropping and other image manipulations.
+    """
+    transformOptions: TransformOptions
+
+    """
+    Background color applied to the wrapper. Also passed to sharp to use as a
+    background when "letterboxing" an image to another aspect ratio.
+    """
+    backgroundColor: String
+  ): JSON!
+  original: ImageSharpOriginal
+  resize(width: Int, height: Int, quality: Int, jpegQuality: Int, pngQuality: Int, webpQuality: Int, jpegProgressive: Boolean = true, pngCompressionLevel: Int = 9, pngCompressionSpeed: Int = 4, grayscale: Boolean = false, duotone: DuotoneGradient, base64: Boolean = false, traceSVG: Potrace, toFormat: ImageFormat = AUTO, cropFocus: ImageCropFocus = ATTENTION, fit: ImageFit = COVER, background: String = "rgba(0,0,0,1)", rotate: Int = 0, trim: Float = 0): ImageSharpResize
+}
+
+interface ContentfulEntry implements Node {
+  contentful_id: String!
+  id: ID!
+  node_locale: String!
+}
+
+interface ContentfulReference {
+  contentful_id: String!
+  id: ID!
+}
+
+type ContentfulAsset implements ContentfulReference & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  file: ContentfulAssetFile
+  title: String
+  description: String
+  node_locale: String
+  sys: ContentfulAssetSys
+}
+
+type ContentfulAssetFile @derivedTypes {
+  url: String
+  details: ContentfulAssetFileDetails
+  fileName: String
+  contentType: String
+}
+
+type ContentfulAssetFileDetails @derivedTypes {
+  size: Int
+  image: ContentfulAssetFileDetailsImage
+}
+
+type ContentfulAssetFileDetailsImage {
+  width: Int
+  height: Int
+}
+
+type ContentfulAssetSys {
+  type: String
+  revision: Int
+}
+
+type ContentfulEventMenuItemWPriceAndOptionalWinePairing implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  menuITem: String
+  menuItemShortDescription: String
+  menuItemPrice: Int
+  event_menu: [ContentfulEventMenu] @link(by: "id", from: "event menu___NODE") @proxy(from: "event menu___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulEventMenuItemWPriceAndOptionalWinePairingSys
+  menuItemLongDescription: String
+  winePairing: String
+}
+
+type ContentfulEventMenu implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  menuName: String
+  sideMenuName: String
+  eventMenuItems: [ContentfulEventMenuItemWPriceAndOptionalWinePairing] @link(by: "id", from: "eventMenuItems___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulEventMenuSys
+  whats_on_page_content: [ContentfulWhatsOnPageContent] @link(by: "id", from: "whats on page content___NODE") @proxy(from: "whats on page content___NODE")
+}
+
+type ContentfulEventMenuSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulEventMenuSysContentType
+}
+
+type ContentfulEventMenuSysContentType @derivedTypes {
+  sys: ContentfulEventMenuSysContentTypeSys
+}
+
+type ContentfulEventMenuSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulWhatsOnPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  eventTitle: String
+  eventDateAndTimeInfo: String
+  eventDateAndTimeInfoLineTwo: String
+  bookNowLinkText: String
+  bookNowLinkUrl: String
+  eventDescription: ContentfulWhatsOnPageContentEventDescription
+  galleryImages: [ContentfulAsset] @link(by: "id", from: "galleryImages___NODE")
+  eventMenuImage: ContentfulAsset @link(by: "id", from: "eventMenuImage___NODE")
+  landing_page_events_module: [ContentfulLandingPageEventsModule] @link(by: "id", from: "landing page events module___NODE") @proxy(from: "landing page events module___NODE")
+  whats_on_page_events_page_content: [ContentfulWhatsOnPageEventsPageContent] @link(by: "id", from: "whats on page events page content___NODE") @proxy(from: "whats on page events page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulWhatsOnPageContentSys
+  eventMenu: ContentfulEventMenuContentfulLunchDinnerMenuUnion @link(by: "id", from: "eventMenu___NODE")
+}
+
+type ContentfulWhatsOnPageContentEventDescription {
+  raw: String
+  references: [ContentfulLunchDinnerMenu] @link(by: "id", from: "references___NODE")
+}
+
+type ContentfulLunchDinnerMenu implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulLunchDinnerMenuSys
+  topTitleIeFood: String
+  seasonalTitleTopRight: String
+  menuItems: [ContentfulMenuSection] @link(by: "id", from: "menuItems___NODE")
+  whats_on_page_content: [ContentfulWhatsOnPageContent] @link(by: "id", from: "whats on page content___NODE") @proxy(from: "whats on page content___NODE")
+  food_menu_page_content: [ContentfulFoodMenuPageContent] @link(by: "id", from: "food menu page content___NODE") @proxy(from: "food menu page content___NODE")
+}
+
+type ContentfulLunchDinnerMenuSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulLunchDinnerMenuSysContentType
+}
+
+type ContentfulLunchDinnerMenuSysContentType @derivedTypes {
+  sys: ContentfulLunchDinnerMenuSysContentTypeSys
+}
+
+type ContentfulLunchDinnerMenuSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulMenuSection implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulMenuSectionSys
+  sectionHeadingIeEntrees: String
+  menuItems: [ContentfulRegularMenuItem] @link(by: "id", from: "menuItems___NODE")
+  lunch___dinner_menu: [ContentfulLunchDinnerMenu] @link(by: "id", from: "lunch & dinner menu___NODE") @proxy(from: "lunch & dinner menu___NODE")
+}
+
+type ContentfulMenuSectionSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulMenuSectionSysContentType
+}
+
+type ContentfulMenuSectionSysContentType @derivedTypes {
+  sys: ContentfulMenuSectionSysContentTypeSys
+}
+
+type ContentfulMenuSectionSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulRegularMenuItem implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  menuItem: String
+  menuItemDescription: String
+  menuItemPrice: Int
+  menu_section: [ContentfulMenuSection] @link(by: "id", from: "menu section___NODE") @proxy(from: "menu section___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulRegularMenuItemSys
+  brunch_menu_section: [ContentfulBrunchMenuSection] @link(by: "id", from: "brunch menu section___NODE") @proxy(from: "brunch menu section___NODE")
+  cocktails_menu: [ContentfulCocktailsMenu] @link(by: "id", from: "cocktails menu___NODE") @proxy(from: "cocktails menu___NODE")
+  non_alcoholic_drinks_menu: [ContentfulNonAlcoholicDrinksMenu] @link(by: "id", from: "non alcoholic drinks menu___NODE") @proxy(from: "non alcoholic drinks menu___NODE")
+  dessert_menu_drinks_section: [ContentfulDessertMenuDrinksSection] @link(by: "id", from: "dessert menu drinks section___NODE") @proxy(from: "dessert menu drinks section___NODE")
+  dessert_menu: [ContentfulDessertMenu] @link(by: "id", from: "dessert menu___NODE") @proxy(from: "dessert menu___NODE")
+}
+
+type ContentfulRegularMenuItemSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulRegularMenuItemSysContentType
+}
+
+type ContentfulRegularMenuItemSysContentType @derivedTypes {
+  sys: ContentfulRegularMenuItemSysContentTypeSys
+}
+
+type ContentfulRegularMenuItemSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulBrunchMenuSection implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  bottomMenuTitle: String
+  scrollToMenuItem: Boolean
+  menuLogo: ContentfulAsset @link(by: "id", from: "menuLogo___NODE")
+  menuItems: [ContentfulRegularMenuItem] @link(by: "id", from: "menuItems___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulBrunchMenuSectionSys
+}
+
+type ContentfulBrunchMenuSectionSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulBrunchMenuSectionSysContentType
+}
+
+type ContentfulBrunchMenuSectionSysContentType @derivedTypes {
+  sys: ContentfulBrunchMenuSectionSysContentTypeSys
+}
+
+type ContentfulBrunchMenuSectionSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulCocktailsMenu implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  seasonHeading: String
+  menuHeadingBottom: String
+  scrollToMenuItem: Boolean
+  menuItems: [ContentfulRegularMenuItem] @link(by: "id", from: "menuItems___NODE")
+  wine_menu_page_content: [ContentfulWineMenuPageContent] @link(by: "id", from: "wine menu page content___NODE") @proxy(from: "wine menu page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulCocktailsMenuSys
+}
+
+type ContentfulWineMenuPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  pageHeading: String
+  wineByTheGlassMenu: ContentfulWinesByTheGlassMenu @link(by: "id", from: "wineByTheGlassMenu___NODE")
+  cocktailMenu: ContentfulCocktailsMenu @link(by: "id", from: "cocktailMenu___NODE")
+  nonAlcoholicDrinksMenu: ContentfulNonAlcoholicDrinksMenu @link(by: "id", from: "nonAlcoholicDrinksMenu___NODE")
+  bottomImage: ContentfulAsset @link(by: "id", from: "bottomImage___NODE")
+  wineMenuPdf: ContentfulAsset @link(by: "id", from: "wineMenuPdf___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulWineMenuPageContentSys
+}
+
+type ContentfulWinesByTheGlassMenu implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  scrollToMenuItem: Boolean
+  wineMenuSection: [ContentfulWineMenuSection] @link(by: "id", from: "wineMenuSection___NODE")
+  wine_menu_page_content: [ContentfulWineMenuPageContent] @link(by: "id", from: "wine menu page content___NODE") @proxy(from: "wine menu page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulWinesByTheGlassMenuSys
+}
+
+type ContentfulWineMenuSection implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  sectionHeadingIeRed: String
+  sectionMenuItems: [ContentfulWineMenuItem] @link(by: "id", from: "sectionMenuItems___NODE")
+  wines_by_the_glass_menu: [ContentfulWinesByTheGlassMenu] @link(by: "id", from: "wines by the glass menu___NODE") @proxy(from: "wines by the glass menu___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulWineMenuSectionSys
+}
+
+type ContentfulWineMenuItem implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  producer: String
+  region: String
+  price: Int
+  wine_menu_section: [ContentfulWineMenuSection] @link(by: "id", from: "wine menu section___NODE") @proxy(from: "wine menu section___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulWineMenuItemSys
+}
+
+type ContentfulWineMenuItemSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulWineMenuItemSysContentType
+}
+
+type ContentfulWineMenuItemSysContentType @derivedTypes {
+  sys: ContentfulWineMenuItemSysContentTypeSys
+}
+
+type ContentfulWineMenuItemSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulWineMenuSectionSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulWineMenuSectionSysContentType
+}
+
+type ContentfulWineMenuSectionSysContentType @derivedTypes {
+  sys: ContentfulWineMenuSectionSysContentTypeSys
+}
+
+type ContentfulWineMenuSectionSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulWinesByTheGlassMenuSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulWinesByTheGlassMenuSysContentType
+}
+
+type ContentfulWinesByTheGlassMenuSysContentType @derivedTypes {
+  sys: ContentfulWinesByTheGlassMenuSysContentTypeSys
+}
+
+type ContentfulWinesByTheGlassMenuSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulNonAlcoholicDrinksMenu implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  menuTitle: String
+  scrollToMenuItem: Boolean
+  backgroundImage: ContentfulAsset @link(by: "id", from: "backgroundImage___NODE")
+  nonAlcoholicMenuItems: [ContentfulRegularMenuItem] @link(by: "id", from: "nonAlcoholicMenuItems___NODE")
+  wine_menu_page_content: [ContentfulWineMenuPageContent] @link(by: "id", from: "wine menu page content___NODE") @proxy(from: "wine menu page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulNonAlcoholicDrinksMenuSys
+}
+
+type ContentfulNonAlcoholicDrinksMenuSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulNonAlcoholicDrinksMenuSysContentType
+}
+
+type ContentfulNonAlcoholicDrinksMenuSysContentType @derivedTypes {
+  sys: ContentfulNonAlcoholicDrinksMenuSysContentTypeSys
+}
+
+type ContentfulNonAlcoholicDrinksMenuSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulWineMenuPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulWineMenuPageContentSysContentType
+}
+
+type ContentfulWineMenuPageContentSysContentType @derivedTypes {
+  sys: ContentfulWineMenuPageContentSysContentTypeSys
+}
+
+type ContentfulWineMenuPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulCocktailsMenuSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulCocktailsMenuSysContentType
+}
+
+type ContentfulCocktailsMenuSysContentType @derivedTypes {
+  sys: ContentfulCocktailsMenuSysContentTypeSys
+}
+
+type ContentfulCocktailsMenuSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulDessertMenuDrinksSection implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  drinkMenuItems: [ContentfulRegularMenuItem] @link(by: "id", from: "drinkMenuItems___NODE")
+  dessert_menu: [ContentfulDessertMenu] @link(by: "id", from: "dessert menu___NODE") @proxy(from: "dessert menu___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulDessertMenuDrinksSectionSys
+}
+
+type ContentfulDessertMenu implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  scrollToMenuItem: Boolean
+  bottomHeading: String
+  menuItems: [ContentfulRegularMenuItem] @link(by: "id", from: "menuItems___NODE")
+  drinksSection: ContentfulDessertMenuDrinksSection @link(by: "id", from: "drinksSection___NODE")
+  food_menu_page_content: [ContentfulFoodMenuPageContent] @link(by: "id", from: "food menu page content___NODE") @proxy(from: "food menu page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulDessertMenuSys
+}
+
+type ContentfulFoodMenuPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  pageTitle: String
+  lunchAndDinner: ContentfulLunchDinnerMenu @link(by: "id", from: "lunchAndDinner___NODE")
+  vertImgUnderMenu: ContentfulAsset @link(by: "id", from: "vertImgUnderMenu___NODE")
+  horizontalImageUnderFoodMenu: ContentfulAsset @link(by: "id", from: "horizontalImageUnderFoodMenu___NODE")
+  imageAdjacentToDessertMenu: ContentfulAsset @link(by: "id", from: "imageAdjacentToDessertMenu___NODE")
+  desserts: [ContentfulDessertMenu] @link(by: "id", from: "desserts___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulFoodMenuPageContentSys
+}
+
+type ContentfulFoodMenuPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulFoodMenuPageContentSysContentType
+}
+
+type ContentfulFoodMenuPageContentSysContentType @derivedTypes {
+  sys: ContentfulFoodMenuPageContentSysContentTypeSys
+}
+
+type ContentfulFoodMenuPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulDessertMenuSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulDessertMenuSysContentType
+}
+
+type ContentfulDessertMenuSysContentType @derivedTypes {
+  sys: ContentfulDessertMenuSysContentTypeSys
+}
+
+type ContentfulDessertMenuSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulDessertMenuDrinksSectionSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulDessertMenuDrinksSectionSysContentType
+}
+
+type ContentfulDessertMenuDrinksSectionSysContentType @derivedTypes {
+  sys: ContentfulDessertMenuDrinksSectionSysContentTypeSys
+}
+
+type ContentfulDessertMenuDrinksSectionSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulLandingPageEventsModule implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  events: [ContentfulWhatsOnPageContent] @link(by: "id", from: "events___NODE")
+  landing_page_content: [ContentfulLandingPageContent] @link(by: "id", from: "landing page content___NODE") @proxy(from: "landing page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulLandingPageEventsModuleSys
+}
+
+type ContentfulLandingPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  heroImageTitle: String
+  heroTopCenterText: String
+  heroAddress: String
+  quoteHeading: String
+  quoteText: ContentfulLandingPageContentQuoteText
+  wineMenuLabelText: String
+  foodMenuLabelText: String
+  privateDiningHeading: String
+  privateDiningIntro: String
+  footerFirstColumnHeading: String
+  facebookLink: String
+  instagramLink: String
+  openingTimesHeadingLunch: String
+  openingTimesLunchDaysOpen: String
+  openingTimesLunchOpenTimes: String
+  openingTimesHeadingDinner: String
+  openingTimesDinnerDaysOpen: String
+  openingTimesDinnerOpenTimes: String
+  addressLineOne: String
+  addressLineTwo: String
+  emailFooterInfo: String
+  phoneNumberFooter: String
+  bottomLeftHeading: String
+  bottomLeftLabelUrl: String
+  heroImage: ContentfulAsset @link(by: "id", from: "heroImage___NODE")
+  gallery: [ContentfulAsset] @link(by: "id", from: "gallery___NODE")
+  whatsOnEvents: ContentfulLandingPageEventsModule @link(by: "id", from: "whatsOnEvents___NODE")
+  privateDiningImage: ContentfulAsset @link(by: "id", from: "privateDiningImage___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulLandingPageContentSys
+}
+
+type ContentfulLandingPageContentQuoteText {
+  raw: String
+}
+
+type ContentfulLandingPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulLandingPageContentSysContentType
+}
+
+type ContentfulLandingPageContentSysContentType @derivedTypes {
+  sys: ContentfulLandingPageContentSysContentTypeSys
+}
+
+type ContentfulLandingPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulLandingPageEventsModuleSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulLandingPageEventsModuleSysContentType
+}
+
+type ContentfulLandingPageEventsModuleSysContentType @derivedTypes {
+  sys: ContentfulLandingPageEventsModuleSysContentTypeSys
+}
+
+type ContentfulLandingPageEventsModuleSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulWhatsOnPageEventsPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  pageHeading: String
+  events: [ContentfulWhatsOnPageContent] @link(by: "id", from: "events___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulWhatsOnPageEventsPageContentSys
+}
+
+type ContentfulWhatsOnPageEventsPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulWhatsOnPageEventsPageContentSysContentType
+}
+
+type ContentfulWhatsOnPageEventsPageContentSysContentType @derivedTypes {
+  sys: ContentfulWhatsOnPageEventsPageContentSysContentTypeSys
+}
+
+type ContentfulWhatsOnPageEventsPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulWhatsOnPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulWhatsOnPageContentSysContentType
+}
+
+type ContentfulWhatsOnPageContentSysContentType @derivedTypes {
+  sys: ContentfulWhatsOnPageContentSysContentTypeSys
+}
+
+type ContentfulWhatsOnPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+union ContentfulEventMenuContentfulLunchDinnerMenuUnion = ContentfulEventMenu | ContentfulLunchDinnerMenu
+
+type ContentfulEventMenuItemWPriceAndOptionalWinePairingSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulEventMenuItemWPriceAndOptionalWinePairingSysContentType
+}
+
+type ContentfulEventMenuItemWPriceAndOptionalWinePairingSysContentType @derivedTypes {
+  sys: ContentfulEventMenuItemWPriceAndOptionalWinePairingSysContentTypeSys
+}
+
+type ContentfulEventMenuItemWPriceAndOptionalWinePairingSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulMenuDuJourMenuItem implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  day: String
+  menuItem: String
+  showLearnMore: Boolean
+  landing_page___menu_du_jour_menu_section: [ContentfulLandingPageMenuDuJourMenuSection] @link(by: "id", from: "landing page - menu du jour menu section___NODE") @proxy(from: "landing page - menu du jour menu section___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulMenuDuJourMenuItemSys
+  winePairing: String
+  price: String
+  menu_du_jour_menu_section: [ContentfulMenuDuJourMenuSection] @link(by: "id", from: "menu du jour menu section___NODE") @proxy(from: "menu du jour menu section___NODE")
+}
+
+type ContentfulLandingPageMenuDuJourMenuSection implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  sectionHeading: String
+  circularMenuText: String
+  menuDuJourMenuItems: [ContentfulMenuDuJourMenuItem] @link(by: "id", from: "menuDuJourMenuItems___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulLandingPageMenuDuJourMenuSectionSys
+}
+
+type ContentfulLandingPageMenuDuJourMenuSectionSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulLandingPageMenuDuJourMenuSectionSysContentType
+}
+
+type ContentfulLandingPageMenuDuJourMenuSectionSysContentType @derivedTypes {
+  sys: ContentfulLandingPageMenuDuJourMenuSectionSysContentTypeSys
+}
+
+type ContentfulLandingPageMenuDuJourMenuSectionSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulMenuDuJourMenuItemSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulMenuDuJourMenuItemSysContentType
+}
+
+type ContentfulMenuDuJourMenuItemSysContentType @derivedTypes {
+  sys: ContentfulMenuDuJourMenuItemSysContentTypeSys
+}
+
+type ContentfulMenuDuJourMenuItemSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulMenuDuJourMenuSection implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  menuTitleTop: String
+  seasonalMenuTitle: String
+  bottomTitle: String
+  scrollToMenuItem: Boolean
+  menuItems: [ContentfulMenuDuJourMenuItem] @link(by: "id", from: "menuItems___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulMenuDuJourMenuSectionSys
+}
+
+type ContentfulMenuDuJourMenuSectionSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulMenuDuJourMenuSectionSysContentType
+}
+
+type ContentfulMenuDuJourMenuSectionSysContentType @derivedTypes {
+  sys: ContentfulMenuDuJourMenuSectionSysContentTypeSys
+}
+
+type ContentfulMenuDuJourMenuSectionSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulDrinksMenuPageContent implements ContentfulReference & ContentfulEntry & Node @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+}
+
+type ContentfulGiftVouchersPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  intro: String
+  venueGiftVoucherHeading: String
+  scottPicketGroupGiftVoucherHeading: String
+  smithStBistroGiftVoucherLink: String
+  spgGvLink: String
+  address: String
+  phoneNumber: String
+  venueGiftVoucherImage: ContentfulAsset @link(by: "id", from: "venueGiftVoucherImage___NODE")
+  spgGiftVoucherImageOnlyImageOnMob: ContentfulAsset @link(by: "id", from: "spgGiftVoucherImageOnlyImageOnMob___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulGiftVouchersPageContentSys
+}
+
+type ContentfulGiftVouchersPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulGiftVouchersPageContentSysContentType
+}
+
+type ContentfulGiftVouchersPageContentSysContentType @derivedTypes {
+  sys: ContentfulGiftVouchersPageContentSysContentTypeSys
+}
+
+type ContentfulGiftVouchersPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulContactUsPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  address: String
+  addressLineTwo: String
+  findUsOnGoogleMapsHeading: String
+  findUsOnGoogleMapsUrl: String
+  phoneNumber: String
+  emailAddress: String
+  tcsLinkHeading: String
+  openingTimesLunchHeading: String
+  openingTimesLunchDaysOpen: String
+  openingTimesLunchOpenTimes: String
+  openingTimesHeadingDinner: String
+  openingTimesDinnerDaysOpen: String
+  openingTimesDinnerOpenTimes: String
+  daysClosed: String
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulContactUsPageContentSys
+}
+
+type ContentfulContactUsPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulContactUsPageContentSysContentType
+}
+
+type ContentfulContactUsPageContentSysContentType @derivedTypes {
+  sys: ContentfulContactUsPageContentSysContentTypeSys
+}
+
+type ContentfulContactUsPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulTermsAndConditionsPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  pageHeading: String
+  content: ContentfulTermsAndConditionsPageContentContent
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulTermsAndConditionsPageContentSys
+}
+
+type ContentfulTermsAndConditionsPageContentContent {
+  raw: String
+}
+
+type ContentfulTermsAndConditionsPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulTermsAndConditionsPageContentSysContentType
+}
+
+type ContentfulTermsAndConditionsPageContentSysContentType @derivedTypes {
+  sys: ContentfulTermsAndConditionsPageContentSysContentTypeSys
+}
+
+type ContentfulTermsAndConditionsPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulReservationsPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  pageTitle: String
+  introduction: ContentfulReservationsPageContentIntroduction
+  reserverationsLinks: [ContentfulReservationsLinks] @link(by: "id", from: "reserverationsLinks___NODE")
+  image: ContentfulAsset @link(by: "id", from: "image___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulReservationsPageContentSys
+}
+
+type ContentfulReservationsPageContentIntroduction {
+  raw: String
+}
+
+type ContentfulReservationsLinks implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  label: String
+  url: String
+  reservations_page_content: [ContentfulReservationsPageContent] @link(by: "id", from: "reservations page content___NODE") @proxy(from: "reservations page content___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulReservationsLinksSys
+}
+
+type ContentfulReservationsLinksSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulReservationsLinksSysContentType
+}
+
+type ContentfulReservationsLinksSysContentType @derivedTypes {
+  sys: ContentfulReservationsLinksSysContentTypeSys
+}
+
+type ContentfulReservationsLinksSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulReservationsPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulReservationsPageContentSysContentType
+}
+
+type ContentfulReservationsPageContentSysContentType @derivedTypes {
+  sys: ContentfulReservationsPageContentSysContentTypeSys
+}
+
+type ContentfulReservationsPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulPrivateDiningPageContent implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  pageHeadnig: String
+  introduction: String
+  description: ContentfulPrivateDiningPageContentDescription
+  eventsPackageLinkText: String
+  makeAndEnquiryHeading: String
+  gallery: [ContentfulAsset] @link(by: "id", from: "gallery___NODE")
+  eventsPackagePdf: ContentfulAsset @link(by: "id", from: "eventsPackagePdf___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulPrivateDiningPageContentSys
+}
+
+type ContentfulPrivateDiningPageContentDescription {
+  raw: String
+}
+
+type ContentfulPrivateDiningPageContentSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulPrivateDiningPageContentSysContentType
+}
+
+type ContentfulPrivateDiningPageContentSysContentType @derivedTypes {
+  sys: ContentfulPrivateDiningPageContentSysContentTypeSys
+}
+
+type ContentfulPrivateDiningPageContentSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulZzzIgnoreDevtestingarea implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  title: String
+  posts: [ContentfulTestBlogPost] @link(by: "id", from: "posts___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulZzzIgnoreDevtestingareaSys
+}
+
+type ContentfulTestBlogPost implements ContentfulReference & ContentfulEntry & Node @derivedTypes @dontInfer {
+  contentful_id: String!
+  node_locale: String!
+  blogTitle: String
+  zzzignoredevtestingarea: [ContentfulZzzIgnoreDevtestingarea] @link(by: "id", from: "zzzignoredevtestingarea___NODE")
+  spaceId: String
+  createdAt: Date @dateformat
+  updatedAt: Date @dateformat
+  sys: ContentfulTestBlogPostSys
+}
+
+type ContentfulTestBlogPostSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulTestBlogPostSysContentType
+}
+
+type ContentfulTestBlogPostSysContentType @derivedTypes {
+  sys: ContentfulTestBlogPostSysContentTypeSys
+}
+
+type ContentfulTestBlogPostSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulZzzIgnoreDevtestingareaSys @derivedTypes {
+  type: String
+  revision: Int
+  contentType: ContentfulZzzIgnoreDevtestingareaSysContentType
+}
+
+type ContentfulZzzIgnoreDevtestingareaSysContentType @derivedTypes {
+  sys: ContentfulZzzIgnoreDevtestingareaSysContentTypeSys
+}
+
+type ContentfulZzzIgnoreDevtestingareaSysContentTypeSys {
+  type: String
+  linkType: String
+  id: String
+}
+
+type ContentfulContentType implements Node @derivedTypes @dontInfer {
+  name: String
+  displayField: String
+  description: String
+  sys: ContentfulContentTypeSys
+}
+
+type ContentfulContentTypeSys {
+  type: String
+}

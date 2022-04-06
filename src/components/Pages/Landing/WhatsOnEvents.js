@@ -7,6 +7,7 @@ import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import DualElements from "./WhatsOnSections/DualElements"
 import MultiElements from "./WhatsOnSections/MultiElements"
+import { useTestEventsData } from "./Queries/WhatsOnQuery"
 const WhatsOnEvents = ({ whatsOnEvents }) => {
   const ref = useRef(null)
   const events = whatsOnEvents.events
@@ -31,6 +32,8 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
       }
     )
   }, [])
+
+
 
   return (
     <SectionContainer

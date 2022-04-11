@@ -82,8 +82,8 @@ const EventTemplate = ({ pageContext }) => {
           eventData.eventMenu.__typename === "ContentfulLunchDinnerMenu" ? (
             <LunchAndDinnerMenu eventData={eventData} />
           ) : eventData.eventMenu !== null &&
-            eventData.eventMenu.__typename === "ContentfulEventMenu" ? (
-            <EventMenu eventData={eventData} />
+            eventData.eventMenu.__typename === "ContentfulEventMenu" ? (<>
+            <EventMenu eventData={eventData} /> "event menu"</>
           ) : null}
         </SectionContainer>
       </PageContainer>

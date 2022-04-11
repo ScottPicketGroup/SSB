@@ -20,7 +20,7 @@ import LunchAndDinnerMenu from "./Menus/LunchAndDinnerMenu"
 
 const EventTemplate = ({ pageContext }) => {
   const eventData = pageContext.eventData
-  console.log(eventData, "hi")
+  console.log(pageContext, "hi")
 
   return (
     <Layout>
@@ -77,7 +77,6 @@ const EventTemplate = ({ pageContext }) => {
               </BC1>
             </ExtWhiteDecorationLink>
           </DescriptionWrapper>
-"event menu goes here"
           {eventData.eventMenu !== null &&
           eventData.eventMenu.__typename === "ContentfulLunchDinnerMenu" ? (
             <LunchAndDinnerMenu eventData={eventData} />

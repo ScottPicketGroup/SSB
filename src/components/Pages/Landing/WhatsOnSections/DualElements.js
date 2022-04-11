@@ -18,11 +18,12 @@ import {
 } from "../../../StyledComponents/typography.css"
 
 const DualElements = ({events}) => {
+  console.log(events)
   return (
     <div>
          <WhatsOnEventsMultiWrapper>
-      {events.length > 1 && events.map((item, i) =>
-        i > 0 && i < 3 ? (
+      { events.map((item, i) =>
+        (
           <WhatsOnEventsElementWrapper key={i} first>
                 
           <PrivateDiningTextWrapper>
@@ -47,7 +48,7 @@ const DualElements = ({events}) => {
             alt="private-dining"
           />
         </WhatsOnEventsElementWrapper>
-        ) : null
+        ) 
       )}
       </WhatsOnEventsMultiWrapper>
     </div>

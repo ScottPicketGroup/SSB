@@ -77,13 +77,13 @@ const EventTemplate = ({ pageContext }) => {
               </BC1>
             </ExtWhiteDecorationLink>
           </DescriptionWrapper>
-
+"event menu goes here"
           {eventData.eventMenu !== null &&
           eventData.eventMenu.__typename === "ContentfulLunchDinnerMenu" ? (
             <LunchAndDinnerMenu eventData={eventData} />
           ) : eventData.eventMenu !== null &&
-            eventData.eventMenu.__typename === "ContentfulEventMenu" ? (<>
-            <EventMenu eventData={eventData} /> "event menu"</>
+            eventData.eventMenu.__typename === "ContentfulEventMenu" ? (
+            <EventMenu eventData={eventData} /> 
           ) : null}
         </SectionContainer>
       </PageContainer>

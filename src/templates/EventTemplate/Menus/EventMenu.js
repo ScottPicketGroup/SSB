@@ -26,7 +26,7 @@ const EventMenu = ({eventData}) => {
                     <Heading2 color="black">
                       {eventData.eventMenu
                         ? eventData.eventMenu.menuName
-                        : "Menu"}hi
+                        : "Menu"}
 
                         {}
                     </Heading2>

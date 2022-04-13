@@ -43,16 +43,20 @@ export const EventTextWrapper = styled.div`
 `
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  // -webkit-line-clamp: ${props => (props.first ? 4 : 3)};
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  text-overflow: ellipsis;
+  height: ${props => (props.privateDining ? '130px' : '65px')};
+
+
   margin-bottom: 1.75rem;
   p {
     margin-bottom: 0;
   }
   @media (max-width: 451px) {
     margin-bottom: 1rem;
+    height: 30px;
   }
 `
 export const WhatsOnEventsContainer = styled.div`

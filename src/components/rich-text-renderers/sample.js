@@ -19,7 +19,9 @@ const Renderer = ({ node, landing }) => {
         <BC1 marginBottom="sm" style={{color: `red !important`}}>{children}</BC1>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <BC1 marginBottom="sm">{children}</BC1>
+        <BC1 marginBottom="sm">
+          
+          {children[0].toString().slice(0,100)}…</BC1>
       ),
     },
   }

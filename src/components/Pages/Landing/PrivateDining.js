@@ -61,6 +61,8 @@ const PrivateDining = ({
     )
   }, [])
 
+console.log(privateDiningIntro)
+
   return (
     <SectionContainer marginBottom="xl">
       <PrivateDiningWrapper first="true" dining="true" ref={ref}>

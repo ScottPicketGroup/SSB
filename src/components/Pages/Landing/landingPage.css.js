@@ -103,17 +103,17 @@ export const WhatsOnEventsElementWrapper = styled.div`
   width: 50%;
   margin-bottom: ${props => (props.key === 0 ? "6rem" : "9rem")};
   min-height: 640px;
-justify-content: space-between;
+  justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
   }
 `
 export const WhatsOnEventsMultiWrapper = styled.div`
-display: flex;
-width: 100%;
-flex-direction: row;
-gap: 8vw;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 8vw;
 `
 export const PrivateDiningWrapper = styled.div`
   display: flex;
@@ -195,12 +195,12 @@ export const WhatsOnEventsWrapper = styled.div`
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
   // -webkit-line-clamp: ${props => (props.first ? 4 : 3)};
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: ${props => (props.privateDining ? '130px' : '75px')};
-
-
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    height: 70px;
+  }
   margin-bottom: 1.75rem;
   p {
     margin-bottom: 0;

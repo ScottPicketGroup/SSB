@@ -14,9 +14,6 @@ const Renderer = ({ node }) => {
       [BLOCKS.HEADING_1]: (node, children) => <Heading1 color="black">{children}</Heading1>,
       [BLOCKS.HEADING_2]: (node, children) => <Heading2 color="black">{children}</Heading2>,
       [BLOCKS.HEADING_3]: (node, children) => <Heading3 color="black">{children}</Heading3>,
-      [BLOCKS.HYPERLINK]: (node, children) => (
-        <BC1 marginBottom="sm" style={{color: `red !important`}}>{children}</BC1>
-      ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <BC1 marginBottom="sm" color="black">{children}</BC1>
       ),

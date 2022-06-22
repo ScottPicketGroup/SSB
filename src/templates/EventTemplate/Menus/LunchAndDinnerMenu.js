@@ -24,18 +24,7 @@ const LunchAndDinnerMenu = ({ eventData }) => {
         <Heading2 style={{ fontSize: "1.75rem" }}>{topTitleIeFood}</Heading2>
       </FoodTitleWrapper>
       {menuItems.map((item, index) =>
-        index === 0 && item.menuItems ? (
-          <FoodItemWrapper key={index}>
-            <FoodSectionItemWrapper>
-              <BC2 style={{ color: "#800103" }} bold>
-                {item.menuItems[0].menuItem}
-              </BC2>
-              <BC2 style={{ color: "#800103" }} bold>
-                {item.menuItems[0].menuItemPrice}PP
-              </BC2>
-            </FoodSectionItemWrapper>
-          </FoodItemWrapper>
-        ) : (
+      (
           <FoodItemWrapper key={index}>
             <BC2 marginBottom="sm" bold>
               {item.sectionHeadingIeEntrees}

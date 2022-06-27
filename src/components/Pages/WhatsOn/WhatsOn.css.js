@@ -44,10 +44,10 @@ export const EventTextWrapper = styled.div`
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
   // -webkit-line-clamp: ${props => (props.first ? 4 : 3)};
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  height: ${props => (props.privateDining ? '130px' : '65px')};
+  height: ${props => (props.privateDining ? '130px' : '')};
 
 
   margin-bottom: 1.75rem;

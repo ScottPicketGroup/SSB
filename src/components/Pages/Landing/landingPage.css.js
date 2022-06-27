@@ -121,7 +121,7 @@ margin-right: ${props => (props.key === 0 ? "10vw" : "0")};
 @media not all and (min-resolution:.001dpcm){ 
 @supports (-webkit-appearance:none) and (not (stroke-color:transparent)) {
 selector { 
-margin-right: ${props => (props.key === 0 ? "10vw" : "0")};
+margin-right: 10vw;
 }
 }}
 
@@ -129,7 +129,7 @@ margin-right: ${props => (props.key === 0 ? "10vw" : "0")};
 @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
 @media {
 selector { 
-margin-right: ${props => (props.key === 0 ? "10vw" : "0")};
+margin-right: 10vw;
 }
 }}
 `

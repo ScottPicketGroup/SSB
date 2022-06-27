@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import Renderer from "../../../rich-text-renderers/WhatsOnLandingRenderer"
 import { getImage } from "gatsby-plugin-image"
 import {
@@ -17,39 +17,36 @@ import {
   RedDecorationLink,
 } from "../../../StyledComponents/typography.css"
 
-const DualElements = ({events}) => {
+const DualElements = ({ events }) => {
   console.log(events)
   return (
     <div>
-         <WhatsOnEventsMultiWrapper>
-      { events.map((item, i) =>
-        (
+      <WhatsOnEventsMultiWrapper>
+        {events.map((item, i) => (
           <WhatsOnEventsElementWrapper key={i} first>
-                
-          <PrivateDiningTextWrapper>
-            <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
-            {item.eventDescription && (
-              <RenderTextOverHiddenWrapper>
-                <Renderer node={item.eventDescription} />…
-              </RenderTextOverHiddenWrapper>
-            )}
-            <RedDecorationLink
-              to={`events/${item.eventTitle
-                .toLowerCase()
-                .replaceAll(" ", "-")}`}
-            >
-              <BC1 marginBottom="lg">Learn more…</BC1>
-            </RedDecorationLink>
-          </PrivateDiningTextWrapper>
-          <PrivateDiningImage
-            first="true"
-            className="first-paragraph"
-            image={getImage(item.galleryImages[0])}
-            alt="private-dining"
-          />
-        </WhatsOnEventsElementWrapper>
-        ) 
-      )}
+            <PrivateDiningImage
+              first="true"
+              className="first-paragraph"
+              image={getImage(item.galleryImages[0])}
+              alt="private-dining"
+            />
+            <PrivateDiningTextWrapper>
+              <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
+              {item.eventDescription && (
+                <RenderTextOverHiddenWrapper>
+                  <Renderer node={item.eventDescription} />…
+                </RenderTextOverHiddenWrapper>
+              )}
+              <RedDecorationLink
+                to={`events/${item.eventTitle
+                  .toLowerCase()
+                  .replaceAll(" ", "-")}`}
+              >
+                <BC1 marginBottom="lg">Learn more…</BC1>
+              </RedDecorationLink>
+            </PrivateDiningTextWrapper>
+          </WhatsOnEventsElementWrapper>
+        ))}
       </WhatsOnEventsMultiWrapper>
     </div>
   )

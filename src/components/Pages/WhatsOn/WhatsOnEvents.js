@@ -16,7 +16,7 @@ import { SectionContainer } from "../../StyledComponents/containers.css"
 import Renderer from "../../rich-text-renderers/sample"
 
 const WhatsOnEvents = ({ events }) => {
-  console.log(events)
+  // console.log(events)
   return (
     <SectionContainer width="62vw" column>
       <WhatsOnEventsContainer>

@@ -20,8 +20,10 @@ const Renderer = ({ node, landing }) => {
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
         <BC1 marginBottom="sm">
-          
-          {children[0].toString().slice(0,100)}…</BC1>
+          {console.log(children.length, node )
+          }
+          {children[0].toString().slice(0,100)}
+          …</BC1>
       ),
     },
   }

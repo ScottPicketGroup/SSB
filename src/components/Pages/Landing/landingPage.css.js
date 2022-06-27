@@ -101,13 +101,37 @@ export const WhatsOnEventsElementWrapper = styled.div`
   flex-direction: column;
   justify-content: ${props => props.key === 0 && "space-between"};
   width: 50%;
-  margin-bottom: ${props => (props.key === 0 ? "6rem" : "9rem")};
+  margin-bott${props => (props.key === 0 ? "6rem" : "9rem")};
   min-height: 640px;
   justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
   }
+  /* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+selector { 
+margin-right: ${props => (props.key === 0 ? "10vw" : "0")}; 
+}
+}}
+/* Test website on real Safari 11+ */
+
+/* Safari 10.1 */
+@media not all and (min-resolution:.001dpcm){ 
+@supports (-webkit-appearance:none) and (not (stroke-color:transparent)) {
+selector { 
+margin-right: ${props => (props.key === 0 ? "10vw" : "0")};
+}
+}}
+
+/* Safari 6.1-10.0 (but not 10.1) */
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
+@media {
+selector { 
+margin-right: ${props => (props.key === 0 ? "10vw" : "0")};
+}
+}}
 `
 export const WhatsOnEventsMultiWrapper = styled.div`
   display: flex;

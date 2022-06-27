@@ -112,7 +112,7 @@ export const WhatsOnEventsElementWrapper = styled.div`
 @media not all and (min-resolution:.001dpcm)
 { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
 selector { 
-margin-right: ${props => (props.key === 0 ? "10vw" : "0")}; 
+margin-right: 10vw; 
 }
 }}
 /* Test website on real Safari 11+ */

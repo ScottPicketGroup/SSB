@@ -23,12 +23,12 @@ const Renderer = ({ node, landing }) => {
           {console.log(children.length, node )
           }
           {children[0].toString().slice(0,100)}
-          …</BC1>
+      </BC1>
       ),
     },
   }
 
-  return <>{renderRichText(node, options)}</>
+  return <>{renderRichText(node, options)}…</>
 }
 
 export default Renderer

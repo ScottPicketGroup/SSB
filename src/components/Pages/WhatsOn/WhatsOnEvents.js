@@ -13,7 +13,7 @@ import {
 } from "./WhatsOn.css"
 import { getImage } from "gatsby-plugin-image"
 import { SectionContainer } from "../../StyledComponents/containers.css"
-import Renderer from "../../rich-text-renderers/sample"
+import Renderer from "../../rich-text-renderers/WhatsOnPageRenderer"
 
 const WhatsOnEvents = ({ events }) => {
   // console.log(events)

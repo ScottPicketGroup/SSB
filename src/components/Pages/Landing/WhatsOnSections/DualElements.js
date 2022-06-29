@@ -23,7 +23,8 @@ const DualElements = ({ events }) => {
     <div>
       <WhatsOnEventsMultiWrapper>
         {events.map((item, i) => (
-          <WhatsOnEventsElementWrapper key={i} first>
+          <WhatsOnEventsElementWrapper key={i} i={i} first>
+              
             <PrivateDiningImage
               first="true"
               className="first-paragraph"

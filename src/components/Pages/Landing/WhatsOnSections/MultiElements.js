@@ -61,6 +61,7 @@ const MultiElements = ({ events }) => {
           events.map((item, i) =>
             i > 0 && i < 3 ? (
               <WhatsOnEventsElementWrapper key={i} first>
+              
                 <PrivateDiningImage
                   first="true"
                   className="first-paragraph"
@@ -68,7 +69,7 @@ const MultiElements = ({ events }) => {
                   alt="private-dining"
                 />
                 <PrivateDiningTextWrapper>
-                  <Heading2 marginBottom="md">{item.eventTitle}</Heading2>
+                  <Heading2 marginBottom="md">{item.eventTitle}  {i}</Heading2>
                   {item.eventDescription && (
                     <RenderTextOverHiddenWrapper>
                       <Renderer node={item.eventDescription} />…

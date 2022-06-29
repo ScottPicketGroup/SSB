@@ -101,10 +101,11 @@ export const WhatsOnEventsElementWrapper = styled.div`
   flex-direction: column;
   justify-content: ${props => props.key === 0 && "space-between"};
   width: 50%;
-  margin-bott${props => (props.key === 0 ? "6rem" : "9rem")};
+  margin-bottom: ${props => (props.i === 0 ? "9rem" : "9rem")};
   min-height: 640px;
   justify-content: space-between;
-  margin-right: 8rem; 
+
+  margin-right: ${props => (props.i === 0 ? "8rem" : 3)};  
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
@@ -138,6 +139,7 @@ export const WhatsOnEventsMultiWrapper = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
+  justify-content: space-between;
   // gap: 8vw;
 `
 export const PrivateDiningWrapper = styled.div`
@@ -211,7 +213,7 @@ export const PrivateDiningTextWrapper = styled.div`
 export const WhatsOnEventsWrapper = styled.div`
   display: flex;
   flex-direction: column;
- // gap: 8vw;
+ justify-content: space-between;
   justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;

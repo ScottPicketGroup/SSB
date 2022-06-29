@@ -104,6 +104,7 @@ export const WhatsOnEventsElementWrapper = styled.div`
   margin-bott${props => (props.key === 0 ? "6rem" : "9rem")};
   min-height: 640px;
   justify-content: space-between;
+  margin-right: 10vw; 
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;

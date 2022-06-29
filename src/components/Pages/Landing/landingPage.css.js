@@ -104,7 +104,7 @@ export const WhatsOnEventsElementWrapper = styled.div`
   margin-bott${props => (props.key === 0 ? "6rem" : "9rem")};
   min-height: 640px;
   justify-content: space-between;
-  margin-right: 10vw; 
+  margin-right: 8rem; 
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
@@ -138,7 +138,7 @@ export const WhatsOnEventsMultiWrapper = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
-  gap: 8vw;
+  // gap: 8vw;
 `
 export const PrivateDiningWrapper = styled.div`
   display: flex;
@@ -211,7 +211,7 @@ export const PrivateDiningTextWrapper = styled.div`
 export const WhatsOnEventsWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 8vw;
+ // gap: 8vw;
   justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;

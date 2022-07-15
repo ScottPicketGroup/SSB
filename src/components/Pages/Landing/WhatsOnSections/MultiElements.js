@@ -41,7 +41,7 @@ const MultiElements = ({ events }) => {
             )}
           </div>
         </PrivateDiningImageWrapepr>
-        <PrivateDiningTextWrapper first="true">
+        <PrivateDiningTextWrapper dining>
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
           <RenderTextOverHiddenWrapper first="true">
             <Renderer node={events[0].eventDescription} />…

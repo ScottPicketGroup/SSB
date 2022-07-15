@@ -21,6 +21,20 @@ const MultiElements = ({ events }) => {
   return (
     <div>
       <PrivateDiningWrapper first>
+      <PrivateDiningTextWrapper first>
+          <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
+          <RenderTextOverHiddenWrapper first="true">
+            <Renderer node={events[0].eventDescription} />…
+          </RenderTextOverHiddenWrapper>
+          <RedDecorationLink
+            marginBottom="lg"
+            to={`/events/${events[0].eventTitle
+              .toLowerCase()
+              .replaceAll(" ", "-")}`}
+          >
+            <BC1 marginBottom="lg">Learn more…</BC1>
+          </RedDecorationLink>
+        </PrivateDiningTextWrapper>
         <PrivateDiningImageWrapepr>
           <div className="first-paragraph">
             <PrivateDiningImage
@@ -41,20 +55,7 @@ const MultiElements = ({ events }) => {
             )}
           </div>
         </PrivateDiningImageWrapepr>
-        <PrivateDiningTextWrapper dining>
-          <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
-          <RenderTextOverHiddenWrapper first="true">
-            <Renderer node={events[0].eventDescription} />…
-          </RenderTextOverHiddenWrapper>
-          <RedDecorationLink
-            marginBottom="lg"
-            to={`/events/${events[0].eventTitle
-              .toLowerCase()
-              .replaceAll(" ", "-")}`}
-          >
-            <BC1 marginBottom="lg">Learn more…</BC1>
-          </RedDecorationLink>
-        </PrivateDiningTextWrapper>
+        
       </PrivateDiningWrapper>
       <WhatsOnEventsMultiWrapper>
         {events.length > 1 &&

@@ -12,7 +12,7 @@ const LogoSlider = () => {
   const [logosWidth, setLogosWidth] = useState(0)
   const [windowWidth, setWindowWith] = useState(0)
   const LogosContainerWidth = useGetElementSize(LogosContainer)
-  const windowContainerWidth = useWindowSize().width
+
   useEffect(() => {
 
    setLogosWidth(LogosContainerWidth)

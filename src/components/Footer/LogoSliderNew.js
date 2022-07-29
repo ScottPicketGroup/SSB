@@ -1,22 +1,13 @@
-import React, { useState, useEffect, useRef } from "react"
+import React, { useState, useEffect } from "react"
 import { Logos, Logo } from "./Footer.css"
+import { StaticImage } from "gatsby-plugin-image"
 import { Heading1 } from "../StyledComponents/typography.css"
-import useGetElementSize from '../hooks/ItemSizing'
-import useWindowSize from "../hooks/useWindowSize"
-import LogoSliderOld from "./LogoSliderOld"
 const contentful = require("contentful")
 
-const LogoSlider = () => {
-  const LogosContainer = useRef()
+const LogoSliderNew = () => {
   const [logos, setLogos] = useState([])
-  const [logosWidth, setLogosWidth] = useState(0)
-  const [windowWidth, setWindowWith] = useState(0)
-  const LogosContainerWidth = useGetElementSize(LogosContainer)
-  const windowContainerWidth = useWindowSize().width
+
   useEffect(() => {
-
-   setLogosWidth(LogosContainerWidth)
-
     const client = contentful.createClient({
       space: "s1sz6aratr2c",
       environment: "master", // defaults to 'master' if not set
@@ -37,28 +28,16 @@ const LogoSlider = () => {
           }
           logosUpdate.push(updateItem)
         })
-        
         setLogos(logosUpdate)
       })
       .catch(console.error)
-
-
   }, [])
-  console.log('w', LogosContainerWidth.elementWidth, logosWidth)
 
+  console.log('logos')
 
- 
-
- return (
-  <LogoSliderOld/>  
-  // <Logos ref={LogosContainer} logosWidth={logos.length * 140} >
-    //   { logos.map((logo, i) => (
-    //     <Logo key={i}>
-    //       <img  src={logo.image.imageSource} />
-    //     </Logo>
-    //   ))}
-    // </Logos>
-  )
+  return <Logos><Heading1>boob</Heading1><Heading1>boob</Heading1><Heading1>boob</Heading1><Heading1>boob</Heading1>
+    {logos.map((logo, i) => <img key ={i} src={logo.image.imageSource}/>)}
+  </Logos>
 }
 
-export default LogoSlider
+export default LogoSliderNew

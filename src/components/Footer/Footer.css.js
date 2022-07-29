@@ -84,24 +84,24 @@ export const FooterLinksColumn = styled.div`
 //   }
 // `
 
-const moveSlideshow = keyframes`
+const moveSlideshow  = (y) => keyframes`
 100% { 
-  transform: translateX(-50%);  
+  transform: translateX(${-y}px) 
 }
 `
 
 export const Logos = styled.div`
   background-color: rgba(140, 25, 27);
   display: flex;
-  width: 4000px;
+ width: ${props => `${props.logosWidth}px`};
   align-items: center;
   height: auto;
   padding: .8rem 0;
   border-top: white 1px solid;
   border-bottom: white 1px solid;
   transform: translate3d(0, 0, 0);
-  animation-name: ${moveSlideshow};
-  animation-duration: 15s;
+  animation-name: ${props => moveSlideshow(props.logosWidth / 2)};
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   svg,
@@ -115,18 +115,12 @@ export const Logos = styled.div`
 `
 export const Logo = styled.div`
   fill: #ffffff;
-  margin-right: 45.5px;
-  svg {
-    fill: #ffffff;
+  margin-right: 40px;
+  min-width: 100px;
+  img {
+    max-width: 100%;
   }
-#CL_LESHOPPE_NOCL_RGB_C, #CL_CHANCERY_RGB_C {
-transform: scale(1.3);
-margin-right: 1rem;
-margin-left: 1rem;
-.Audreys_WHT_Logo {
-  margin-bottom: -.5rem
-}
-}
+
 `
 
 export const SocialLinks = styled.div`

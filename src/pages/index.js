@@ -44,7 +44,7 @@ const IndexPage = ({ data }) => {
       <Gallery gallery={gallery} />
    
       
-      <WhatsOnEvents whatsOnEvents={whatsOnEvents} />
+      {/* <WhatsOnEvents whatsOnEvents={whatsOnEvents} /> */}
 
       {/* <Weekday data={weekdaySpecials} /> */}
       <PrivateDining
@@ -79,22 +79,7 @@ export const landingPageData = graphql`
           gallery {
             gatsbyImageData(placeholder: BLURRED)
           }
-          whatsOnEvents {
-            events {
-              id
-              eventDescription {
-                raw
-              }
-              eventTitle
-              galleryImages {
-                gatsbyImageData(
-  
-                 placeholder: BLURRED
-                          layout: FULL_WIDTH
-                          aspectRatio: 1.5)
-              }
-            }
-          }
+          
       
           privateDiningHeading
           privateDiningImage {
@@ -119,5 +104,21 @@ export const landingPageData = graphql`
 //     menuItem
 //     day
 //     showLearnMore
+//   }
+// }
+// whatsOnEvents {
+//   events {
+//     id
+//     eventDescription {
+//       raw
+//     }
+//     eventTitle
+//     galleryImages {
+//       gatsbyImageData(
+
+//        placeholder: BLURRED
+//                 layout: FULL_WIDTH
+//                 aspectRatio: 1.5)
+//     }
 //   }
 // }

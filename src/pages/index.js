@@ -81,11 +81,16 @@ export const landingPageData = graphql`
             gatsbyImageData(placeholder: BLURRED)
           }
           whatsOnEvents {
+            id
             events {
+              bookNowLinkText
+              bookNowLinkUrl
+              eventDateAndTimeInfo
+              eventDateAndTimeInfoLineTwo
               eventTitle
-            
             }
           }
+          
 
           privateDiningHeading
           privateDiningImage {

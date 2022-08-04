@@ -1,26 +1,26 @@
 const path = require("path")
 
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions;
-  // type definitions go here
-  const typeDefs = `
+// exports.createSchemaCustomization = ({ actions }) => {
+//   const { createTypes } = actions;
+//   // type definitions go here
+//   const typeDefs = `
    
-    type WhatsOnEvents implements Node {
-      events: [Events!]
-    }
-    type Events implements Node {
-      eventTitle: String
+//     type WhatsOnEvents implements Node {
+//       events: [Events!]
+//     }
+//     type Events implements Node {
+//       eventTitle: String
 
-    }
-    type Images implements Node {
-      gatsbyImageData: String!
-    }
+//     }
+//     type Images implements Node {
+//       gatsbyImageData: String!
+//     }
     
     
-  `;
-  createTypes(typeDefs);
-};
+//   `;
+//   createTypes(typeDefs);
+// };
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.

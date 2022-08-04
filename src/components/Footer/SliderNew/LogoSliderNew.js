@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Logos, Logo } from "./Footer.css"
+import { Logos, Logo } from "../Footer.css"
 import { StaticImage } from "gatsby-plugin-image"
-import { Heading1 } from "../StyledComponents/typography.css"
+import { Heading1 } from "../../StyledComponents/typography.css"
 const contentful = require("contentful")
 
 const LogoSliderNew = () => {

@@ -1,0 +1,147 @@
+import React, { useState, useEffect, useRef } from "react"
+import { Logos, Logo } from "./Footer.css"
+import { Heading1 } from "../StyledComponents/typography.css"
+import useGetElementSize from '../hooks/ItemSizing'
+import useWindowSize from "../hooks/useWindowSize"
+import LogoSliderOld from "./LogoSliderOld"
+const contentful = require("contentful")
+
+const LogoSlider = () => {
+  const LogosContainer = useRef()
+  const [logos, setLogos] = useState([])
+  const [logosWidth, setLogosWidth] = useState(0)
+  const [windowWidth, setWindowWith] = useState(0)
+  const LogosContainerWidth = useGetElementSize(LogosContainer)
+
+  useEffect(() => {
+
+   setLogosWidth(LogosContainerWidth)
+
+    const client = contentful.createClient({
+      space: "s1sz6aratr2c",
+      environment: "master", // defaults to 'master' if not set
+      accessToken: "HvLYzkcU-68nLJPCWug6U29j7ey4M4PyjCPHYIdi6Bo",
+    })
+
+    client
+      .getEntry("5zSRdrKU9rKu3HFcw4ONYS")
+      .then(entry => {
+        const logosUpdate = []
+        entry.fields.footerItems.map(item => {
+          const updateItem = {
+            url: item.fields.url,
+            image: {
+              imageTitle: item.fields.icon.fields.title,
+              imageSource: item.fields.icon.fields.file.url,
+            },
+          }
+          logosUpdate.push(updateItem)
+        })
+        
+        setLogos(logosUpdate)
+      })
+      .catch(console.error)
+
+
+  }, [])
+  console.log('w', LogosContainerWidth.elementWidth, logosWidth)
+
+
+ 
+
+ return (
+  <LogoSliderOld/>  
+  // <Logos ref={LogosContainer} logosWidth={logos.length * 140} >
+    //   { logos.map((logo, i) => (
+    //     <Logo key={i}>
+    //       <img  src={logo.image.imageSource} />
+    //     </Logo>
+    //   ))}
+    // </Logos>
+  )
+}
+
+export default LogoSlider
+
+const moveSlideshow = keyframes`
+100% { 
+  transform: translateX(-2025px);  
+}
+`
+
+export const Logos = styled.div`
+  display: flex;
+  width: 4800px;
+  align-items: center;
+  height: auto;
+  padding: 1.65rem 0;
+  border-top: white 1px solid;
+  border-bottom: white 1px solid;
+  transform: translate3d(0, 0, 0);
+  animation-name: ${moveSlideshow};
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  svg,
+  path,
+  g {
+    fill: #f9f9f4;
+  }
+
+  /* @media screen and (max-width: 450px) {
+    .slick-list {
+      width: 1500px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  } */
+  @media (max-width: 450px){
+    padding: 20px 0;
+  }
+`
+export const Logo = styled.div`
+  fill: #f9f9f4;
+  margin-right: 70px;
+  svg {
+    fill: #f9f9f4;
+  }
+`
+
+const moveSlideshow  = (y) => keyframes`
+100% { 
+  transform: translateX(-50%) ;
+}
+`
+
+export const Logos = styled.div`
+  background-color: rgba(140, 25, 27);
+  display: flex;
+ width: ${props => `${props.logosWidth}px`};
+  align-items: center;
+  height: auto;
+  padding: .8rem 0;
+  border-top: white 1px solid;
+  border-bottom: white 1px solid;
+  transform: translate3d(0, 0, 0);
+  animation-name: moveSlideshow;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  svg,
+  path,
+  g {
+    fill: #ffffff;
+  }
+  @media (max-width: 450px) {
+    padding: 20px 0;
+  }
+`
+export const Logo = styled.div`
+  fill: #ffffff;
+  margin-right: 40px;
+  min-width: 100px;
+  img {
+    max-width: 100%;
+  }
+
+`

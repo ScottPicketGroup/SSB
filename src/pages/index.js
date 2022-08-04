@@ -83,12 +83,7 @@ export const landingPageData = graphql`
           whatsOnEvents {
             events {
               eventTitle
-              eventDescription {
-                raw
-              }
-              galleryImages {
-                gatsbyImageData
-              }
+            
             }
           }
 

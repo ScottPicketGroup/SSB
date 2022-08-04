@@ -84,43 +84,48 @@ export const FooterLinksColumn = styled.div`
 //   }
 // `
 
-const moveSlideshow  = (y) => keyframes`
+const moveSlideshow = keyframes`
 100% { 
-  transform: translateX(${-y}px) 
+  transform: translateX(-2025px);  
 }
 `
 
 export const Logos = styled.div`
-  background-color: rgba(140, 25, 27);
   display: flex;
- width: ${props => `${props.logosWidth}px`};
+  width: 4800px;
   align-items: center;
   height: auto;
-  padding: .8rem 0;
+  padding: 1.65rem 0;
   border-top: white 1px solid;
   border-bottom: white 1px solid;
   transform: translate3d(0, 0, 0);
-  animation-name: ${props => moveSlideshow(props.logosWidth / 2)};
-  animation-duration: 20s;
+  animation-name: ${moveSlideshow};
+  animation-duration: 15s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   svg,
   path,
   g {
-    fill: #ffffff;
+    fill: #f9f9f4;
   }
-  @media (max-width: 450px) {
+
+  /* @media screen and (max-width: 450px) {
+    .slick-list {
+      width: 1500px;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  } */
+  @media (max-width: 450px){
     padding: 20px 0;
   }
 `
 export const Logo = styled.div`
-  fill: #ffffff;
-  margin-right: 40px;
-  min-width: 100px;
-  img {
-    max-width: 100%;
+  fill: #f9f9f4;
+  margin-right: 70px;
+  svg {
+    fill: #f9f9f4;
   }
-
 `
 
 export const SocialLinks = styled.div`

@@ -40,11 +40,13 @@ const WhatsOnEvents = ({ whatsOnEvents }) => {
       marginBottom="lg"
     >
       <WhatsOnEventsWrapper>
-        {/* {events.length === 2 ? (
+        {events && events.length === 2 ? (
           <DualElements events={events} />
-        ) : (
+        ) : events && events.length === 0 ?(
           <MultiElements events={events} />
-        )} */}
+        ) : null
+    
+    }
       </WhatsOnEventsWrapper>
     </SectionContainer>
   )

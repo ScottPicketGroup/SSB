@@ -76,7 +76,7 @@ const SliderExtended = styled.div`
   align-items: center;
   background: #8C1D1C;
   border-bottom: 1px solid white;
-  div.sc-dkPtRN:nth-child(2){
+  div.sc-dkPtRN{
     display: flex;
     align-items: center;
   }

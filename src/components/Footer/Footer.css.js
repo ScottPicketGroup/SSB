@@ -40,49 +40,6 @@ export const FooterLinksColumn = styled.div`
   }
 `
 
-// export const FooterLink = styled(Link)`
-//   color: white;
-//   margin-bottom: ${props => {
-//     switch (props.marginBottom) {
-//       case "sm":
-//         return ".75rem"
-//       case "md":
-//         return "1.25rem"
-//       case "lg":
-//         return "3.75rem"
-//       case "xl":
-//         return "8rem"
-//       case "xxl":
-//         return "9.63rem"
-//       default:
-//         return "0"
-//     }
-//   }};
-//   margin-top: ${props => {
-//     switch (props.marginTop) {
-//       case "sm":
-//         return "1rem"
-//       case "md":
-//         return "1.5rem"
-//       case "lg":
-//         return "3.75rem"
-//       case "xl":
-//         return "8rem"
-//       case "xxl":
-//         return "100%"
-//       default:
-//         return "0"
-//     }
-//   }};
-//   :hover {
-//     font-family: bold;
-//   }
-//   @media (max-width: 450px) {
-//     font-size: 1rem;
-//     margin-bottom: 2.35rem;
-//     line-height: 1.15;
-//   }
-// `
 
 const moveSlideshow = keyframes`
 100% { 
@@ -92,17 +49,13 @@ const moveSlideshow = keyframes`
 
 export const Logos = styled.div`
   display: flex;
-  width: 4800px;
+ 
   align-items: center;
   height: auto;
   padding: 1.65rem 0;
   border-top: white 1px solid;
   border-bottom: white 1px solid;
-  transform: translate3d(0, 0, 0);
-  animation-name: ${moveSlideshow};
-  animation-duration: 15s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+
   svg,
   path,
   g {

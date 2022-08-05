@@ -43,7 +43,7 @@ const LogoSliderNew = () => {
 console.log(logos)
   return (
     <SliderExtended>
-      <Marquee velocity={90}>
+      <Marquee velocity={0}>
         {
         logos &&
           logos.map((logo, i) => (

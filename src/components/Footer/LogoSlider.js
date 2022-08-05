@@ -47,7 +47,7 @@ console.log(logos)
         {
         logos &&
           logos.map((logo, i) => (
-        <LogoLink>
+        <LogoLink href={logo.url} target="_blank">
        
             <Img
               key={i}
@@ -76,7 +76,7 @@ const SliderExtended = styled.div`
   align-items: center;
   background: #8C1D1C;
   border-bottom: 1px solid white;
-  .fkWtkb .sc-dkPtRN{
+  div.sc-dkPtRN:nth-child(2){
     display: flex;
     align-items: center;
   }

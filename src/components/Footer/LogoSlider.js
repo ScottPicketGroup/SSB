@@ -47,20 +47,28 @@ console.log(logos)
         {
         logos &&
           logos.map((logo, i) => (
-        
+        <LogoLink>
+       
             <Img
               key={i}
               src={logo.image.imageSource}
               aspectRatio={logo.image.aspectRatio}
             />
+             </LogoLink>
           ))}
+         
       </Marquee>
     </SliderExtended>
   )
 }
 
 export default LogoSliderNew
-
+export const LogoLink = styled.a`
+height: 7rem;
+display: flex;
+align-items: center;
+  
+`;
 const SliderExtended = styled.div`
   background: blue;
   height: 7rem;

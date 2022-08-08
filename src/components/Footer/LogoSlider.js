@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react"
 import Marquee from "react-marquee-slider"
 import styled, { keyframes } from "styled-components"
+import useWindowSize from "../hooks/useWindowSize"
 
 const contentful = require("contentful")
 
 const LogoSliderNew = () => {
   const [logos, setLogos] = useState([])
-
+  const [velocity, setVelocity] = useState(0)
+  
+  console.log('useWindowSize', useWindowSize())
+  
+  const windowWidth = useWindowSize().width
   useEffect(() => {
+   
+   windowWidth > 480 ? setVelocity(90) : setVelocity(30) 
+   
     const client = contentful.createClient({
       space: "s1sz6aratr2c",
       environment: "master", 
@@ -38,12 +46,12 @@ const LogoSliderNew = () => {
         setLogos(logosUpdate)
       })
       .catch(console.error)
-  }, [])
+  }, [windowWidth])
 
-console.log(logos)
+
   return (
     <SliderExtended>
-      <Marquee velocity={80}>
+      <Marquee velocity={30}>
         {
         logos &&
           logos.map((logo, i) => (

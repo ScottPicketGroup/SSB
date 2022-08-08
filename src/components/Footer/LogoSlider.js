@@ -9,7 +9,7 @@ const LogoSliderNew = () => {
   const [logos, setLogos] = useState([])
   const [velocity, setVelocity] = useState(0)
   const isBrowser = typeof window !== "undefined"
-  console.log("useWindowSize", useWindowSize())
+  
 
   useEffect(() => {
     

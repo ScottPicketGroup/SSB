@@ -8,12 +8,14 @@ const contentful = require("contentful")
 const LogoSliderNew = () => {
   const [logos, setLogos] = useState([])
   const [velocity, setVelocity] = useState(0)
-
+  const isBrowser = typeof window !== "undefined"
   console.log("useWindowSize", useWindowSize())
 
   useEffect(() => {
-    window && window.innerWidth > 480 ? setVelocity(90) : setVelocity(30)
-
+    
+    if (isBrowser) {
+      window.innerWidth > 480 ? setVelocity(90) : setVelocity(30)
+    }
     const client = contentful.createClient({
       space: "s1sz6aratr2c",
       environment: "master",

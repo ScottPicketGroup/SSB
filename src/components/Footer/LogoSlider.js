@@ -48,14 +48,14 @@ const LogoSliderNew = () => {
       .catch(console.error)
   }, [windowWidth])
 
-
+console.log(velocity)
   return (
     <SliderExtended>
       <Marquee velocity={30}>
         {
         logos &&
           logos.map((logo, i) => (
-        <LogoLink href={logo.url} target="_blank">
+        <LogoLink href={logo.url} target="_blank" key={i}>
        
             <Img
               key={i}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Marquee from "react-marquee-slider"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import useWindowSize from "../hooks/useWindowSize"
 
 const contentful = require("contentful")
@@ -8,17 +8,15 @@ const contentful = require("contentful")
 const LogoSliderNew = () => {
   const [logos, setLogos] = useState([])
   const [velocity, setVelocity] = useState(0)
-  
-  console.log('useWindowSize', useWindowSize())
-  
-  const windowWidth = useWindowSize().width
+
+  console.log("useWindowSize", useWindowSize())
+
   useEffect(() => {
-   
-   windowWidth > 480 ? setVelocity(90) : setVelocity(30) 
-   
+    window && window.innerWidth > 480 ? setVelocity(90) : setVelocity(30)
+
     const client = contentful.createClient({
       space: "s1sz6aratr2c",
-      environment: "master", 
+      environment: "master",
       accessToken: "HvLYzkcU-68nLJPCWug6U29j7ey4M4PyjCPHYIdi6Bo",
     })
 
@@ -39,32 +37,28 @@ const LogoSliderNew = () => {
                 item.fields.icon.fields.file.details.image.width,
             },
           }
-
           logosUpdate.push(updateItem)
         })
 
         setLogos(logosUpdate)
       })
       .catch(console.error)
-  }, [windowWidth])
+  }, [])
 
-console.log(velocity)
+  console.log(velocity)
   return (
     <SliderExtended>
       <Marquee velocity={30}>
-        {
-        logos &&
+        {logos &&
           logos.map((logo, i) => (
-        <LogoLink href={logo.url} target="_blank" key={i}>
-       
-            <Img
-              key={i}
-              src={logo.image.imageSource}
-              aspectRatio={logo.image.aspectRatio}
-            />
-             </LogoLink>
+            <LogoLink href={logo.url} target="_blank" key={i}>
+              <Img
+                key={i}
+                src={logo.image.imageSource}
+                aspectRatio={logo.image.aspectRatio}
+              />
+            </LogoLink>
           ))}
-         
       </Marquee>
     </SliderExtended>
   )
@@ -72,19 +66,18 @@ console.log(velocity)
 
 export default LogoSliderNew
 export const LogoLink = styled.a`
-height: 7rem;
-display: flex;
-align-items: center;
-  
-`;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+`
 const SliderExtended = styled.div`
   background: blue;
   height: 7rem;
   display: flex;
   align-items: center;
-  background: #8C1D1C;
+  background: #8c1d1c;
   border-bottom: 1px solid white;
-  div.sc-dkPtRN{
+  div.sc-dkPtRN {
     display: flex;
     align-items: center;
   }
@@ -99,7 +92,6 @@ const Img = styled.img`
   margin-right: 3rem;
 `
 export const ImgContainer = styled.div`
-
   display: flex !important;
   align-items: center !important;
   marign-right: 2rem;

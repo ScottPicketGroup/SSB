@@ -333,7 +333,7 @@ option {
       outline: none;
       background: transparent;
 
-      height: 3rem;
+      
       font-size: 150%;
     }
     :valid {

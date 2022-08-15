@@ -1,26 +1,33 @@
 const path = require("path")
 
 
-// exports.createSchemaCustomization = ({ actions }) => {
-//   const { createTypes } = actions;
-//   // type definitions go here
-//   const typeDefs = `
-   
-//     type WhatsOnEvents implements Node {
-//       events: [Events!]
-//     }
-//     type Events implements Node {
-//       eventTitle: String
-
-//     }
-//     type Images implements Node {
-//       gatsbyImageData: String!
-//     }
-    
-    
-//   `;
-//   createTypes(typeDefs);
-// };
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  const typeDefs = [
+    // "type MarkdownRemark implements Node { frontmatter: Frontmatter }",
+    schema.buildObjectType({
+      name: "ContentfulTest",
+      fields: {
+        testArray: {
+          type: "ContentfulTest2",
+          resolve(source, args, context, info, testArray){
+            if(source.testArray !== 'undefined')
+            return context.nodeModel.findOne({
+              type: "ContentfulTest2",
+              query: {
+                filter: { spaceId: { eq: source.spaceId } }
+              }
+            
+            })
+          }
+        },
+       test: "String!"
+      },
+      interfaces: ["Node"],
+    })
+  ]
+  createTypes(typeDefs)
+}
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   // Query for markdown nodes to use in creating pages.

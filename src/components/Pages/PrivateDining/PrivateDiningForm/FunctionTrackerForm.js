@@ -103,7 +103,9 @@ export const FunctionTrackerFormContainer = styled.div`
     margin: 2rem 0px !important;
     border: 1px solid black !important;
 }
-
+.select2-selection__placeholder {
+    color: black !important;
+  }
 .form-control {
     border: none !important;
     -webkit-box-shadow: none;
@@ -279,12 +281,8 @@ Around the search field
   .select2-selection__arrow {
     background-color: inherit;
   }
-  .select2-selection__placeholder {
-    color: white !important;
-  }
-  .select2-search__field {
-    color: white !important;
-  }
+  
+  
   .select2-selection__arrow::before {
     content: "";
     display: none;

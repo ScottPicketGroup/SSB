@@ -223,7 +223,13 @@ export const FunctionTrackerFormContainer = styled.div`
     color: white !important;
     background-color: transparent !important;
   }
-
+  .select2-results {
+    color: #5F5F5F;
+    background-color: #FFFFFF;
+    font-family: PitchRegular !important;
+    border: black 1px solid;
+    -web: hidden;
+}
   
 `
 {/* 

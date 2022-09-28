@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Helmet } from "react-helmet"
 import { ActiveMenuProvider } from "./src/components/hooks/ActiveMenu"
 import GlobalStyles from "./src/components/StyledComponents/GlobalStyles.css"
 import { Typography } from "./src/components/StyledComponents/typography.css"

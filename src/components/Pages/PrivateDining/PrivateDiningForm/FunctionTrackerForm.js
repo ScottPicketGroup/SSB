@@ -86,6 +86,7 @@ export const FunctionTrackerFormContainer = styled.div`
     color: black !important;
     background-color: #FFFFFF;
     border: 1px solid black !important;
+    font-family: PitchRegular !important;
 }
 .select2-results__option {
     padding: 7px 12px;

@@ -90,6 +90,7 @@ export const FunctionTrackerFormContainer = styled.div`
     font-family: PitchRegular !important;
     font-size: 1rem;
     color: black !important;
+    margin-top: 2rem;
 }
 .picker {
     font-size: 16px;

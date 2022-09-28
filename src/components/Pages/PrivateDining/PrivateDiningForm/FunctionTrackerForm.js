@@ -9,6 +9,28 @@ const FunctionTrackerForm = () => {
 export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
+.select2-results {
+    color: black;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+}
+.select2-results__option {
+    padding: 7px 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: black;
+    font-family: PitchRegular;
+}
+.select2-container {
+    border: 0px;
+    width: 100% !important;
+    margin: 1rem 0px !important;
+    border: 1px solid black !important;
+}
+
 .form-control {
     border: none !important;
     -webkit-box-shadow: none;
@@ -18,6 +40,21 @@ export const FunctionTrackerFormContainer = styled.div`
     padding: 0 !important;
     font-family: PitchRegular !important;
     font-size: 1rem;
+    color: black !important;
+}
+.picker {
+    font-size: 16px;
+    text-align: left;
+    line-height: 1.2;
+    color: #000000;
+    position: absolute;
+    z-index: 10000000;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1rem;
+    font-family: PitchRegular;
     color: black !important;
 }
   background-color: inherit !important;

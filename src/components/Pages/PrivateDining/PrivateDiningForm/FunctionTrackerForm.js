@@ -13,7 +13,7 @@ export const FunctionTrackerFormContainer = styled.div`
   padding: 0.75rem 4.5rem;
     color: black;
     background-color: #FFFFFF;
-    border: 1px solid black;
+    border: 1px solid black !important;
     font-size: 1rem;
     font-family: 'PitchRegular';
     text-transform: uppercase;
@@ -97,7 +97,7 @@ export const FunctionTrackerFormContainer = styled.div`
 .select2-container {
     border: 0px;
     width: 100% !important;
-    margin: 1rem 0px !important;
+    margin: 2rem 0px !important;
     border: 1px solid black !important;
 }
 

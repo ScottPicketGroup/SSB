@@ -94,8 +94,8 @@ export const FunctionTrackerFormContainer = styled.div`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: black;
-    font-family: PitchRegular;
+    color: black !important;
+    font-family: PitchRegular !important;
 }
 .select2-container {
     border: 0px;

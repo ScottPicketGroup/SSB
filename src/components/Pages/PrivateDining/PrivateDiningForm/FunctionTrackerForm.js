@@ -36,7 +36,7 @@ export const FunctionTrackerFormContainer = styled.div`
 #enquireform > div:nth-child(11) > div > div > label {
   padding-left: 30px !important;
     padding-top: 5px;
-    margin-top: 10px;
+    margin-top: 1rem;
     position: absolute;
     font-size: 1rem;
     font-family: 'PitchRegular';
@@ -45,7 +45,9 @@ export const FunctionTrackerFormContainer = styled.div`
   color: pink !important;
   font-size: 10rem !important;
 }
+
 .checker span {
+  margin-top: 1rem;
     content: "";
     display: block;
     width: 30px;

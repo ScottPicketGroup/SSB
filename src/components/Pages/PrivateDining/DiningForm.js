@@ -7,7 +7,7 @@ import FunctionTrackerForm from "./PrivateDiningForm/FunctionTrackerForm"
 
 const DiningForm = ({ makeAndEnquiryHeading }) => {
   // console.log("form info:", window.ftenquireinit(907,'smithstreetbistrot'))
-  console.log('window', window)
+  // console.log('window', window)
   return (
     <FormWrapper>
       <TitleWrapper>

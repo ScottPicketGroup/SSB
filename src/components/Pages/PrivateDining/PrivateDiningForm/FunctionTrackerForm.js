@@ -32,6 +32,7 @@ export const FunctionTrackerFormContainer = styled.div`
     line-height: 30px;
     border: 1px solid black;
     transition: all 300ms ease-in-out 0s;
+    margin-top: 1rem;
 }
 #enquireform > div:nth-child(11) > div > div > label {
   padding-left: 30px !important;

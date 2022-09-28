@@ -6,7 +6,7 @@ import { FormWrapper, TitleWrapper } from "./PrivateDining.css"
 import FunctionTrackerForm from "./PrivateDiningForm/FunctionTrackerForm"
 
 const DiningForm = ({ makeAndEnquiryHeading }) => {
-  console.log("form info:", window.ftenquireinit(907,'smithstreetbistrot'))
+  // console.log("form info:", window.ftenquireinit(907,'smithstreetbistrot'))
   console.log('window', window)
   return (
     <FormWrapper>

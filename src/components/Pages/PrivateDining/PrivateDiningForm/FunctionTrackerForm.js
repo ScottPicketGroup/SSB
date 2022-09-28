@@ -8,9 +8,7 @@ const FunctionTrackerForm = () => {
 
 export default FunctionTrackerForm
 
-export const FunctionTrackerFormContainer = styled.div`height: 2rem;
-background: rgba(255,255,255,0);
-padding: 1.5rem 0;
+export const FunctionTrackerFormContainer = styled.div`
 #enquireform > div:nth-child(14) > input {
   padding: 0.75rem 4.5rem;
     color: black;

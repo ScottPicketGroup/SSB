@@ -9,6 +9,25 @@ const FunctionTrackerForm = () => {
 export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
+.checker span {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    transition: all 300ms ease-in-out 0s;
+}
+.checker input {
+
+    padding-left: 30px;
+    padding-top: 5px;
+    margin-top: 10p;
+    position: absolute;
+    font-size: 1rem;
+    font-family: 'PitchRegular';
+}
+
 .checker span:after {
     content: "";
     font-family: 'icomoon';

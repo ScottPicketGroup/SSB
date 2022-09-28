@@ -104,6 +104,7 @@ export const FunctionTrackerFormContainer = styled.div`
     border: 1px solid black !important;
 }
 .select2-selection__placeholder {
+    font-family: PitchRegular !important;
     color: black !important;
   }
 .form-control {
@@ -118,6 +119,7 @@ export const FunctionTrackerFormContainer = styled.div`
     color: black !important;
     margin-top: 2rem;
 }
+
 .picker {
     font-size: 16px;
     text-align: left;

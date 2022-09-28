@@ -9,6 +9,17 @@ const FunctionTrackerForm = () => {
 export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
+.form-control {
+    border: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: 1px solid black !important;
+    border-radius: 0;
+    padding: 0 !important;
+    font-family: PitchRegular !important;
+    font-size: 1rem;
+    color: black !important;
+}
   background-color: inherit !important;
   .ftpage-container {
     background-color: inherit !important;

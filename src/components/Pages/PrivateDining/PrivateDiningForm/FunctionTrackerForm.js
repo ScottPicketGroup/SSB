@@ -9,6 +9,21 @@ const FunctionTrackerForm = () => {
 export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
+#enquireform > div:nth-child(14) > input {
+  padding: 0.75rem 4.5rem;
+    color: black;
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    font-size: 1rem;
+    font-family: 'PitchRegular';
+    text-transform: uppercase;
+    border-radius: 0;
+    transition: all .3 ease;
+    :hover {
+      background-color: black;
+      color: white;
+    }
+}
 #uniform-subcribemailinglistfield > span {
   content: "";
     display: block;

@@ -8,7 +8,9 @@ const FunctionTrackerForm = () => {
 
 export default FunctionTrackerForm
 
-export const FunctionTrackerFormContainer = styled.div`
+export const FunctionTrackerFormContainer = styled.div`height: 2rem;
+background: rgba(255,255,255,0);
+padding: 1.5rem 0;
 #enquireform > div:nth-child(14) > input {
   padding: 0.75rem 4.5rem;
     color: black;
@@ -36,10 +38,14 @@ export const FunctionTrackerFormContainer = styled.div`
 #enquireform > div:nth-child(11) > div > div > label {
   padding-left: 30px !important;
     padding-top: 5px;
-    margin-top: 10p;
+    margin-top: 10px;
     position: absolute;
     font-size: 1rem;
     font-family: 'PitchRegular';
+}
+.form-control input {
+  color: pink !important;
+  font-size: 10rem !important;
 }
 .checker span {
     content: "";

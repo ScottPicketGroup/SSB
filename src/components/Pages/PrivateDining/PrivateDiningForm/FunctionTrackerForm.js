@@ -9,6 +9,19 @@ const FunctionTrackerForm = () => {
 export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
+.checker span:after {
+    content: "";
+    font-family: 'icomoon';
+    font-size: 16px;
+    line-height: 1;
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 .select2-results {
     color: black;
     background-color: #FFFFFF;

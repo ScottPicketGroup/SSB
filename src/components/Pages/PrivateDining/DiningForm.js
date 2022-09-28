@@ -13,7 +13,7 @@ const DiningForm = ({ makeAndEnquiryHeading }) => {
       <TitleWrapper>
         <Heading2 color="black">{makeAndEnquiryHeading}</Heading2>
       </TitleWrapper>
-      <FunctionTrackerForm/>
+      {/* <FunctionTrackerForm/> */}
     </FormWrapper>
   )
 }

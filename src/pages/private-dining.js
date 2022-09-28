@@ -28,7 +28,7 @@ const PrivateDingingPage = ({ data }) => {
         eventsPackageLinkText={eventsPackageLinkText}
         eventsPackagePdf={eventsPackagePdf}
       />
-      {/* <DiningForm makeAndEnquiryHeading={makeAndEnquiryHeading} /> */}
+      <DiningForm makeAndEnquiryHeading={makeAndEnquiryHeading} />
     </Layout>
   )
 }

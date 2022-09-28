@@ -77,7 +77,10 @@ export const FunctionTrackerFormContainer = styled.div`
     opacity: 0;
     filter: alpha(opacity=0);
 }
-
+#select2-startminute-container > span, #select2-startminute-container > span {
+  font-family: PitchRegular !important;
+  
+}
 #select2-eventdescriptionfield-container > span {
   color: black !important;
   font-family: PitchRegular;

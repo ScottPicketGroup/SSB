@@ -9,6 +9,15 @@ const FunctionTrackerForm = () => {
 export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
+#uniform-subcribemailinglistfield > span {
+  content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid black;
+    transition: all 300ms ease-in-out 0s;
+}
 .checker span {
     content: "";
     display: block;

@@ -6,6 +6,9 @@ import { Typography } from "./src/components/StyledComponents/typography.css"
 const App = ({ element }) => {
   return (
     <>
+      <Helmet>
+      <script language="javascript" src="https://smithstreetbistrot.functiontracker.com/public/v4/enquire.js"></script>
+      </Helmet>
       <GlobalStyles />
       <Typography />
       <ActiveMenuProvider>{element}</ActiveMenuProvider>

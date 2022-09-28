@@ -29,10 +29,12 @@ const FoodPage = ({ data }) => {
   } = data.allContentfulFoodMenuPageContent.nodes[0]
 
   const excuteScroll = el => {
-    const pos = itemsRef.current[el].getBoundingClientRect().top + window.pageYOffset - 150
+    const pos =
+      itemsRef.current[el].getBoundingClientRect().top +
+      window.pageYOffset -
+      150
     window.scrollTo({ top: pos, behavior: "smooth" })
   }
-
 
   return (
     <Layout>
@@ -59,22 +61,16 @@ const FoodPage = ({ data }) => {
             hiddenOnMobImg={imageAdjacentToBrunchMenuHiddenOnMob}
           />
         </SectionContainer> */}
-    <div 
-      ref={el => (itemsRef.current[2] = el)}>
-        <Food
-          ref={el => (itemsRef.current[2] = el)}
-          foodData={lunchAndDinner}
-          vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
-          image3={image3}
-        />
+        <div ref={el => (itemsRef.current[2] = el)}>
+          <Food
+            ref={el => (itemsRef.current[2] = el)}
+            foodData={lunchAndDinner}
+            vertImageUnderMenuHiddenOnMob={vertImageUnderMenuHiddenOnMob}
+            image3={image3}
+          />
         </div>
 
-        <SectionContainer
-          marginBottom="xxl"
-          centered
-          red
-        
-        >
+        <SectionContainer marginBottom="xxl" centered red>
           <Desserts dessertData={desserts} />
         </SectionContainer>
       </PageContainer>
@@ -114,7 +110,7 @@ export const foodPageData = graphql`
     allContentfulFoodMenuPageContent {
       nodes {
         pageTitle
-       
+
         lunchAndDinner {
           menuItems {
             id

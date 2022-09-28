@@ -238,7 +238,7 @@ export const FunctionTrackerFormContainer = styled.div`
   }
   .select2-results {
     color: #5F5F5F;
-    background-color: #FFFFFF;
+    
     font-family: PitchRegular !important;
     border: black 1px solid;
     -web: hidden;
@@ -255,21 +255,10 @@ Around the search field
     background-color: transparent !important;
   }
 
-  /* Each result */
-  .select2-results {
-    color: white;
-    background-color: inherit;
-  }
+ 
 
   /* Higlighted (hover) result */
-  .select2-results__option--highlighted {
-    color: white;
-  }
-
-  /* Selected option */
-  .select2-results__option[aria-selected="true"] {
-    color: white;
-  }
+  
 
   .select2-container {
     border: 0;

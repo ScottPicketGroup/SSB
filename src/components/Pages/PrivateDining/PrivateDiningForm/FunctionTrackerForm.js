@@ -78,9 +78,9 @@ export const FunctionTrackerFormContainer = styled.div`
     filter: alpha(opacity=0);
 }
 .select2-results {
-    color: black;
+    color: black !important;
     background-color: #FFFFFF;
-    border: 1px solid black;
+    border: 1px solid black !important;
 }
 .select2-results__option {
     padding: 7px 12px;

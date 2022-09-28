@@ -63,7 +63,10 @@ export const FunctionTrackerFormContainer = styled.div`
     font-size: 1rem;
     font-family: 'PitchRegular';
 }
-
+#select2-startminute-results, #select2-starthours-results, #select2-eventdescriptionfield-results {
+  color: black !important;
+  font-family: PitchRegular !important;
+}
 .checker span:after {
     content: "";
     font-family: 'icomoon';

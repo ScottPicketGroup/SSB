@@ -84,6 +84,9 @@ export const FunctionTrackerFormContainer = styled.div`
   font-family: PitchRegular !important;
   
 }
+#select2-eventdescriptionfield-result-2dyd-Anniversary {
+  font-family: PitchRegular !important;
+}
 #select2-eventdescriptionfield-container > span {
   color: black !important;
   font-family: PitchRegular;
@@ -168,14 +171,11 @@ export const FunctionTrackerFormContainer = styled.div`
     font-size: 1rem;
   }
   //*[@id="enquireform"]/div[9]/div
-  .ftcontrol-label {
-    color: white !important;
-    text-transform: uppercase !important;
-  }
+ 
   .ftform-control {
     border-radius: 0px !important;
     background-color: transparent !important;
-    color: white !important;
+  
     box-shadow: none !important;
     border: none !important;
     border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
@@ -205,12 +205,12 @@ export const FunctionTrackerFormContainer = styled.div`
     }
     :valid {
       box-shadow: none !important;
-      color: white !important;
+       !important;
       font-size: 1rem !important;
       font-family: normal !important;
     }
     ::-moz-focus-outer {
-      color: white !important;
+       !important;
     }
     @media screen and (max-width: 450px) {
       width: 100% !important;
@@ -233,7 +233,7 @@ export const FunctionTrackerFormContainer = styled.div`
     background-color: transparent !important;
   }
   .select2-selection__rendered {
-    color: white !important;
+     !important;
     background-color: transparent !important;
   }
   .select2-results {
@@ -245,13 +245,13 @@ export const FunctionTrackerFormContainer = styled.div`
 }
 Around the search field
   .select2-search {
-    color: white;
+    ;
     background-color: transparent !important;
   }
 
   /* Search field */
   .select2-search input {
-    color: white;
+    ;
     background-color: transparent !important;
   }
 
@@ -287,35 +287,35 @@ Around the search field
   }
 
   .form-control-uniform {
-    color: white !important;
+    
     font-weight: bold !important;
   }
   .ftform-control::-webkit-input-placeholder {
-    color: white;
+    
   } /* WebKit, Blink, Edge */
   .ftform-control:-moz-placeholder {
-    color: white;
+    
   } /* Mozilla Firefox 4 to 18 */
   .ftform-control::-moz-placeholder {
-    color: white;
+    
   } /* Mozilla Firefox 19+ */
   .ftform-control:-ms-input-placeholder {
-    color: white;
+    
   } /* Internet Explorer 10-11 */
   .ftform-control::-ms-input-placeholder {
-    color: white;
+    
   } /* Microsoft Edge */
   .checker span {
     color: #dddddd;
     border: 2px solid #dddddd;
   }
   .picker__header {
-    color: white;
+    
   }
   .picker__table {
-    color: white;
+    
   }
-  ..select2-selection--single:not([class*="bg-"]):not([class*="border-"]) {
+  .select2-selection--single:not([class*="bg-"]):not([class*="border-"]) {
     border-color: transparent !important;
   }
   .select2-results__option[aria-selected="true"] {

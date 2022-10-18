@@ -70,7 +70,7 @@ const MultiElements = ({ events }) => {
                   alt="private-dining"
                 />
                 <PrivateDiningTextWrapper>
-                  <Heading2 marginBottom="md">{item.eventTitle}  {i}</Heading2>
+                  <Heading2 marginBottom="md">{item.eventTitle} </Heading2>
                   {item.eventDescription && (
                     <RenderTextOverHiddenWrapper>
                       <Renderer node={item.eventDescription} />…

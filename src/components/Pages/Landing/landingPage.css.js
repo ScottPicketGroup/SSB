@@ -103,7 +103,6 @@ export const WhatsOnEventsElementWrapper = styled.div`
   width: 50%;
   margin-bottom: ${props => (props.i === 0 ? "9rem" : "9rem")};
   min-height: 640px;
-  justify-content: space-between;
   margin-right: ${props => (props.i === 1 ? "1rem" : "inherit")};
     
   @media (max-width: 451px) {

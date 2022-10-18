@@ -73,7 +73,7 @@ const MultiElements = ({ events }) => {
                   <Heading2 marginBottom="md">{item.eventTitle} </Heading2>
                   {item.eventDescription && (
                     <RenderTextOverHiddenWrapper>
-                      <Renderer node={item.eventDescription} />…
+                      <Renderer node={item.eventDescription} />
                     </RenderTextOverHiddenWrapper>
                   )}
                   <RedDecorationLink

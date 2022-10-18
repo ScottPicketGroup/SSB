@@ -24,7 +24,7 @@ const Renderer = ({ node, landing }) => {
     },
   }
 
-  return <>{renderRichText(node, options)}</>
+  return <>{renderRichText(node, options)}<span>… </span></>
 }
 
 export default Renderer

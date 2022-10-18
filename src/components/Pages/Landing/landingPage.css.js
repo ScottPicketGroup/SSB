@@ -104,8 +104,8 @@ export const WhatsOnEventsElementWrapper = styled.div`
   margin-bottom: ${props => (props.i === 0 ? "9rem" : "9rem")};
   min-height: 640px;
   justify-content: space-between;
-
-  margin-right: ${props => (props.i === 0 ? "8rem" : 3)};  
+  margin-right: ${props => (props.i === 1 ? "1rem" : "inherit")};
+    
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
@@ -181,6 +181,7 @@ export const PrivateDiningImage = styled(GatsbyImage)`
   aspect-ratio: 3/2 !important;
   min-width: 100%;
   margin-right: 1rem;
+  gap: 1rem;
   order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
     order: 0;

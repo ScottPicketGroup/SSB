@@ -61,7 +61,7 @@ const MultiElements = ({ events }) => {
         {events.length > 1 &&
           events.map((item, i) =>
             i > 0 && i < 3 ? (
-              <WhatsOnEventsElementWrapper key={i} first>
+              <WhatsOnEventsElementWrapper key={i} first i={i}>
               
                 <PrivateDiningImage
                   first="true"

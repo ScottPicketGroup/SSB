@@ -120,7 +120,7 @@ font-size: 1rem;
 .select2-container {
     border: 0px;
     width: 100% !important;
-    margin: 2rem 0px !important;
+    margin-top: 2rem important;
     border: 1px solid black !important;
 }
 .select2-selection__placeholder {
@@ -188,7 +188,8 @@ font-size: 1rem;
   
     box-shadow: none !important;
     border: none !important;
-    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
+    border-bottom: 1px solid ${props =>
+      props.err ? "#CB0000" : "white"} !important;
   }
   input {
  
@@ -198,7 +199,8 @@ font-size: 1rem;
     font-size: 0.75rem !important;
     line-height: none !important;
 
-    border-bottom: 1px solid ${props => (props.err ? "#CB0000" : "white")} !important;
+    border-bottom: 1px solid ${props =>
+      props.err ? "#CB0000" : "white"} !important;
     ::placeholder {
       color: ${props => (props.err ? "#CB0000" : "#B1B1B1")};
       font-size: 1rem;
@@ -270,11 +272,7 @@ Around the search field
   /* Higlighted (hover) result */
   
 
-  .select2-container {
-    border: 0;
-    width: 100% !important ;
-    margin: 1rem 0 !important;
-  }
+
   element.style .select2-selection--single:not([class*="bg-"]) {
     background-color: transparent !important;
   }
@@ -396,6 +394,8 @@ span.checked {
   margin-left: .25rem;
 }
 `
-{/* 
+{
+  /* 
 
-*/}
+*/
+}

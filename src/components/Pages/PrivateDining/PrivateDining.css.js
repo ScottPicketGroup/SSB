@@ -41,6 +41,7 @@ export const TitleWrapper = styled.div`
   margin-bottom: 1.75rem;
   @media (max-width: 451px) {
     width: 90%;
+    margin-left: 0;
   }
 `
 export const DescriptionWrapper = styled.div`

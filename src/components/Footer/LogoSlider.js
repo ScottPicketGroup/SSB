@@ -50,7 +50,7 @@ const LogoSliderNew = () => {
   console.log(velocity)
   return (
     <SliderExtended>
-      <Marquee velocity={80}>
+      <Marquee velocity={velocity}>
         {logos &&
           logos.map((logo, i) => (
             <LogoLink href={logo.url} target="_blank" key={i}>

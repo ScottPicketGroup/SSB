@@ -100,7 +100,8 @@ export const WhatsOnEventsElementWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: ${props => props.key === 0 && "space-between"};
-  width: 50%;
+  width: 43%;
+  
   margin-bottom: ${props => (props.i === 0 ? "9rem" : "9rem")};
   min-height: 640px;
   margin-right: ${props => (props.i === 1 ? "1rem" : "inherit")};
@@ -149,7 +150,7 @@ export const PrivateDiningWrapper = styled.div`
   flex-direction: ${props => (props.first ? "row" : "column")};
   justify-content: ${props => props.first && "space-between"};
   width: 100%;
-  margin-bottom: ${props => (props.first ? "6rem" : "0")};
+  margin-bottom: ${props => (props.first && props.whatson ? `9rem` : props.first ? "6rem" : "0")};
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
@@ -167,11 +168,11 @@ export const LandingEventImageWrapepr = styled.div`
 export const PrivateDiningImageWrapepr = styled.div`
   --r: 318 / 211;
 
-  aspect-ratio: var(--r);
-  width: min(90%, min(600px, 90vh * (var(--r))));
-
+  aspect-ratio: 1.52;
+  
+  
   overflow: hidden;
-
+  width: 100%;
   display: ${props => (props.mobile ? "none" : "block")};
 
   @media (max-width: 451px) {
@@ -183,7 +184,7 @@ export const PrivateDiningImage = styled(GatsbyImage)`
   aspect-ratio: 3/2 !important;
   min-width: 100%;
   margin-right: 1rem;
-  gap: 1rem;
+  gap: 4rem;
   order: ${props => (props.first ? "1" : "0")};
   @media (max-width: 451px) {
     order: 0;
@@ -198,11 +199,11 @@ export const PrivateDiningTextWrapper = styled.div`
   // align-items: center;
   text-align: left;
   margin-top: 3.5rem;
-  
+
   padding-left: ${props => (props.dining ? "4rem" : "")};
-  padding-right: ${props => (props.first ? "2rem" : "")};
+  padding-right: ${props => (props.first ? "20%" : "")};
   width: ${props => (props.first ? "50%" : props.dining ? "50%" : "80%")};
-  margin ${props => (props.dining ? "3rem auto 0" : "3rem 0 0")};
+  /* margin ${props => (props.dining ? "3rem auto 0" : "3rem 0 0")}; */
   order: ${props => (props.first ? "0" : "1")};
   @media (max-width: 451px) {
     order: 1;

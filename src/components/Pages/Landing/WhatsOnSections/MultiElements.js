@@ -18,15 +18,12 @@ import {
 } from "../../../StyledComponents/typography.css"
 
 const MultiElements = ({ events }) => {
- 
   return (
     <div>
-      <PrivateDiningWrapper first>
-      <PrivateDiningTextWrapper first>
+      <PrivateDiningWrapper first whatson>
+        <PrivateDiningTextWrapper first >
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
-          
-            <Renderer node={events[0].eventDescription} />
-          
+          <Renderer node={events[0].eventDescription} />
           <RedDecorationLink
             marginBottom="lg"
             to={`/events/${events[0].eventTitle
@@ -36,7 +33,7 @@ const MultiElements = ({ events }) => {
             <BC1 marginBottom="lg">Learn more…</BC1>
           </RedDecorationLink>
         </PrivateDiningTextWrapper>
-        <PrivateDiningImageWrapepr>
+        <PrivateDiningImageWrapepr first>
           <div className="first-paragraph">
             <PrivateDiningImage
               image={getImage(events[0].galleryImages[0])}
@@ -56,14 +53,12 @@ const MultiElements = ({ events }) => {
             )}
           </div>
         </PrivateDiningImageWrapepr>
-        
       </PrivateDiningWrapper>
       <WhatsOnEventsMultiWrapper>
         {events.length > 1 &&
           events.map((item, i) =>
             i > 0 && i < 3 ? (
               <WhatsOnEventsElementWrapper key={i} first i={i}>
-              
                 <PrivateDiningImage
                   first="true"
                   className="first-paragraph"

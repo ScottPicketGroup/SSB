@@ -10,9 +10,9 @@ export default FunctionTrackerForm
 
 export const FunctionTrackerFormContainer = styled.div`
 div.form-group:nth-child(13) > div:nth-child(1) > div:nth-child(1) > label:nth-child(2) {
-  padding-left: 30.1px;
-margin-bottom: -15.3px;
-top: 20px;
+  padding-left: 30.1px !important;
+
+top: 1rem;
 position: absolute;
 font-family: PitchRegular;
 font-size: 1rem;

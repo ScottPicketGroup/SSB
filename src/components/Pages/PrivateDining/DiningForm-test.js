@@ -18,7 +18,7 @@ React.useEffect(() => {
   )
 },[])
 
-  // console.log('window', window)
+
   return (
     <FormWrapper>
       <TitleWrapper>

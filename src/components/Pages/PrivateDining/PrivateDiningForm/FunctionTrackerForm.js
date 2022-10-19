@@ -120,7 +120,7 @@ font-size: 1rem;
 .select2-container {
     border: 0px;
     width: 100% !important;
-    margin-top: 2rem important;
+    margin-top: 2rem !important;
     border: 1px solid black !important;
 }
 .select2-selection__placeholder {

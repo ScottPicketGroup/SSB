@@ -52,6 +52,10 @@ font-size: 1rem;
     font-family: 'PitchRegular';
 }
 
+#enquireform p {
+  font-family: 'PitchRegular';
+  font-size: 1rem;
+}
 
 .checker span {
   margin-top: 1rem;

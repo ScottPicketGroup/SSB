@@ -14,7 +14,7 @@ React.useEffect(() => {
   }
 
   return console.log(
-    "form info:", window &&    window.ftenquireinit(907, "smithstreetbistrot")
+    "form info:", 
   )
 },[])
 

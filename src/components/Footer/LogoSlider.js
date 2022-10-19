@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import Marquee from "react-marquee-slider"
 import styled from "styled-components"
-import useWindowSize from "../hooks/useWindowSize"
 
 const contentful = require("contentful")
 

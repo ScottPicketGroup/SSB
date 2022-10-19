@@ -36,6 +36,7 @@ export const FormWrapper = styled.div`
 `
 export const TitleWrapper = styled.div`
   width: 40vw;
+  margin-left: 2rem;
   text-align: center;
   margin-bottom: 1.75rem;
   @media (max-width: 451px) {

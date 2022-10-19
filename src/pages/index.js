@@ -27,7 +27,7 @@ const IndexPage = ({ data }) => {
     heroTopCenterText,
     heroAddress,
   } = data.allContentfulLandingPageContent.edges[0].node
-console.log('whatsOnEvents', whatsOnEvents)
+
   return (
     <Layout landing>
       <Seo title="Home" />

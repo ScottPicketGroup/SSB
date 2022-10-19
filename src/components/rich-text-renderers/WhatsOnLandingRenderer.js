@@ -20,11 +20,11 @@ const Renderer = ({ node, landing }) => {
         <BC1 marginBottom="sm" style={{color: `red !important`}}>{children}</BC1>
       ),
      
-      [BLOCKS.PARAGRAPH]: (node, children) => <BC1>{children}</BC1>
+      [BLOCKS.PARAGRAPH]: (node, children) => <BC1 >{children}</BC1>
     },
   }
 
-  return <>{renderRichText(node, options)}<span>… </span></>
+  return < >{renderRichText(node, options)}</>
 }
 
 export default Renderer

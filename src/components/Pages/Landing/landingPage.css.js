@@ -104,35 +104,38 @@ export const WhatsOnEventsElementWrapper = styled.div`
   margin-bottom: ${props => (props.i === 0 ? "9rem" : "9rem")};
   min-height: 640px;
   margin-right: ${props => (props.i === 1 ? "1rem" : "inherit")};
-    
+
   @media (max-width: 451px) {
     flex-direction: column;
     margin-bottom: 0;
   }
   /* Safari 11+ */
-@media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
-selector { 
-margin-right: 10vw; 
-}
-}}
-/* Test website on real Safari 11+ */
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+      selector {
+        margin-right: 10vw;
+      }
+    }
+  }
+  /* Test website on real Safari 11+ */
 
-/* Safari 10.1 */
-@media not all and (min-resolution:.001dpcm){ 
-@supports (-webkit-appearance:none) and (not (stroke-color:transparent)) {
-selector { 
-margin-right: 10vw;
-}
-}}
+  /* Safari 10.1 */
+  @media not all and (min-resolution: 0.001dpcm) {
+    @supports (-webkit-appearance: none) and (not (stroke-color: transparent)) {
+      selector {
+        margin-right: 10vw;
+      }
+    }
+  }
 
-/* Safari 6.1-10.0 (but not 10.1) */
-@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0){ 
-@media {
-selector { 
-margin-right: 10vw;
-}
-}}
+  /* Safari 6.1-10.0 (but not 10.1) */
+  @media screen and (min-color-index: 0) and(-webkit-min-device-pixel-ratio:0) {
+    @media {
+      selector {
+        margin-right: 10vw;
+      }
+    }
+  }
 `
 export const WhatsOnEventsMultiWrapper = styled.div`
   display: flex;
@@ -213,7 +216,7 @@ export const PrivateDiningTextWrapper = styled.div`
 export const WhatsOnEventsWrapper = styled.div`
   display: flex;
   flex-direction: column;
- justify-content: space-between;
+  justify-content: space-between;
   justify-content: space-between;
   @media (max-width: 451px) {
     flex-direction: column;
@@ -222,12 +225,14 @@ export const WhatsOnEventsWrapper = styled.div`
 export const RenderTextOverHiddenWrapper = styled.div`
   display: -webkit-box;
   // -webkit-line-clamp: ${props => (props.first ? 4 : 3)};
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+
+  @media screen and (min-color-index: 0) and (-webkit-min-device-pixel-ratio: 0) {
     height: 70px;
   }
+
   margin-bottom: 1.75rem;
   p {
     margin-bottom: 0;

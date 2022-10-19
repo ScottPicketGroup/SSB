@@ -1,5 +1,5 @@
 import React from "react"
-import Renderer from "../../../rich-text-renderers/WhatsOnLandingRenderer"
+import Renderer from "../../../rich-text-renderers/LandingWhatsOnRenderer"
 import { getImage } from "gatsby-plugin-image"
 import {
   PrivateDiningTextWrapper,
@@ -18,14 +18,15 @@ import {
 } from "../../../StyledComponents/typography.css"
 
 const MultiElements = ({ events }) => {
+ 
   return (
     <div>
       <PrivateDiningWrapper first>
       <PrivateDiningTextWrapper first>
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
-          <RenderTextOverHiddenWrapper first="true">
-            <Renderer node={events[0].eventDescription} />…
-          </RenderTextOverHiddenWrapper>
+          
+            <Renderer node={events[0].eventDescription} />
+          
           <RedDecorationLink
             marginBottom="lg"
             to={`/events/${events[0].eventTitle

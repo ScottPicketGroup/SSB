@@ -31,16 +31,17 @@ const Renderer = ({ node }) => {
         </a>
       ),
 
-      [BLOCKS.PARAGRAPH]: (node, children) => {
-        output.push(children)
-      },
+      [BLOCKS.PARAGRAPH]: (node, children) => <BC1>{children}</BC1>,
+      // [BLOCKS.PARAGRAPH]: (node, children) => {
+      //   output.push(children)
+      // },
     },
   }
 
   return (
     <>
       {renderRichText(node, options)}
-      {console.log("output", output[0].toString().substring(output[0].toString().length - 2))}
+      {/* {console.log("output", output[0].toString().substring(output[0].toString().length - 2))}
       {output[0].toString().length > 120 ? (
         <BC1 marginBottom="md">
           {output[0].toString().substring(0, 150)}
@@ -61,7 +62,7 @@ const Renderer = ({ node }) => {
             <span style={{ marginLeft: `-.6rem`, background: `white` }}>…</span>
           </BC1>
         </>
-      )}
+      )} */}
     </>
   )
 }

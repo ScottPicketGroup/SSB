@@ -18,12 +18,13 @@ import {
 } from "../../../StyledComponents/typography.css"
 
 const MultiElements = ({ events }) => {
+  console.log(events)
   return (
     <div>
       <PrivateDiningWrapper first whatson>
-        <PrivateDiningTextWrapper first >
+        <PrivateDiningTextWrapper first>
           <Heading2 marginBottom="md">{events[0].eventTitle}</Heading2>
-          <Renderer node={events[0].eventDescription} />
+          <Renderer node={events[0].previewDescription} />
           <RedDecorationLink
             marginBottom="lg"
             to={`/events/${events[0].eventTitle
@@ -67,9 +68,9 @@ const MultiElements = ({ events }) => {
                 />
                 <PrivateDiningTextWrapper>
                   <Heading2 marginBottom="md">{item.eventTitle} </Heading2>
-                  {item.eventDescription && (
+                  {item.previewDescription && (
                     <RenderTextOverHiddenWrapper>
-                      <Renderer node={item.eventDescription} />
+                      <Renderer node={item.previewDescription} />
                     </RenderTextOverHiddenWrapper>
                   )}
                   <RedDecorationLink

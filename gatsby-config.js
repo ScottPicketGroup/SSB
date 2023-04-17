@@ -2,7 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-
 module.exports = {
   flags: {
     FAST_DEV: true,
@@ -18,7 +17,6 @@ module.exports = {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-PXJL7GH",
-       
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -50,12 +48,12 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-    
+
     {
       resolve: `gatsby-source-contentful`,
       options: {
         spaceId: `d38aafs95ly9`,
-        accessToken: process.env.CONTENTFUL_ACCESSTOKEN,
+        accessToken: `LfclS4NvMCf-EFdXSGefTojr354Ua-gHiHsTQHqCo2Q`,
       },
     },
     // {

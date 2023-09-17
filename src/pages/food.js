@@ -24,6 +24,7 @@ const FoodPage = ({ data }) => {
     desserts,
     vertImageUnderMenuHiddenOnMob,
     image3,
+
     imageAdjacentToBrunchMenuHiddenOnMob,
     lunchAndDinner,
   } = data.allContentfulFoodMenuPageContent.nodes[0]
@@ -127,6 +128,7 @@ export const foodPageData = graphql`
         desserts {
           bottomHeading
           scrollToMenuItem
+          seasonTitle
           menuItems {
             menuItem
             menuItemDescription

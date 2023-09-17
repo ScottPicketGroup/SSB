@@ -11,13 +11,18 @@ import {
   DessertDrinkSectionItemWrapper,
   DessertDrinkSectionContainer,
   DessertDrinkContainer,
-  DessertsImageWrapepr
+  DessertsImageWrapepr,
 } from "./FoodPage.css"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 const Desserts = ({ dessertData }) => {
-  const { menuItems, bottomHeading, drinksSection, food_menu_page_content } =
-    dessertData[0]
+  const {
+    menuItems,
+    bottomHeading,
+    drinksSection,
+    food_menu_page_content,
+    seasonTitle,
+  } = dessertData[0]
   gsap.registerPlugin(ScrollTrigger)
   const ref = useRef(null)
 
@@ -127,9 +132,11 @@ const Desserts = ({ dessertData }) => {
         >
           {bottomHeading}
         </Heading2>
-        <DessertSeasonalTitleWrapper>
-          <BC2 bold>SPRING & SUMMER</BC2>
-        </DessertSeasonalTitleWrapper>
+        {seasonTitle && (
+          <DessertSeasonalTitleWrapper>
+            <BC2 bold>{seasonTitle}</BC2>
+          </DessertSeasonalTitleWrapper>
+        )}
       </DessertWrapper>
     </DessertContainer>
   )

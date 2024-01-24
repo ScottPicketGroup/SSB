@@ -45,7 +45,7 @@ const Header = ({ landing }) => {
         <HeaderLogoWrapper>
           <ReservationMenuWrapper>
           <Link to="/reservations" style={{ textAlign: "center", minWidth: `3rem` }}>
-              <BookATableText>BOOK A TABLE</BookATableText>
+              <BookATableText>BOOK A TABLE STAGING</BookATableText>
               </Link>
           </ReservationMenuWrapper>
 

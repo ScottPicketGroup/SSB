@@ -108,39 +108,23 @@ const MenuComponent = () => {
           <BC1 marginBottom="md" color="white">
             Select your gift voucher below
           </BC1>
-          <GiftVouchersItemContainer>
+          <GiftVouchersItemContainer style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <GiftVouchersItemWrapper>
               <a
-                href={giftVouchersData.smithStBistroGiftVoucherLink}
-                style={{ textDecorationColor: color.SECONDARY_WHITE, textDecorationThickness: '1px'}}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Heading2 color="white">
-                  {giftVouchersData.venueGiftVoucherHeading}
-                </Heading2>
-              </a>
-              <MobileHiddenGiftItemImage
-                image={getImage(giftVouchersData.venueGiftVoucherImage)}
-                alt="gift-left-image"
-              />
-            </GiftVouchersItemWrapper>
-            <GiftVouchersItemWrapper>
-              <a
-                href={giftVouchersData.spgGvLink}
-                style={{ textDecorationColor: color.SECONDARY_WHITE, textDecorationThickness: '1px' }}
-                target="_blank"
-                rel="noreferrer"
+                  href={giftVouchersData.spgGvLink}
+                  style={{ textDecorationColor: color.SECONDARY_WHITE, textDecorationThickness: '1px' }}
+                  target="_blank"
+                  rel="noreferrer"
               >
                 <Heading2 color="white">
                   {giftVouchersData.scottPicketGroupGiftVoucherHeading}
                 </Heading2>
               </a>
               <GiftItemImage
-                image={getImage(
-                  giftVouchersData.spgGiftVoucherImageOnlyImageOnMob
-                )}
-                alt="gift-right-image"
+                  image={getImage(
+                      giftVouchersData.spgGiftVoucherImageOnlyImageOnMob
+                  )}
+                  alt="gift-right-image"
               />
             </GiftVouchersItemWrapper>
           </GiftVouchersItemContainer>
